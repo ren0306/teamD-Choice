@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{86C5F771-FD0E-4321-B0FB-BA21FF10E87D}</ProjectGuid>
+    <RootNamespace>ChoiceD</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ED\ObjED1.cpp" />
+    <ClCompile Include="ED\ObjED2.cpp" />
+    <ClCompile Include="ED\ObjED3.cpp" />
+    <ClCompile Include="ED\SceneED1.cpp" />
+    <ClCompile Include="ED\SceneED2.cpp" />
+    <ClCompile Include="ED\SceneED3.cpp" />
+    <ClCompile Include="GameL\Audio.cpp" />
+    <ClCompile Include="GameL\DirectXDevice.cpp" />
+    <ClCompile Include="GameL\Draw2DTex_Source.cpp" />
+    <ClCompile Include="GameL\DrawFont.cpp" />
+    <ClCompile Include="GameL\DrawTexture.cpp" />
+    <ClCompile Include="GameL\GameL_Main.cpp" />
+    <ClCompile Include="GameL\HitBoxManager.cpp" />
+    <ClCompile Include="GameL\MultiThread.cpp" />
+    <ClCompile Include="GameL\SceneManager.cpp" />
+    <ClCompile Include="GameL\SceneObjManager.cpp" />
+    <ClCompile Include="GameL\SetWindow.cpp" />
+    <ClCompile Include="GameL\UserData.cpp" />
+    <ClCompile Include="GameL\WICTextureLoader.cpp" />
+    <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="GameOver\Game Over.cpp" />
+    <ClCompile Include="GameOver\GAME OVER2.cpp" />
+    <ClCompile Include="GameOver\GAMEOVER1.cpp" />
+    <ClCompile Include="GameOver\GameOver2.cpp" />
+    <ClCompile Include="ゲームメイン\ObjBackGround.cpp" />
+    <ClCompile Include="ゲームメイン\ObjMain.cpp" />
+    <ClCompile Include="ゲームメイン\SceneMain.cpp" />
+    <ClCompile Include="シューティング\CObjBullet.cpp" />
+    <ClCompile Include="シューティング\CObjBullteEnemy.cpp" />
+    <ClCompile Include="シューティング\ObjEnemy1.cpp" />
+    <ClCompile Include="シューティング\ObjEnemy2.cpp" />
+    <ClCompile Include="シューティング\ObjEnemy3.cpp" />
+    <ClCompile Include="シューティング\ObjEnemy4.cpp" />
+    <ClCompile Include="シューティング\ObjHero.cpp" />
+    <ClCompile Include="シューティング\ObjSTG.cpp" />
+    <ClCompile Include="シューティング\ObjSTG2.cpp" />
+    <ClCompile Include="シューティング\ObjSTG3.cpp" />
+    <ClCompile Include="シューティング\ObjSTG4.cpp" />
+    <ClCompile Include="シューティング\Objteki1.cpp" />
+    <ClCompile Include="シューティング\Objteki2.cpp" />
+    <ClCompile Include="シューティング\Objteki3.cpp" />
+    <ClCompile Include="シューティング\Objteki4.cpp" />
+    <ClCompile Include="シューティング\SceneSTG.cpp" />
+    <ClCompile Include="シューティング\SceneSTG2.cpp" />
+    <ClCompile Include="シューティング\SceneSTG3.cpp" />
+    <ClCompile Include="シューティング\SceneSTG4.cpp" />
+    <ClCompile Include="シューティング\ShootingMain.cpp" />
+    <ClCompile Include="シューティング\UtilityModule.cpp" />
+    <ClCompile Include="タイトル\ObjTitle.cpp" />
+    <ClCompile Include="タイトル\SceneTitle.cpp" />
+    <ClCompile Include="謎解き\ObjTenkey.cpp" />
+    <ClCompile Include="謎解き\SceneNazo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ED\ObjED1.h" />
+    <ClInclude Include="ED\ObjED2.h" />
+    <ClInclude Include="ED\ObjED3.h" />
+    <ClInclude Include="ED\SceneED1.h" />
+    <ClInclude Include="ED\SceneED2.h" />
+    <ClInclude Include="ED\SceneED3.h" />
+    <ClInclude Include="GameHead.h" />
+    <ClInclude Include="GameL\Audio.h" />
+    <ClInclude Include="GameL\DirectXDevice.h" />
+    <ClInclude Include="GameL\DirectXTex.h" />
+    <ClInclude Include="GameL\DrawFont.h" />
+    <ClInclude Include="GameL\DrawTexture.h" />
+    <ClInclude Include="GameL\HitBoxManager.h" />
+    <ClInclude Include="GameL\MultiThread.h" />
+    <ClInclude Include="GameL\SceneManager.h" />
+    <ClInclude Include="GameL\SceneObjManager.h" />
+    <ClInclude Include="GameL\SetWindow.h" />
+    <ClInclude Include="GameL\UserData.h" />
+    <ClInclude Include="GameL\WICTextureLoader.h" />
+    <ClInclude Include="GameL\WinInputs.h" />
+    <ClInclude Include="GameOver\GAME OVER2.h" />
+    <ClInclude Include="GameOver\GameOver.h" />
+    <ClInclude Include="GameOver\GAMEOVER1.h" />
+    <ClInclude Include="GameOver\GameOver2.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="ゲームメイン\ObjBackGround.h" />
+    <ClInclude Include="ゲームメイン\ObjMain.h" />
+    <ClInclude Include="ゲームメイン\SceneMain.h" />
+    <ClInclude Include="シューティング\CObjBullet.h" />
+    <ClInclude Include="シューティング\CObjBullteEnemy.h" />
+    <ClInclude Include="シューティング\ObjEnemy1.h" />
+    <ClInclude Include="シューティング\ObjEnemy2.h" />
+    <ClInclude Include="シューティング\ObjEnemy3.h" />
+    <ClInclude Include="シューティング\ObjEnemy4.h" />
+    <ClInclude Include="シューティング\ObjHero.h" />
+    <ClInclude Include="シューティング\ObjSTG.h" />
+    <ClInclude Include="シューティング\ObjSTG2.h" />
+    <ClInclude Include="シューティング\ObjSTG3.h" />
+    <ClInclude Include="シューティング\ObjSTG4.h" />
+    <ClInclude Include="シューティング\Objteki1.h" />
+    <ClInclude Include="シューティング\Objteki2.h" />
+    <ClInclude Include="シューティング\Objteki3.h" />
+    <ClInclude Include="シューティング\Objteki4.h" />
+    <ClInclude Include="シューティング\SceneSTG.h" />
+    <ClInclude Include="シューティング\SceneSTG2.h" />
+    <ClInclude Include="シューティング\SceneSTG3.h" />
+    <ClInclude Include="シューティング\SceneSTG4.h" />
+    <ClInclude Include="シューティング\ShootingMain.h" />
+    <ClInclude Include="シューティング\UtilityModule.h" />
+    <ClInclude Include="タイトル\ObjTitle.h" />
+    <ClInclude Include="タイトル\SceneTitle.h" />
+    <ClInclude Include="謎解き\ObjTenkey.h" />
+    <ClInclude Include="謎解き\SceneNazo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GameL\DirectXTex.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="GameL\DirectXTex.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
