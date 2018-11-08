@@ -159,7 +159,6 @@
     <ClCompile Include="シューティング\SceneSTG2.cpp" />
     <ClCompile Include="シューティング\SceneSTG3.cpp" />
     <ClCompile Include="シューティング\SceneSTG4.cpp" />
-    <ClCompile Include="シューティング\ShootingMain.cpp" />
     <ClCompile Include="シューティング\UtilityModule.cpp" />
     <ClCompile Include="タイトル\ObjTitle.cpp" />
     <ClCompile Include="タイトル\SceneTitle.cpp" />
@@ -217,7 +216,6 @@
     <ClInclude Include="シューティング\SceneSTG2.h" />
     <ClInclude Include="シューティング\SceneSTG3.h" />
     <ClInclude Include="シューティング\SceneSTG4.h" />
-    <ClInclude Include="シューティング\ShootingMain.h" />
     <ClInclude Include="シューティング\UtilityModule.h" />
     <ClInclude Include="タイトル\ObjTitle.h" />
     <ClInclude Include="タイトル\SceneTitle.h" />

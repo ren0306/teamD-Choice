@@ -1,6 +1,6 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
-
+#include "../GameL\HitBoxManager.h"
 
 #include "../GameHead.h"
 #include "Objteki3.h"
@@ -22,7 +22,8 @@ void CObjteki3::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-
+	//当たり判定HitBox
+	Hits::SetHitBox(this, m_x, m_y , 150, 130, ELEMENT_ENEMY, OBJ_ENEMY3, 1);
 }
 
 //アクション
@@ -49,9 +50,10 @@ void CObjteki3::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
+
 	//HitBoxの内容を更新
-	//CHitBox* hit = Hits::GetHitBox(this);
-	//hit->SetPos(m_x + 100, m_y + 50);
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x + 10, m_y + 20);
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
@@ -60,7 +62,6 @@ void CObjteki3::Action()
 		this->SetStatus(false);		//自身に削除命令
 									//Hits::DeleteHitBox(this);
 	}
-
 
 }
 

@@ -18,12 +18,21 @@ void CObjMain::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-
+	m_and = 0.0;
 }
 
 //アクション
 void CObjMain::Action()
 {
+	if (m_f == true)
+	{
+		m_and += 0.1;
+		if (m_and == 1.0)
+		{
+			m_f = false;
+		}
+
+	}
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -54,7 +63,7 @@ void CObjMain::Action()
 //ドロー
 void CObjMain::Draw()
 {
-	float c[4] = { 1,1,1,1 };
+	float c[4] = { 1,1,1,m_and };
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);

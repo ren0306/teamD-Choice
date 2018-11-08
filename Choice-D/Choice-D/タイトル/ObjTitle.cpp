@@ -39,7 +39,6 @@ void CObjTitle::Action()
 		if (m_mou_l == true)
 		{
 			m_and -= 0.1;
-			
 			Scene::SetScene(new CSceneMain());
 		}
 	}
