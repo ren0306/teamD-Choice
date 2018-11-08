@@ -34,7 +34,7 @@ void CSceneSTG::InitScene()
 	Objs::InsertObj(obj, OBJ_STG, 10);
 
 	//外部グラフィックファイルを読み込み1番に登録
-	Draw::LoadImageW(L"teki1.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"teki1.png", 10, TEX_SIZE_512);
 
 	CObjteki1* objb = new CObjteki1(200,10);
 	Objs::InsertObj(objb, OBJ_TEKI1, 50);
