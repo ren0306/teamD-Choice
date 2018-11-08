@@ -102,7 +102,6 @@ struct UserData
 #include "ゲームメイン\SceneMain.h"
 #include "タイトル\SceneTitle.h"
 #include "GameOver\GameOver.h"
-#include "シューティング\ShootingMain.h"
 #include "GameOver\GameOver2.h"
 #include "ED\SceneED1.h"
 #include "ED\SceneED3.h"

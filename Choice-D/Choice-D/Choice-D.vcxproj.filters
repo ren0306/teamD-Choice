@@ -171,9 +171,6 @@
     <ClCompile Include="シューティング\SceneSTG4.cpp">
       <Filter>ソース ファイル\STG</Filter>
     </ClCompile>
-    <ClCompile Include="シューティング\ShootingMain.cpp">
-      <Filter>ソース ファイル\STG</Filter>
-    </ClCompile>
     <ClCompile Include="シューティング\UtilityModule.cpp">
       <Filter>ソース ファイル\STG</Filter>
     </ClCompile>
@@ -330,9 +327,6 @@
       <Filter>ソース ファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\SceneSTG4.h">
-      <Filter>ソース ファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ShootingMain.h">
       <Filter>ソース ファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\UtilityModule.h">
