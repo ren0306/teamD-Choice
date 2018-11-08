@@ -161,8 +161,8 @@ void CObjTenkey::Action()
 		}
 
 	}
-		//963
-		if (m_mou_x > 406 && m_mou_x < 445)
+	//963
+	if (m_mou_x > 406 && m_mou_x < 445)
 		{
 			//9“ü—Í
 			if (m_mou_y > 373 && m_mou_y < 410)
@@ -218,16 +218,15 @@ void CObjTenkey::Action()
 			}
 
 		}
-		//[‚·‚×‚Äíœ]‚ð‰Ÿ‚·‚Æ(–¢ŽÀ‘•)
-		if (m_reset_flag == true)
-		{
-			return;
-		}
-
-		if (cnt == 4)
-		{
-			Scene::SetScene(new CSceneGameOver2);
-		}
+	//[‚·‚×‚Äíœ]‚ð‰Ÿ‚·‚Æ(–¢ŽÀ‘•)
+	if (m_reset_flag == true)
+	{
+		return;
+	}
+	if (cnt == 4)
+	{
+		Scene::SetScene(new CSceneGameOver2);
+	}
 		/*
 		if (m_flag[1] == true)
 			{
