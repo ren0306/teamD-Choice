@@ -51,7 +51,7 @@ void CShootingMain::InitScene()
 	Draw::LoadImage(L"hero.png", 1, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み2番に登録(512×512ピクセル)
-	Draw::LoadImage(L"Enemy2.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"teki5.png", 2, TEX_SIZE_512);
 
 	//外部グラフィックファイルを読み込み1番に登録(512×512ピクセル)
 	//Draw::LoadImage(L"BossBack.png", 1, TEX_SIZE_512);

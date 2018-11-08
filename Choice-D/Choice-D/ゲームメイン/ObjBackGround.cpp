@@ -71,12 +71,12 @@ void CObjBackGround::Draw()
 	Draw::Draw(1, &src, &dst, d, 0.0f);
 
 
-	/*float p[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float p[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 800.0f;
-	src.m_bottom = 450.0f;
+	src.m_right = 1920.0f;
+	src.m_bottom = 1080.0f;
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
@@ -88,13 +88,13 @@ void CObjBackGround::Draw()
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1920.0f;
-	src.m_bottom = 1080.0f;
+	src.m_right =769.0f;
+	src.m_bottom = 621.0f;
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
-	Draw::Draw(1, &src, &dst, d, 0.0f);*/
+	Draw::Draw(20, &src, &dst, d, 0.0f);
 
 
 	
