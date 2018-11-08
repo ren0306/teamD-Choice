@@ -31,7 +31,7 @@ void CSceneNazo::InitScene()
 	//出力させる文字のグラフィックを作成
 	//例　Font::SetStrTex(L"ゲームを始める");
 
-	Draw::LoadImageW(L"tenkey.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
 
 
 	//オブジェクト作成

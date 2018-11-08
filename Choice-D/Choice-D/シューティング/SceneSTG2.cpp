@@ -35,7 +35,7 @@ void CSceneSTG2::InitScene()
 	Objs::InsertObj(obj, OBJ_STG, 10);
 
 	//外部グラフィックファイルを読み込み0番に登録
-	Draw::LoadImageW(L"ss01.png", 0, TEX_SIZE_512);
+	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_STG3, 10);
@@ -44,13 +44,13 @@ void CSceneSTG2::InitScene()
 	Objs::InsertObj(p, OBJ_BACKGROUND, 0);
 
 	//外部グラフィックファイルを読み込み1番に登録
-	Draw::LoadImageW(L"teki2.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"teki2.png", 10, TEX_SIZE_512);
 
 	CObjteki2* objb = new CObjteki2(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI2, 50);
 
 	//外部グラフィックファイルを読み込み1番に登録
-	Draw::LoadImageW(L"hero.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"hero.png", 1, TEX_SIZE_512);
 
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);

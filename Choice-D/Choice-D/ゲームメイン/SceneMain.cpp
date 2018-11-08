@@ -33,8 +33,8 @@ CSceneMain::~CSceneMain()
 void CSceneMain::InitScene()
 {
 	//外部グラフィックファイルを読み込み０番に登録
-	Draw::LoadImageW(L"doukutu.png", 0, TEX_SIZE_512);
-	Draw::LoadImageW(L"door.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
+	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_MAIN, 12);
