@@ -37,7 +37,7 @@ void CObjTenkey::Action()
 {
 	if (m_flag[5] == false&&m_flag[4]==false&&m_flag[7]==false)
 	{
-		Scene::SetScene(new CSceneMain);
+		Scene::SetScene(new CSceneMain2);
 		m_f == 1;
 	}
 	//マウスの位置を取得

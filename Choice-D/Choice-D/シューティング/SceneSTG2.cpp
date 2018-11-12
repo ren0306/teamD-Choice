@@ -29,28 +29,24 @@ CSceneSTG2::~CSceneSTG2()
 //ゲームタイトル初期化メソッド
 void CSceneSTG2::InitScene()
 {
-
-	//STGオブジェクト作成
-	CObjSTG* obj = new CObjSTG();
-	Objs::InsertObj(obj, OBJ_STG, 10);
-
 	//外部グラフィックファイルを読み込み0番に登録
 	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
-
-	CObjMain* m = new CObjMain();
-	Objs::InsertObj(m, OBJ_STG3, 10);
-
-	CObjBackGround* p = new CObjBackGround();
-	Objs::InsertObj(p, OBJ_BACKGROUND, 0);
-
-	//外部グラフィックファイルを読み込み1番に登録
+	//外部グラフィックファイルを読み込み10番に登録
 	Draw::LoadImage(L"teki2.png", 10, TEX_SIZE_512);
+	//外部グラフィックファイルを読み込み6番に登録
+	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
+
+	//STGオブジェクト作成
+	CObjSTG2* obj = new CObjSTG2();
+	Objs::InsertObj(obj, OBJ_STG2, 10);
+
+	CObjBackGround2* p = new CObjBackGround2();
+	Objs::InsertObj(p, OBJ_BACKGROUND2, 0);
+
 
 	CObjteki2* objb = new CObjteki2(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI2, 50);
 
-	//外部グラフィックファイルを読み込み1番に登録
-	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
 
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
