@@ -11,11 +11,11 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneMain.h"
+#include "../ゲームメイン/SceneMain2.h"
 #include "../GameHead.h"
 
 //コンストラクタ
-CSceneMain::CSceneMain()
+CSceneMain2::CSceneMain2()
 {
 }
 
@@ -23,21 +23,22 @@ CSceneMain::CSceneMain()
 
 
 //テストラクタ
-CSceneMain::~CSceneMain()
+CSceneMain2::~CSceneMain2()
 {
 }
 
 
 
 //ゲームメイン初期化メソッド
-void CSceneMain::InitScene()
+void CSceneMain2::InitScene()
 {
 	//外部グラフィックファイルを読み込み０番に登録
-	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
-	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
+	//Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
 
-	CObjMain* m = new CObjMain();
-	Objs::InsertObj(m, OBJ_MAIN, 12);
+
+	/*CObjMain* m = new CObjMain();
+	Objs::InsertObj(m, OBJ_MAIN, 12);*/
 
 	CObjBackGround* b = new CObjBackGround();
 	Objs::InsertObj(b, OBJ_BACKGROUND, 120);
@@ -52,6 +53,6 @@ void CSceneMain::InitScene()
 
 
 //ゲームメイン実行中メソッド
-void CSceneMain::Scene()
+void CSceneMain2::Scene()
 {
 }

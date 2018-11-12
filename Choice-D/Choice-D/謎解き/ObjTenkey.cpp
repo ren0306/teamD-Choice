@@ -38,6 +38,7 @@ void CObjTenkey::Action()
 	if (m_flag[5] == false&&m_flag[4]==false&&m_flag[7]==false)
 	{
 		Scene::SetScene(new CSceneMain);
+		m_f == 1;
 	}
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -296,17 +297,18 @@ void CObjTenkey::Draw()
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;
 	RECT_F dst;
-
+	//テンキー出力（切り取り位置）
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1024.0f;
 	src.m_bottom = 1024.0f;
-
+	//テンキー出力（出力位置）
 	dst.m_top = 50.0f+300;
 	dst.m_left = 0.0f+255;
 	dst.m_right = 400.0f+100;
 	dst.m_bottom =250.0f+300;
 	Draw::Draw(2, &src, &dst, d, 0.0f);
+
 
 }
 

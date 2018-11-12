@@ -5,10 +5,10 @@
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\SceneManager.h"
 
-#include "../小物関係/ObjBackGround.h"
-#include "SceneMain.h"
+#include "ObjDoor.h"
+#include "../ゲームメイン/SceneMain.h"
 #include "../GameHead.h"
-#include"../謎解き/ObjTenkey.h"
+
 
 
 //使用するネームスペース
@@ -16,17 +16,17 @@ using namespace GameL;
 
 
 //イニシャライズ
-void CObjBackGround::Init()
+void CObjDoor::Init()
 {
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	
+
 }
 
 //アクション
-void CObjBackGround::Action()
+void CObjDoor::Action()
 {
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -38,30 +38,26 @@ void CObjBackGround::Action()
 }
 
 //ドロー
-void CObjBackGround::Draw()
+void CObjDoor::Draw()
 {
 
-	
+
 	RECT_F src;
 	RECT_F dst;
 
-	
-	
-
-	
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//メインステージ1背景表示
+	//ドア1表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 320.0f;
-	src.m_bottom = 160.0f;
+	src.m_right = 650.0f;
+	src.m_bottom = 946.0f;
 	dst.m_top = 0.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 600.0f;
-	Draw::Draw(0, &src, &dst, d, 0.0f);
+	dst.m_left = 100.0f;
+	dst.m_right = 400.0f;
+	dst.m_bottom = 500.0f;
+	Draw::Draw(1, &src, &dst, d, 0.0f);
 
 
 
-	
+
 }

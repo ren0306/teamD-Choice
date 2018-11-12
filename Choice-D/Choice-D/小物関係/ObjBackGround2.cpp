@@ -5,8 +5,8 @@
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\SceneManager.h"
 
-#include "../小物関係/ObjBackGround.h"
-#include "SceneMain.h"
+#include "ObjBackGround2.h"
+#include "../ゲームメイン/SceneMain2.h"
 #include "../GameHead.h"
 #include"../謎解き/ObjTenkey.h"
 
@@ -16,17 +16,17 @@ using namespace GameL;
 
 
 //イニシャライズ
-void CObjBackGround::Init()
+void CObjBackGround2::Init()
 {
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	
+
 }
 
 //アクション
-void CObjBackGround::Action()
+void CObjBackGround2::Action()
 {
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -38,23 +38,20 @@ void CObjBackGround::Action()
 }
 
 //ドロー
-void CObjBackGround::Draw()
+void CObjBackGround2::Draw()
 {
 
-	
+
 	RECT_F src;
 	RECT_F dst;
 
-	
-	
-
-	
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//メインステージ1背景表示
+	//メインステージ2背景表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 320.0f;
-	src.m_bottom = 160.0f;
+	src.m_right = 1920.0f;
+	src.m_bottom = 1080.0f;
+
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
@@ -63,5 +60,5 @@ void CObjBackGround::Draw()
 
 
 
-	
+
 }

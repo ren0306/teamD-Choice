@@ -31,6 +31,24 @@
     <Filter Include="ソース ファイル\謎解き">
       <UniqueIdentifier>{28b0f6a0-5cc8-4ad7-a118-0cab21f151b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Main\1層">
+      <UniqueIdentifier>{b2d91678-5abb-413f-9a81-bf30cecc1229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Main\2層">
+      <UniqueIdentifier>{47a19a81-2f89-4b74-a292-bf34c42b1509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Main\3層">
+      <UniqueIdentifier>{87532220-eb0e-4825-a043-dc186ed1629b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Main\4層">
+      <UniqueIdentifier>{8f35ec8a-4422-47a7-b507-3306e992f652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Main\5層">
+      <UniqueIdentifier>{8321b3d0-b04f-470d-8930-c2c59663bd6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\小物関係">
+      <UniqueIdentifier>{d93b629a-c47e-41a9-bf2c-a326a2a0e578}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -104,15 +122,6 @@
     </ClCompile>
     <ClCompile Include="GameOver\GameOver2.cpp">
       <Filter>ソース ファイル\GameOver]</Filter>
-    </ClCompile>
-    <ClCompile Include="ゲームメイン\ObjMain.cpp">
-      <Filter>ソース ファイル\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="ゲームメイン\ObjBackGround.cpp">
-      <Filter>ソース ファイル\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="ゲームメイン\SceneMain.cpp">
-      <Filter>ソース ファイル\Main</Filter>
     </ClCompile>
     <ClCompile Include="シューティング\CObjBullet.cpp">
       <Filter>ソース ファイル\STG</Filter>
@@ -188,6 +197,27 @@
     </ClCompile>
     <ClCompile Include="謎解き\SceneNazo.cpp">
       <Filter>ソース ファイル\謎解き</Filter>
+    </ClCompile>
+    <ClCompile Include="ゲームメイン\ObjMain.cpp">
+      <Filter>ソース ファイル\Main\1層</Filter>
+    </ClCompile>
+    <ClCompile Include="ゲームメイン\SceneMain.cpp">
+      <Filter>ソース ファイル\Main\1層</Filter>
+    </ClCompile>
+    <ClCompile Include="謎解き\ObjBGNazo.cpp">
+      <Filter>ソース ファイル\謎解き</Filter>
+    </ClCompile>
+    <ClCompile Include="ゲームメイン\ObjBackGround.cpp">
+      <Filter>ソース ファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\ObjDoor.cpp">
+      <Filter>ソース ファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ゲームメイン\SceneMain2.cpp">
+      <Filter>ソース ファイル\Main\2層</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\ObjBackGround2.cpp">
+      <Filter>ソース ファイル\小物関係</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -266,15 +296,6 @@
     <ClInclude Include="GameOver\GAMEOVER1.h">
       <Filter>ソース ファイル\GameOver]</Filter>
     </ClInclude>
-    <ClInclude Include="ゲームメイン\ObjBackGround.h">
-      <Filter>ソース ファイル\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="ゲームメイン\ObjMain.h">
-      <Filter>ソース ファイル\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="ゲームメイン\SceneMain.h">
-      <Filter>ソース ファイル\Main</Filter>
-    </ClInclude>
     <ClInclude Include="シューティング\CObjBullet.h">
       <Filter>ソース ファイル\STG</Filter>
     </ClInclude>
@@ -349,6 +370,27 @@
     </ClInclude>
     <ClInclude Include="謎解き\SceneNazo.h">
       <Filter>ソース ファイル\謎解き</Filter>
+    </ClInclude>
+    <ClInclude Include="ゲームメイン\ObjMain.h">
+      <Filter>ソース ファイル\Main\1層</Filter>
+    </ClInclude>
+    <ClInclude Include="ゲームメイン\SceneMain.h">
+      <Filter>ソース ファイル\Main\1層</Filter>
+    </ClInclude>
+    <ClInclude Include="謎解き\ObjBGNazo.h">
+      <Filter>ソース ファイル\謎解き</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\ObjDoor.h">
+      <Filter>ソース ファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ゲームメイン\SceneMain2.h">
+      <Filter>ソース ファイル\Main\2層</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\ObjBackGround.h">
+      <Filter>ソース ファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\ObjBackGround2.h">
+      <Filter>ソース ファイル\小物関係</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

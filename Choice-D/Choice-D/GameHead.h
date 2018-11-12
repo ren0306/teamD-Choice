@@ -17,6 +17,7 @@ enum OBJ_NAME
 	OBJ_GAMEOVER,
 	OBJ_MAIN,
 	OBJ_BACKGROUND,
+	OBJ_BACKGROUND2,
 	OBJ_GAMEOVER2,
 	OBJ_ED1,
 	OBJ_ED3,
@@ -28,6 +29,8 @@ enum OBJ_NAME
 	OBJ_STG,
 	OBJ_STG3,
 	OBJ_STG4,
+	OBJ_BGN,
+	OBJ_DOOR,
 };
 //------------------------------------------------
 
@@ -84,7 +87,8 @@ struct UserData
 #include "ゲームメイン\ObjMain.h"
 #include "GameOver\GAMEOVER1.h"
 #include "GameOver\GAME OVER2.h"
-#include "ゲームメイン\ObjBackGround.h"
+#include "小物関係\ObjBackGround.h"
+#include "小物関係\ObjBackGround2.h"
 #include "ED\ObjED2.h"
 #include "ED\ObjED1.h"
 #include "ED\ObjED3.h"
@@ -95,11 +99,14 @@ struct UserData
 #include "シューティング\ObjSTG2.h"
 #include "シューティング\ObjSTG3.h"
 #include "シューティング\ObjSTG4.h"
+#include "謎解き\ObjBGNazo.h"
+#include "小物関係\ObjDoor.h"
 
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "ゲームメイン\SceneMain.h"
+#include "ゲームメイン\SceneMain2.h"
 #include "タイトル\SceneTitle.h"
 #include "GameOver\GameOver.h"
 #include "シューティング\ShootingMain.h"
@@ -112,9 +119,10 @@ struct UserData
 #include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG2.h"
 #include "シューティング\SceneSTG4.h"
+
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneNazo
+#define SET_GAME_START CSceneMain2
 //-----------------------------------------------
