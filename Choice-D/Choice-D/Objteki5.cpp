@@ -1,33 +1,33 @@
 //使用するヘッダーファイル
-#include "../GameL\DrawTexture.h"
-#include "../GameL\HitBoxManager.h"
+#include "GameL\DrawTexture.h"
+#include "GameL\HitBoxManager.h"
 
-#include "../GameHead.h"
-#include "Objteki3.h"
-#include "UtilityModule.h"
-
+#include "GameHead.h"
+#include "Objteki5.h"
+#include "シューティング\UtilityModule.h"
 //使用するネームスペース
 using namespace GameL;
 
 //コンストラクタ
-CObjteki3::CObjteki3(float x, float y)
+CObjteki5::CObjteki5(float x, float y)
 {
 	m_x = x;
 	m_y = y;
 }
 
 //イニシャライズ
-void CObjteki3::Init()
+void CObjteki5::Init()
 {
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y , 150, 130, ELEMENT_ENEMY, OBJ_ENEMY3, 1);
+	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_ENEMY4, 1);
+
 }
 
 //アクション
-void CObjteki3::Action()
+void CObjteki5::Action()
 {
 	//角度加算
 	m_r += 2.0f;
@@ -50,10 +50,9 @@ void CObjteki3::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
-
 	//HitBoxの内容を更新
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x + 10, m_y + 20);
+	//CHitBox* hit = Hits::GetHitBox(this);
+	//hit->SetPos(m_x + 100, m_y + 50);
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
@@ -63,10 +62,13 @@ void CObjteki3::Action()
 									//Hits::DeleteHitBox(this);
 	}
 
+	//HitBoxの内容を更新
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
 }
 
 //ドロー
-void CObjteki3::Draw()
+void CObjteki5::Draw()
 {
 	//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -77,15 +79,15 @@ void CObjteki3::Draw()
 			   //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 512.0f;
-	src.m_bottom = 512.0f;
+	src.m_right = 900.0f;
+	src.m_bottom = 725.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
-	dst.m_right = 200.0f + m_x;
-	dst.m_bottom = 200.0f + m_y;
+	dst.m_right = 160.0f + m_x;
+	dst.m_bottom = 210.0f + m_y;
 
 	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+	Draw::Draw(70, &src, &dst, c, 0.0f);
 }

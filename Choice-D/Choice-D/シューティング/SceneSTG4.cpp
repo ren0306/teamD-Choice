@@ -31,23 +31,28 @@ void CSceneSTG4::InitScene()
 
 	//STGオブジェクト作成
 	CObjSTG4* obj = new CObjSTG4();
-	Objs::InsertObj(obj, OBJ_STG3, 10);
+	Objs::InsertObj(obj, OBJ_STG4, 10);
 
-	//外部グラフィックファイルを読み込み0番に登録
-	Draw::LoadImage(L"dou.png", 0, TEX_SIZE_512);
+	//背景を読み込み0番に登録
+	Draw::LoadImage(L"syu-haikei.png",20, TEX_SIZE_512);
+
+	//敵４を読み込み1番に登録
+	Draw::LoadImage(L"teki4.png", 10, TEX_SIZE_512);
+
+	//主人公を読み込み6番に登録
+	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_STG3, 10);
 
-	CObjBackGround* p = new CObjBackGround();
-	Objs::InsertObj(p, OBJ_BACKGROUND, 0);
-
-
-	//外部グラフィックファイルを読み込み1番に登録
-	Draw::LoadImage(L"teki4.png", 10, TEX_SIZE_512);
+	CObjBackGround* q = new CObjBackGround();
+	Objs::InsertObj(q, OBJ_BACKGROUND, 20);
 
 	CObjteki4* objb = new CObjteki4(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI1, 50);
+
+	CObjHero*ob = new CObjHero();
+	Objs::InsertObj(ob, OBJ_HERO, 150);
 }
 
 //ゲームタイトル実行中メソッド

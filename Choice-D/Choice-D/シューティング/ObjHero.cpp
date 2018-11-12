@@ -187,6 +187,6 @@ void CObjHero::Draw()
 	dst.m_bottom = 32.0f + m_y;
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(1, &src, &dst, ob, 0.0f);
+	Draw::Draw(6, &src, &dst, ob, 0.0f);
 
 }

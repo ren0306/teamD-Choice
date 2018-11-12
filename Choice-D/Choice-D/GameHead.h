@@ -26,9 +26,14 @@ enum OBJ_NAME
 	OBJ_TENKEY,
 	OBJ_TEKI1,
 	OBJ_TEKI2,
+	OBJ_TEKI3,
+	OBJ_TEKI4,
+	OBJ_TEKI5,
 	OBJ_STG,
+	OBJ_STG2,
 	OBJ_STG3,
 	OBJ_STG4,
+	OBJ_STG5,
 	OBJ_BGN,
 	OBJ_DOOR,
 };
@@ -99,6 +104,7 @@ struct UserData
 #include "シューティング\ObjSTG2.h"
 #include "シューティング\ObjSTG3.h"
 #include "シューティング\ObjSTG4.h"
+#include "ObjSTG5.h"
 #include "謎解き\ObjBGNazo.h"
 #include "小物関係\ObjDoor.h"
 
@@ -109,7 +115,6 @@ struct UserData
 #include "ゲームメイン\SceneMain2.h"
 #include "タイトル\SceneTitle.h"
 #include "GameOver\GameOver.h"
-#include "シューティング\ShootingMain.h"
 #include "GameOver\GameOver2.h"
 #include "ED\SceneED1.h"
 #include "ED\SceneED3.h"
@@ -119,7 +124,7 @@ struct UserData
 #include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG2.h"
 #include "シューティング\SceneSTG4.h"
-
+#include "SceneSTG5.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
