@@ -20,4 +20,5 @@ private:
 	float m_vy;	//敵3移動ベクトルy
 	float m_r = 0.0f;
 
+	int m_hp;	//ボスのヒットポイント
 };

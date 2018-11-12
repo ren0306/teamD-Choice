@@ -5,69 +5,64 @@
 #include "../GameL\SceneManager.h"
 
 #include "../GameHead.h"
-#include "ObjMain.h"
+#include "ObjBGNazo.h"
+#include "../ゲームメイン/SceneMain.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-
 //イニシャライズ
-void CObjMain::Init()
+void CObjBGN::Init()
 {
+
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0;
 }
 
 //アクション
-void CObjMain::Action()
+void CObjBGN::Action()
 {
-	if (m_f == true)
-	{
-		m_and += 0.1;
-		if (m_and == 1.0)
-		{
-			m_f = false;
-		}
-
-	}
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	//戦闘画面遷移
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>190 && m_mou_y < 230)
-	{
-		//マウスのボタンが押されたら戦闘に遷移
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneGameOver());
-		}
-	}
-	//謎画面遷移
-	else if (m_mou_x >170 && m_mou_x < 320 && m_mou_y>170 && m_mou_y < 455)
-	{
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneNazo());
-		}
-
-	}
-
 
 }
 
 //ドロー
-void CObjMain::Draw()
+void CObjBGN::Draw()
 {
-	float c[4] = { 1,1,1,m_and };
+
+	float c[4] = { 1,1,1,1 };
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 
+
+	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	RECT_F src;
+	RECT_F dst;
+	//ドア1表示(切り取り位置)
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 650.0f;
+	src.m_bottom = 946.0f;
+	//ドア1表示(表示位置)
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 980.0f;
+	Draw::Draw(1, &src, &dst, d, 0.0f);
+
+
 }
+
+
+
+
+

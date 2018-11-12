@@ -1,6 +1,6 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
-
+#include "../GameL\HitBoxManager.h"
 
 #include "../GameHead.h"
 #include "Objteki2.h"
@@ -12,6 +12,9 @@ using namespace GameL;
 //コンストラクタ
 CObjteki2::CObjteki2(float x, float y)
 {
+	m_hp = 35;
+
+
 	m_x = x;
 	m_y = y;
 }
@@ -22,12 +25,17 @@ void CObjteki2::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-
+	//当たり判定HitBox
+	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_TEKI2, 1);
 }
 
 //アクション
 void CObjteki2::Action()
 {
+	//HitBoxの内容を更新
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+
 	//角度加算
 	m_r += 2.0f;
 
@@ -49,19 +57,27 @@ void CObjteki2::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
-	//HitBoxの内容を更新
-	//CHitBox* hit = Hits::GetHitBox(this);
-	//hit->SetPos(m_x + 100, m_y + 50);
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
 	if (check == false)
 	{
 		this->SetStatus(false);		//自身に削除命令
-									//Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);
 	}
 
+	//HPが0になったら破棄
 
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
+	}
 }
 
 //ドロー

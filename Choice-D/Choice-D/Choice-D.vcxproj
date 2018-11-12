@@ -140,6 +140,7 @@
     <ClCompile Include="ゲームメイン\ObjBackGround.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
+    <ClCompile Include="ゲームメイン\SceneMain2.cpp" />
     <ClCompile Include="シューティング\CObjBullet.cpp" />
     <ClCompile Include="シューティング\CObjBullteEnemy.cpp" />
     <ClCompile Include="シューティング\ObjEnemy1.cpp" />
@@ -162,6 +163,9 @@
     <ClCompile Include="シューティング\UtilityModule.cpp" />
     <ClCompile Include="タイトル\ObjTitle.cpp" />
     <ClCompile Include="タイトル\SceneTitle.cpp" />
+    <ClCompile Include="小物関係\ObjBackGround2.cpp" />
+    <ClCompile Include="小物関係\ObjDoor.cpp" />
+    <ClCompile Include="謎解き\ObjBGNazo.cpp" />
     <ClCompile Include="謎解き\ObjTenkey.cpp" />
     <ClCompile Include="謎解き\SceneNazo.cpp" />
   </ItemGroup>
@@ -197,6 +201,7 @@
     <ClInclude Include="ゲームメイン\ObjBackGround.h" />
     <ClInclude Include="ゲームメイン\ObjMain.h" />
     <ClInclude Include="ゲームメイン\SceneMain.h" />
+    <ClInclude Include="ゲームメイン\SceneMain2.h" />
     <ClInclude Include="シューティング\CObjBullet.h" />
     <ClInclude Include="シューティング\CObjBullteEnemy.h" />
     <ClInclude Include="シューティング\ObjEnemy1.h" />
@@ -219,6 +224,10 @@
     <ClInclude Include="シューティング\UtilityModule.h" />
     <ClInclude Include="タイトル\ObjTitle.h" />
     <ClInclude Include="タイトル\SceneTitle.h" />
+    <ClInclude Include="小物関係\ObjBackGround.h" />
+    <ClInclude Include="小物関係\ObjBackGround2.h" />
+    <ClInclude Include="小物関係\ObjDoor.h" />
+    <ClInclude Include="謎解き\ObjBGNazo.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />
   </ItemGroup>

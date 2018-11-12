@@ -12,6 +12,8 @@ using namespace GameL;
 //コンストラクタ
 CObjteki4::CObjteki4(float x, float y)
 {
+	m_hp = 25;
+
 	m_x = x;
 	m_y = y;
 }
@@ -23,7 +25,7 @@ void CObjteki4::Init()
 	m_vy = 0.0f;
 
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_ENEMY4, 1);
+	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_TEKI4, 1);
 
 }
 
@@ -54,27 +56,29 @@ void CObjteki4::Action()
 
 	//HitBoxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x , m_y);
+	hit->SetPos(m_x , m_y );
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
 	if (check == false)
 	{
 		this->SetStatus(false);		//自身に削除命令
-		//Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);
+	}
+	//HPが0になったら破棄
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
 	}
 
-	if (hit->CheckElementHit(ELEMENT_PLAYER) == true)
+
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
-		if (m_hp == 0)
-		{
-			this->SetStatus(false);		//自身に削除命令
-			Hits::DeleteHitBox(this);
-
-		}
 	}
-
+	
 }
 
 	//ドロー
