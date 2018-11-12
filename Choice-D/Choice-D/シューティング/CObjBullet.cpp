@@ -70,9 +70,10 @@ void CObjBullet::Action()
 	}
 
 	//当たり判定を行うオブジェクト情報郡
-	int data_base[1] =
+	int data_base[2] =
 	{
 		OBJ_ENEMY1,
+		OBJ_ENEMY4,
 	};
 
 	//オブジェクト情報郡と当たり判定を行い、当たっていれば削除
