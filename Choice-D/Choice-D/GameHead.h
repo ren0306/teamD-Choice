@@ -117,17 +117,17 @@ struct UserData
 #include "GameOver\GameOver.h"
 #include "GameOver\GameOver2.h"
 #include "ED\SceneED1.h"
-#include "ED\SceneED3.h"
 #include "ED\SceneED2.h"
+#include "ED\SceneED3.h"
 #include "謎解き\SceneNazo.h"
 #include "シューティング\SceneSTG.h"
-#include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG2.h"
+#include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG4.h"
 #include "SceneSTG5.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain2
+#define SET_GAME_START CSceneSTG2
 //-----------------------------------------------

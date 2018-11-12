@@ -137,7 +137,6 @@
     <ClCompile Include="ObjSTG5.cpp" />
     <ClCompile Include="Objteki5.cpp" />
     <ClCompile Include="SceneSTG5.cpp" />
-    <ClCompile Include="ゲームメイン\ObjBackGround.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain2.cpp" />
@@ -163,6 +162,7 @@
     <ClCompile Include="シューティング\UtilityModule.cpp" />
     <ClCompile Include="タイトル\ObjTitle.cpp" />
     <ClCompile Include="タイトル\SceneTitle.cpp" />
+    <ClCompile Include="小物関係\ObjBackGround.cpp" />
     <ClCompile Include="小物関係\ObjBackGround2.cpp" />
     <ClCompile Include="小物関係\ObjDoor.cpp" />
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />
@@ -198,7 +198,6 @@
     <ClInclude Include="ObjSTG5.h" />
     <ClInclude Include="Objteki5.h" />
     <ClInclude Include="SceneSTG5.h" />
-    <ClInclude Include="ゲームメイン\ObjBackGround.h" />
     <ClInclude Include="ゲームメイン\ObjMain.h" />
     <ClInclude Include="ゲームメイン\SceneMain.h" />
     <ClInclude Include="ゲームメイン\SceneMain2.h" />

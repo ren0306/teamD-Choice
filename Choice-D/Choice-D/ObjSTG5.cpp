@@ -44,7 +44,7 @@ void CObjSTG5::Action()
 }
 
 //ドロー
-void CObjSTG::Draw()
+void CObjSTG5::Draw()
 {
 	float c[4] = { 1,1,1,1 };
 	//仮マウス位置表示
