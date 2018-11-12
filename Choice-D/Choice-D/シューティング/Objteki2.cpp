@@ -12,6 +12,7 @@ using namespace GameL;
 //コンストラクタ
 CObjteki2::CObjteki2(float x, float y)
 {
+	m_time = 0;
 	m_x = x;
 	m_y = y;
 }
@@ -28,6 +29,22 @@ void CObjteki2::Init()
 //アクション
 void CObjteki2::Action()
 {
+	m_time++;
+
+	//通常弾発射
+	if (m_time % 50 == 0)
+	{
+		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
+		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 190, m_y + 114);
+		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI2, 100);
+	}
+
+	//m_timeの初期化
+	if (m_time > 1000)
+	{
+		m_time = 0;
+	}
+
 	//角度加算
 	m_r += 2.0f;
 

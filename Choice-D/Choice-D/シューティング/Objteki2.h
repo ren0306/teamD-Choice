@@ -19,5 +19,5 @@ private:
 	float m_vx;	//敵1移動ベクトルx
 	float m_vy;	//敵¹移動ベクトルy
 	float m_r = 0.0f;
-
+	int   m_time;//弾丸間隔用
 };

@@ -144,9 +144,6 @@
     <ClCompile Include="シューティング\ObjHero.cpp">
       <Filter>ソース ファイル\STG</Filter>
     </ClCompile>
-    <ClCompile Include="シューティング\ShootingMain.cpp">
-      <Filter>ソース ファイル\STG</Filter>
-    </ClCompile>
     <ClCompile Include="シューティング\UtilityModule.cpp">
       <Filter>ソース ファイル\STG</Filter>
     </ClCompile>
@@ -211,6 +208,21 @@
       <Filter>ソース ファイル\STG\teki5</Filter>
     </ClCompile>
     <ClCompile Include="Objteki5.cpp">
+      <Filter>ソース ファイル\STG\teki5</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki1.cpp">
+      <Filter>ソース ファイル\STG\teki1</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki2.cpp">
+      <Filter>ソース ファイル\STG\teki2</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki3.cpp">
+      <Filter>ソース ファイル\STG\teki3</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki4.cpp">
+      <Filter>ソース ファイル\STG\teki4</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki5.cpp">
       <Filter>ソース ファイル\STG\teki5</Filter>
     </ClCompile>
   </ItemGroup>
@@ -317,9 +329,6 @@
     <ClInclude Include="シューティング\ObjHero.h">
       <Filter>ソース ファイル\STG</Filter>
     </ClInclude>
-    <ClInclude Include="シューティング\ShootingMain.h">
-      <Filter>ソース ファイル\STG</Filter>
-    </ClInclude>
     <ClInclude Include="シューティング\UtilityModule.h">
       <Filter>ソース ファイル\STG</Filter>
     </ClInclude>
@@ -381,6 +390,21 @@
       <Filter>ソース ファイル\STG\teki5</Filter>
     </ClInclude>
     <ClInclude Include="SceneSTG5.h">
+      <Filter>ソース ファイル\STG\teki5</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki1.h">
+      <Filter>ソース ファイル\STG\teki1</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki2.h">
+      <Filter>ソース ファイル\STG\teki2</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki3.h">
+      <Filter>ソース ファイル\STG\teki3</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki4.h">
+      <Filter>ソース ファイル\STG\teki4</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki5.h">
       <Filter>ソース ファイル\STG\teki5</Filter>
     </ClInclude>
   </ItemGroup>

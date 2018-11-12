@@ -45,6 +45,9 @@ void CSceneSTG::InitScene()
 	//ålŒö‚ğ“Ç‚İ‚İ6”Ô‚É“o˜^
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
 
+	//“G’eŠÛ‚ğ“Ç‚İ‚İ30”Ô‚É“o˜^
+	Draw::LoadImage(L"Bullet1.png", 30, TEX_SIZE_512);
+
 	CObjBackGround* q = new CObjBackGround();
 	Objs::InsertObj(q, OBJ_BACKGROUND, 20);
 
