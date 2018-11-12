@@ -20,4 +20,6 @@ class CObjteki1 :public CObj
 		float m_vy;	//敵¹移動ベクトルy
 		float m_r = 0.0f;
 
+		int m_hp;	//ボスのヒットポイント
+
 };
