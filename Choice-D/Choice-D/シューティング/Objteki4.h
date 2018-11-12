@@ -4,7 +4,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト：敵3
+//オブジェクト：敵4
 class CObjteki4 :public CObj
 {
 public:
@@ -20,4 +20,5 @@ private:
 	float m_vy;	//敵3移動ベクトルy
 	float m_r = 0.0f;
 
+	int m_hp;	//ボスのヒットポイント
 };

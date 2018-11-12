@@ -11,6 +11,9 @@ using namespace GameL;
 //コンストラクタ
 CObjteki5::CObjteki5(float x, float y)
 {
+
+	m_hp = 35;
+
 	m_x = x;
 	m_y = y;
 }
@@ -22,7 +25,7 @@ void CObjteki5::Init()
 	m_vy = 0.0f;
 
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_ENEMY4, 1);
+	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_TEKI5, 1);
 
 }
 
@@ -51,8 +54,8 @@ void CObjteki5::Action()
 	m_x += m_vx;
 	m_y += m_vy;
 	//HitBoxの内容を更新
-	//CHitBox* hit = Hits::GetHitBox(this);
-	//hit->SetPos(m_x + 100, m_y + 50);
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x , m_y );
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
@@ -62,9 +65,19 @@ void CObjteki5::Action()
 									//Hits::DeleteHitBox(this);
 	}
 
-	//HitBoxの内容を更新
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+	//HPが0になったら破棄
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
+
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
+	}
 }
 
 //ドロー
@@ -79,15 +92,15 @@ void CObjteki5::Draw()
 			   //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 900.0f;
-	src.m_bottom = 725.0f;
+	src.m_right = 187.0f;
+	src.m_bottom = 159.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
-	dst.m_right = 160.0f + m_x;
-	dst.m_bottom = 210.0f + m_y;
+	dst.m_right = 200.0f + m_x;
+	dst.m_bottom = 200.0f + m_y;
 
 	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(70, &src, &dst, c, 0.0f);
+	Draw::Draw(30, &src, &dst, c, 0.0f);
 }

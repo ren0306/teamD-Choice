@@ -12,6 +12,8 @@ using namespace GameL;
 //コンストラクタ
 CObjteki4::CObjteki4(float x, float y)
 {
+	m_hp = 25;
+
 	m_x = x;
 	m_y = y;
 }
@@ -23,7 +25,7 @@ void CObjteki4::Init()
 	m_vy = 0.0f;
 
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_ENEMY4, 1);
+	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_TEKI4, 1);
 
 }
 
@@ -51,44 +53,55 @@ void CObjteki4::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
+
 	//HitBoxの内容を更新
-	//CHitBox* hit = Hits::GetHitBox(this);
-	//hit->SetPos(m_x + 100, m_y + 50);
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x , m_y );
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
 	if (check == false)
 	{
 		this->SetStatus(false);		//自身に削除命令
-									//Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);
+	}
+	//HPが0になったら破棄
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
 	}
 
-	//HitBoxの内容を更新
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
+	}
+	
 }
 
-//ドロー
-void CObjteki4::Draw()
-{
-	//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	//ドロー
+	void CObjteki4::Draw()
+	{
+		//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
+		float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	RECT_F src;//描画元切り取り位置
-	RECT_F dst;//描画先表示位置
+		RECT_F src;//描画元切り取り位置
+		RECT_F dst;//描画先表示位置
 
-	//切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 1152.0f;
-	src.m_bottom = 1772.0f;
+		//切り取り位置の設定
+		src.m_top = 0.0f;
+		src.m_left = 0.0f;
+		src.m_right = 1152.0f;
+		src.m_bottom = 1772.0f;
 
-	//表示位置の設定
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 0.0f + m_x;
-	dst.m_right = 160.0f + m_x;
-	dst.m_bottom = 210.0f + m_y;
+		//表示位置の設定
+		dst.m_top = 0.0f + m_y;
+		dst.m_left = 0.0f + m_x;
+		dst.m_right = 160.0f + m_x;
+		dst.m_bottom = 210.0f + m_y;
 
-	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(10, &src, &dst, c, 0.0f);
-}
+		//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(10, &src, &dst, c, 0.0f);
+	}
