@@ -37,7 +37,7 @@ void CSceneSTG5::InitScene()
 	Draw::LoadImage(L"syu-haikei.png", 20, TEX_SIZE_512);
 
 	//“G‚S‚ğ“Ç‚İ‚İ1”Ô‚É“o˜^
-	Draw::LoadImage(L"teki5.png", 70, TEX_SIZE_512);
+	Draw::LoadImage(L"teki5.png", 30, TEX_SIZE_512);
 
 	//ålŒö‚ğ“Ç‚İ‚İ6”Ô‚É“o˜^
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);

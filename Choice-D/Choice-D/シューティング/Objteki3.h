@@ -20,4 +20,6 @@ private:
 	float m_vy;	//敵3移動ベクトルy
 	float m_r = 0.0f;
 	int   m_time;//弾丸間隔用
+
+	int m_hp;	//ボスのヒットポイント
 };

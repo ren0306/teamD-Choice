@@ -12,6 +12,8 @@ using namespace GameL;
 //コンストラクタ
 CObjteki3::CObjteki3(float x, float y)
 {
+	m_hp = 40;
+
 	m_x = x;
 	m_y = y;
 }
@@ -24,7 +26,7 @@ void CObjteki3::Init()
 	m_vy = 0.0f;
 
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y , 150, 130, ELEMENT_ENEMY, OBJ_ENEMY3, 1);
+	Hits::SetHitBox(this, m_x, m_y , 150, 130, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 }
 
 //アクション
@@ -77,7 +79,22 @@ void CObjteki3::Action()
 	if (check == false)
 	{
 		this->SetStatus(false);		//自身に削除命令
-									//Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);
+	}
+
+
+	//HPが0になったら破棄
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
+
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
 	}
 
 }

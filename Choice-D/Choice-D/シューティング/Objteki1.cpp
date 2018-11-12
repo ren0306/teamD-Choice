@@ -1,6 +1,6 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
-
+#include "../GameL\HitBoxManager.h"
 
 #include "../GameHead.h"
 #include "Objteki1.h"
@@ -19,11 +19,16 @@ CObjteki1::CObjteki1(float x, float y)
 //イニシャライズ
 void CObjteki1::Init()
 {
+	m_hp = 30;
+
+
+
 	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	
+	//当たり判定HitBox
+	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_ENEMY1, 1);
 }
 
 //アクション
@@ -66,20 +71,31 @@ void CObjteki1::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
-	//HitBoxの内容を更新
-	//CHitBox* hit = Hits::GetHitBox(this);
-	//hit->SetPos(m_x + 100, m_y + 50);
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
 	if (check == false)
 	{
 		this->SetStatus(false);		//自身に削除命令
-		//Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);
 	}
 
-	
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
 	}
+
+	//HPが0になったら破棄
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
+
+
+}
 
 	//ドロー
 	void CObjteki1::Draw()
@@ -90,7 +106,7 @@ void CObjteki1::Action()
 		RECT_F src;//描画元切り取り位置
 		RECT_F dst;//描画先表示位置
 
-				   //切り取り位置の設定
+		//切り取り位置の設定
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
 		src.m_right = 984.0f;
