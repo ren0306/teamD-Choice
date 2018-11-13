@@ -28,14 +28,14 @@ void CObjteki1::Init()
 	m_vy = 0.0f;
 
 	//“–‚½‚è”»’èHitBox
-	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_ENEMY1, 1);
+	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjteki1::Action()
 {
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+	hit->SetPos(m_x +90, m_y +20);
 
 
 	m_time++;

@@ -45,6 +45,9 @@ void CSceneSTG3::InitScene()
 	//“G’eŠÛ‚ğ“Ç‚İ‚İ30”Ô‚É“o˜^
 	Draw::LoadImage(L"Bullet3.png", 30, TEX_SIZE_512);
 
+	//ålŒö’eŠÛ‚ğ“Ç‚İ‚İ11”Ô‚É“o˜^
+	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
+
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_STG3, 10);
 

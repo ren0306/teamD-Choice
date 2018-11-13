@@ -193,6 +193,9 @@
     <ClCompile Include="SceneSTG5.cpp">
       <Filter>ソースファイル\STG\teki5</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\GameOvergamen.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -385,6 +388,9 @@
     </ClInclude>
     <ClInclude Include="SceneSTG5.h">
       <Filter>ソースファイル\STG\teki5</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\GameOvergamen.h">
+      <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

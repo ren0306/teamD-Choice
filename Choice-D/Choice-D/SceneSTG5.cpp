@@ -46,7 +46,7 @@ void CSceneSTG5::InitScene()
 	Draw::LoadImage(L"Bullet5.png", 18, TEX_SIZE_512);
 
 	//éÂêlåˆíeä€Çì«Ç›çûÇ›11î‘Ç…ìoò^
-	Draw::LoadImage(L"ìGíe.png", 11, TEX_SIZE_512);
+	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_STG5, 10);
@@ -57,8 +57,7 @@ void CSceneSTG5::InitScene()
 	CObjteki5* objb = new CObjteki5(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI5, 50);
 
-	CObjBullet*i = new CObjBullet();
-	Objs::InsertObj(i, OBJ_BULLET, 150);
+	
 
 
 	CObjHero*ob = new CObjHero();

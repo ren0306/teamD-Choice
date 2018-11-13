@@ -107,7 +107,7 @@ void CObjBullet::Draw()
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
 	dst.m_right = 32.0f + m_x;
-	dst.m_bottom = .0f + m_y;
+	dst.m_bottom = 32.0f + m_y;
 
 	//11番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(11, &m_eff, &dst, i, 0.0f);

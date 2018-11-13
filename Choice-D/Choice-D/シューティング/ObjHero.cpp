@@ -60,8 +60,8 @@ void CObjHero::Action()
 			//Audio::Start(2);
 
 			// 弾丸オブジェクト作成
-			CObjBullet*  obj_b = new CObjBullet(m_x , m_y + -30.0f); //弾丸オブジェクト作成
-			Objs::InsertObj(obj_b, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+			CObjBullet*  i = new CObjBullet(m_x , m_y + -30.0f); //弾丸オブジェクト作成
+			Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
 
 			m_f = false;
 		}

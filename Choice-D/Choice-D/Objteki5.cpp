@@ -79,7 +79,7 @@ void CObjteki5::Action()
 	if (check == false)
 	{
 		this->SetStatus(false);		//©g‚Éíœ–½—ß
-									//Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);
 	}
 
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
