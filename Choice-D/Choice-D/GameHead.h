@@ -43,6 +43,7 @@ enum OBJ_NAME
 	OBJ_DOOR,
 	OBJ_DOOR2,
 
+	OBJ_GAMEOVERGAMEN,
 };
 //------------------------------------------------
 
@@ -119,6 +120,7 @@ struct UserData
 #include "ObjSTG5.h"
 #include "ì‰âÇ´\ObjBGNazo.h"
 #include "è¨ï®ä÷åW\ObjDoor.h"
+#include "è¨ï®ä÷åW\GameOvergamen.h"
 #include "è¨ï®ä÷åW\ObjDoor2.h"
 
 //------------------------------------------------

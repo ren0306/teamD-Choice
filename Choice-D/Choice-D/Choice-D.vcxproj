@@ -170,6 +170,7 @@
     <ClCompile Include="シューティング\UtilityModule.cpp" />
     <ClCompile Include="タイトル\ObjTitle.cpp" />
     <ClCompile Include="タイトル\SceneTitle.cpp" />
+    <ClCompile Include="小物関係\GameOvergamen.cpp" />
     <ClCompile Include="小物関係\ObjBackGround.cpp" />
     <ClCompile Include="小物関係\ObjBackGround2.cpp" />
     <ClCompile Include="小物関係\ObjDoor.cpp" />
@@ -242,6 +243,7 @@
     <ClInclude Include="シューティング\UtilityModule.h" />
     <ClInclude Include="タイトル\ObjTitle.h" />
     <ClInclude Include="タイトル\SceneTitle.h" />
+    <ClInclude Include="小物関係\GameOvergamen.h" />
     <ClInclude Include="小物関係\ObjBackGround.h" />
     <ClInclude Include="小物関係\ObjBackGround2.h" />
     <ClInclude Include="小物関係\ObjDoor.h" />

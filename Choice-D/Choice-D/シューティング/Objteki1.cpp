@@ -28,14 +28,14 @@ void CObjteki1::Init()
 	m_vy = 0.0f;
 
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_ENEMY1, 1);
+	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
 
 //アクション
 void CObjteki1::Action()
 {
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+	hit->SetPos(m_x +90, m_y +20);
 
 
 	m_time++;
@@ -43,8 +43,8 @@ void CObjteki1::Action()
 	//通常弾発射
 	if (m_time % 50 == 0)
 	{
-		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
-		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 190, m_y + 114);
+		//弾丸敵機オブジェクト
+		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
 	}
 

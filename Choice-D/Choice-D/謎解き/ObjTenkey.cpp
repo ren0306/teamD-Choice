@@ -7,6 +7,7 @@
 #include "../GameHead.h"
 #include "ObjTenkey.h"
 #include "../ゲームメイン/SceneMain.h"
+#include "../GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -39,6 +40,8 @@ void CObjTenkey::Action()
 	{
 		Scene::SetScene(new CSceneMain2);
 		m_f == 1;
+		Audio::Start(0);
+
 	}
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();

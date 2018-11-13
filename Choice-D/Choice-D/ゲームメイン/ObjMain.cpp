@@ -3,7 +3,7 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
-
+#include "../GameL/Audio.h"
 #include "../GameHead.h"
 #include "ObjMain.h"
 
@@ -50,7 +50,15 @@ void CObjMain::Action()
 			Scene::SetScene(new CSceneSTG());
 		}
 	}
-	
+	//“ä‰æ–Ê‘JˆÚ
+	else if (m_mou_x >170 && m_mou_x < 320 && m_mou_y>170 && m_mou_y < 455)
+	{
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneNazo());
+		}
+
+	}
 
 
 }

@@ -205,6 +205,9 @@
     <ClCompile Include="ゲームメイン\ObjMain2.cpp">
       <Filter>ソースファイル\メイン</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\GameOvergamen.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -409,6 +412,9 @@
     </ClInclude>
     <ClInclude Include="ゲームメイン\ObjMain2.h">
       <Filter>ソースファイル\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\GameOvergamen.h">
+      <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
