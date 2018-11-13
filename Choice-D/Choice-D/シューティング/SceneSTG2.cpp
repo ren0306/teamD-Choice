@@ -50,6 +50,9 @@ void CSceneSTG2::InitScene()
 
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
+
+	//敵弾丸を読み込み30番に登録
+	Draw::LoadImage(L"Bullet2.png", 30, TEX_SIZE_512);
 }
 
 //ゲームタイトル実行中メソッド
