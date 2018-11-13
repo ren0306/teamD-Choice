@@ -23,6 +23,7 @@ void CObjteki1::Init()
 
 
 
+	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
@@ -33,9 +34,21 @@ void CObjteki1::Init()
 //アクション
 void CObjteki1::Action()
 {
-	//HitBoxの内容を更新
-	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x + 130, m_y + 15);
+	m_time++;
+
+	//通常弾発射
+	if (m_time % 50 == 0)
+	{
+		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
+		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 190, m_y + 114);
+		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
+	}
+
+	//m_timeの初期化
+	if (m_time > 1000)
+	{
+		m_time = 0;
+	}
 
 	//角度加算
 	m_r += 2.0f;
@@ -93,7 +106,7 @@ void CObjteki1::Action()
 		RECT_F src;//描画元切り取り位置
 		RECT_F dst;//描画先表示位置
 
-				   //切り取り位置の設定
+		//切り取り位置の設定
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
 		src.m_right = 984.0f;

@@ -14,6 +14,11 @@ enum OBJ_NAME
 	OBJ_ENEMY3,
 	OBJ_ENEMY4,
 	OBJ_BULLET_ENEMY,
+	OBJ_BULLET_TEKI1,
+	OBJ_BULLET_TEKI2,
+	OBJ_BULLET_TEKI3,
+	OBJ_BULLET_TEKI4,
+	OBJ_BULLET_TEKI5,
 	OBJ_GAMEOVER,
 	OBJ_MAIN,
 	OBJ_BACKGROUND,
@@ -88,6 +93,11 @@ struct UserData
 #include "シューティング\ObjEnemy3.h"
 #include "シューティング\ObjEnemy4.h"
 #include "シューティング\CObjBullteEnemy.h"
+#include "CObjBulletTeki1.h"
+#include "CObjBulletTeki2.h"
+#include "CObjBulletTeki3.h"
+#include "CObjBulletTeki4.h"
+#include "CObjBulletTeki5.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
 #include "GameOver\GAMEOVER1.h"
@@ -117,17 +127,17 @@ struct UserData
 #include "GameOver\GameOver.h"
 #include "GameOver\GameOver2.h"
 #include "ED\SceneED1.h"
-#include "ED\SceneED3.h"
 #include "ED\SceneED2.h"
+#include "ED\SceneED3.h"
 #include "謎解き\SceneNazo.h"
 #include "シューティング\SceneSTG.h"
-#include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG2.h"
+#include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG4.h"
 #include "SceneSTG5.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain2
+#define SET_GAME_START CSceneSTG2
 //-----------------------------------------------
