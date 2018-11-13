@@ -41,8 +41,8 @@ void CObjteki2::Action()
 	//通常弾発射
 	if (m_time % 50 == 0)
 	{
-		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
-		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 190, m_y + 114);
+		//弾丸敵機オブジェクト
+		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 78, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI2, 100);
 	}
 

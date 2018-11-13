@@ -41,6 +41,8 @@ enum OBJ_NAME
 	OBJ_STG5,
 	OBJ_BGN,
 	OBJ_DOOR,
+	OBJ_DOOR2,
+
 };
 //------------------------------------------------
 
@@ -117,6 +119,7 @@ struct UserData
 #include "ObjSTG5.h"
 #include "ì‰âÇ´\ObjBGNazo.h"
 #include "è¨ï®ä÷åW\ObjDoor.h"
+#include "è¨ï®ä÷åW\ObjDoor2.h"
 
 //------------------------------------------------
 

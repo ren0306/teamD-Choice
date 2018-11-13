@@ -43,7 +43,10 @@ void CSceneSTG5::InitScene()
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
 
 	//“G’eŠÛ‚ğ“Ç‚İ‚İ30”Ô‚É“o˜^
-	Draw::LoadImage(L"Bullet5.png", 30, TEX_SIZE_512);
+	Draw::LoadImage(L"Bullet5.png", 18, TEX_SIZE_512);
+
+	//ålŒö’eŠÛ‚ğ“Ç‚İ‚İ11”Ô‚É“o˜^
+	Draw::LoadImage(L"“G’e.png", 11, TEX_SIZE_512);
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_STG5, 10);
@@ -54,8 +57,14 @@ void CSceneSTG5::InitScene()
 	CObjteki5* objb = new CObjteki5(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI5, 50);
 
+	CObjBullet*i = new CObjBullet();
+	Objs::InsertObj(i, OBJ_BULLET, 150);
+
+
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
+	
+	
 }
 
 //ƒQ[ƒ€ƒ^ƒCƒgƒ‹Às’†ƒƒ\ƒbƒh

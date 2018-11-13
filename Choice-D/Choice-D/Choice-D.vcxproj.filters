@@ -49,21 +49,6 @@
     <ClCompile Include="シューティング\CObjBullet.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
-    <ClCompile Include="CObjBulletTeki1.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjBulletTeki2.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjBulletTeki3.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjBulletTeki4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjBulletTeki5.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
     <ClCompile Include="シューティング\CObjBullteEnemy.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
@@ -80,51 +65,6 @@
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="シューティング\ObjHero.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjSTG.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjSTG2.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjSTG3.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjSTG4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSTG5.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\Objteki1.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\Objteki2.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\Objteki3.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\Objteki4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="Objteki5.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\SceneSTG.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\SceneSTG2.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\SceneSTG3.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\SceneSTG4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneSTG5.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="GameOver\Game Over.cpp">
@@ -193,6 +133,69 @@
     <ClCompile Include="ゲームメイン\SceneMain3.cpp">
       <Filter>ソースファイル\メイン</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\ObjDoor2.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\ObjSTG.cpp">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\Objteki1.cpp">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneSTG.cpp">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\Objteki2.cpp">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\ObjSTG2.cpp">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneSTG2.cpp">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki1.cpp">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki2.cpp">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki3.cpp">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\ObjSTG3.cpp">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\Objteki3.cpp">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneSTG3.cpp">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki4.cpp">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\ObjSTG4.cpp">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\Objteki4.cpp">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneSTG4.cpp">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBulletTeki5.cpp">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSTG5.cpp">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClCompile>
+    <ClCompile Include="Objteki5.cpp">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSTG5.cpp">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -242,21 +245,6 @@
     <ClInclude Include="シューティング\CObjBullet.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
-    <ClInclude Include="CObjBulletTeki1.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjBulletTeki3.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjBulletTeki2.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjBulletTeki4.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjBulletTeki5.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
     <ClInclude Include="シューティング\CObjBullteEnemy.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
@@ -273,51 +261,6 @@
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\ObjHero.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjSTG.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjSTG2.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjSTG3.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjSTG4.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSTG5.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\Objteki1.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\Objteki2.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\Objteki3.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\Objteki4.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="Objteki5.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\SceneSTG.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\SceneSTG2.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\SceneSTG3.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\SceneSTG4.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneSTG5.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="GameOver\GAME OVER2.h">
@@ -386,6 +329,69 @@
     <ClInclude Include="ゲームメイン\SceneMain3.h">
       <Filter>ソースファイル\メイン</Filter>
     </ClInclude>
+    <ClInclude Include="小物関係\ObjDoor2.h">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\Objteki1.h">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneSTG.h">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjSTG.h">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\Objteki2.h">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjSTG2.h">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneSTG2.h">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki1.h">
+      <Filter>ソースファイル\STG\teki1</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki2.h">
+      <Filter>ソースファイル\STG\teki2</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki3.h">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjSTG3.h">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\Objteki3.h">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneSTG3.h">
+      <Filter>ソースファイル\STG\teki3</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki4.h">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneSTG4.h">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\Objteki4.h">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjSTG4.h">
+      <Filter>ソースファイル\STG\teki4</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBulletTeki5.h">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSTG5.h">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClInclude>
+    <ClInclude Include="Objteki5.h">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneSTG5.h">
+      <Filter>ソースファイル\STG\teki5</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -414,6 +420,21 @@
     </Filter>
     <Filter Include="ソースファイル\タイトル">
       <UniqueIdentifier>{7d6744ca-d2c7-4187-8212-78b2c04ee9fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\STG\teki1">
+      <UniqueIdentifier>{7e17acc0-42ef-4c2b-abad-083f2683774c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\STG\teki2">
+      <UniqueIdentifier>{965cb70d-3fb4-4d0e-a3ee-3320d711e5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\STG\teki3">
+      <UniqueIdentifier>{039e1e69-c5f0-4709-8541-f4690eb48f60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\STG\teki4">
+      <UniqueIdentifier>{7f64b219-a084-436d-ae57-b9d0767b96c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\STG\teki5">
+      <UniqueIdentifier>{b727f345-83c4-4211-91a3-a3cc423ab9c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

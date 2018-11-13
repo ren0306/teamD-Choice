@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
+#include "../GameL/DrawTexture.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -29,7 +30,7 @@ void CSceneTitle::InitScene()
 {
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
-
+	Draw::LoadImage(L"Title.png", 0, TEX_SIZE_512);
 	//タイトルオブジェクト作成
 	CObjTitle* obj = new CObjTitle();
 	Objs::InsertObj(obj, OBJ_TITLE, 10);
