@@ -21,6 +21,5 @@ class CObjteki1 :public CObj
 		float m_r = 0.0f;
 		int m_hp = 30;
 
-		int m_hp;	//ボスのヒットポイント
 
 };
