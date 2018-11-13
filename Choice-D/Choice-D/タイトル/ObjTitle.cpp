@@ -55,4 +55,23 @@ void CObjTitle::Draw()
 	Font::StrDraw(str, 20, 20, 12,c);
 	Font::StrDraw(L"ÉQÅ[ÉÄÇénÇﬂÇÈ", 400, 400, 32, c);
 
+
+	RECT_F src;
+	RECT_F dst;
+
+	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	//Choiceï\é¶
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 455.0f;
+	src.m_bottom = 180.0f;
+
+	dst.m_top = 150.0f;
+	dst.m_left = 150.0f;
+	dst.m_right = 600.0f;
+	dst.m_bottom = 400.0f;
+	Draw::Draw(0, &src, &dst, d, 0.0f);
+
+
+
 }

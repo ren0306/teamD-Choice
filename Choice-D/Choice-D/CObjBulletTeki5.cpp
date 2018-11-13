@@ -98,5 +98,5 @@ void CObjBulletTeki5::Draw()
 	dst.m_bottom = 32.0f + m_y;
 
 	//30番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(30, &m_eff, &dst, c, 0.0f);
+	Draw::Draw(18, &m_eff, &dst, c, 0.0f);
 }

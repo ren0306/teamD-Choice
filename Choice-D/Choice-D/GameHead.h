@@ -41,6 +41,8 @@ enum OBJ_NAME
 	OBJ_STG5,
 	OBJ_BGN,
 	OBJ_DOOR,
+	OBJ_DOOR2,
+
 };
 //------------------------------------------------
 
@@ -117,6 +119,7 @@ struct UserData
 #include "ObjSTG5.h"
 #include "謎解き\ObjBGNazo.h"
 #include "小物関係\ObjDoor.h"
+#include "小物関係\ObjDoor2.h"
 
 //------------------------------------------------
 
@@ -140,5 +143,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain3
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
