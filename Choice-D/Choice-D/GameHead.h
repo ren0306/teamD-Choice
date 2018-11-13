@@ -127,6 +127,8 @@ struct UserData
 #include "ゲームメイン\SceneMain.h"
 #include "ゲームメイン\SceneMain2.h"
 #include "ゲームメイン\SceneMain3.h"
+#include "ゲームメイン\SceneMain4.h"
+#include "ゲームメイン\SceneMain5.h"
 #include "タイトル\SceneTitle.h"
 #include "GameOver\GameOver.h"
 #include "GameOver\GameOver2.h"

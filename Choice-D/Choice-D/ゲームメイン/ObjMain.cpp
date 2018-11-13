@@ -24,6 +24,8 @@ void CObjMain::Init()
 //アクション
 void CObjMain::Action()
 {
+	float c[4] = { 1,1,1,m_and };
+
 	if (m_f == true)
 	{
 		m_and += 0.1;
@@ -45,12 +47,15 @@ void CObjMain::Action()
 		//マウスのボタンが押されたら戦闘に遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneGameOver());
+			Scene::SetScene(new CSceneSTG());
 		}
 	}
 	//謎画面遷移
 	else if (m_mou_x >170 && m_mou_x < 320 && m_mou_y>170 && m_mou_y < 455)
 	{
+
+		Font::StrDraw(L"謎解きを選ぶ", 400, 400, 32, c);
+
 		if (m_mou_r == true || m_mou_l == true)
 		{
 			Scene::SetScene(new CSceneNazo());

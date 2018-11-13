@@ -57,7 +57,7 @@ void CSceneSTG5::InitScene()
 	CObjteki5* objb = new CObjteki5(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI5, 50);
 
-	CObjBullet*i = new CObjBullet();
+	CObjBullet*i = new CObjBullet(123,123);
 	Objs::InsertObj(i, OBJ_BULLET, 150);
 
 

@@ -36,7 +36,7 @@ void CSceneNazo::InitScene()
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
 	//オブジェクト作成
 	CObjTenkey* key = new CObjTenkey();
-	Objs::InsertObj(key, OBJ_TENKEY, 10);
+	Objs::InsertObj(key, OBJ_TENKEY, 10000);
 
 	CObjBGN* BGN = new CObjBGN();
 	Objs::InsertObj(BGN, OBJ_BGN, 1);
