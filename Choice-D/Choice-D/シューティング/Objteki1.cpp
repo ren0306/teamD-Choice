@@ -34,6 +34,10 @@ void CObjteki1::Init()
 //アクション
 void CObjteki1::Action()
 {
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+
+
 	m_time++;
 
 	//通常弾発射
@@ -97,29 +101,29 @@ void CObjteki1::Action()
 
 }
 
-	//ドロー
-	void CObjteki1::Draw()
-	{
-		//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
-		float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+//ドロー
+void CObjteki1::Draw()
+{
+	//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-		RECT_F src;//描画元切り取り位置
-		RECT_F dst;//描画先表示位置
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
 
-		//切り取り位置の設定
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 984.0f;
-		src.m_bottom = 760.0f;
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 984.0f;
+	src.m_bottom = 760.0f;
 
-		//表示位置の設定
-		dst.m_top = 0.0f + m_y;
-		dst.m_left = 0.0f + m_x;
-		dst.m_right = 400.0f + m_x;
-		dst.m_bottom = 260.0f + m_y;
+	//表示位置の設定
+	dst.m_top = 0.0f + m_y;
+	dst.m_left = 0.0f + m_x;
+	dst.m_right = 400.0f + m_x;
+	dst.m_bottom = 260.0f + m_y;
 
-		//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-		Draw::Draw(10, &src, &dst, c, 0.0f);
-	}
+	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+	Draw::Draw(10, &src, &dst, c, 0.0f);
+}
 
 

@@ -123,6 +123,7 @@ struct UserData
 //ゲームシーンクラスヘッダ------------------------
 #include "ゲームメイン\SceneMain.h"
 #include "ゲームメイン\SceneMain2.h"
+#include "ゲームメイン\SceneMain3.h"
 #include "タイトル\SceneTitle.h"
 #include "GameOver\GameOver.h"
 #include "GameOver\GameOver2.h"
@@ -139,5 +140,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneSTG2
+#define SET_GAME_START CSceneMain3
 //-----------------------------------------------

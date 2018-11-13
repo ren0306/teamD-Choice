@@ -33,6 +33,9 @@ void CObjteki2::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjteki2::Action()
 {
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+
 	m_time++;
 
 	//’Êí’e”­Ë

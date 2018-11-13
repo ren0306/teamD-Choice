@@ -145,6 +145,7 @@
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain2.cpp" />
+    <ClCompile Include="ゲームメイン\SceneMain3.cpp" />
     <ClCompile Include="シューティング\CObjBullet.cpp" />
     <ClCompile Include="シューティング\CObjBullteEnemy.cpp" />
     <ClCompile Include="シューティング\ObjEnemy1.cpp" />
@@ -211,6 +212,7 @@
     <ClInclude Include="ゲームメイン\ObjMain.h" />
     <ClInclude Include="ゲームメイン\SceneMain.h" />
     <ClInclude Include="ゲームメイン\SceneMain2.h" />
+    <ClInclude Include="ゲームメイン\SceneMain3.h" />
     <ClInclude Include="シューティング\CObjBullet.h" />
     <ClInclude Include="シューティング\CObjBullteEnemy.h" />
     <ClInclude Include="シューティング\ObjEnemy1.h" />
