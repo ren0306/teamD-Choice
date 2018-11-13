@@ -3,7 +3,7 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
-
+#include "../GameL/Audio.h"
 #include "../GameHead.h"
 #include "ObjMain.h"
 
@@ -45,6 +45,7 @@ void CObjMain::Action()
 		//マウスのボタンが押されたら戦闘に遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
+
 			Scene::SetScene(new CSceneGameOver());
 		}
 	}
@@ -54,6 +55,7 @@ void CObjMain::Action()
 		if (m_mou_r == true || m_mou_l == true)
 		{
 			Scene::SetScene(new CSceneNazo());
+			Audio::Start(0);
 		}
 
 	}
