@@ -96,16 +96,19 @@ void CObjBullet::Action()
 void CObjBullet::Draw()
 {
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
-	float  c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float  i[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+	
 	RECT_F dst; //描画先表示位置
+
+	
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
 	dst.m_right = 32.0f + m_x;
-	dst.m_bottom = 32.0f + m_y;
+	dst.m_bottom = .0f + m_y;
 
-	//0番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(0, &m_eff, &dst, c, 0.0f);
+	//11番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+	Draw::Draw(11, &m_eff, &dst, i, 0.0f);
 }
