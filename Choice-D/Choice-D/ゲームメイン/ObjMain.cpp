@@ -50,18 +50,7 @@ void CObjMain::Action()
 			Scene::SetScene(new CSceneSTG());
 		}
 	}
-	//“ä‰æ–Ê‘JˆÚ
-	else if (m_mou_x >170 && m_mou_x < 320 && m_mou_y>170 && m_mou_y < 455)
-	{
-
-		Font::StrDraw(L"“ä‰ð‚«‚ð‘I‚Ô", 400, 400, 32, c);
-
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneNazo());
-		}
-
-	}
+	
 
 
 }
@@ -74,5 +63,16 @@ void CObjMain::Draw()
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
+	//“ä‰æ–Ê‘JˆÚ
+	if (m_mou_x >170 && m_mou_x < 320 && m_mou_y>170 && m_mou_y < 455)
+	{
 
+		Font::StrDraw(L"“ä‰ð‚«‚ð‘I‚Ô", 400, 400, 32, c);
+
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneNazo());
+		}
+
+	}
 }
