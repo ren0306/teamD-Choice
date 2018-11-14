@@ -171,8 +171,10 @@
     <ClCompile Include="タイトル\ObjTitle.cpp" />
     <ClCompile Include="タイトル\SceneTitle.cpp" />
     <ClCompile Include="小物関係\GameOvergamen.cpp" />
+    <ClCompile Include="小物関係\ObjBackGroud4.cpp" />
     <ClCompile Include="小物関係\ObjBackGround.cpp" />
     <ClCompile Include="小物関係\ObjBackGround2.cpp" />
+    <ClCompile Include="小物関係\ObjBackground3.cpp" />
     <ClCompile Include="小物関係\ObjDoor.cpp" />
     <ClCompile Include="小物関係\ObjDoor2.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -246,6 +248,8 @@
     <ClInclude Include="小物関係\GameOvergamen.h" />
     <ClInclude Include="小物関係\ObjBackGround.h" />
     <ClInclude Include="小物関係\ObjBackGround2.h" />
+    <ClInclude Include="小物関係\ObjBackGround3.h" />
+    <ClInclude Include="小物関係\ObjBackground4.h" />
     <ClInclude Include="小物関係\ObjDoor.h" />
     <ClInclude Include="小物関係\ObjDoor2.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
