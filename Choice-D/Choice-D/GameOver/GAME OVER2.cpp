@@ -45,6 +45,6 @@ void CObjGAMEOVER2::Draw()
 	float s[4] = { 1.0f,1.0f,1.0f,1.0f };
 	Font::StrDraw(L"ƒ^ƒCƒgƒ‹‰æ–Ê‚Ö", 280, 500, 30, s);
 
-	
+	Font::StrDraw(L"‚â‚ç‚ê‚Ä‚µ‚Ü‚Á‚½", 325, 250, 20, s);
 
 }

@@ -41,24 +41,6 @@ void CObjMain::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	//戦闘画面遷移
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>190 && m_mou_y < 230)
-	{
-		//マウスのボタンが押されたら戦闘に遷移
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneSTG());
-		}
-	}
-	//謎画面遷移
-	else if (m_mou_x >170 && m_mou_x < 320 && m_mou_y>170 && m_mou_y < 455)
-	{
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneNazo());
-		}
-
-	}
 
 
 }
@@ -66,11 +48,24 @@ void CObjMain::Action()
 //ドロー
 void CObjMain::Draw()
 {
-	float c[4] = { 1,1,1,m_and };
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
+	//戦闘画面遷移
+	if (m_mou_x > 500 && m_mou_x < 765 && m_mou_y>220 && m_mou_y < 382)
+	{
+		Font::StrDraw(L"敵と戦うことを選ぶ", 400, 400, 32, c);
+
+		//マウスのボタンが押されたら戦闘に遷移
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneSTG());
+		}
+	}
+
 	//謎画面遷移
 	if (m_mou_x >170 && m_mou_x < 320 && m_mou_y>170 && m_mou_y < 455)
 	{
@@ -83,4 +78,26 @@ void CObjMain::Draw()
 		}
 
 	}
+	//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
+
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
+
+	  //切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 984.0f;
+	src.m_bottom = 760.0f;
+
+	//表示位置の設定
+	dst.m_top = 0.0f+200;
+	dst.m_left = 0.0f+500;
+	dst.m_right = 800.0f ;
+	dst.m_bottom = 260.0f+200;
+
+	//2番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+	Draw::Draw(2, &src, &dst, c, 0.0f);
+
+
+
 }
