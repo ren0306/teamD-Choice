@@ -62,9 +62,9 @@ void CObjTitle::Draw()
 		Font::StrDraw(L"ゲームを始める", 400, 400, 32, c);
 	}
 
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>420 && m_mou_y < 460)
+	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 470)
 	{
-		Font::StrDraw(L"◇操作説明", 400, 430, 32, c);
+		Font::StrDraw(L"◇操作説明", 400, 450, 32, c);
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_l == true)
 		{
@@ -74,7 +74,7 @@ void CObjTitle::Draw()
 	}
 	else
 	{
-		Font::StrDraw(L"操作説明", 400, 430, 32, c);
+		Font::StrDraw(L"操作説明", 400, 450, 32, c);
 	}
 
 
