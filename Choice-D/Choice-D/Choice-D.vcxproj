@@ -142,6 +142,7 @@
     <ClCompile Include="ObjSTG5.cpp" />
     <ClCompile Include="Objteki5.cpp" />
     <ClCompile Include="SceneSTG5.cpp" />
+    <ClCompile Include="STGBackground.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain2.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
@@ -213,6 +214,7 @@
     <ClInclude Include="ObjSTG5.h" />
     <ClInclude Include="Objteki5.h" />
     <ClInclude Include="SceneSTG5.h" />
+    <ClInclude Include="STGBackground.h" />
     <ClInclude Include="ゲームメイン\ObjMain.h" />
     <ClInclude Include="ゲームメイン\ObjMain2.h" />
     <ClInclude Include="ゲームメイン\SceneMain.h" />

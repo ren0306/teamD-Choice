@@ -18,6 +18,7 @@ enum OBJ_NAME
 	OBJ_MAIN,
 	OBJ_BACKGROUND,
 	OBJ_BACKGROUND2,
+	OBJ_STGBACKGROUND,
 	OBJ_GAMEOVER2,
 	OBJ_ED1,
 	OBJ_ED3,
@@ -97,6 +98,7 @@ struct UserData
 #include "GameOver\GAME OVER2.h"
 #include "è¨ï®ä÷åW\ObjBackGround.h"
 #include "è¨ï®ä÷åW\ObjBackGround2.h"
+#include "STGBackground.h"
 #include "ED\ObjED2.h"
 #include "ED\ObjED1.h"
 #include "ED\ObjED3.h"
