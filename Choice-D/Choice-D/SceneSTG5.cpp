@@ -48,9 +48,6 @@ void CSceneSTG5::InitScene()
 	//éÂêlåˆíeä€Çì«Ç›çûÇ›11î‘Ç…ìoò^
 	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
 
-	CObjMain* m = new CObjMain();
-	Objs::InsertObj(m, OBJ_STG5, 10);
-
 	CObjBackGround* q = new CObjBackGround();
 	Objs::InsertObj(q, OBJ_BACKGROUND, 20);
 
