@@ -6,6 +6,7 @@
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\DrawTexture.h"
+#include "../GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -34,9 +35,11 @@ void CSceneNazo::InitScene()
 	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
+	Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
+
 	//オブジェクト作成
 	CObjTenkey* key = new CObjTenkey();
-	Objs::InsertObj(key, OBJ_TENKEY, 10);
+	Objs::InsertObj(key, OBJ_TENKEY, 10000);
 
 	CObjBGN* BGN = new CObjBGN();
 	Objs::InsertObj(BGN, OBJ_BGN, 1);

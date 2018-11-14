@@ -6,7 +6,7 @@
 #include "../GameL\SceneManager.h"
 
 #include "ObjBackGround.h"
-#include "SceneMain.h"
+#include "../ゲームメイン/SceneMain.h"
 #include "../GameHead.h"
 
 
@@ -59,16 +59,6 @@ void CObjBackGround::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 	Draw::Draw(0, &src, &dst, d, 0.0f);
-	//ドア1表示
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 650.0f;
-	src.m_bottom = 946.0f;
-	dst.m_top = 0.0f;
-	dst.m_left = 100.0f;
-	dst.m_right = 400.0f;
-	dst.m_bottom = 500.0f;
-	Draw::Draw(1, &src, &dst, d, 0.0f);
 
 
 

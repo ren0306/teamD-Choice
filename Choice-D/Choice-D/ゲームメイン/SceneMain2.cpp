@@ -33,18 +33,14 @@ CSceneMain2::~CSceneMain2()
 void CSceneMain2::InitScene()
 {
 	//外部グラフィックファイルを読み込み０番に登録
-	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
-	//Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_1024);
+	Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
 
+	CObjBackGround2* b = new CObjBackGround2();
+	Objs::InsertObj(b, OBJ_BACKGROUND2, 0);
 
-	/*CObjMain* m = new CObjMain();
-	Objs::InsertObj(m, OBJ_MAIN, 12);*/
-
-	CObjBackGround* b = new CObjBackGround();
-	Objs::InsertObj(b, OBJ_BACKGROUND, 120);
-
-	CObjDoor* Door = new CObjDoor();
-	Objs::InsertObj(Door, OBJ_DOOR, 130);
+	CObjDoor2* Door2 = new CObjDoor2();
+	Objs::InsertObj(Door2, OBJ_DOOR2, 130);
 
 
 

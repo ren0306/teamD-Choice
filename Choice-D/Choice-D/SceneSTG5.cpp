@@ -42,8 +42,11 @@ void CSceneSTG5::InitScene()
 	//主人公を読み込み6番に登録
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
 
-	CObjMain* m = new CObjMain();
-	Objs::InsertObj(m, OBJ_STG5, 10);
+	//敵弾丸を読み込み30番に登録
+	Draw::LoadImage(L"Bullet5.png", 18, TEX_SIZE_512);
+
+	//主人公弾丸を読み込み11番に登録
+	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
 
 	CObjBackGround* q = new CObjBackGround();
 	Objs::InsertObj(q, OBJ_BACKGROUND, 20);
@@ -51,8 +54,13 @@ void CSceneSTG5::InitScene()
 	CObjteki5* objb = new CObjteki5(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI5, 50);
 
+	
+
+
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
+	
+	
 }
 
 //ゲームタイトル実行中メソッド

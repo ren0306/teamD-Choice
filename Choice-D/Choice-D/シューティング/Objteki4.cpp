@@ -21,6 +21,7 @@ CObjteki4::CObjteki4(float x, float y)
 //イニシャライズ
 void CObjteki4::Init()
 {
+	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
@@ -32,6 +33,22 @@ void CObjteki4::Init()
 //アクション
 void CObjteki4::Action()
 {
+	m_time++;
+
+	//通常弾発射
+	if (m_time % 50 == 0)
+	{
+		//弾丸敵機オブジェクト
+		CObjBulletTeki4* obj_b = new CObjBulletTeki4(m_x + 65, m_y + 95);
+		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI4, 100);
+	}
+
+	//m_timeの初期化
+	if (m_time > 1000)
+	{
+		m_time = 0;
+	}
+
 	//角度加算
 	m_r += 2.0f;
 

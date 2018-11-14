@@ -34,7 +34,6 @@ void CObjDoor::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-
 }
 
 //ドロー
