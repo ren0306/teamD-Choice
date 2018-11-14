@@ -199,6 +199,12 @@
     <ClCompile Include="小物関係\ObjBackGroud4.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
+    <ClCompile Include="タイトル\SceneSousagamen.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="タイトル\ObjSousagamen.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -397,6 +403,12 @@
     </ClInclude>
     <ClInclude Include="小物関係\ObjBackground4.h">
       <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="タイトル\SceneSousagamen.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="タイトル\ObjSousagamen.h">
+      <Filter>ソースファイル\タイトル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
