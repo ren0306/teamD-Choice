@@ -38,6 +38,8 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
 	//“G‚P‚ğ“Ç‚İ‚İ2”Ô‚É“o˜^
 	Draw::LoadImage(L"teki1.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
+
 
 	Font::SetStrTex(L"“ä‰ğ‚«‚ğ‘I‚Ô");
 	Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
