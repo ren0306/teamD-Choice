@@ -205,6 +205,9 @@
     <ClCompile Include="タイトル\ObjSousagamen.cpp">
       <Filter>ソースファイル\タイトル</Filter>
     </ClCompile>
+    <ClCompile Include="STGBackground.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -409,6 +412,9 @@
     </ClInclude>
     <ClInclude Include="タイトル\ObjSousagamen.h">
       <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="STGBackground.h">
+      <Filter>ソースファイル\STG</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

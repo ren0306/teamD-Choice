@@ -34,9 +34,9 @@ void CSceneSTG4::InitScene()
 	Objs::InsertObj(obj, OBJ_STG4, 10);
 
 	//”wŒi‚ğ“Ç‚İ‚İ0”Ô‚É“o˜^
-	Draw::LoadImage(L"syu-haikei.png",20, TEX_SIZE_512);
+	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
 
-	//“G‚S‚ğ“Ç‚İ‚İ1”Ô‚É“o˜^
+	//“G‚S‚ğ“Ç‚İ‚İ10”Ô‚É“o˜^
 	Draw::LoadImage(L"teki4.png", 10, TEX_SIZE_512);
 
 	//ålŒö‚ğ“Ç‚İ‚İ6”Ô‚É“o˜^
@@ -48,8 +48,9 @@ void CSceneSTG4::InitScene()
 	//ålŒö’eŠÛ‚ğ“Ç‚İ‚İ11”Ô‚É“o˜^
 	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
 
-	CObjBackGround* q = new CObjBackGround();
-	Objs::InsertObj(q, OBJ_BACKGROUND, 20);
+	//”wŒiƒIƒuƒWƒFƒNƒgì¬
+	STGBackground* back = new STGBackground();
+	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);
 
 	CObjteki4* objb = new CObjteki4(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI4, 50);
