@@ -64,21 +64,6 @@
     <ClCompile Include="CObjBulletTeki5.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
-    <ClCompile Include="シューティング\CObjBullteEnemy.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy1.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy2.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy3.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
     <ClCompile Include="シューティング\ObjHero.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
@@ -208,6 +193,12 @@
     <ClCompile Include="小物関係\GameOvergamen.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\ObjBackground3.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\ObjBackGroud4.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -270,21 +261,6 @@
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="CObjBulletTeki5.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\CObjBullteEnemy.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy1.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy2.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy3.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy4.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\ObjHero.h">
@@ -416,6 +392,12 @@
     <ClInclude Include="小物関係\GameOvergamen.h">
       <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
+    <ClInclude Include="小物関係\ObjBackGround3.h">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\ObjBackground4.h">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -423,9 +405,6 @@
     </Filter>
     <Filter Include="ソースファイル">
       <UniqueIdentifier>{51aa1587-345e-4c33-a4a2-a1fe11cf8348}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\STG">
-      <UniqueIdentifier>{aa193f39-49b2-47f6-92b0-1c68767ac6a9}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\GameOver">
       <UniqueIdentifier>{43fa5e54-e86e-4291-9093-d922e990db60}</UniqueIdentifier>
@@ -444,6 +423,9 @@
     </Filter>
     <Filter Include="ソースファイル\タイトル">
       <UniqueIdentifier>{7d6744ca-d2c7-4187-8212-78b2c04ee9fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\STG">
+      <UniqueIdentifier>{aa193f39-49b2-47f6-92b0-1c68767ac6a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
