@@ -64,21 +64,6 @@
     <ClCompile Include="CObjBulletTeki5.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
-    <ClCompile Include="シューティング\CObjBullteEnemy.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy1.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy2.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy3.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjEnemy4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
     <ClCompile Include="シューティング\ObjHero.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
@@ -270,21 +255,6 @@
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="CObjBulletTeki5.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\CObjBullteEnemy.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy1.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy2.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy3.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjEnemy4.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\ObjHero.h">

@@ -149,11 +149,6 @@
     <ClCompile Include="ゲームメイン\SceneMain3.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain5.cpp" />
     <ClCompile Include="シューティング\CObjBullet.cpp" />
-    <ClCompile Include="シューティング\CObjBullteEnemy.cpp" />
-    <ClCompile Include="シューティング\ObjEnemy1.cpp" />
-    <ClCompile Include="シューティング\ObjEnemy2.cpp" />
-    <ClCompile Include="シューティング\ObjEnemy3.cpp" />
-    <ClCompile Include="シューティング\ObjEnemy4.cpp" />
     <ClCompile Include="シューティング\ObjHero.cpp" />
     <ClCompile Include="シューティング\ObjSTG.cpp" />
     <ClCompile Include="シューティング\ObjSTG2.cpp" />
@@ -222,11 +217,6 @@
     <ClInclude Include="ゲームメイン\SceneMain4.h" />
     <ClInclude Include="ゲームメイン\SceneMain5.h" />
     <ClInclude Include="シューティング\CObjBullet.h" />
-    <ClInclude Include="シューティング\CObjBullteEnemy.h" />
-    <ClInclude Include="シューティング\ObjEnemy1.h" />
-    <ClInclude Include="シューティング\ObjEnemy2.h" />
-    <ClInclude Include="シューティング\ObjEnemy3.h" />
-    <ClInclude Include="シューティング\ObjEnemy4.h" />
     <ClInclude Include="シューティング\ObjHero.h" />
     <ClInclude Include="シューティング\ObjSTG.h" />
     <ClInclude Include="シューティング\ObjSTG2.h" />
