@@ -62,7 +62,7 @@ void CObjMain::Draw()
 		//マウスのボタンが押されたら戦闘に遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneSTG());
+
 		}
 	}
 
