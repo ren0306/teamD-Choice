@@ -20,5 +20,5 @@ private:
 	bool m_mou_r;
 	bool m_mou_l;
 	double m_and;
-	bool m_f = true;
+	bool m_f;
 };
