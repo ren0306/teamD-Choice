@@ -53,13 +53,13 @@ void CSceneSTG::InitScene()
 
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();
-	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);
+	Objs::InsertObj(back, OBJ_STGBACKGROUND, 0);
 
 	CObjteki1* objb = new CObjteki1(200,10);
-	Objs::InsertObj(objb, OBJ_TEKI1, 50);
+	Objs::InsertObj(objb, OBJ_TEKI1, 120);
 
 	CObjHero*ob = new CObjHero();
-	Objs::InsertObj(ob, OBJ_HERO, 150);
+	Objs::InsertObj(ob, OBJ_HERO, 110);
 }
 
 //ゲームタイトル実行中メソッド

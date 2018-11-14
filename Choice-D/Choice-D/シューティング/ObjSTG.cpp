@@ -32,6 +32,7 @@ void CObjSTG::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+
 }
 
 //ÉhÉçÅ[
