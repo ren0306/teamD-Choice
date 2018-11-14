@@ -36,14 +36,14 @@ void CSceneSTG5::InitScene()
 	//”wŒi‚ğ“Ç‚İ‚İ0”Ô‚É“o˜^
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
 
-	//“G‚T‚ğ“Ç‚İ‚İ30”Ô‚É“o˜^
-	Draw::LoadImage(L"teki5.png", 30, TEX_SIZE_512);
+	//“G‚T‚ğ“Ç‚İ‚İ10”Ô‚É“o˜^
+	Draw::LoadImage(L"teki5.png", 10, TEX_SIZE_512);
 
 	//ålŒö‚ğ“Ç‚İ‚İ6”Ô‚É“o˜^
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
 
-	//“G’eŠÛ‚ğ“Ç‚İ‚İ18”Ô‚É“o˜^
-	Draw::LoadImage(L"Bullet5.png", 18, TEX_SIZE_512);
+	//“G’eŠÛ‚ğ“Ç‚İ‚İ30”Ô‚É“o˜^
+	Draw::LoadImage(L"Bullet5.png", 30, TEX_SIZE_512);
 
 	//ålŒö’eŠÛ‚ğ“Ç‚İ‚İ11”Ô‚É“o˜^
 	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
