@@ -116,7 +116,7 @@ void CObjteki1::Draw()
 	dst.m_right = 400.0f + m_x;
 	dst.m_bottom = 260.0f + m_y;
 
-	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
 	//HPが0になったら破棄
 	if (m_hp <= 0)
