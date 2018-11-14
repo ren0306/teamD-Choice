@@ -54,10 +54,10 @@ void CObjGameOvergamen::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 63.0f;
 	src.m_bottom = 54.0f;
-	dst.m_top = 0.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 300.0f;
-	dst.m_bottom = 300.0f;
+	dst.m_top =180.0f;
+	dst.m_left = 280.0f;
+	dst.m_right = 500.0f;
+	dst.m_bottom = 360.0f;
 	Draw::Draw(3, &src, &dst, ga, 0.0f);
 
 

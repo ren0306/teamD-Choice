@@ -9,11 +9,6 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_HERO,
 	OBJ_BULLET,
-	OBJ_ENEMY1,
-	OBJ_ENEMY2,
-	OBJ_ENEMY3,
-	OBJ_ENEMY4,
-	OBJ_BULLET_ENEMY,
 	OBJ_BULLET_TEKI1,
 	OBJ_BULLET_TEKI2,
 	OBJ_BULLET_TEKI3,
@@ -42,7 +37,7 @@ enum OBJ_NAME
 	OBJ_BGN,
 	OBJ_DOOR,
 	OBJ_DOOR2,
-
+	OBJ_SOUSAGAMEN,
 	OBJ_GAMEOVERGAMEN,
 };
 //------------------------------------------------
@@ -91,11 +86,6 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include "シューティング\ObjHero.h"
 #include "シューティング\CObjBullet.h"
-#include "シューティング\ObjEnemy1.h"
-#include "シューティング\ObjEnemy2.h"
-#include "シューティング\ObjEnemy3.h"
-#include "シューティング\ObjEnemy4.h"
-#include "シューティング\CObjBullteEnemy.h"
 #include "CObjBulletTeki1.h"
 #include "CObjBulletTeki2.h"
 #include "CObjBulletTeki3.h"
@@ -122,6 +112,7 @@ struct UserData
 #include "小物関係\ObjDoor.h"
 #include "小物関係\GameOvergamen.h"
 #include "小物関係\ObjDoor2.h"
+#include "タイトル\ObjSousagamen.h"
 
 //------------------------------------------------
 
@@ -143,6 +134,7 @@ struct UserData
 #include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG4.h"
 #include "SceneSTG5.h"
+#include "タイトル\SceneSousagamen.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

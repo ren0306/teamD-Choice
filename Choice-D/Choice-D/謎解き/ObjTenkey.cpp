@@ -51,8 +51,7 @@ void CObjTenkey::Action()
 	m_mou_l = Input::GetMouButtonL();
 
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
-	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
-	Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
+
 	//マウスの位置とクリックする場所で当たり判定
 	/*
 	789
@@ -288,14 +287,16 @@ void CObjTenkey::Action()
 //ドロー
 void CObjTenkey::Draw()
 {
+	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	float c[4] = { 1,1,1,1 };
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
-
 	Font::StrDraw(L"__________", 250, 290, 50, c);
+	Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
+	Font::StrDraw(L"[メイン画面に戻る]", 32, 32, 30, f);
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;

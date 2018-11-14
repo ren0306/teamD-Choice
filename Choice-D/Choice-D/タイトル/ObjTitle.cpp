@@ -9,13 +9,16 @@
 #include "ObjTitle.h"
 #include "../ゲームメイン/SceneMain.h"
 
+
+
+
 //使用するネームスペース
 using namespace GameL;
 
 //イニシャライズ
 void CObjTitle::Init()
 {
-
+	//マウスの位置
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
 	m_mou_r = false;
@@ -32,16 +35,6 @@ void CObjTitle::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>390 && m_mou_y < 430)
-	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_l == true)
-		{
-			m_and -= 0.1;
-			Scene::SetScene(new CSceneMain());
-		}
-	}
 
 }
 
@@ -53,7 +46,36 @@ void CObjTitle::Draw()
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12,c);
-	Font::StrDraw(L"ゲームを始める", 400, 400, 32, c);
+	//マウスの位置とクリックする場所で当たり判定
+	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>390 && m_mou_y < 430)
+	{
+		Font::StrDraw(L"◇ゲームを始める", 400, 400, 32,c);
+		//マウスのボタンが押されたらメインに遷移
+		if (m_mou_l == true)
+		{
+			m_and -= 0.1;
+			Scene::SetScene(new CSceneMain());
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"ゲームを始める", 400, 400, 32, c);
+	}
+
+	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 470)
+	{
+		Font::StrDraw(L"◇操作説明", 400, 450, 32, c);
+		//マウスのボタンが押されたらメインに遷移
+		if (m_mou_l == true)
+		{
+			m_and -= 0.1;
+			Scene::SetScene(new CSceneGameOver());
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"操作説明", 400, 450, 32, c);
+	}
 
 
 	RECT_F src;
@@ -65,7 +87,7 @@ void CObjTitle::Draw()
 	src.m_left = 0.0f;
 	src.m_right = 455.0f;
 	src.m_bottom = 180.0f;
-
+	
 	dst.m_top = 150.0f;
 	dst.m_left = 150.0f;
 	dst.m_right = 600.0f;
