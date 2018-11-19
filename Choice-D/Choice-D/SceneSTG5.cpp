@@ -48,6 +48,9 @@ void CSceneSTG5::InitScene()
 	//主人公弾丸を読み込み11番に登録
 	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
 
+	//敵HPバー表示
+	Draw::LoadImage(L"HP.png", 5, TEX_SIZE_512);
+
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();
 	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);

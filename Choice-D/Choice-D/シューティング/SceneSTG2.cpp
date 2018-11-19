@@ -44,6 +44,9 @@ void CSceneSTG2::InitScene()
 	//主人公弾丸を読み込み11番に登録
 	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
 
+	//敵HPバー表示
+	Draw::LoadImage(L"HP.png", 5, TEX_SIZE_512);
+
 	//STGオブジェクト作成
 	CObjSTG2* obj = new CObjSTG2();
 	Objs::InsertObj(obj, OBJ_STG2, 10);

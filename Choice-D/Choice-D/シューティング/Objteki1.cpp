@@ -20,8 +20,8 @@ CObjteki1::CObjteki1(float x, float y)
 //イニシャライズ
 void CObjteki1::Init()
 {
-	m_hp = 1;
-
+	m_hp = 30.f;
+	m_maxhp = 30.f;
 
 
 	m_time = 0;
@@ -35,6 +35,7 @@ void CObjteki1::Init()
 //アクション
 void CObjteki1::Action()
 {
+	//HitBox位置を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x +90, m_y +20);
 
@@ -77,18 +78,17 @@ void CObjteki1::Action()
 	m_x += m_vx;
 	m_y += m_vy;
 
-	//敵機が完全に領域外にでたら敵機を破棄する
-	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
-	if (check == false)
-	{
-		this->SetStatus(false);		//自身に削除命令
-		Hits::DeleteHitBox(this);
-	}
-
 	//弾丸と接触してるしたらHPを減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
+	}
+	if (m_hp <= 0)
+	{
+		this->SetStatus(false);		//自身に削除命令を出す。
+		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+
+		m_f = true;
 	}
 
 
@@ -98,11 +98,31 @@ void CObjteki1::Action()
 //ドロー
 void CObjteki1::Draw()
 {
-	//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
+
+
+
+	//敵HP表示
+	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 100.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_bottom = 125.0f;
+
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
+
+	//敵表示
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
@@ -119,17 +139,16 @@ void CObjteki1::Draw()
 	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
 	//HPが0になったら破棄
-	if (m_hp <= 0)
-	{
-		Hits::DeleteHitBox(this);
-		m_f = true;
-	}
-	if (m_f == true)
+	/*if (m_f == true)
 	{
 		float l[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 		Font::StrDraw(L"敵を倒した！！！", 400, 400, 50, l);
-	}
+	}*/
+
+
+
+
 
 }
 
