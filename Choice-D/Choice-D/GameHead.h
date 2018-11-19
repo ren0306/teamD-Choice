@@ -18,6 +18,9 @@ enum OBJ_NAME
 	OBJ_MAIN,
 	OBJ_BACKGROUND,
 	OBJ_BACKGROUND2,
+	OBJ_BACKGROUND3,
+	OBJ_BACKGROUND4,
+	OBJ_BACKGROUND5,
 	OBJ_STGBACKGROUND,
 	OBJ_GAMEOVER2,
 	OBJ_ED1,
@@ -42,6 +45,7 @@ enum OBJ_NAME
 	OBJ_GAMEOVERGAMEN,
 	OBJ_ED1GAZOU,
 	OBJ_ED2GAZOU,
+	OBJ_ED3GAZOU,
 };
 //------------------------------------------------
 
@@ -100,6 +104,9 @@ struct UserData
 #include "GameOver\GAME OVER2.h"
 #include "小物関係\ObjBackGround.h"
 #include "小物関係\ObjBackGround2.h"
+#include "小物関係\ObjBackGround3.h"
+#include "小物関係\ObjBackground4.h"
+#include "小物関係\ObjBackground5.h"
 #include "STGBackground.h"
 #include "ED\ObjED2.h"
 #include "ED\ObjED1.h"
@@ -119,6 +126,7 @@ struct UserData
 #include "タイトル\ObjSousagamen.h"
 #include "小物関係\ObjED1gazou.h"
 #include "小物関係\ObjED2gazou.h"
+#include "小物関係\ObjED3gazou.h"
 
 //------------------------------------------------
 
@@ -145,5 +153,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneNazo
+#define SET_GAME_START CSceneMain4
 //-----------------------------------------------

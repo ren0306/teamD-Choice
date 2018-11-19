@@ -49,18 +49,28 @@ void CObjSousagamen::Draw()
 	RECT_F dst;
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//Choice表示
+	//キーボード表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 862.0f;
 	src.m_bottom = 361.0f;
 
 	dst.m_top = 150.0f;
-	dst.m_left = 100.0f;
-	dst.m_right = 550.0f;
+	dst.m_left = 10.0f;
+	dst.m_right = 430.0f;
 	dst.m_bottom = 400.0f;
 	Draw::Draw(0, &src, &dst, d, 0.0f);
 
+	//マウス表示
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 570.0f;
+	src.m_bottom = 365.0f;
 
+	dst.m_top = 170.0f;
+	dst.m_left = 440.0f;
+	dst.m_right = 770.0f;
+	dst.m_bottom = 385.0f;
+	Draw::Draw(1, &src, &dst, d, 0.0f);
 
 }

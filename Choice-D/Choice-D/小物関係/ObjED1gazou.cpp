@@ -47,15 +47,15 @@ void CObjED1gazou::Draw()
 
 
 
-	float ED1[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float ED1[4] = { 1.0f,1.0f,1.0f,0.1f };
 	//ゲームオーバー1背景表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 510.0f;
-	src.m_bottom = 379.0f;
-	dst.m_top = 100.0f;
-	dst.m_left = 0.0f;
+	src.m_right = 640.0f;
+	src.m_bottom = 420.0f;
+	dst.m_top = 150.0f;
+	dst.m_left = 200.0f;
 	dst.m_right = 600.0f;
-	dst.m_bottom = 450.0f;
+	dst.m_bottom = 400.0f;
 	Draw::Draw(3, &src, &dst, ED1, 0.0f);
 }
