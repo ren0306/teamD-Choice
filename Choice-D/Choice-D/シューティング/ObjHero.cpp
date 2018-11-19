@@ -37,7 +37,8 @@ float CObjHero::GetY()
 //イニシャライズ
 void CObjHero::Init()
 {
-	m_hp = 20;
+	m_hp = 20.f;
+	m_maxhp = 20.f;
 	m_x = 400;
 	m_y = 550;
 	m_f = true;
@@ -166,6 +167,22 @@ void CObjHero::Draw()
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
+
+	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 125.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_bottom = 150.0f;
+
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
