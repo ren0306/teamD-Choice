@@ -211,8 +211,9 @@
     <ClCompile Include="小物関係\ObjED2gazou.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
-    <ClCompile Include="STGBackground.cpp">
-      <Filter>ソースファイル\STG</Filter>
+    <ClCompile Include="STGBackground.cpp" />
+    <ClCompile Include="小物関係\ObjED3gazou.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -425,8 +426,9 @@
     <ClInclude Include="小物関係\ObjED2gazou.h">
       <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
-    <ClInclude Include="STGBackground.h">
-      <Filter>ソースファイル\STG</Filter>
+    <ClInclude Include="STGBackground.h" />
+    <ClInclude Include="小物関係\ObjED3gazou.h">
+      <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

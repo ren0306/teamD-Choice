@@ -83,7 +83,7 @@ void CObjGameOvergamen::Draw()
 	dst.m_left = 480.0f;
 	dst.m_right = 650.0f;
 	dst.m_bottom = 400.0f;
-	Draw::Draw(12, &src, &dst, ga, 0.0f);
+	Draw::Draw(12, &src, &dst, ga3, 0.0f);
 
 	float ga4[4] = { 1.0f,1.0f,1.0f,1.0f };
 	//ゲームオーバー2背景表示
@@ -95,7 +95,7 @@ void CObjGameOvergamen::Draw()
 	dst.m_left = 300.0f;
 	dst.m_right = 130.0f;
 	dst.m_bottom = 400.0f;
-	Draw::Draw(13, &src, &dst, ga, 0.0f);
+	Draw::Draw(13, &src, &dst, ga4, 0.0f);
 
 	float ga5[4] = { 1.0f,1.0f,1.0f,1.0f };
 	//ゲームオーバー2背景表示
@@ -107,7 +107,7 @@ void CObjGameOvergamen::Draw()
 	dst.m_left = 410.0f;
 	dst.m_right = 580.0f;
 	dst.m_bottom = 300.0f;
-	Draw::Draw(14, &src, &dst, ga, 0.0f);
+	Draw::Draw(14, &src, &dst, ga5, 0.0f);
 
 	float ga6[4] = { 1.0f,1.0f,1.0f,1.0f };
 	//ゲームオーバー2背景表示
@@ -119,6 +119,6 @@ void CObjGameOvergamen::Draw()
 	dst.m_left = 380.0f;
 	dst.m_right = 200.0f;
 	dst.m_bottom = 300.0f;
-	Draw::Draw(15, &src, &dst, ga, 0.0f);
+	Draw::Draw(15, &src, &dst, ga6, 0.0f);
 
 }
