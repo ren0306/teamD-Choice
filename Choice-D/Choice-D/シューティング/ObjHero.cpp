@@ -4,6 +4,7 @@
 #include "../GameL\HitBoxManager.h"
 #include "../GameL\Audio.h"
 #include "../GameHead.h"
+#include "../GameL/DrawFont.h"
 #include "ObjHero.h"
 #include "UtilityModule.h"
 
@@ -144,9 +145,31 @@ void CObjHero::Action()
 	//ELEMENT_ENEMYを持つオブジェクトと接触したらHPを減らす
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI1) != nullptr)
+		{
+			m_hp -= 1;
+		}
+
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI2) != nullptr)
+		{
+			m_hp -= 1;
+		}
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI3) != nullptr)
+		{
+			m_hp -= 2;
+		}
+
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI4) != nullptr)
+		{
+			m_hp -= 3;
+		}
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI5) != nullptr)
+		{
+			m_hp -= 3;
+		}
+
 		m_hp -= 1;
 	}
-
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
@@ -169,6 +192,7 @@ void CObjHero::Draw()
 	RECT_F dst; //描画先表示位置
 
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -176,10 +200,10 @@ void CObjHero::Draw()
 	src.m_bottom = 720.0f;
 
 	//表示位置の設定
-	dst.m_top = 125.0f;
+	dst.m_top = 150.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = (m_hp / m_maxhp)*128.0f;
-	dst.m_bottom = 150.0f;
+	dst.m_bottom = 175.0f;
 
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
