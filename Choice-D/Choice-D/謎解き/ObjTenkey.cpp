@@ -66,12 +66,7 @@ void CObjTenkey::Action()
 			{
 				if (m_flag[7] == true)
 				{
-					Font::StrDraw(L"7", m_ps, 270, 50, o);
 					m_flag[7] = false;
-				}
-				else
-				{
-					m_flag[7] == true;
 				}
 			}
 			//4“ü—Í
@@ -81,13 +76,8 @@ void CObjTenkey::Action()
 					{
 						if (m_flag[4] == true)
 						{
-							Font::StrDraw(L"4", m_ps, 270, 50, o);
 							m_flag[4] = false;
 						}
-					}
-					else
-					{
-						m_flag[4] == true;
 					}
 			}
 			//1“ü—Í
@@ -97,13 +87,8 @@ void CObjTenkey::Action()
 				{
 					if (m_flag[1] == true)
 					{
-						Font::StrDraw(L"1", m_ps, 270, 50, o);
 						m_flag[1] = false;
 					}
-				}
-				else
-				{
-					m_flag[1] == true;
 				}
 			}
 
@@ -118,13 +103,8 @@ void CObjTenkey::Action()
 			{
 				if (m_flag[8] == true)
 				{
-					Font::StrDraw(L"8", m_ps, 270, 50, o);
 					m_flag[8] = false;
 				}
-			}
-			else
-			{
-				m_flag[8] == true;
 			}
 
 		}
@@ -135,13 +115,8 @@ void CObjTenkey::Action()
 			{
 				if (m_flag[5] == true)
 				{
-					Font::StrDraw(L"5", m_ps, 270, 50, o);
 					m_flag[5] = false;
 				}
-			}
-			else
-			{
-				m_flag[5] == true;
 			}
 
 		}
@@ -152,13 +127,8 @@ void CObjTenkey::Action()
 			{
 				if (m_flag[7] == true)
 				{
-					Font::StrDraw(L"2", m_ps, 270, 50, o);
 					m_flag[7] = false;
 				}
-			}
-			else
-			{
-				m_flag[7] == true;
 			}
 
 		}
@@ -174,13 +144,8 @@ void CObjTenkey::Action()
 				{
 					if (m_flag[9] == true)
 					{
-						Font::StrDraw(L"9", m_ps, 270, 50, o);
 						m_flag[9] = false;
 					}
-				}
-				else
-				{
-					m_flag[9] == true;
 				}
 
 			}
@@ -191,13 +156,8 @@ void CObjTenkey::Action()
 				{
 					if (m_flag[6] == true)
 					{
-						Font::StrDraw(L"6", m_ps, 270, 50, o);
 						m_flag[6] = false;
 					}
-				}
-				else
-				{
-					m_flag[6] == true;
 				}
 
 
@@ -209,13 +169,8 @@ void CObjTenkey::Action()
 				{
 					if (m_flag[3] == true)
 					{
-						Font::StrDraw(L"3", m_ps, 270, 50, o);
 						m_flag[3] = false;
 					}
-				}
-				else
-				{
-					m_flag[3] == true;
 				}
 
 			}
@@ -230,7 +185,7 @@ void CObjTenkey::Action()
 	{
 		Scene::SetScene(new CSceneGameOver2);
 	}
-		/*
+		
 		if (m_flag[1] == true)
 			{
 				Font::StrDraw(L"1", m_ps, 270, 50, o);
@@ -279,7 +234,7 @@ void CObjTenkey::Action()
 			{
 				Font::StrDraw(L"9", m_ps, 270, 50, o);
 			}
-			*/
+			
 
 
 }

@@ -119,6 +119,6 @@ void CObjteki4::Action()
 		dst.m_right = 160.0f + m_x;
 		dst.m_bottom = 210.0f + m_y;
 
-		//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(10, &src, &dst, c, 0.0f);
 	}
