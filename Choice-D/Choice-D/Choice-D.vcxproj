@@ -145,6 +145,7 @@
     <ClCompile Include="Objteki5.cpp" />
     <ClCompile Include="SceneSTG5.cpp" />
     <ClCompile Include="SceneMain5.cpp" />
+    <ClCompile Include="STGBackground.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain2.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
@@ -180,6 +181,9 @@
     <ClCompile Include="小物関係\ObjBackground5.cpp" />
     <ClCompile Include="小物関係\ObjDoor.cpp" />
     <ClCompile Include="小物関係\ObjDoor2.cpp" />
+    <ClCompile Include="小物関係\ObjED1gazou.cpp" />
+    <ClCompile Include="小物関係\ObjED2gazou.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -221,6 +225,7 @@
     <ClInclude Include="ObjSTG5.h" />
     <ClInclude Include="Objteki5.h" />
     <ClInclude Include="SceneSTG5.h" />
+    <ClInclude Include="STGBackground.h" />
     <ClInclude Include="ゲームメイン\ObjMain.h" />
     <ClInclude Include="ゲームメイン\ObjMain2.h" />
     <ClInclude Include="ゲームメイン\SceneMain.h" />
@@ -259,6 +264,8 @@
     <ClInclude Include="小物関係\ObjBackground5.h" />
     <ClInclude Include="小物関係\ObjDoor.h" />
     <ClInclude Include="小物関係\ObjDoor2.h" />
+    <ClInclude Include="小物関係\ObjED1gazou.h" />
+    <ClInclude Include="小物関係\ObjED2gazou.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />

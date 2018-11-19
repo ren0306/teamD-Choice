@@ -32,16 +32,6 @@ void CObjSousagamen::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>390 && m_mou_y < 430)
-	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_l == true)
-		{
-			m_and -= 0.1;
-			Scene::SetScene(new CSceneTitle());
-		}
-	}
 
 }
 
@@ -53,7 +43,6 @@ void CObjSousagamen::Draw()
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
-	Font::StrDraw(L"ゲームを始める", 400, 400, 32, c);
 
 
 	RECT_F src;
@@ -63,12 +52,12 @@ void CObjSousagamen::Draw()
 	//Choice表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 455.0f;
-	src.m_bottom = 180.0f;
+	src.m_right = 862.0f;
+	src.m_bottom = 361.0f;
 
 	dst.m_top = 150.0f;
-	dst.m_left = 150.0f;
-	dst.m_right = 600.0f;
+	dst.m_left = 100.0f;
+	dst.m_right = 550.0f;
 	dst.m_bottom = 400.0f;
 	Draw::Draw(0, &src, &dst, d, 0.0f);
 

@@ -6,11 +6,11 @@
 using namespace GameL;
 
 //シーン：ゲームタイトル
-class CObjMain :public CObj
+class CObjED1gazou :public CObj
 {
 public:
-	CObjMain() {};
-	~CObjMain() {};
+	CObjED1gazou() {};
+	~CObjED1gazou() {};
 	void Init();
 	void Action();
 	void Draw();
@@ -19,6 +19,5 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;
-	double m_and;
-	bool m_f;
+
 };

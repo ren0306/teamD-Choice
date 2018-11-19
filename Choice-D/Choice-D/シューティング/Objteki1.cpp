@@ -5,6 +5,7 @@
 #include "../GameHead.h"
 #include "Objteki1.h"
 #include "UtilityModule.h"
+#include "../GameL/DrawFont.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -19,7 +20,7 @@ CObjteki1::CObjteki1(float x, float y)
 //イニシャライズ
 void CObjteki1::Init()
 {
-	m_hp = 30;
+	m_hp = 1;
 
 
 
@@ -90,13 +91,6 @@ void CObjteki1::Action()
 		m_hp -= 1;
 	}
 
-	//HPが0になったら破棄
-	if (m_hp <= 0)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-
 
 
 }
@@ -122,8 +116,21 @@ void CObjteki1::Draw()
 	dst.m_right = 400.0f + m_x;
 	dst.m_bottom = 260.0f + m_y;
 
-	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
+	//HPが0になったら破棄
+	if (m_hp <= 0)
+	{
+		Hits::DeleteHitBox(this);
+		m_f = true;
+	}
+	if (m_f == true)
+	{
+		float l[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+		Font::StrDraw(L"敵を倒した！！！", 400, 400, 50, l);
+	}
+
 }
 
 
