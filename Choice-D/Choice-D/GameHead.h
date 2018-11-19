@@ -16,6 +16,10 @@ enum OBJ_NAME
 	OBJ_BULLET_TEKI5,
 	OBJ_GAMEOVER,
 	OBJ_MAIN,
+	OBJ_MAIN2,
+	OBJ_MAIN3,
+	OBJ_MAIN4,
+	OBJ_MAIN5,
 	OBJ_BACKGROUND,
 	OBJ_BACKGROUND2,
 	OBJ_STGBACKGROUND,
@@ -94,6 +98,10 @@ struct UserData
 #include "CObjBulletTeki5.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
+#include "ゲームメイン\ObjMain2.h"
+#include "ObjMain3.h"
+#include "ObjMain4.h"
+#include "ObjMain5.h"
 #include "GameOver\GAMEOVER1.h"
 #include "GameOver\GAME OVER2.h"
 #include "小物関係\ObjBackGround.h"

@@ -57,7 +57,7 @@ void CObjDoor2::Draw()
 	dst.m_left = 450.0f;
 	dst.m_right = 650.0f;
 	dst.m_bottom = 600.0f;
-	Draw::Draw(2, &src, &dst, d, 0.0f);
+	Draw::Draw(1, &src, &dst, d, 0.0f);
 
 
 

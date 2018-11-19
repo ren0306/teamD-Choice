@@ -1,16 +1,16 @@
 #pragma once
 //使用するヘッダーファイル
-#include "../GameL\SceneObjManager.h"
+#include "GameL\SceneObjManager.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //シーン：ゲームタイトル
-class CObjMain2 :public CObj
+class CObjMain3 :public CObj
 {
 public:
-	CObjMain2() {};
-	~CObjMain2() {};
+	CObjMain3() {};
+	~CObjMain3() {};
 	void Init();
 	void Action();
 	void Draw();

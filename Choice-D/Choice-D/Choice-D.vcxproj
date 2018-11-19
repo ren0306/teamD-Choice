@@ -139,6 +139,9 @@
     <ClCompile Include="GameOver\GAME OVER2.cpp" />
     <ClCompile Include="GameOver\GAMEOVER1.cpp" />
     <ClCompile Include="GameOver\GameOver2.cpp" />
+    <ClCompile Include="ObjMain3.cpp" />
+    <ClCompile Include="ObjMain4.cpp" />
+    <ClCompile Include="ObjMain5.cpp" />
     <ClCompile Include="ObjSTG5.cpp" />
     <ClCompile Include="Objteki5.cpp" />
     <ClCompile Include="SceneSTG5.cpp" />
@@ -211,6 +214,9 @@
     <ClInclude Include="GameOver\GAMEOVER1.h" />
     <ClInclude Include="GameOver\GameOver2.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="ObjMain3.h" />
+    <ClInclude Include="ObjMain4.h" />
+    <ClInclude Include="ObjMain5.h" />
     <ClInclude Include="ObjSTG5.h" />
     <ClInclude Include="Objteki5.h" />
     <ClInclude Include="SceneSTG5.h" />

@@ -208,6 +208,15 @@
     <ClCompile Include="STGBackground.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
+    <ClCompile Include="ObjMain3.cpp">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMain4.cpp">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMain5.cpp">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -415,6 +424,15 @@
     </ClInclude>
     <ClInclude Include="STGBackground.h">
       <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMain3.h">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMain4.h">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMain5.h">
+      <Filter>ソースファイル\メイン</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
