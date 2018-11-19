@@ -114,7 +114,9 @@
     <ClCompile Include="CObjBulletTeki2.cpp" />
     <ClCompile Include="CObjBulletTeki3.cpp" />
     <ClCompile Include="CObjBulletTeki4.cpp" />
-    <ClCompile Include="CObjBulletTeki5.cpp" />
+    <ClCompile Include="CObjBulletTeki5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ED\ObjED1.cpp" />
     <ClCompile Include="ED\ObjED2.cpp" />
     <ClCompile Include="ED\ObjED3.cpp" />
@@ -142,13 +144,16 @@
     <ClCompile Include="ObjSTG5.cpp" />
     <ClCompile Include="Objteki5.cpp" />
     <ClCompile Include="SceneSTG5.cpp" />
+    <ClCompile Include="SceneMain5.cpp" />
     <ClCompile Include="STGBackground.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain2.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain2.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain3.cpp" />
-    <ClCompile Include="ゲームメイン\SceneMain5.cpp" />
+    <ClCompile Include="ゲームメイン\SceneMain5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="シューティング\CObjBullet.cpp" />
     <ClCompile Include="シューティング\ObjHero.cpp" />
     <ClCompile Include="シューティング\ObjSTG.cpp" />
@@ -173,9 +178,16 @@
     <ClCompile Include="小物関係\ObjBackGround.cpp" />
     <ClCompile Include="小物関係\ObjBackGround2.cpp" />
     <ClCompile Include="小物関係\ObjBackground3.cpp" />
+    <ClCompile Include="小物関係\ObjBackground5.cpp" />
     <ClCompile Include="小物関係\ObjDoor.cpp" />
     <ClCompile Include="小物関係\ObjDoor2.cpp" />
+    <ClCompile Include="小物関係\ObjED1gazou.cpp" />
+    <ClCompile Include="小物関係\ObjED2gazou.cpp" />
+    <ClCompile Include="小物関係\ObjED3gazou.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />
     <ClCompile Include="謎解き\ObjTenkey.cpp" />
     <ClCompile Include="謎解き\SceneNazo.cpp" />
@@ -220,8 +232,12 @@
     <ClInclude Include="ゲームメイン\SceneMain.h" />
     <ClInclude Include="ゲームメイン\SceneMain2.h" />
     <ClInclude Include="ゲームメイン\SceneMain3.h" />
-    <ClInclude Include="ゲームメイン\SceneMain4.h" />
-    <ClInclude Include="ゲームメイン\SceneMain5.h" />
+    <ClInclude Include="ゲームメイン\SceneMain4.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="ゲームメイン\SceneMain5.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="シューティング\CObjBullet.h" />
     <ClInclude Include="シューティング\ObjHero.h" />
     <ClInclude Include="シューティング\ObjSTG.h" />
@@ -246,8 +262,12 @@
     <ClInclude Include="小物関係\ObjBackGround2.h" />
     <ClInclude Include="小物関係\ObjBackGround3.h" />
     <ClInclude Include="小物関係\ObjBackground4.h" />
+    <ClInclude Include="小物関係\ObjBackground5.h" />
     <ClInclude Include="小物関係\ObjDoor.h" />
     <ClInclude Include="小物関係\ObjDoor2.h" />
+    <ClInclude Include="小物関係\ObjED1gazou.h" />
+    <ClInclude Include="小物関係\ObjED2gazou.h" />
+    <ClInclude Include="小物関係\ObjED3gazou.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />

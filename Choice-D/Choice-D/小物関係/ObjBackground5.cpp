@@ -5,8 +5,8 @@
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\SceneManager.h"
 
-#include "ObjBackGround4.h"
-#include "../ゲームメイン/SceneMain4.h"
+#include "ObjBackGround5.h"
+#include "../ゲームメイン/SceneMain5.h"
 #include "../GameHead.h"
 #include"../謎解き/ObjTenkey.h"
 
@@ -16,7 +16,7 @@ using namespace GameL;
 
 
 //イニシャライズ
-void CObjBackGround4::Init()
+void CObjBackGround5::Init()
 {
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
@@ -26,7 +26,7 @@ void CObjBackGround4::Init()
 }
 
 //アクション
-void CObjBackGround4::Action()
+void CObjBackGround5::Action()
 {
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -38,7 +38,7 @@ void CObjBackGround4::Action()
 }
 
 //ドロー
-void CObjBackGround4::Draw()
+void CObjBackGround5::Draw()
 {
 
 
@@ -46,11 +46,11 @@ void CObjBackGround4::Draw()
 	RECT_F dst;
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//メインステージ4背景表示
-	src.m_top		= 0.0f;
-	src.m_left		= 0.0f;
-	src.m_right		= 300.0f;
-	src.m_bottom	= 190.0f;
+	//メインステージ5背景表示
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 474.0f;
+	src.m_bottom = 237.0f;
 
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
