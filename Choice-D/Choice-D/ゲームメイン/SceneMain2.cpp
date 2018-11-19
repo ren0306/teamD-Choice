@@ -43,6 +43,10 @@ void CSceneMain2::InitScene()
 	CObjMain2* m = new CObjMain2();
 	Objs::InsertObj(m, OBJ_MAIN2, 140);
 
+	//読み込み番号が被っている+同じ画像を読み込もうとしているため、一旦こちらをコメントアウト中。修正必要有。
+	//Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
+	//Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
+
 	CObjBackGround2* b = new CObjBackGround2();
 	Objs::InsertObj(b, OBJ_BACKGROUND2, 120);
 

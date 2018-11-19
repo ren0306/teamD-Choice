@@ -40,14 +40,17 @@ void CSceneMain3::InitScene()
 	Draw::LoadImage(L"teki2.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
 
+	//読み込み番号が被っているため一旦コメントアウト中。修正必要有。
+	//Draw::LoadImage(L"Main3.png", 0, TEX_SIZE_512);
+	//Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
+
 	CObjMain2* m = new CObjMain2();
 	Objs::InsertObj(m, OBJ_MAIN2, 140);
+	CObjBackGround3* b = new CObjBackGround3();
+	Objs::InsertObj(b, OBJ_BACKGROUND3, 0);
 
-	CObjBackGround2* b = new CObjBackGround2();
-	Objs::InsertObj(b, OBJ_BACKGROUND2, 120);
-
-	CObjDoor* Door = new CObjDoor();
-	Objs::InsertObj(Door, OBJ_DOOR, 130);
+	CObjDoor2* Door2 = new CObjDoor2();
+	Objs::InsertObj(Door2, OBJ_DOOR2, 130);
 
 
 

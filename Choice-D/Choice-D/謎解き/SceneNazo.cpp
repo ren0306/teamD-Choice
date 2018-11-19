@@ -32,6 +32,7 @@ void CSceneNazo::InitScene()
 	//出力させる文字のグラフィックを作成
 	//例　Font::SetStrTex(L"ゲームを始める");
 
+	Draw::LoadImage(L"anser.png", 3, TEX_SIZE_512);
 	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
@@ -39,7 +40,7 @@ void CSceneNazo::InitScene()
 
 	//オブジェクト作成
 	CObjTenkey* key = new CObjTenkey();
-	Objs::InsertObj(key, OBJ_TENKEY, 10000);
+	Objs::InsertObj(key, OBJ_TENKEY, 2);
 
 	CObjBGN* BGN = new CObjBGN();
 	Objs::InsertObj(BGN, OBJ_BGN, 1);

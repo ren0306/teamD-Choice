@@ -46,11 +46,11 @@ void CObjBackGround3::Draw()
 	RECT_F dst;
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//メインステージ2背景表示
+	//メインステージ3背景表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1920.0f;
-	src.m_bottom = 1080.0f;
+	src.m_right = 640.0f;
+	src.m_bottom = 480.0f;
 
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;

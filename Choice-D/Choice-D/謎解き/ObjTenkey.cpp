@@ -21,16 +21,6 @@ void CObjTenkey::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_f = true;
-	m_flag[1] = true;
-	m_flag[2] = true;
-	m_flag[3] = true;
-	m_flag[4] = true;
-	m_flag[5] = true;
-	m_flag[6] = true;
-	m_flag[7] = true;
-	m_flag[8] = true;
-	m_flag[9] = true;
-	m_flag[10] = true;
 }
 
 //アクション
@@ -50,7 +40,6 @@ void CObjTenkey::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
-	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
 
 	//マウスの位置とクリックする場所で当たり判定
 	/*
@@ -64,31 +53,27 @@ void CObjTenkey::Action()
 		//７入力
 			if (m_mou_y > 373 && m_mou_y < 410)
 			{
-				if (m_flag[7] == true)
+				if (m_mou_l == true)
 				{
-					m_flag[7] = false;
+					m_flag[7] = true;
 				}
 			}
 			//4入力
 			else if (m_mou_y > 416 && m_mou_y < 450)
 			{
-					if (m_mou_l == true)
-					{
-						if (m_flag[4] == true)
-						{
-							m_flag[4] = false;
-						}
-					}
+				if (m_mou_l == true)
+				{
+					m_flag[4] = true;
+				}
 			}
+
+		
 			//1入力
 			else if (m_mou_y > 460 && m_mou_y < 494)
 			{
 				if (m_mou_l == true)
 				{
-					if (m_flag[1] == true)
-					{
-						m_flag[1] = false;
-					}
+					m_flag[1] = true;
 				}
 			}
 
@@ -100,11 +85,8 @@ void CObjTenkey::Action()
 		if (m_mou_y > 373 && m_mou_y < 410)
 		{
 			if (m_mou_l == true)
-			{
-				if (m_flag[8] == true)
-				{
-					m_flag[8] = false;
-				}
+			{		
+				m_flag[8] = true;
 			}
 
 		}
@@ -113,10 +95,7 @@ void CObjTenkey::Action()
 		{
 			if (m_mou_l == true)
 			{
-				if (m_flag[5] == true)
-				{
-					m_flag[5] = false;
-				}
+				m_flag[5] = true;
 			}
 
 		}
@@ -125,10 +104,7 @@ void CObjTenkey::Action()
 		{
 			if (m_mou_l == true)
 			{
-				if (m_flag[7] == true)
-				{
-					m_flag[7] = false;
-				}
+				m_flag[2] = true;
 			}
 
 		}
@@ -142,10 +118,7 @@ void CObjTenkey::Action()
 			{
 				if (m_mou_l == true)
 				{
-					if (m_flag[9] == true)
-					{
-						m_flag[9] = false;
-					}
+					m_flag[9] = true;
 				}
 
 			}
@@ -154,10 +127,7 @@ void CObjTenkey::Action()
 			{
 				if (m_mou_l == true)
 				{
-					if (m_flag[6] == true)
-					{
-						m_flag[6] = false;
-					}
+					m_flag[6] = true;
 				}
 
 
@@ -167,10 +137,7 @@ void CObjTenkey::Action()
 			{
 				if (m_mou_l == true)
 				{
-					if (m_flag[3] == true)
-					{
-						m_flag[3] = false;
-					}
+					m_flag[3] = true;
 				}
 
 			}
@@ -186,54 +153,6 @@ void CObjTenkey::Action()
 		Scene::SetScene(new CSceneGameOver2);
 	}
 		
-		if (m_flag[1] == true)
-			{
-				Font::StrDraw(L"1", m_ps, 270, 50, o);
-			}
-		if (m_flag[2] == true)
-			{
-
-				Font::StrDraw(L"2", m_ps, 270, 50, o);
-
-			}
-		if (m_flag[3] == true)
-			{
-
-				Font::StrDraw(L"3", m_ps, 270, 50, o);
-
-			}
-		if (m_flag[4] == true)
-			{
-
-				Font::StrDraw(L"4", m_ps, 270, 50, o);
-
-			}
-		if (m_flag[5] == true)
-			{
-
-				Font::StrDraw(L"5", m_ps, 270, 50, o);
-
-			}
-		if (m_flag[6] == true)
-			{
-
-				Font::StrDraw(L"6", m_ps, 270, 50, o);
-
-			}
-		if (m_flag[7] == true)
-			{
-
-			}
-		if (m_flag[8] == true)
-			{
-
-				Font::StrDraw(L"8", m_ps, 270, 50, o);
-
-			}
-		if (m_flag[9] == true)
-			{
-				Font::StrDraw(L"9", m_ps, 270, 50, o);
-			}
 			
 
 
@@ -267,7 +186,65 @@ void CObjTenkey::Draw()
 	dst.m_right = 400.0f+100;
 	dst.m_bottom =250.0f+300;
 	Draw::Draw(2, &src, &dst, d, 0.0f);
+	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
 
+	if (m_flag[1] == true)
+	{
+		src.m_top = 0.0f;
+		src.m_left = 0.0f;
+		src.m_right = 320.0f;
+		src.m_bottom = 320.0f;
+
+		dst.m_top = 0.0f ;
+		dst.m_left = 0.0f ;
+		dst.m_right = 800.0f ;
+		dst.m_bottom = 600.0f ;
+		Draw::Draw(3, &src, &dst, d, 0.0f);
+	}
+	if (m_flag[2] == true)
+	{
+
+		Font::StrDraw(L"2", m_ps, 270, 50, o);
+
+	}
+	if (m_flag[3] == true)
+	{
+
+		Font::StrDraw(L"3", m_ps, 270, 50, o);
+
+	}
+	if (m_flag[4] == true)
+	{
+
+		Font::StrDraw(L"4", m_ps, 270, 50, o);
+
+	}
+	if (m_flag[5] == true)
+	{
+
+		Font::StrDraw(L"5", m_ps, 270, 50, o);
+
+	}
+	if (m_flag[6] == true)
+	{
+
+		Font::StrDraw(L"6", m_ps, 270, 50, o);
+
+	}
+	if (m_flag[7] == true)
+	{
+
+	}
+	if (m_flag[8] == true)
+	{
+
+		Font::StrDraw(L"8", m_ps, 270, 50, o);
+
+	}
+	if (m_flag[9] == true)
+	{
+		Font::StrDraw(L"9", m_ps, 270, 50, o);
+	}
 
 }
 
