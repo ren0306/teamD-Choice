@@ -20,7 +20,8 @@ class CObjteki1 :public CObj
 		float m_vy;	//敵1移動ベクトルy
 		float m_r = 0.0f;
 		int   m_time;//弾丸間隔用
-		int m_hp = 30;
+		float m_hp ;
+		float m_maxhp;
 		bool m_f;
 
 };

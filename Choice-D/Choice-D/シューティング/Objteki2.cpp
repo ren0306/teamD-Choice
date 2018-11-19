@@ -12,8 +12,8 @@ using namespace GameL;
 //コンストラクタ
 CObjteki2::CObjteki2(float x, float y)
 {
-	m_hp = 35;
-
+	m_hp = 35.f;
+	m_maxhp = 35.f;
 
 	m_time = 0;
 	m_x = x;
@@ -99,13 +99,32 @@ void CObjteki2::Action()
 //ドロー
 void CObjteki2::Draw()
 {
-	//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-			   //切り取り位置の設定
+	//敵HP表示
+	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 100.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_bottom = 125.0f;
+
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
+
+
+	//敵２表示
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+
+	 //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1071.0f;

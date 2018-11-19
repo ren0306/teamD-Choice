@@ -42,6 +42,7 @@ void CHitBox::SetPos(float x,float y,float h,float w)
 }
 void CHitBox::SetPos(float x,float y)
 {
+
 	m_hit_box.x=x;
 	m_hit_box.y=y; 
 }
