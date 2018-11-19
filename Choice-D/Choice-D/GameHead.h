@@ -39,6 +39,8 @@ enum OBJ_NAME
 	OBJ_DOOR2,
 	OBJ_SOUSAGAMEN,
 	OBJ_GAMEOVERGAMEN,
+	OBJ_ED1GAZOU,
+	OBJ_ED2GAZOU,
 };
 //------------------------------------------------
 
@@ -113,6 +115,8 @@ struct UserData
 #include "小物関係\GameOvergamen.h"
 #include "小物関係\ObjDoor2.h"
 #include "タイトル\ObjSousagamen.h"
+#include "小物関係\ObjED1gazou.h"
+#include "小物関係\ObjED2gazou.h"
 
 //------------------------------------------------
 
@@ -139,5 +143,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneGameOver2
+#define SET_GAME_START CSceneED1
 //-----------------------------------------------
