@@ -36,8 +36,8 @@ void CSceneMain5::InitScene()
 	Draw::LoadImage(L"Main5.png", 0, TEX_SIZE_1024);
 	Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
 
-	CObjBackGround2* b = new CObjBackGround2();
-	Objs::InsertObj(b, OBJ_BACKGROUND2, 120);
+	CObjBackGround5* b = new CObjBackGround5();
+	Objs::InsertObj(b, OBJ_BACKGROUND5, 120);
 
 	CObjDoor2* Door2 = new CObjDoor2();
 	Objs::InsertObj(Door2, OBJ_DOOR2, 130);
