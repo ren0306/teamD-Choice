@@ -49,6 +49,13 @@ void CObjED2::Draw()
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
+
+	//外部グラフィック画像を読み込み0番に登録
+	Draw::LoadImage(L"ED2.png", 3, TEX_SIZE_512);
+
+	CObjED2gazou* ED2 = new CObjED2gazou();
+	Objs::InsertObj(ED2, OBJ_ED2GAZOU, 20);
+
 	Font::StrDraw(str, 20, 20, 12, c);
 	Font::StrDraw(L"END", 330, 50, 90, c);
 	Font::StrDraw(L"敵には多少気づかれてしまったが、何とか脱出できた。", 40, 435, 30, c);

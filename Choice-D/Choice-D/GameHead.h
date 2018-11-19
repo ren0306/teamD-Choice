@@ -40,6 +40,8 @@ enum OBJ_NAME
 	OBJ_DOOR2,
 	OBJ_SOUSAGAMEN,
 	OBJ_GAMEOVERGAMEN,
+	OBJ_ED1GAZOU,
+	OBJ_ED2GAZOU,
 };
 //------------------------------------------------
 
@@ -115,6 +117,8 @@ struct UserData
 #include "è¨ï®ä÷åW\GameOvergamen.h"
 #include "è¨ï®ä÷åW\ObjDoor2.h"
 #include "É^ÉCÉgÉã\ObjSousagamen.h"
+#include "è¨ï®ä÷åW\ObjED1gazou.h"
+#include "è¨ï®ä÷åW\ObjED2gazou.h"
 
 //------------------------------------------------
 

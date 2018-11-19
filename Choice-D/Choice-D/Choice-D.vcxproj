@@ -175,6 +175,8 @@
     <ClCompile Include="小物関係\ObjBackground3.cpp" />
     <ClCompile Include="小物関係\ObjDoor.cpp" />
     <ClCompile Include="小物関係\ObjDoor2.cpp" />
+    <ClCompile Include="小物関係\ObjED1gazou.cpp" />
+    <ClCompile Include="小物関係\ObjED2gazou.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />
     <ClCompile Include="謎解き\ObjTenkey.cpp" />
@@ -248,6 +250,8 @@
     <ClInclude Include="小物関係\ObjBackground4.h" />
     <ClInclude Include="小物関係\ObjDoor.h" />
     <ClInclude Include="小物関係\ObjDoor2.h" />
+    <ClInclude Include="小物関係\ObjED1gazou.h" />
+    <ClInclude Include="小物関係\ObjED2gazou.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />
