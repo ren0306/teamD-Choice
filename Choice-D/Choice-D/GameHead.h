@@ -18,6 +18,9 @@ enum OBJ_NAME
 	OBJ_MAIN,
 	OBJ_BACKGROUND,
 	OBJ_BACKGROUND2,
+	OBJ_BACKGROUND3,
+	OBJ_BACKGROUND4,
+	OBJ_BACKGROUND5,
 	OBJ_GAMEOVER2,
 	OBJ_ED1,
 	OBJ_ED3,
@@ -39,6 +42,7 @@ enum OBJ_NAME
 	OBJ_DOOR2,
 	OBJ_SOUSAGAMEN,
 	OBJ_GAMEOVERGAMEN,
+
 };
 //------------------------------------------------
 
@@ -113,6 +117,8 @@ struct UserData
 #include "小物関係\GameOvergamen.h"
 #include "小物関係\ObjDoor2.h"
 #include "タイトル\ObjSousagamen.h"
+#include "小物関係\ObjBackGround3.h"
+#include "小物関係\ObjBackground4.h"
 
 //------------------------------------------------
 
@@ -139,5 +145,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneGameOver2
+#define SET_GAME_START CSceneMain5
 //-----------------------------------------------
