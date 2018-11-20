@@ -19,7 +19,7 @@ void CObjMain::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_and = 1.0;
-	//m_f = true;
+	m_f = false;
 }
 
 //ƒAƒNƒVƒ‡ƒ“

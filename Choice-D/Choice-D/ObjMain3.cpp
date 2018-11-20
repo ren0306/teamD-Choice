@@ -1,18 +1,18 @@
 //使用するヘッダー
-#include "../GameL\DrawTexture.h"
-#include "../GameL\WinInputs.h"
-#include "../GameL\DrawFont.h"
-#include "../GameL\SceneManager.h"
+#include "GameL\DrawTexture.h"
+#include "GameL\WinInputs.h"
+#include "GameL\DrawFont.h"
+#include "GameL\SceneManager.h"
 
-#include "../GameHead.h"
-#include "ObjMain2.h"
+#include "GameHead.h"
+#include "ObjMain3.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 
 //イニシャライズ
-void CObjMain2::Init()
+void CObjMain3::Init()
 {
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
@@ -23,17 +23,17 @@ void CObjMain2::Init()
 }
 
 //アクション
-void CObjMain2::Action()
+void CObjMain3::Action()
 {
 	float c[4] = { 1,1,1,m_and };
 
 	/*if (m_f == true)
 	{
-		m_and += 0.1;
-		if (m_and == 1.0)
-		{
-			m_f = false;
-		}
+	m_and += 0.1;
+	if (m_and == 1.0)
+	{
+	m_f = false;
+	}
 
 	}*/
 	//マウスの位置を取得
@@ -48,14 +48,14 @@ void CObjMain2::Action()
 }
 
 //ドロー
-void CObjMain2::Draw()
+void CObjMain3::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	float d[4] = { 0.0f,0.0f,0.0f,1.0f };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	//仮マウス位置表示
+			   //仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
@@ -114,7 +114,7 @@ void CObjMain2::Draw()
 		}
 
 	}
-	
+
 	//謎画面遷移
 	if (m_mou_x >455 && m_mou_x < 630 && m_mou_y>397 && m_mou_y < 584)
 	{
@@ -123,7 +123,7 @@ void CObjMain2::Draw()
 
 		if (m_mou_r == true || m_mou_l == true)
 		{
-			//仮でSceneNazoに繋いでいる。後でSceneNazo2に変更すべし。
+			//仮でSceneNazoに繋いでいる。後でSceneNazo3に変更すべし。
 			Scene::SetScene(new CSceneNazo());
 		}
 
