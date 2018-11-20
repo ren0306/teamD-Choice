@@ -221,6 +221,15 @@
     <ClCompile Include="小物関係\ObjED3gazou.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
+    <ClCompile Include="ObjMain3.cpp">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMain4.cpp">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMain5.cpp">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -438,6 +447,15 @@
     <ClInclude Include="STGBackground.h" />
     <ClInclude Include="小物関係\ObjED3gazou.h">
       <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMain3.h">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMain4.h">
+      <Filter>ソースファイル\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMain5.h">
+      <Filter>ソースファイル\メイン</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

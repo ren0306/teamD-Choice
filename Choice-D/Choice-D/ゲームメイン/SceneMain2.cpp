@@ -7,6 +7,7 @@
 #include "../GameL\DrawTexture.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\UserData.h"
+#include "../GameL/Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -33,11 +34,21 @@ CSceneMain2::~CSceneMain2()
 void CSceneMain2::InitScene()
 {
 	//外部グラフィックファイルを読み込み０番に登録
-	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
-	Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_1024);
+	Draw::LoadImage(L"door2.png", 1, TEX_SIZE_512);
+	//敵２を読み込み2番に登録
+	Draw::LoadImage(L"teki2.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
+
+	CObjMain2* m = new CObjMain2();
+	Objs::InsertObj(m, OBJ_MAIN2, 140);
+
+	//読み込み番号が被っている+同じ画像を読み込もうとしているため、一旦こちらをコメントアウト中。修正必要有。
+	//Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
+	//Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
 
 	CObjBackGround2* b = new CObjBackGround2();
-	Objs::InsertObj(b, OBJ_BACKGROUND2, 0);
+	Objs::InsertObj(b, OBJ_BACKGROUND2, 120);
 
 	CObjDoor2* Door2 = new CObjDoor2();
 	Objs::InsertObj(Door2, OBJ_DOOR2, 130);

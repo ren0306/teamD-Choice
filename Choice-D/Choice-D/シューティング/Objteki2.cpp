@@ -1,7 +1,7 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
-
+#include "../GameL/DrawFont.h"
 #include "../GameHead.h"
 #include "Objteki2.h"
 #include "UtilityModule.h"
@@ -104,6 +104,7 @@ void CObjteki2::Draw()
 
 	//敵HP表示
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
