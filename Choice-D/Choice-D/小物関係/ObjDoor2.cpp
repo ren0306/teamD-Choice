@@ -83,7 +83,7 @@ void CObjDoor2::Draw()
 	dst.m_left = 450.0f;
 	dst.m_right = 650.0f;
 	dst.m_bottom = 600.0f;
-	Draw::Draw(100, &src, &dst, d, 0.0f);
+	Draw::Draw(20, &src, &dst, d, 0.0f);
 
 	//ÉhÉA2ï\é¶(SceneMain5)
 	//êÿÇËéÊÇË
@@ -96,5 +96,5 @@ void CObjDoor2::Draw()
 	dst.m_left = 450.0f;
 	dst.m_right = 650.0f;
 	dst.m_bottom = 600.0f;
-	Draw::Draw(1000, &src, &dst, d, 0.0f);
+	Draw::Draw(30, &src, &dst, d, 0.0f);
 }
