@@ -4,6 +4,7 @@
 #include "../GameL\HitBoxManager.h"
 #include "../GameL\Audio.h"
 #include "../GameHead.h"
+#include "../GameL/DrawFont.h"
 #include "ObjHero.h"
 #include "UtilityModule.h"
 
@@ -37,7 +38,8 @@ float CObjHero::GetY()
 //イニシャライズ
 void CObjHero::Init()
 {
-	m_hp = 20;
+	m_hp = 20.f;
+	m_maxhp = 20.f;
 	m_x = 400;
 	m_y = 550;
 	m_f = true;
@@ -60,8 +62,8 @@ void CObjHero::Action()
 			//Audio::Start(2);
 
 			// 弾丸オブジェクト作成
-			CObjBullet*  obj_b = new CObjBullet(m_x , m_y + -30.0f); //弾丸オブジェクト作成
-			Objs::InsertObj(obj_b, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+			CObjBullet*  i = new CObjBullet(m_x , m_y + -30.0f); //弾丸オブジェクト作成
+			Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
 
 			m_f = false;
 		}
@@ -143,18 +145,38 @@ void CObjHero::Action()
 	//ELEMENT_ENEMYを持つオブジェクトと接触したらHPを減らす
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI1) != nullptr)
+		{
+			m_hp -= 1;
+		}
+
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI2) != nullptr)
+		{
+			m_hp -= 1;
+		}
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI3) != nullptr)
+		{
+			m_hp -= 2;
+		}
+
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI4) != nullptr)
+		{
+			m_hp -= 3;
+		}
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI5) != nullptr)
+		{
+			m_hp -= 3;
+		}
+
 		m_hp -= 1;
 	}
-
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
 		this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxに削除する。
 
-		//主人公機消滅でシーンをゲームオーバーに移行する
-		/*↓ゲームオーバーのシーンはまだ作ってないためコメントアウト中*/
-		//Scene::SetScene(new CSceneGameOver());
+		Scene::SetScene(new CSceneGameOver2());
 	}
 }
 
@@ -166,6 +188,23 @@ void CObjHero::Draw()
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
+
+	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 150.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_bottom = 175.0f;
+
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;

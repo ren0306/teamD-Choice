@@ -1,7 +1,7 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
-
+#include "../GameL/DrawFont.h"
 #include "../GameHead.h"
 #include "Objteki2.h"
 #include "UtilityModule.h"
@@ -12,8 +12,8 @@ using namespace GameL;
 //コンストラクタ
 CObjteki2::CObjteki2(float x, float y)
 {
-	m_hp = 35;
-
+	m_hp = 35.f;
+	m_maxhp = 35.f;
 
 	m_time = 0;
 	m_x = x;
@@ -33,13 +33,16 @@ void CObjteki2::Init()
 //アクション
 void CObjteki2::Action()
 {
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x, m_y);
+
 	m_time++;
 
 	//通常弾発射
-	if (m_time % 50 == 0)
+	if (m_time % 45 == 0)
 	{
-		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
-		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 190, m_y + 114);
+		//弾丸敵機オブジェクト
+		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 78, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI2, 100);
 	}
 
@@ -85,19 +88,40 @@ void CObjteki2::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Scene::SetScene(new CSceneMain3());
 	}
 }
 
 //ドロー
 void CObjteki2::Draw()
 {
-	//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-			   //切り取り位置の設定
+	//敵HP表示
+	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 100.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_bottom = 125.0f;
+
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
+
+
+	//敵２表示
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+
+	 //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1071.0f;
@@ -109,6 +133,6 @@ void CObjteki2::Draw()
 	dst.m_right = 200.0f + m_x;
 	dst.m_bottom = 160.0f + m_y;
 
-	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
 }

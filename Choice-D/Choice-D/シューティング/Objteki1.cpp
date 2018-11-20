@@ -5,9 +5,12 @@
 #include "../GameHead.h"
 #include "Objteki1.h"
 #include "UtilityModule.h"
+#include "../GameL/DrawFont.h"
+
 
 //使用するネームスペース
 using namespace GameL;
+
 
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)
@@ -19,28 +22,32 @@ CObjteki1::CObjteki1(float x, float y)
 //イニシャライズ
 void CObjteki1::Init()
 {
-	m_hp = 30;
-
+	m_hp = 30.f;
+	m_maxhp = 30.f;
 
 
 	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_ENEMY1, 1);
+	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
 
 //アクション
 void CObjteki1::Action()
 {
+	//HitBox位置を更新
+	CHitBox* hit = Hits::GetHitBox(this);
+	hit->SetPos(m_x +90, m_y +20);
+
+
 	m_time++;
 
 	//通常弾発射
 	if (m_time % 50 == 0)
 	{
-		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
-		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 190, m_y + 114);
+		//弾丸敵機オブジェクト
+		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
 	}
 
@@ -72,50 +79,80 @@ void CObjteki1::Action()
 	m_x += m_vx;
 	m_y += m_vy;
 
-	//敵機が完全に領域外にでたら敵機を破棄する
-	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
-	if (check == false)
+	if (m_hp <= 15)
 	{
-		this->SetStatus(false);		//自身に削除命令
-		Hits::DeleteHitBox(this);
+		m_vx *= 1.5f*2;
+		m_vy *= 1.5f*2;
+
 	}
 
-	
 
-	//HPが0になったら破棄
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
+	}
 	if (m_hp <= 0)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		this->SetStatus(false);		//自身に削除命令を出す。
+		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+		Scene::SetScene(new CSceneKuria());
+
 	}
 
 
 
 }
 
-	//ドロー
-	void CObjteki1::Draw()
-	{
-		//描画カラー情報　R=RED　G=Green　B=Blue　A=alpha(透過情報）A=alpha(透過情報）
-		float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+//ドロー
+void CObjteki1::Draw()
+{
 
-		RECT_F src;//描画元切り取り位置
-		RECT_F dst;//描画先表示位置
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
 
-		//切り取り位置の設定
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 984.0f;
-		src.m_bottom = 760.0f;
 
-		//表示位置の設定
-		dst.m_top = 0.0f + m_y;
-		dst.m_left = 0.0f + m_x;
-		dst.m_right = 400.0f + m_x;
-		dst.m_bottom = 260.0f + m_y;
 
-		//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-		Draw::Draw(10, &src, &dst, c, 0.0f);
-	}
+	//敵HP表示
+	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 100.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_bottom = 125.0f;
+
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
+
+	//敵表示
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 984.0f;
+	src.m_bottom = 760.0f;
+
+	//表示位置の設定
+	dst.m_top = 0.0f + m_y;
+	dst.m_left = 0.0f + m_x;
+	dst.m_right = 400.0f + m_x;
+	dst.m_bottom = 260.0f + m_y;
+
+	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+	Draw::Draw(10, &src, &dst, c, 0.0f);
+
+
+
+
+
+}
 
 

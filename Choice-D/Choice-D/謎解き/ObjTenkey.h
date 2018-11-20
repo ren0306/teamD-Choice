@@ -19,9 +19,10 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;	
-	int cnt = 0;
-	int m_ps = 300;
+	float cnt = 0.f;
+	float m_ps ;
 	bool m_flag[10];
-	bool m_reset_flag=false;
+	bool m_reset_flag;
+	int m_psf;
 
 };

@@ -1,7 +1,7 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
-
+#include "../GameL/DrawFont.h"
 #include "../GameHead.h"
 #include "Objteki4.h"
 #include "UtilityModule.h"
@@ -12,7 +12,8 @@ using namespace GameL;
 //コンストラクタ
 CObjteki4::CObjteki4(float x, float y)
 {
-	m_hp = 25;
+	m_hp = 25.f;
+	m_maxhp = 25.f;
 
 	m_x = x;
 	m_y = y;
@@ -36,10 +37,10 @@ void CObjteki4::Action()
 	m_time++;
 
 	//通常弾発射
-	if (m_time % 50 == 0)
+	if (m_time % 35 == 0)
 	{
-		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
-		CObjBulletTeki4* obj_b = new CObjBulletTeki4(m_x + 190, m_y + 114);
+		//弾丸敵機オブジェクト
+		CObjBulletTeki4* obj_b = new CObjBulletTeki4(m_x + 65, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI4, 100);
 	}
 
@@ -87,6 +88,7 @@ void CObjteki4::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Scene::SetScene(new CSceneMain5());
 	}
 
 
@@ -107,6 +109,25 @@ void CObjteki4::Action()
 		RECT_F src;//描画元切り取り位置
 		RECT_F dst;//描画先表示位置
 
+		//敵HP表示
+		float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+		Font::StrDraw(L"敵のHP", 0, 75, 28, h);
+
+		src.m_top = 0.0f;
+		src.m_left = 0.0f;
+		src.m_right = 1280.0f;
+		src.m_bottom = 720.0f;
+
+		//表示位置の設定
+		dst.m_top = 100.0f;
+		dst.m_left = 0.0f;
+		dst.m_right = (m_hp / m_maxhp)*128.0f;
+		dst.m_bottom = 125.0f;
+
+		//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+		Draw::Draw(5, &src, &dst, h, 0.0f);
+
+
 		//切り取り位置の設定
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
@@ -119,6 +140,6 @@ void CObjteki4::Action()
 		dst.m_right = 160.0f + m_x;
 		dst.m_bottom = 210.0f + m_y;
 
-		//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(10, &src, &dst, c, 0.0f);
 	}

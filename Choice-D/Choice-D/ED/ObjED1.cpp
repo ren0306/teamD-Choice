@@ -46,11 +46,13 @@ void CObjED1::Action()
 void CObjED1::Draw()
 {
 	float c[4] = { 1,1,1,1 };
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);
 	
+	//外部グラフィック画像を読み込み0番に登録
+	Draw::LoadImage(L"ED1.png", 3, TEX_SIZE_512);
+
+	CObjED1gazou* ED1 = new CObjED1gazou();
+	Objs::InsertObj(ED1, OBJ_ED1GAZOU, 20);
+
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
 	Font::StrDraw(L"BAD END", 250, 50, 90, o);
 

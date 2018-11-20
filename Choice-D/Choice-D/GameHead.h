@@ -9,11 +9,6 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_HERO,
 	OBJ_BULLET,
-	OBJ_ENEMY1,
-	OBJ_ENEMY2,
-	OBJ_ENEMY3,
-	OBJ_ENEMY4,
-	OBJ_BULLET_ENEMY,
 	OBJ_BULLET_TEKI1,
 	OBJ_BULLET_TEKI2,
 	OBJ_BULLET_TEKI3,
@@ -21,8 +16,16 @@ enum OBJ_NAME
 	OBJ_BULLET_TEKI5,
 	OBJ_GAMEOVER,
 	OBJ_MAIN,
+	OBJ_MAIN2,
+	OBJ_MAIN3,
+	OBJ_MAIN4,
+	OBJ_MAIN5,
 	OBJ_BACKGROUND,
 	OBJ_BACKGROUND2,
+	OBJ_BACKGROUND3,
+	OBJ_BACKGROUND4,
+	OBJ_BACKGROUND5,
+	OBJ_STGBACKGROUND,
 	OBJ_GAMEOVER2,
 	OBJ_ED1,
 	OBJ_ED3,
@@ -41,6 +44,13 @@ enum OBJ_NAME
 	OBJ_STG5,
 	OBJ_BGN,
 	OBJ_DOOR,
+	OBJ_DOOR2,
+	OBJ_SOUSAGAMEN,
+	OBJ_GAMEOVERGAMEN,
+	OBJ_ED1GAZOU,
+	OBJ_ED2GAZOU,
+	OBJ_ED3GAZOU,
+	OBJ_KURIA,
 };
 //------------------------------------------------
 
@@ -88,11 +98,6 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include "シューティング\ObjHero.h"
 #include "シューティング\CObjBullet.h"
-#include "シューティング\ObjEnemy1.h"
-#include "シューティング\ObjEnemy2.h"
-#include "シューティング\ObjEnemy3.h"
-#include "シューティング\ObjEnemy4.h"
-#include "シューティング\CObjBullteEnemy.h"
 #include "CObjBulletTeki1.h"
 #include "CObjBulletTeki2.h"
 #include "CObjBulletTeki3.h"
@@ -100,10 +105,18 @@ struct UserData
 #include "CObjBulletTeki5.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
+#include "ゲームメイン\ObjMain2.h"
+#include "ObjMain3.h"
+#include "ObjMain4.h"
+#include "ObjMain5.h"
 #include "GameOver\GAMEOVER1.h"
 #include "GameOver\GAME OVER2.h"
 #include "小物関係\ObjBackGround.h"
 #include "小物関係\ObjBackGround2.h"
+#include "小物関係\ObjBackGround3.h"
+#include "小物関係\ObjBackground4.h"
+#include "小物関係\ObjBackground5.h"
+#include "STGBackground.h"
 #include "ED\ObjED2.h"
 #include "ED\ObjED1.h"
 #include "ED\ObjED3.h"
@@ -117,12 +130,22 @@ struct UserData
 #include "ObjSTG5.h"
 #include "謎解き\ObjBGNazo.h"
 #include "小物関係\ObjDoor.h"
+#include "小物関係\GameOvergamen.h"
+#include "小物関係\ObjDoor2.h"
+#include "タイトル\ObjSousagamen.h"
+#include "小物関係\ObjED1gazou.h"
+#include "小物関係\ObjED2gazou.h"
+#include "小物関係\ObjED3gazou.h"
+#include "シューティング\ObjKuria.h"
 
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "ゲームメイン\SceneMain.h"
 #include "ゲームメイン\SceneMain2.h"
+#include "ゲームメイン\SceneMain3.h"
+#include "ゲームメイン\SceneMain4.h"
+#include "ゲームメイン\SceneMain5.h"
 #include "タイトル\SceneTitle.h"
 #include "GameOver\GameOver.h"
 #include "GameOver\GameOver2.h"
@@ -135,6 +158,9 @@ struct UserData
 #include "シューティング\SceneSTG3.h"
 #include "シューティング\SceneSTG4.h"
 #include "SceneSTG5.h"
+#include "タイトル\SceneSousagamen.h"
+#include "シューティング\SceneKuria.h"
+
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

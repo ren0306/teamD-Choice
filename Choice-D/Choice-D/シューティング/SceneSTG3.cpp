@@ -33,10 +33,10 @@ void CSceneSTG3::InitScene()
 	CObjSTG3* obj = new CObjSTG3();
 	Objs::InsertObj(obj, OBJ_STG3, 10);
 
-	//外部グラフィックファイルを読み込み0番に登録
-	Draw::LoadImage(L"syu-haikei.png", 20, TEX_SIZE_512);
+	//背景を読み込み0番に登録
+	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
 
-	//外部グラフィックファイルを読み込み1番に登録
+	//敵３を読み込み10番に登録
 	Draw::LoadImage(L"teki3.png", 10, TEX_SIZE_512);
 
 	//主人公を読み込み6番に登録
@@ -45,11 +45,15 @@ void CSceneSTG3::InitScene()
 	//敵弾丸を読み込み30番に登録
 	Draw::LoadImage(L"Bullet3.png", 30, TEX_SIZE_512);
 
-	CObjMain* m = new CObjMain();
-	Objs::InsertObj(m, OBJ_STG3, 10);
+	//主人公弾丸を読み込み11番に登録
+	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
 
-	CObjBackGround* q = new CObjBackGround();
-	Objs::InsertObj(q, OBJ_BACKGROUND, 20);
+	//敵HPバー表示
+	Draw::LoadImage(L"HP.png", 5, TEX_SIZE_512);
+
+	//背景オブジェクト作成
+	STGBackground* back = new STGBackground();
+	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);
 
 	CObjteki3* objb = new CObjteki3(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI3, 50);

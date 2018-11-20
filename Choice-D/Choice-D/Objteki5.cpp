@@ -1,9 +1,11 @@
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\DrawFont.h"
 
 #include "GameHead.h"
 #include "Objteki5.h"
+#include "シューティング\Objteki1.h"
 #include "シューティング\UtilityModule.h"
 //使用するネームスペース
 using namespace GameL;
@@ -12,8 +14,8 @@ using namespace GameL;
 CObjteki5::CObjteki5(float x, float y)
 {
 
-	m_hp = 35;
-
+	m_hp = 35.f;
+	m_maxhp = 35.f;
 	m_x = x;
 	m_y = y;
 }
@@ -26,7 +28,7 @@ void CObjteki5::Init()
 	m_vy = 0.0f;
 
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_TEKI5, 1);
+	Hits::SetHitBox(this, m_x, m_y, 180-80, 170, ELEMENT_ENEMY, OBJ_TEKI5, 1);
 
 }
 
@@ -36,10 +38,10 @@ void CObjteki5::Action()
 	m_time++;
 
 	//通常弾発射
-	if (m_time % 50 == 0)
+	if (m_time % 20 == 0)
 	{
-		//弾丸敵機オブジェクト(弾丸射出初期位置はまだしっかり定めていない)
-		CObjBulletTeki5* obj_b = new CObjBulletTeki5(m_x + 190, m_y + 114);
+		//弾丸敵機オブジェクト
+		CObjBulletTeki5* obj_b = new CObjBulletTeki5(m_x + 75, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI5, 100);
 	}
 
@@ -72,14 +74,14 @@ void CObjteki5::Action()
 	m_y += m_vy;
 	//HitBoxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x , m_y );
+	hit->SetPos(m_x+35 , m_y );
 
 	//敵機が完全に領域外にでたら敵機を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0, 800.0f, 600.0f);
 	if (check == false)
 	{
 		this->SetStatus(false);		//自身に削除命令
-									//Hits::DeleteHitBox(this);
+		Hits::DeleteHitBox(this);
 	}
 
 	//HPが0になったら破棄
@@ -87,6 +89,8 @@ void CObjteki5::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Scene::SetScene(new CSceneED1());
+
 	}
 
 
@@ -106,6 +110,24 @@ void CObjteki5::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
+	//敵HP表示
+	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
+
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 100.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_bottom = 125.0f;
+
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
+
 			   //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -118,6 +140,6 @@ void CObjteki5::Draw()
 	dst.m_right = 200.0f + m_x;
 	dst.m_bottom = 200.0f + m_y;
 
-	//0番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(30, &src, &dst, c, 0.0f);
+	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+	Draw::Draw(10, &src, &dst, c, 0.0f);
 }

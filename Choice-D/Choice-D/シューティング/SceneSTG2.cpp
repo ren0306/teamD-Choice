@@ -26,22 +26,34 @@ CSceneSTG2::~CSceneSTG2()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲーム戦闘初期化メソッド
 void CSceneSTG2::InitScene()
 {
-	//外部グラフィックファイルを読み込み0番に登録
-	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
-	//外部グラフィックファイルを読み込み10番に登録
+	//背景を読み込み0番に登録
+	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
+
+	//敵２を読み込み10番に登録
 	Draw::LoadImage(L"teki2.png", 10, TEX_SIZE_512);
-	//外部グラフィックファイルを読み込み6番に登録
+
+	//主人公を読み込み6番に登録
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
+
+	//敵弾丸を読み込み30番に登録
+	Draw::LoadImage(L"Bullet2.png", 30, TEX_SIZE_512);
+
+	//主人公弾丸を読み込み11番に登録
+	Draw::LoadImage(L"HeroBullet.png", 11, TEX_SIZE_512);
+
+	//敵HPバー表示
+	Draw::LoadImage(L"HP.png", 5, TEX_SIZE_512);
 
 	//STGオブジェクト作成
 	CObjSTG2* obj = new CObjSTG2();
 	Objs::InsertObj(obj, OBJ_STG2, 10);
 
-	CObjBackGround2* p = new CObjBackGround2();
-	Objs::InsertObj(p, OBJ_BACKGROUND2, 0);
+	//背景オブジェクト作成
+	STGBackground* back = new STGBackground();
+	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);
 
 
 	CObjteki2* objb = new CObjteki2(200, 10);
@@ -51,8 +63,6 @@ void CSceneSTG2::InitScene()
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
 
-	//敵弾丸を読み込み30番に登録
-	Draw::LoadImage(L"Bullet2.png", 30, TEX_SIZE_512);
 }
 
 //ゲームタイトル実行中メソッド
