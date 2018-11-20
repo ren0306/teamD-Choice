@@ -31,11 +31,20 @@ void CSceneNazo::InitScene()
 {
 	//出力させる文字のグラフィックを作成
 	//例　Font::SetStrTex(L"ゲームを始める");
-
-	Draw::LoadImage(L"anser.png", 3, TEX_SIZE_512);
-	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
-	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
+	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"1.png", 3, TEX_SIZE_512);
+	Draw::LoadImage(L"2.png", 4, TEX_SIZE_512);
+	Draw::LoadImage(L"3.png", 5, TEX_SIZE_512);
+	Draw::LoadImage(L"4.png", 6, TEX_SIZE_512);
+	Draw::LoadImage(L"5.png", 7, TEX_SIZE_512);
+	Draw::LoadImage(L"6.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"7.png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"8.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"9.png", 11, TEX_SIZE_512);
+
+
 	Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
 
 	//オブジェクト作成
