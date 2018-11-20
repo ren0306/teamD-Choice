@@ -88,6 +88,7 @@ void CObjteki2::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Scene::SetScene(new CSceneMain3());
 	}
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚µ‚½‚çHP‚ðŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)

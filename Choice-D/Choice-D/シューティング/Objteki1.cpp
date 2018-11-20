@@ -7,8 +7,10 @@
 #include "UtilityModule.h"
 #include "../GameL/DrawFont.h"
 
+
 //使用するネームスペース
 using namespace GameL;
+
 
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)

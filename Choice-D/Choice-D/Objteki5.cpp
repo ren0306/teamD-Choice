@@ -5,6 +5,7 @@
 
 #include "GameHead.h"
 #include "Objteki5.h"
+#include "シューティング\Objteki1.h"
 #include "シューティング\UtilityModule.h"
 //使用するネームスペース
 using namespace GameL;
@@ -88,6 +89,8 @@ void CObjteki5::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Scene::SetScene(new CSceneED1());
+
 	}
 
 
