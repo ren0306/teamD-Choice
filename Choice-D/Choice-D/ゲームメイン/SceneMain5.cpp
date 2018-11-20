@@ -34,14 +34,14 @@ CSceneMain5::~CSceneMain5()
 void CSceneMain5::InitScene()
 {
 	//外部グラフィックファイルを読み込み０番に登録
-	Draw::LoadImage(L"Main5.png", 0, TEX_SIZE_1024);
-	Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"Main5.png", 0, TEX_SIZE_512);
+	Draw::LoadImage(L"door2.png", 1, TEX_SIZE_512);
 	//敵２を読み込み2番に登録
-	Draw::LoadImage(L"teki2.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"teki5.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
 
-	CObjMain2* m = new CObjMain2();
-	Objs::InsertObj(m, OBJ_MAIN2, 140);
+	CObjMain5* m = new CObjMain5();
+	Objs::InsertObj(m, OBJ_MAIN5, 140);
 
 	CObjBackGround5* b = new CObjBackGround5();
 	Objs::InsertObj(b, OBJ_BACKGROUND5, 120);
