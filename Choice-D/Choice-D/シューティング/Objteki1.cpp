@@ -87,8 +87,8 @@ void CObjteki1::Action()
 	{
 		this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+		Scene::SetScene(new CSceneMain2());
 
-		m_f = true;
 	}
 
 
@@ -138,13 +138,6 @@ void CObjteki1::Draw()
 
 	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
-	//HPが0になったら破棄
-	/*if (m_f == true)
-	{
-		float l[4] = { 1.0f,1.0f,1.0f,1.0f };
-
-		Font::StrDraw(L"敵を倒した！！！", 400, 400, 50, l);
-	}*/
 
 
 
