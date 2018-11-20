@@ -21,6 +21,8 @@ void CObjTenkey::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_f = true;
+	m_ps = 50.f;
+	m_psf = 0;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -190,60 +192,116 @@ void CObjTenkey::Draw()
 
 	if (m_flag[1] == true)
 	{
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 320.0f;
-		src.m_bottom = 320.0f;
+		if (m_psf == 1)
+		{
+			dst.m_top = 250.0f;
+			dst.m_left = 250.0f;
+			dst.m_right = 378.0f;
+			dst.m_bottom = 378.0f;
+			Draw::Draw(3, &src, &dst, d, 0.0f);
+			m_psf = 2;
+		}
+		else if (m_psf == 2)
+		{
+			dst.m_top = 250.0f;
+			dst.m_left = 300.0f;
+			dst.m_right = 428.0f;
+			dst.m_bottom = 378.0f;
+			Draw::Draw(3, &src, &dst, d, 0.0f);
 
-		dst.m_top = 0.0f ;
-		dst.m_left = 0.0f ;
-		dst.m_right = 800.0f ;
-		dst.m_bottom = 600.0f ;
-		Draw::Draw(3, &src, &dst, d, 0.0f);
+		}
+		else
+		{
+			dst.m_top = 250.0f;
+			dst.m_left = 200.0f;
+			dst.m_right = 328.0f;
+			dst.m_bottom = 378.0f;
+			Draw::Draw(3, &src, &dst, d, 0.0f);
+			m_psf = 1;
+		}
 	}
 	if (m_flag[2] == true)
 	{
-
-		Font::StrDraw(L"2", m_ps, 270, 50, o);
-
+		if (m_psf == 1)
+		{
+			dst.m_top = 250.0f;
+			dst.m_left = 250.0f;
+			dst.m_right = 378.0f;
+			dst.m_bottom = 378.0f;
+			Draw::Draw(4, &src, &dst, d, 0.0f);
+		}
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(4, &src, &dst, d, 0.0f);
+		m_psf = 1;
 	}
 	if (m_flag[3] == true)
 	{
 
-		Font::StrDraw(L"3", m_ps, 270, 50, o);
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(5, &src, &dst, d, 0.0f);
 
 	}
 	if (m_flag[4] == true)
 	{
 
-		Font::StrDraw(L"4", m_ps, 270, 50, o);
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(6, &src, &dst, d, 0.0f);
 
 	}
 	if (m_flag[5] == true)
 	{
 
-		Font::StrDraw(L"5", m_ps, 270, 50, o);
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(7, &src, &dst, d, 0.0f);
 
 	}
 	if (m_flag[6] == true)
 	{
 
-		Font::StrDraw(L"6", m_ps, 270, 50, o);
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(8, &src, &dst, d, 0.0f);
 
 	}
 	if (m_flag[7] == true)
 	{
-
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(9, &src, &dst, d, 0.0f);
 	}
 	if (m_flag[8] == true)
 	{
 
-		Font::StrDraw(L"8", m_ps, 270, 50, o);
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(10, &src, &dst, d, 0.0f);
 
 	}
 	if (m_flag[9] == true)
 	{
-		Font::StrDraw(L"9", m_ps, 270, 50, o);
+		dst.m_top = 250.0f;
+		dst.m_left = 200.0f;
+		dst.m_right = 328.0f;
+		dst.m_bottom = 378.0f;
+		Draw::Draw(11, &src, &dst, d, 0.0f);
 	}
 
 }
