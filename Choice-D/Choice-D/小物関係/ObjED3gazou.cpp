@@ -51,36 +51,14 @@ void CObjED3gazou::Draw()
 	//主人公表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 130.0f;
-	src.m_bottom = 185.0f;
-	dst.m_top = 150.0f;
+	src.m_right = 891.0f;
+	src.m_bottom = 586.0f;
+	dst.m_top = 130.0f;
 	dst.m_left = 200.0f;
-	dst.m_right = 450.0f;
-	dst.m_bottom = 400.0f;
+	dst.m_right = 650.0f;
+	dst.m_bottom = 420.0f;
 	Draw::Draw(3, &src, &dst, ED3, 0.0f);
 
-	float ga3[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//ゲームオーバー2背景表示
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 512.0f;
-	src.m_bottom = 512.0f;
-	dst.m_top = 200.0f;
-	dst.m_left = 650.0f;
-	dst.m_right = 550.0f;
-	dst.m_bottom = 300.0f;
-	Draw::Draw(12, &src, &dst, ga3, 0.0f);
-
-	float ga4[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//ゲームオーバー2背景表示
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 1071.0f;
-	src.m_bottom = 865.0f;
-	dst.m_top = 230.0f;
-	dst.m_left = 550.0f;
-	dst.m_right = 400.0f;
-	dst.m_bottom = 350.0f;
-	Draw::Draw(13, &src, &dst, ga3, 0.0f);
+	
 
 }
