@@ -29,7 +29,6 @@ void CObjteki1::Init()
 	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
 	//“–‚½‚è”»’èHitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
@@ -66,7 +65,7 @@ void CObjteki1::Action()
 		m_r = 0.0f;
 
 	//ˆÚ“®•ûŒü
-	m_vx = sin(3.14 / 180 * m_r);
+	m_vx = sin(6.28 / 180 * m_r);
 	m_vy = 0.0f;
 
 	//ˆÚ“®ƒxƒNƒgƒ‹³‹K‰»
@@ -79,6 +78,8 @@ void CObjteki1::Action()
 	//ˆÚ“®ƒxƒNƒgƒ‹‚ðÀ•W‚É‰ÁŽZ‚·‚é
 	m_x += m_vx;
 	m_y += m_vy;
+
+
 
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚µ‚½‚çHP‚ðŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
