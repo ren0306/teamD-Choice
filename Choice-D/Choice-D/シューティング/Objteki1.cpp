@@ -7,8 +7,10 @@
 #include "UtilityModule.h"
 #include "../GameL/DrawFont.h"
 
+
 //使用するネームスペース
 using namespace GameL;
+
 
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)
@@ -27,7 +29,6 @@ void CObjteki1::Init()
 	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
@@ -64,7 +65,7 @@ void CObjteki1::Action()
 		m_r = 0.0f;
 
 	//移動方向
-	m_vx = sin(3.14 / 180 * m_r);
+	m_vx = sin(6.28 / 180 * m_r);
 	m_vy = 0.0f;
 
 	//移動ベクトル正規化
@@ -77,6 +78,8 @@ void CObjteki1::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
+
+
 
 	//弾丸と接触してるしたらHPを減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)

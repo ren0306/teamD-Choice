@@ -4,6 +4,9 @@
 //使用するネームスペース
 using namespace GameL;
 
+//extern bool m_tf;
+
+
 //オブジェクト：敵１
 class CObjteki1 :public CObj
 {
@@ -23,5 +26,4 @@ class CObjteki1 :public CObj
 		float m_hp ;
 		float m_maxhp;
 		bool m_f;
-
 };
