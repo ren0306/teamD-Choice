@@ -50,6 +50,7 @@ enum OBJ_NAME
 	OBJ_ED1GAZOU,
 	OBJ_ED2GAZOU,
 	OBJ_ED3GAZOU,
+	OBJ_KURIA,
 };
 //------------------------------------------------
 
@@ -135,6 +136,7 @@ struct UserData
 #include "小物関係\ObjED1gazou.h"
 #include "小物関係\ObjED2gazou.h"
 #include "小物関係\ObjED3gazou.h"
+#include "シューティング\ObjKuria.h"
 
 //------------------------------------------------
 
@@ -157,6 +159,8 @@ struct UserData
 #include "シューティング\SceneSTG4.h"
 #include "SceneSTG5.h"
 #include "タイトル\SceneSousagamen.h"
+#include "シューティング\SceneKuria.h"
+
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

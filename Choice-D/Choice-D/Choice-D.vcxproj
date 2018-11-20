@@ -158,6 +158,7 @@
     </ClCompile>
     <ClCompile Include="シューティング\CObjBullet.cpp" />
     <ClCompile Include="シューティング\ObjHero.cpp" />
+    <ClCompile Include="シューティング\ObjKuria.cpp" />
     <ClCompile Include="シューティング\ObjSTG.cpp" />
     <ClCompile Include="シューティング\ObjSTG2.cpp" />
     <ClCompile Include="シューティング\ObjSTG3.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="シューティング\Objteki2.cpp" />
     <ClCompile Include="シューティング\Objteki3.cpp" />
     <ClCompile Include="シューティング\Objteki4.cpp" />
+    <ClCompile Include="シューティング\SceneKuria.cpp" />
     <ClCompile Include="シューティング\SceneSTG.cpp" />
     <ClCompile Include="シューティング\SceneSTG2.cpp" />
     <ClCompile Include="シューティング\SceneSTG3.cpp" />
@@ -245,6 +247,7 @@
     </ClInclude>
     <ClInclude Include="シューティング\CObjBullet.h" />
     <ClInclude Include="シューティング\ObjHero.h" />
+    <ClInclude Include="シューティング\ObjKuria.h" />
     <ClInclude Include="シューティング\ObjSTG.h" />
     <ClInclude Include="シューティング\ObjSTG2.h" />
     <ClInclude Include="シューティング\ObjSTG3.h" />
@@ -253,6 +256,7 @@
     <ClInclude Include="シューティング\Objteki2.h" />
     <ClInclude Include="シューティング\Objteki3.h" />
     <ClInclude Include="シューティング\Objteki4.h" />
+    <ClInclude Include="シューティング\SceneKuria.h" />
     <ClInclude Include="シューティング\SceneSTG.h" />
     <ClInclude Include="シューティング\SceneSTG2.h" />
     <ClInclude Include="シューティング\SceneSTG3.h" />

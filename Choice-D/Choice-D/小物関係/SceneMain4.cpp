@@ -35,13 +35,13 @@ void CSceneMain4::InitScene()
 {
 	//外部グラフィックファイルを読み込み1番に登録
 	Draw::LoadImage(L"Main4.png", 0, TEX_SIZE_512);
-	Draw::LoadImage(L"door2.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"door2.png", 20, TEX_SIZE_512);
 	//敵２を読み込み2番に登録
-	Draw::LoadImage(L"teki2.png", 2, TEX_SIZE_512);
+	Draw::LoadImage(L"teki4.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
 
-	CObjMain2* m = new CObjMain2();
-	Objs::InsertObj(m, OBJ_MAIN2, 140);
+	CObjMain4* m = new CObjMain4();
+	Objs::InsertObj(m, OBJ_MAIN4, 140);
 
 	CObjBackGround4* b = new CObjBackGround4();
 	Objs::InsertObj(b, OBJ_BACKGROUND4, 120);

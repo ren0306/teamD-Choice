@@ -37,7 +37,7 @@ void CObjteki4::Action()
 	m_time++;
 
 	//通常弾発射
-	if (m_time % 50 == 0)
+	if (m_time % 35 == 0)
 	{
 		//弾丸敵機オブジェクト
 		CObjBulletTeki4* obj_b = new CObjBulletTeki4(m_x + 65, m_y + 95);
@@ -88,6 +88,7 @@ void CObjteki4::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		Scene::SetScene(new CSceneMain5());
 	}
 
 

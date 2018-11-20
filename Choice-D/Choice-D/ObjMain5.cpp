@@ -93,7 +93,7 @@ void CObjMain5::Draw()
 			Font::StrDraw(L"‚Í‚¢", 100, 150, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneSTG2());
+				Scene::SetScene(new CSceneSTG5());
 			}
 		}
 		else
@@ -105,7 +105,7 @@ void CObjMain5::Draw()
 			Font::StrDraw(L"‚¢‚¢‚¦", 300, 150, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneMain2());
+				Scene::SetScene(new CSceneMain5());
 			}
 		}
 		else
@@ -132,8 +132,8 @@ void CObjMain5::Draw()
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1071.0f;
-	src.m_bottom = 865.0f;
+	src.m_right = 187.0f;
+	src.m_bottom = 159.0f;
 
 	//•\¦ˆÊ’u‚Ìİ’è
 	dst.m_top = 0.0f + 200;
