@@ -65,7 +65,7 @@ void CObjteki1::Action()
 		m_r = 0.0f;
 
 	//移動方向
-	m_vx = sin(6.28 / 180 * m_r);
+	m_vx = sin(3.14 / 180 * m_r);
 	m_vy = 0.0f;
 
 	//移動ベクトル正規化
@@ -79,6 +79,12 @@ void CObjteki1::Action()
 	m_x += m_vx;
 	m_y += m_vy;
 
+	if (m_hp <= 15)
+	{
+		m_vx *= 1.5f*2;
+		m_vy *= 1.5f*2;
+
+	}
 
 
 	//弾丸と接触してるしたらHPを減らす
@@ -90,7 +96,7 @@ void CObjteki1::Action()
 	{
 		this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
-		Scene::SetScene(new CSceneMain2());
+		Scene::SetScene(new CSceneKuria());
 
 	}
 
@@ -109,6 +115,7 @@ void CObjteki1::Draw()
 
 	//敵HP表示
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;

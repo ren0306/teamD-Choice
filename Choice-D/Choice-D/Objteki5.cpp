@@ -38,7 +38,7 @@ void CObjteki5::Action()
 	m_time++;
 
 	//通常弾発射
-	if (m_time % 50 == 0)
+	if (m_time % 20 == 0)
 	{
 		//弾丸敵機オブジェクト
 		CObjBulletTeki5* obj_b = new CObjBulletTeki5(m_x + 75, m_y + 95);
