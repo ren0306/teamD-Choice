@@ -93,7 +93,7 @@ void CObjMain5::Draw()
 			Font::StrDraw(L"ÅûÇÕÇ¢", 100, 150, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneSTG2());
+				Scene::SetScene(new CSceneSTG5());
 			}
 		}
 		else
@@ -105,7 +105,7 @@ void CObjMain5::Draw()
 			Font::StrDraw(L"ÅûÇ¢Ç¢Ç¶", 300, 150, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneMain2());
+				Scene::SetScene(new CSceneMain5());
 			}
 		}
 		else

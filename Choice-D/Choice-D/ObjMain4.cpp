@@ -93,7 +93,7 @@ void CObjMain4::Draw()
 			Font::StrDraw(L"◇はい", 100, 150, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneSTG2());
+				Scene::SetScene(new CSceneSTG4());
 			}
 		}
 		else
@@ -105,7 +105,7 @@ void CObjMain4::Draw()
 			Font::StrDraw(L"◇いいえ", 300, 150, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneMain2());
+				Scene::SetScene(new CSceneMain4());
 			}
 		}
 		else
@@ -132,14 +132,14 @@ void CObjMain4::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1071.0f;
-	src.m_bottom = 865.0f;
+	src.m_right = 1152.0f;
+	src.m_bottom = 1772.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f + 200;
 	dst.m_left = 0.0f + 50;
-	dst.m_right = 200.0f + 250;
-	dst.m_bottom = 160.0f + 400;
+	dst.m_right = 160.0f + 250;
+	dst.m_bottom = 210.0f + 400;
 
 	//2番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(2, &src, &dst, c, 0.0f);

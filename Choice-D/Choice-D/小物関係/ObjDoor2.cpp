@@ -46,7 +46,7 @@ void CObjDoor2::Draw()
 	RECT_F dst;
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
-	//ドア2表示
+	//ドア2表示(SceneMain2)
 	//切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -59,7 +59,42 @@ void CObjDoor2::Draw()
 	dst.m_bottom = 600.0f;
 	Draw::Draw(1, &src, &dst, d, 0.0f);
 
+	//ドア2表示(SceneMain3)
+	//切り取り
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 188.0f;
+	src.m_bottom = 266.0f;
+	//表示位置
+	dst.m_top = 65.0f;
+	dst.m_left = 480.0f;
+	dst.m_right = 720.0f;
+	dst.m_bottom = 320.0f;
+	Draw::Draw(10, &src, &dst, d, 0.0f);
 
+	//ドア2表示(SceneMain4)
+	//切り取り
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 188.0f;
+	src.m_bottom = 266.0f;
+	//表示位置
+	dst.m_top = 400.0f;
+	dst.m_left = 450.0f;
+	dst.m_right = 650.0f;
+	dst.m_bottom = 600.0f;
+	Draw::Draw(100, &src, &dst, d, 0.0f);
 
-
+	//ドア2表示(SceneMain5)
+	//切り取り
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 188.0f;
+	src.m_bottom = 266.0f;
+	//表示位置
+	dst.m_top = 400.0f;
+	dst.m_left = 450.0f;
+	dst.m_right = 650.0f;
+	dst.m_bottom = 600.0f;
+	Draw::Draw(1000, &src, &dst, d, 0.0f);
 }

@@ -35,7 +35,7 @@ void CSceneMain3::InitScene()
 {
 	//外部グラフィックファイルを読み込み０番に登録
 	Draw::LoadImage(L"Main3.png", 0, TEX_SIZE_512);
-	Draw::LoadImage(L"door2.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"door2.png", 10, TEX_SIZE_512);
 	//敵２を読み込み2番に登録
 	Draw::LoadImage(L"teki3.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
