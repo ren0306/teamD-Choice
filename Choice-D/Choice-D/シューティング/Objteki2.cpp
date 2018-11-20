@@ -86,11 +86,6 @@ void CObjteki2::Action()
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
-	//íeä€Ç∆ê⁄êGÇµÇƒÇÈÇµÇΩÇÁHPÇå∏ÇÁÇ∑
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
-	{
-		m_hp -= 1;
-	}
 }
 
 //ÉhÉçÅ[

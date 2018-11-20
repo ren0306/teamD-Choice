@@ -22,6 +22,6 @@ class CObjteki1 :public CObj
 		int   m_time;//弾丸間隔用
 		int m_hp = 30;
 
-		int m_hp;	//ボスのヒットポイント
+
 
 };
