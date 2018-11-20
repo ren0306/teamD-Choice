@@ -79,10 +79,10 @@ void CObjDoor2::Draw()
 	src.m_right = 188.0f;
 	src.m_bottom = 266.0f;
 	//表示位置
-	dst.m_top = 400.0f;
-	dst.m_left = 450.0f;
-	dst.m_right = 650.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 110.0f;
+	dst.m_left = 110.0f;
+	dst.m_right = 300.0f;
+	dst.m_bottom = 420.0f;
 	Draw::Draw(20, &src, &dst, d, 0.0f);
 
 	//ドア2表示(SceneMain5)
