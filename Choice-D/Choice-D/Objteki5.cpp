@@ -14,11 +14,13 @@ using namespace GameL;
 CObjteki5::CObjteki5(float x, float y)
 {
 
-	m_hp = 35.f;
+	m_hp = 1.f;
 	m_maxhp = 35.f;
 	m_x = x;
 	m_y = y;
 }
+
+
 
 //イニシャライズ
 void CObjteki5::Init()
@@ -35,6 +37,7 @@ void CObjteki5::Init()
 //アクション
 void CObjteki5::Action()
 {
+
 	m_time++;
 
 	//通常弾発射
@@ -69,6 +72,8 @@ void CObjteki5::Action()
 	m_vx *= 1.5f;
 	m_vy *= 1.5f;
 
+	
+
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
@@ -83,15 +88,24 @@ void CObjteki5::Action()
 		this->SetStatus(false);		//自身に削除命令
 		Hits::DeleteHitBox(this);
 	}
-
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-		Scene::SetScene(new CSceneED1());
+		//敵1の正と負を取得する
+//		Remember* flag = (Remember*)Objs::GetObj(OBJ_REMEMBER);
+	//	m_f5 = flag->GETF();
+		
+
+		Scene::SetScene(new CSceneED2());
 
 	}
+	if (m_f5 == true)
+	{
+		Scene::SetScene(new CSceneED1());
+	}
+
 
 
 	//弾丸と接触してるしたらHPを減らす
