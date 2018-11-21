@@ -45,11 +45,8 @@ void CObjED3::Action()
 //ドロー
 void CObjED3::Draw()
 {
+	
 	float c[4] = { 1,1,1,1 };
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);
 
 	//外部グラフィック画像を読み込み0番に登録
 	Draw::LoadImage(L"ED3.png", 3, TEX_SIZE_512);
@@ -58,22 +55,12 @@ void CObjED3::Draw()
 	Objs::InsertObj(ED3, OBJ_ED3GAZOU, 20);
 
 
-	//外部グラフィック画像を読み込み13番に登録
-	Draw::LoadImage(L"teki2.png", 13, TEX_SIZE_512);
-
-	CObjED3gazou* ga4 = new CObjED3gazou();
-	Objs::InsertObj(ga4, OBJ_ED3GAZOU, 22);
-
-	//外部グラフィック画像を読み込み12番に登録
-	Draw::LoadImage(L"teki3.png", 12, TEX_SIZE_512);
-
-	CObjED3gazou* ga3 = new CObjED3gazou();
-	Objs::InsertObj(ga3, OBJ_ED3GAZOU, 21);
+	
 
 	float o[4] = { 1.0f,1.0f,0.0f,1.0f };
 	Font::StrDraw(L"HAPPY END", 200, 50, 90, o);
 
-	float s[4] = { 0.2f,0.7f,0.9f,1.0f };
+	float s[4] = { 0.2f,1.0f,0.9f,1.0f };
 	Font::StrDraw(L"やったね！敵に気づかれずに脱出することができた！", 50, 450, 30, s);
 
 	Font::StrDraw(L"クリックでタイトルへ", 480, 535, 25, c);

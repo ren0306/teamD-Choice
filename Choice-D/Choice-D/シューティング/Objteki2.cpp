@@ -39,7 +39,7 @@ void CObjteki2::Action()
 	m_time++;
 
 	//’Êí’e”­ŽË
-	if (m_time % 50 == 0)
+	if (m_time % 45 == 0)
 	{
 		//’eŠÛ“G‹@ƒIƒuƒWƒFƒNƒg
 		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 78, m_y + 95);
@@ -88,11 +88,7 @@ void CObjteki2::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-	}
-	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚µ‚½‚çHP‚ðŒ¸‚ç‚·
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
-	{
-		m_hp -= 1;
+		Scene::SetScene(new CSceneMain3());
 	}
 }
 

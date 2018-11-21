@@ -55,15 +55,15 @@ void CObjMain4::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-			   //仮マウス位置表示
+	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 
 	//戦闘画面遷移
-	if (m_mou_x > 110 && m_mou_x < 360 && m_mou_y>238 && m_mou_y < 530)
+	if (m_mou_x > 365 && m_mou_x < 525 && m_mou_y>170 && m_mou_y < 415)
 	{
-		Font::StrDraw(L"敵と戦うことを選ぶ", 455, 350, 32, c);
+		Font::StrDraw(L"敵と戦うことを選ぶ", 300, 130, 32, c);
 		//マウスのボタンが押されたら戦闘に遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
@@ -81,45 +81,45 @@ void CObjMain4::Draw()
 		src.m_bottom = 614.0f;
 
 		//表示位置の設定
-		dst.m_top = 0.0f;
-		dst.m_left = 0.0f;
-		dst.m_right = 500.0f;
-		dst.m_bottom = 300.0f;
+		dst.m_top = 0.0f + 380;
+		dst.m_left = 0.0f - 50;
+		dst.m_right = 500.0f - 50;
+		dst.m_bottom = 300.0f + 380;
 
 		//3番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(3, &src, &dst, c, 0.0f);
-		if (m_mou_x > 100 && m_mou_x < 160 && m_mou_y>150 && m_mou_y < 175)
+		if (m_mou_x > 100-50 && m_mou_x < 160-50 && m_mou_y>150+350 && m_mou_y < 175+350)
 		{
-			Font::StrDraw(L"◇はい", 100, 150, 32, d);
+			Font::StrDraw(L"◇はい", 100 - 50, 150 + 350, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneSTG2());
+				Scene::SetScene(new CSceneSTG4());
 			}
 		}
 		else
 		{
-			Font::StrDraw(L"はい", 100, 150, 32, d);
+			Font::StrDraw(L"はい", 100 - 50, 150 + 350, 32, d);
 		}
-		if (m_mou_x > 300 && m_mou_x < 380 && m_mou_y>150 && m_mou_y < 175)
+		if (m_mou_x > 300-50 && m_mou_x < 380-50 && m_mou_y>150+350 && m_mou_y < 175+350)
 		{
-			Font::StrDraw(L"◇いいえ", 300, 150, 32, d);
+			Font::StrDraw(L"◇いいえ", 300 - 50, 150 + 350, 32, d);
 			if (m_mou_l == true)
 			{
-				Scene::SetScene(new CSceneMain2());
+				Scene::SetScene(new CSceneMain4());
 			}
 		}
 		else
 		{
-			Font::StrDraw(L"いいえ", 300, 150, 32, d);
+			Font::StrDraw(L"いいえ", 300 - 50, 150 + 350, 32, d);
 		}
 
 	}
 
 	//謎画面遷移
-	if (m_mou_x >455 && m_mou_x < 630 && m_mou_y>397 && m_mou_y < 584)
+	if (m_mou_x >110 && m_mou_x < 288 && m_mou_y>115 && m_mou_y < 400)
 	{
 
-		Font::StrDraw(L"謎解きを選ぶ", 455, 350, 32, c);
+		Font::StrDraw(L"謎解きを選ぶ", 112, 75, 32, c);
 
 		if (m_mou_r == true || m_mou_l == true)
 		{
@@ -132,14 +132,14 @@ void CObjMain4::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1071.0f;
-	src.m_bottom = 865.0f;
+	src.m_right = 1152.0f;
+	src.m_bottom = 1772.0f;
 
 	//表示位置の設定
-	dst.m_top = 0.0f + 200;
-	dst.m_left = 0.0f + 50;
-	dst.m_right = 200.0f + 250;
-	dst.m_bottom = 160.0f + 400;
+	dst.m_top = 0.0f + 170;
+	dst.m_left = 0.0f + 300;
+	dst.m_right = 160.0f + 400;
+	dst.m_bottom = 210.0f + 270;
 
 	//2番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(2, &src, &dst, c, 0.0f);

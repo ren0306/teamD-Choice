@@ -7,8 +7,10 @@
 #include "UtilityModule.h"
 #include "../GameL/DrawFont.h"
 
+
 //使用するネームスペース
 using namespace GameL;
+
 
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)
@@ -27,7 +29,6 @@ void CObjteki1::Init()
 	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
@@ -78,6 +79,14 @@ void CObjteki1::Action()
 	m_x += m_vx;
 	m_y += m_vy;
 
+	if (m_hp <= 15)
+	{
+		m_vx *= 1.5f*2;
+		m_vy *= 1.5f*2;
+
+	}
+
+
 	//弾丸と接触してるしたらHPを減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
@@ -87,8 +96,8 @@ void CObjteki1::Action()
 	{
 		this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+		Scene::SetScene(new CSceneKuria());
 
-		m_f = true;
 	}
 
 
@@ -106,6 +115,7 @@ void CObjteki1::Draw()
 
 	//敵HP表示
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -138,13 +148,6 @@ void CObjteki1::Draw()
 
 	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
-	//HPが0になったら破棄
-	/*if (m_f == true)
-	{
-		float l[4] = { 1.0f,1.0f,1.0f,1.0f };
-
-		Font::StrDraw(L"敵を倒した！！！", 400, 400, 50, l);
-	}*/
 
 
 
