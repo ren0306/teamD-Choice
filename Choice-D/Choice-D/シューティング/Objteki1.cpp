@@ -19,6 +19,17 @@ CObjteki1::CObjteki1(float x, float y)
 	m_y = y;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 //イニシャライズ
 void CObjteki1::Init()
 {
@@ -96,6 +107,7 @@ void CObjteki1::Action()
 	{
 		this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+		m_f = true;
 		Scene::SetScene(new CSceneKuria());
 
 	}

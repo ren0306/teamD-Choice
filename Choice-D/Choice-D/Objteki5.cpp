@@ -83,14 +83,20 @@ void CObjteki5::Action()
 		this->SetStatus(false);		//自身に削除命令
 		Hits::DeleteHitBox(this);
 	}
-
+	
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-		Scene::SetScene(new CSceneED1());
-
+		if (m_f == true)
+		{
+			Scene::SetScene(new CSceneED1());
+		}
+		else
+		{
+			Scene::SetScene(new CSceneED3());
+		}
 	}
 
 
@@ -143,3 +149,4 @@ void CObjteki5::Draw()
 	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);
 }
+
