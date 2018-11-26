@@ -193,6 +193,7 @@
     <ClCompile Include="小物関係\SceneMain4.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="小物関係\TimeLimit.cpp" />
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />
     <ClCompile Include="謎解き\ObjTenkey.cpp" />
     <ClCompile Include="謎解き\SceneNazo.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="小物関係\ObjED1gazou.h" />
     <ClInclude Include="小物関係\ObjED2gazou.h" />
     <ClInclude Include="小物関係\ObjED3gazou.h" />
+    <ClInclude Include="小物関係\TimeLimit.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />

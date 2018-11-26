@@ -6,6 +6,7 @@
 #include "../GameL/Audio.h"
 #include "../GameHead.h"
 #include "ObjMain.h"
+#include "../小物関係/TimeLimit.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -156,6 +157,18 @@ void CObjMain::Draw()
 	//2番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 
+	/*int second = (m_time / 60) % 60; //秒
+	int minute = (m_time / 60) / 60; //分
+
+	wchar_t strt[128];
+	if (second < 10)
+	{
+		swprintf_s(strt, L"%d分0%d秒", minute, second);
+	}
+	else
+	{
+		swprintf_s(strt, L"%d分%d秒", minute, second);
+	}*/
 
 
 }

@@ -56,6 +56,9 @@ void CSceneMain::InitScene()
 	CObjDoor* Door = new CObjDoor();
 	Objs::InsertObj(Door, OBJ_DOOR, 130);
 
+	CObjTimeLimit* t = new CObjTimeLimit();
+	Objs::InsertObj(t, OBJ_TIME, 150);
+
 
 
 }

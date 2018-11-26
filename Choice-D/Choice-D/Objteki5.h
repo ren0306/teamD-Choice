@@ -13,8 +13,8 @@ public:
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー
-	void SETF(float x) { m_f5 = x; }
-	bool GETF() { return m_f5; }
+	void SET(float x) { m_f = x; }
+	bool GET() { return m_f; }
 
 private:
 	float m_x;	//敵5のx方向の位置

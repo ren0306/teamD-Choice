@@ -15,6 +15,9 @@ class CObjteki1 :public CObj
 		void Init();	//イニシャライズ
 		void Action();	//アクション
 		void Draw();	//ドロー
+
+		bool GET() { return m_f; }
+
 	private:
 		float m_x;	//敵1のx方向の位置
 		float m_y;	//敵1のy方向の位置
@@ -24,5 +27,6 @@ class CObjteki1 :public CObj
 		int   m_time;//弾丸間隔用
 		float m_hp ;
 		float m_maxhp;
+		bool m_f;
 
 };

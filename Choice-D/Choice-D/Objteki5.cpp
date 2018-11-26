@@ -38,6 +38,10 @@ void CObjteki5::Init()
 void CObjteki5::Action()
 {
 
+	//“G1‚Ì³‚Æ•‰‚ğæ“¾‚·‚é
+	CObjteki1* flag = (CObjteki1*)Objs::GetObj(OBJ_TEKI1);
+	m_f=flag->GET();
+
 	m_time++;
 
 	//’Êí’e”­Ë
@@ -91,21 +95,14 @@ void CObjteki5::Action()
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		//“G1‚Ì³‚Æ•‰‚ğæ“¾‚·‚é
-//		Remember* flag = (Remember*)Objs::GetObj(OBJ_REMEMBER);
-	//	m_f5 = flag->GETF();
-		
-
-		Scene::SetScene(new CSceneED2());
+		/*this->SetStatus(false);
+		Hits::DeleteHitBox(this);*/
+		if (m_f == true)
+		{
+			Scene::SetScene(new CSceneED2());
+		}
 
 	}
-	if (m_f5 == true)
-	{
-		Scene::SetScene(new CSceneED1());
-	}
-
 
 
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚µ‚½‚çHP‚ğŒ¸‚ç‚·

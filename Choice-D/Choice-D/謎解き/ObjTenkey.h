@@ -22,7 +22,8 @@ private:
 	float cnt = 0.f;
 	float m_ps ;
 	bool m_flag[10];
-	bool m_reset_flag;
-	int m_psf;
+	bool m_1;
+	bool m_2;
+	bool m_3;
 
 };

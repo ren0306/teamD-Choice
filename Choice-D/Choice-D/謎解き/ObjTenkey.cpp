@@ -22,14 +22,11 @@ void CObjTenkey::Init()
 	m_mou_l = false;
 	m_f = true;
 	m_ps = 50.f;
-	m_psf = 0;
-	m_reset_flag = false;
 }
 
 //アクション
 void CObjTenkey::Action()
 {
-
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -37,7 +34,6 @@ void CObjTenkey::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-
 
 	//マウスの位置とクリックする場所で当たり判定
 	/*
@@ -141,36 +137,21 @@ void CObjTenkey::Action()
 			}
 
 		}
-	//[すべて削除]を押すと
-	if (m_mou_x>=500&&m_mou_x<=666&&m_mou_y>=442&&m_mou_y<=470)
-	{
-		if (m_mou_l == true)
-		{
-			m_flag[1] = false;
-			m_flag[2] = false;
-			m_flag[3] = false;
-			m_flag[4] = false;
-			m_flag[5] = false;
-			m_flag[6] = false;
-			m_flag[7] = false;
-			m_flag[8] = false;
-			m_flag[9] = false;
-		}
-	}
 
 }
 
 //ドロー
 void CObjTenkey::Draw()
-{
+{	//白
 	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
-
-	float c[4] = { 1,1,1,1 };
+	//赤
+	float r[4] = { 1.0f,0.0f,0.0f,1.0f };
+	//黄色
+	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);
-	Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
+	Font::StrDraw(str, 20, 20, 12, f);
 
 	//メインに戻る
 	if (m_mou_x >= 37 && m_mou_x <= 290 && m_mou_y >= 33 && m_mou_y <= 60)
@@ -185,13 +166,10 @@ void CObjTenkey::Draw()
 	{
 		Font::StrDraw(L"[メイン画面に戻る]", 32, 32, 30, f);
 	}
-
-	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
-
 	//謎解き答え正解にの場合2へ
 	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
 	{
-		Font::StrDraw(L"[◇答え決定ボタン]", 0, 450, 30, s);
+		Font::StrDraw(L"[◇答え決定ボタン]", 0, 450, 25, s);
 
 		if (m_mou_l == true)
 		{
@@ -200,14 +178,48 @@ void CObjTenkey::Draw()
 				Scene::SetScene(new CSceneMain2);
 				Audio::Start(0);
 			}
+			else
+			{
+				Font::StrDraw(L"解答が違います", 300, 0, 30, r);
+				m_flag[1] = false;
+				m_flag[2] = false;
+				m_flag[3] = false;
+				m_flag[4] = false;
+				m_flag[5] = false;
+				m_flag[6] = false;
+				m_flag[7] = false;
+				m_flag[8] = false;
+				m_flag[9] = false;
+			}
 		}
 	}
 	else
 	{
 		Font::StrDraw(L"[答え決定ボタン]", 0, 450, 30, s);
 	}
+	//[すべて削除]を押すと
+	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
+	{
+		Font::StrDraw(L"[◇すべて削除]", 500, 450, 30, f);
 
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+		if (m_mou_l == true)
+		{
+			m_flag[1] = false;
+			m_flag[2] = false;
+			m_flag[3] = false;
+			m_flag[4] = false;
+			m_flag[5] = false;
+			m_flag[6] = false;
+			m_flag[7] = false;
+			m_flag[8] = false;
+			m_flag[9] = false;
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
+	}
+
 	RECT_F src;
 	RECT_F dst;
 	//テンキー出力（切り取り位置）
@@ -220,7 +232,7 @@ void CObjTenkey::Draw()
 	dst.m_left = 0.0f+255;
 	dst.m_right = 400.0f+100;
 	dst.m_bottom =250.0f+300;
-	Draw::Draw(2, &src, &dst, d, 0.0f);
+	Draw::Draw(2, &src, &dst, f, 0.0f);
 
 
 
@@ -234,7 +246,7 @@ void CObjTenkey::Draw()
 	dst.m_left = 0.0f ;
 	dst.m_right = 600.0f + 300;
 	dst.m_bottom = 450.0f + 250;
-	Draw::Draw(12, &src, &dst, d, 0.0f);
+	Draw::Draw(12, &src, &dst, f, 0.0f);
 
 	//問題出力（切り取り位置）
 	src.m_top = 0.0f;
@@ -242,31 +254,21 @@ void CObjTenkey::Draw()
 	src.m_right = 1008.0f;
 	src.m_bottom = 647.0f;
 	//問題出力（出力位置）
-	dst.m_top = 50.0f;
-	dst.m_left = 80.0f;
+	dst.m_top = 25.0f;
+	dst.m_left = 50.0f;
 	dst.m_right = 800.f;
-	dst.m_bottom = 250.0f;
-	Draw::Draw(13, &src, &dst, d, 0.0f);
+	dst.m_bottom = 350.0f;
+	Draw::Draw(13, &src, &dst, f, 0.0f);
 
-
+	//紫
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
 	Font::StrDraw(L"1 2 3 4 5 6 7 8 9", 250, 300, 30, o);
 
 	//m_flag[]の制御
 	if (m_flag[1] == true)
 	{
-		if (cnt > 1)
-		{
-		Font::StrDraw(L"1", 237, 293, 40, o);
-		}
-		else
-		{
-			Font::StrDraw(L"〇", 237, 293, 40, o);
-		}
-
-
+		Font::StrDraw(L"〇", 237, 293, 40, o);
 	}
-
 	if (m_flag[2] == true)
 	{
 		Font::StrDraw(L"〇", 267, 293, 40, o);
@@ -278,32 +280,26 @@ void CObjTenkey::Draw()
 	if (m_flag[4] == true)
 	{
 		Font::StrDraw(L"〇", 327, 293, 40, o);
-
 	}
 	if (m_flag[5] == true)
 	{
 		Font::StrDraw(L"〇", 357, 293, 40, o);
-
 	}
 	if (m_flag[6] == true)
 	{
 		Font::StrDraw(L"〇", 387, 293, 40, o);
-
 	}
 	if (m_flag[7] == true)
 	{
 		Font::StrDraw(L"〇", 417, 293, 40, o);
-
 	}
 	if (m_flag[8] == true)
 	{
 		Font::StrDraw(L"〇", 447, 293, 40, o);
-
 	}
 	if (m_flag[9] == true)
 	{
 		Font::StrDraw(L"〇", 477, 293, 40, o);
-
 	}
 
 }

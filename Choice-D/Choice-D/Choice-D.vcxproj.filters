@@ -238,6 +238,9 @@
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\Remember.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\TimeLimit.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -470,6 +473,9 @@
     </ClInclude>
     <ClInclude Include="シューティング\ObjKuria.h">
       <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\TimeLimit.h">
+      <Filter>ソースファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -48,6 +48,8 @@ void CSceneNazo::InitScene()
 
 
 	Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
+	//敵1の正と負を取得する
+	CObjTimeLimit* time = (CObjTimeLimit*)Objs::GetObj(OBJ_TIME);
 
 	//オブジェクト作成
 	CObjTenkey* key = new CObjTenkey();
@@ -59,10 +61,15 @@ void CSceneNazo::InitScene()
 	CObjBackGround* b = new CObjBackGround();
 	Objs::InsertObj(b, OBJ_BACKGROUND, 0);
 
+	CObjTimeLimit* t = new CObjTimeLimit();
+	Objs::InsertObj(t, OBJ_TIME, 150);
+
 	
 }
 
 //ゲームタイトル実行中メソッド
 void CSceneNazo::Scene()
 {
+
+
 }

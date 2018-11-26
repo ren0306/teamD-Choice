@@ -52,6 +52,7 @@ enum OBJ_NAME
 	OBJ_ED3GAZOU,
 	OBJ_KURIA,
 	OBJ_REMEMBER,
+	OBJ_TIME,
 };
 //------------------------------------------------
 
@@ -142,6 +143,7 @@ struct UserData
 #include "小物関係\ObjED3gazou.h"
 #include "シューティング\ObjKuria.h"
 #include "小物関係\Remember.h"
+#include "小物関係\TimeLimit.h"
 
 //------------------------------------------------
 
@@ -170,5 +172,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
