@@ -29,13 +29,36 @@ void CObjTenkey::Init()
 //アクション
 void CObjTenkey::Action()
 {
-	if (m_flag[5] == false&&m_flag[4]==false&&m_flag[7]==false)
+	//削除実行
+	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
 	{
-		Scene::SetScene(new CSceneMain2);
-		m_f == 1;
-		Audio::Start(0);
-
+		if (m_mou_l == true)
+		{
+			//フォント削除プログラム
+		}
 	}
+	//謎解き答え正解にの場合2へ
+	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
+	{
+		if (m_mou_l == true)
+		{
+			if (m_flag[5] == true && m_flag[4] == true && m_flag[7] == true)
+			{
+				Scene::SetScene(new CSceneMain2);
+				Audio::Start(0);
+			}
+		}
+	}
+	//メインに戻る
+	if (m_mou_x >= 37 && m_mou_x <= 290 && m_mou_y >= 33 && m_mou_y <= 60)
+	{
+		if (m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneMain);
+		}
+	}
+
+
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -59,7 +82,6 @@ void CObjTenkey::Action()
 				if (m_mou_l == true)
 				{
 					m_flag[7] = true;
-					m_psf = 2;
 				}
 			}
 			//4入力
@@ -68,10 +90,6 @@ void CObjTenkey::Action()
 				if (m_mou_l == true)
 				{
 					m_flag[4] = true;
-				}
-				else
-				{
-					m_flag[4]=false;
 				}
 			}
 
@@ -156,13 +174,6 @@ void CObjTenkey::Action()
 	{
 		return;
 	}
-	if (cnt == 4)
-	{
-		Scene::SetScene(new CSceneGameOver2);
-	}
-		
-			
-
 
 }
 
@@ -170,6 +181,7 @@ void CObjTenkey::Action()
 void CObjTenkey::Draw()
 {
 	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
 
 	float c[4] = { 1,1,1,1 };
 	//仮マウス位置表示
@@ -177,6 +189,7 @@ void CObjTenkey::Draw()
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 	Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
+	Font::StrDraw(L"[答え決定ボタン]", 0, 450, 30, s);
 	Font::StrDraw(L"[メイン画面に戻る]", 32, 32, 30, f);
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -222,112 +235,60 @@ void CObjTenkey::Draw()
 
 
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	Font::StrDraw(L"1 2 3 4 5 6 7 8 9", 250, 300, 30, o);
+
 	//m_flag[]の制御
 	if (m_flag[1] == true)
 	{
-		if (m_psf == 2)
+		if (cnt > 1)
 		{
-			dst.m_top = 220.0f;
-			dst.m_left = 135.0f;
-			dst.m_right = 258.0f;
-			dst.m_bottom = 330.0f;
-			Draw::Draw(3, &src, &dst, d, 0.0f);
-
+		Font::StrDraw(L"1", 237, 293, 40, o);
 		}
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 197.0f;
-		src.m_bottom = 487.0f;
+		else
+		{
+			Font::StrDraw(L"〇", 237, 293, 40, o);
+		}
 
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(3, &src, &dst, d, 0.0f);
-		m_flag[1] = false;
 
 	}
 
 	if (m_flag[2] == true)
 	{
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(4, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"〇", 267, 293, 40, o);
 	}
 	if (m_flag[3] == true)
 	{
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(5, &src, &dst, d, 0.0f);
-
+		Font::StrDraw(L"〇", 297, 293, 40, o);
 	}
 	if (m_flag[4] == true)
 	{
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 830.0f;
-		src.m_bottom = 635.0f;
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(6, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"〇", 327, 293, 40, o);
 
 	}
 	if (m_flag[5] == true)
 	{
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(7, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"〇", 357, 293, 40, o);
 
 	}
 	if (m_flag[6] == true)
 	{
-
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(8, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"〇", 387, 293, 40, o);
 
 	}
 	if (m_flag[7] == true)
 	{
+		Font::StrDraw(L"〇", 417, 293, 40, o);
 
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(9, &src, &dst, d, 0.0f);
 	}
 	if (m_flag[8] == true)
 	{
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(10, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"〇", 447, 293, 40, o);
 
 	}
 	if (m_flag[9] == true)
 	{
+		Font::StrDraw(L"〇", 477, 293, 40, o);
 
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(11, &src, &dst, d, 0.0f);
 	}
 
 }

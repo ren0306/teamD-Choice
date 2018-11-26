@@ -1,6 +1,9 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
+#include <stdlib.h>
+#include <time.h>
+
 
 #include "../GameHead.h"
 #include "Objteki1.h"
@@ -11,6 +14,17 @@
 //使用するネームスペース
 using namespace GameL;
 
+//位置情報X変更用
+void CObjteki1::Set(bool x)
+{
+	m_f = x;
+}
+
+//位置情報Y取得用
+bool CObjteki1::Get()
+{
+	return m_f;
+}
 
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)
@@ -18,6 +32,7 @@ CObjteki1::CObjteki1(float x, float y)
 	m_x = x;
 	m_y = y;
 }
+
 
 //イニシャライズ
 void CObjteki1::Init()
@@ -40,6 +55,10 @@ void CObjteki1::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x +90, m_y +20);
 
+	srand(time(NULL)); // ランダム情報を初期化
+
+	float rnd=0;
+	rnd = rand() % 100;
 
 
 	m_time++;
@@ -50,6 +69,7 @@ void CObjteki1::Action()
 		//弾丸敵機オブジェクト
 		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
+
 	}
 
 	//m_timeの初期化
@@ -102,10 +122,9 @@ void CObjteki1::Action()
 	//HP０で
 	if (m_hp <= 0)
 	{
-		m_f1 = true;
-
-		/*this->SetStatus(false);		//自身に削除命令を出す。
-		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する*/
+		this->SetStatus(false);		//自身に削除命令を出す。
+		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+		m_f = true;
 		Scene::SetScene(new CSceneKuria());
 
 	}

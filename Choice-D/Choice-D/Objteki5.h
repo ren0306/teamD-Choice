@@ -26,4 +26,5 @@ private:
 	bool m_f5;
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
+	bool m_f;
 };
