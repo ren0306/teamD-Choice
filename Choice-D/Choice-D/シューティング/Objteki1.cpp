@@ -1,6 +1,9 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
+#include <stdlib.h>
+#include <time.h>
+
 
 #include "../GameHead.h"
 #include "Objteki1.h"
@@ -19,12 +22,12 @@ CObjteki1::CObjteki1(float x, float y)
 	m_y = y;
 }
 
+
 //イニシャライズ
 void CObjteki1::Init()
 {
 	m_hp = 30.f;
 	m_maxhp = 30.f;
-
 
 	m_time = 0;
 	m_vx = 0.0f;
@@ -40,6 +43,8 @@ void CObjteki1::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x +90, m_y +20);
 
+	srand(time(NULL)); // ランダム情報を初期化
+
 
 	m_time++;
 
@@ -49,6 +54,7 @@ void CObjteki1::Action()
 		//弾丸敵機オブジェクト
 		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
+
 	}
 
 	//m_timeの初期化
@@ -81,8 +87,13 @@ void CObjteki1::Action()
 
 	if (m_hp <= 15)
 	{
-		m_vx *= 1.5f*2;
-		m_vy *= 1.5f*2;
+		if (m_time % 1 == 0)
+		{
+			//弾丸敵機オブジェクト
+			CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
+			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
+		}
+
 
 	}
 
@@ -91,7 +102,9 @@ void CObjteki1::Action()
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
+
 	}
+	//HP０で
 	if (m_hp <= 0)
 	{
 		this->SetStatus(false);		//自身に削除命令を出す。

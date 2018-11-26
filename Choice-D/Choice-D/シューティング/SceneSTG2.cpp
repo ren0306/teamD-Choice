@@ -26,7 +26,7 @@ CSceneSTG2::~CSceneSTG2()
 {
 }
 
-//ゲーム戦闘初期化メソッド
+//ゲームシューティング2初期化メソッド
 void CSceneSTG2::InitScene()
 {
 	//背景を読み込み0番に登録
@@ -65,7 +65,7 @@ void CSceneSTG2::InitScene()
 
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームシューティング2実行中メソッド
 void CSceneSTG2::Scene()
 {
 }

@@ -5,14 +5,14 @@
 //使用するネームスペース
 using namespace GameL;
 
-//シーン：ゲームタイトル
+//シーン：ゲームエンディング1
 class CSceneED1 :public CScene
 {
 public:
 	CSceneED1();
 	~CSceneED1();
-	void InitScene();//ゲームタイトルの初期化メソッド
-	void Scene();	 //ゲームタイトルの実行中メソッド
+	void InitScene();//ゲームエンディングの初期化メソッド
+	void Scene();	 //ゲームエンディングの実行中メソッド
 private:
 
 };

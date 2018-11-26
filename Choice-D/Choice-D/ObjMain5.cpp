@@ -20,6 +20,7 @@ void CObjMain5::Init()
 	m_mou_l = false;
 	m_and = 1.0;
 	m_f = false;
+	m_key_flag = false;
 }
 
 //アクション
@@ -55,78 +56,91 @@ void CObjMain5::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-			   //仮マウス位置表示
+	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 
-	//戦闘画面遷移
-	if (m_mou_x > 110 && m_mou_x < 360 && m_mou_y>238 && m_mou_y < 530)
+	//前シーンから左または右クリックを押し続けている、
+	//もしくはこのシーンに入って一度でもクリックを押してない状態に移行すると実行。
+	if (m_mou_r == true || m_mou_l == true || m_key_flag == true)
 	{
-		Font::StrDraw(L"敵と戦うことを選ぶ", 455, 350, 32, c);
-		//マウスのボタンが押されたら戦闘に遷移
-		if (m_mou_r == true || m_mou_l == true)
+		//このシーンに入って一度でもクリックを押してない状態に移行すると実行。
+		if (m_key_flag == true)
 		{
-			m_f = true;
-
-		}
-
-	}
-	if (m_f == true)
-	{
-		//切り取り位置の設定
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 768.0f;
-		src.m_bottom = 614.0f;
-
-		//表示位置の設定
-		dst.m_top = 0.0f;
-		dst.m_left = 0.0f;
-		dst.m_right = 500.0f;
-		dst.m_bottom = 300.0f;
-
-		//3番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-		Draw::Draw(3, &src, &dst, c, 0.0f);
-		if (m_mou_x > 100 && m_mou_x < 160 && m_mou_y>150 && m_mou_y < 175)
-		{
-			Font::StrDraw(L"◇はい", 100, 150, 32, d);
-			if (m_mou_l == true)
+			//戦闘画面遷移
+			if (m_mou_x > 110 && m_mou_x < 360 && m_mou_y>238 && m_mou_y < 530)
 			{
-				Scene::SetScene(new CSceneSTG5());
+				Font::StrDraw(L"敵と戦うことを選ぶ", 455, 350, 32, c);
+				//マウスのボタンが押されたら戦闘に遷移
+				if (m_mou_r == true || m_mou_l == true)
+				{
+					m_f = true;
+
+				}
+
+			}
+			if (m_f == true)
+			{
+				//切り取り位置の設定
+				src.m_top = 0.0f;
+				src.m_left = 0.0f;
+				src.m_right = 768.0f;
+				src.m_bottom = 614.0f;
+
+				//表示位置の設定
+				dst.m_top = 0.0f;
+				dst.m_left = 0.0f;
+				dst.m_right = 500.0f;
+				dst.m_bottom = 300.0f;
+
+				//3番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+				Draw::Draw(3, &src, &dst, c, 0.0f);
+				if (m_mou_x > 100 && m_mou_x < 160 && m_mou_y>150 && m_mou_y < 175)
+				{
+					Font::StrDraw(L"◇はい", 100, 150, 32, d);
+					if (m_mou_l == true)
+					{
+						Scene::SetScene(new CSceneSTG5());
+					}
+				}
+				else
+				{
+					Font::StrDraw(L"はい", 100, 150, 32, d);
+				}
+				if (m_mou_x > 300 && m_mou_x < 380 && m_mou_y>150 && m_mou_y < 175)
+				{
+					Font::StrDraw(L"◇いいえ", 300, 150, 32, d);
+					if (m_mou_l == true)
+					{
+						Scene::SetScene(new CSceneMain5());
+					}
+				}
+				else
+				{
+					Font::StrDraw(L"いいえ", 300, 150, 32, d);
+				}
+
+			}
+
+			//謎画面遷移
+			if (m_mou_x >455 && m_mou_x < 630 && m_mou_y>397 && m_mou_y < 584)
+			{
+
+				Font::StrDraw(L"謎解きを選ぶ", 455, 350, 32, c);
+
+				if (m_mou_r == true || m_mou_l == true)
+				{
+					//仮でSceneNazoに繋いでいる。後でSceneNazo5に変更すべし。
+					Scene::SetScene(new CSceneNazo());
+				}
+
 			}
 		}
-		else
-		{
-			Font::StrDraw(L"はい", 100, 150, 32, d);
-		}
-		if (m_mou_x > 300 && m_mou_x < 380 && m_mou_y>150 && m_mou_y < 175)
-		{
-			Font::StrDraw(L"◇いいえ", 300, 150, 32, d);
-			if (m_mou_l == true)
-			{
-				Scene::SetScene(new CSceneMain5());
-			}
-		}
-		else
-		{
-			Font::StrDraw(L"いいえ", 300, 150, 32, d);
-		}
-
 	}
-
-	//謎画面遷移
-	if (m_mou_x >455 && m_mou_x < 630 && m_mou_y>397 && m_mou_y < 584)
+	else
 	{
-
-		Font::StrDraw(L"謎解きを選ぶ", 455, 350, 32, c);
-
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			//仮でSceneNazoに繋いでいる。後でSceneNazo5に変更すべし。
-			Scene::SetScene(new CSceneNazo());
-		}
-
+		m_key_flag = true;
 	}
 
 	//切り取り位置の設定
@@ -143,6 +157,4 @@ void CObjMain5::Draw()
 
 	//2番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(2, &src, &dst, c, 0.0f);
-
-
 }

@@ -4,7 +4,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト：敵１
+//オブジェクト：敵2
 class CObjteki2 :public CObj
 {
 public:
@@ -13,6 +13,8 @@ public:
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー
+	bool GETF() { return m_f2; }
+
 private:
 	float m_x;	//敵1のx方向の位置
 	float m_y;	//敵1のy方向の位置
@@ -21,6 +23,7 @@ private:
 	float m_r = 0.0f;
 	int   m_time;//弾丸間隔用
 
+	bool m_f2;
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
 };

@@ -5,7 +5,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-//シーン：ゲームタイトル
+//シーン：ゲーム操作画面
 class CObjGameOvergamen :public CObj
 {
 public:

@@ -5,7 +5,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-//シーン：ゲームオーバー
+//シーン：ゲームオーバー1
 class CSceneGameOver:public CScene
 {
 	public:

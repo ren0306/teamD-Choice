@@ -21,4 +21,5 @@ private:
 	bool m_mou_l;
 	double m_and;
 	bool m_f;
+	bool m_key_flag;//キーフラグ
 };

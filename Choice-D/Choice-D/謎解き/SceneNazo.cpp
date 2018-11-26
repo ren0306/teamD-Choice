@@ -43,6 +43,8 @@ void CSceneNazo::InitScene()
 	Draw::LoadImage(L"7.png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"8.png", 10, TEX_SIZE_512);
 	Draw::LoadImage(L"9.png", 11, TEX_SIZE_512);
+	Draw::LoadImage(L"‰ð“š.png", 12, TEX_SIZE_512);
+	Draw::LoadImage(L"–â‘è.png", 13, TEX_SIZE_512);
 
 
 	Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);

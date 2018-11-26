@@ -4,7 +4,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト：タイトル
+//オブジェクト：テンキー
 class CObjTenkey :public CObj
 {
 public:
@@ -22,7 +22,7 @@ private:
 	float cnt = 0.f;
 	float m_ps ;
 	bool m_flag[10];
-	bool m_reset_flag=false;
+	bool m_reset_flag;
 	int m_psf;
 
 };
