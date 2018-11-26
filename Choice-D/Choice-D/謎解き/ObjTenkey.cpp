@@ -179,11 +179,16 @@ void CObjTenkey::Draw()
 		if (m_mou_l == true)
 		{
 			Scene::SetScene(new CSceneMain);
+
+			Audio::Start(1);
+
+
 		}
 	}
 	else
 	{
 		Font::StrDraw(L"[ƒƒCƒ“‰æ–Ê‚É–ß‚é]", 32, 32, 30, f);
+		//BGM‚ğ“o˜^
 	}
 
 	float s[4] = { 1.0f,1.0f,0.0f,1.0f };

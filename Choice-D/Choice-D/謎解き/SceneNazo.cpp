@@ -48,7 +48,8 @@ void CSceneNazo::InitScene()
 
 
 	Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
-
+	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::Start(1);
 	//オブジェクト作成
 	CObjTenkey* key = new CObjTenkey();
 	Objs::InsertObj(key, OBJ_TENKEY, 2);

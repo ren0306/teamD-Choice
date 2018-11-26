@@ -5,6 +5,7 @@
 #include "../GameL\SceneManager.h"
 
 
+
 #include "../GameHead.h"
 #include "ObjTitle.h"
 #include "../ゲームメイン/SceneMain.h"
@@ -35,7 +36,7 @@ void CObjTitle::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-
+	
 }
 
 //ドロー
