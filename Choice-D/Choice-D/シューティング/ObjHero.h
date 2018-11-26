@@ -25,4 +25,5 @@ private:
 	float m_vy;		//主人公機のｙ方向移動ベクトル用変数
 	float   m_hp;		//自機のヒットポイント
 	float m_maxhp;
+	float m_time;
 };

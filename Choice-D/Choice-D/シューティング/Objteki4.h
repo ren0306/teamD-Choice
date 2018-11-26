@@ -13,6 +13,9 @@ public:
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー
+	//bool GETF() { return m_f4; }
+	bool m_f4;
+
 private:
 	float m_x;	//敵3のx方向の位置
 	float m_y;	//敵3のy方向の位置

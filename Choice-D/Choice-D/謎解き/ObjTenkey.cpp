@@ -29,13 +29,8 @@ void CObjTenkey::Init()
 //ÉAÉNÉVÉáÉì
 void CObjTenkey::Action()
 {
-	if (m_flag[5] == false&&m_flag[4]==false&&m_flag[7]==false)
-	{
-		Scene::SetScene(new CSceneMain2);
-		m_f == 1;
-		Audio::Start(0);
 
-	}
+
 	//É}ÉEÉXÇÃà íuÇéÊìæ
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -59,7 +54,6 @@ void CObjTenkey::Action()
 				if (m_mou_l == true)
 				{
 					m_flag[7] = true;
-					m_psf = 2;
 				}
 			}
 			//4ì¸óÕ
@@ -68,10 +62,6 @@ void CObjTenkey::Action()
 				if (m_mou_l == true)
 				{
 					m_flag[4] = true;
-				}
-				else
-				{
-					m_flag[4]=false;
 				}
 			}
 
@@ -151,18 +141,22 @@ void CObjTenkey::Action()
 			}
 
 		}
-	//[Ç∑Ç◊ÇƒçÌèú]ÇâüÇ∑Ç∆(ñ¢é¿ëï)
-	if (m_reset_flag == true)
+	//[Ç∑Ç◊ÇƒçÌèú]ÇâüÇ∑Ç∆
+	if (m_mou_x>=500&&m_mou_x<=666&&m_mou_y>=442&&m_mou_y<=470)
 	{
-		return;
+		if (m_mou_l == true)
+		{
+			m_flag[1] = false;
+			m_flag[2] = false;
+			m_flag[3] = false;
+			m_flag[4] = false;
+			m_flag[5] = false;
+			m_flag[6] = false;
+			m_flag[7] = false;
+			m_flag[8] = false;
+			m_flag[9] = false;
+		}
 	}
-	if (cnt == 4)
-	{
-		Scene::SetScene(new CSceneGameOver2);
-	}
-		
-			
-
 
 }
 
@@ -177,7 +171,41 @@ void CObjTenkey::Draw()
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 	Font::StrDraw(L"[Ç∑Ç◊ÇƒçÌèú]", 500, 450, 30, f);
-	Font::StrDraw(L"[ÉÅÉCÉìâÊñ Ç…ñﬂÇÈ]", 32, 32, 30, f);
+
+	//ÉÅÉCÉìÇ…ñﬂÇÈ
+	if (m_mou_x >= 37 && m_mou_x <= 290 && m_mou_y >= 33 && m_mou_y <= 60)
+	{
+		Font::StrDraw(L"[ÅûÉÅÉCÉìâÊñ Ç…ñﬂÇÈ]", 32, 32, 30, f);
+		if (m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneMain);
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"[ÉÅÉCÉìâÊñ Ç…ñﬂÇÈ]", 32, 32, 30, f);
+	}
+
+	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
+
+	//ì‰âÇ´ìöÇ¶ê≥âÇ…ÇÃèÍçá2Ç÷
+	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
+	{
+		Font::StrDraw(L"[ÅûìöÇ¶åàíËÉ{É^Éì]", 0, 450, 30, s);
+
+		if (m_mou_l == true)
+		{
+			if (m_flag[5] == true && m_flag[4] == true && m_flag[7] == true)
+			{
+				Scene::SetScene(new CSceneMain2);
+				Audio::Start(0);
+			}
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"[ìöÇ¶åàíËÉ{É^Éì]", 0, 450, 30, s);
+	}
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;
@@ -222,112 +250,60 @@ void CObjTenkey::Draw()
 
 
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	Font::StrDraw(L"1 2 3 4 5 6 7 8 9", 250, 300, 30, o);
+
 	//m_flag[]ÇÃêßå‰
 	if (m_flag[1] == true)
 	{
-		if (m_psf == 2)
+		if (cnt > 1)
 		{
-			dst.m_top = 220.0f;
-			dst.m_left = 135.0f;
-			dst.m_right = 258.0f;
-			dst.m_bottom = 330.0f;
-			Draw::Draw(3, &src, &dst, d, 0.0f);
-
+		Font::StrDraw(L"1", 237, 293, 40, o);
 		}
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 197.0f;
-		src.m_bottom = 487.0f;
+		else
+		{
+			Font::StrDraw(L"ÅZ", 237, 293, 40, o);
+		}
 
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(3, &src, &dst, d, 0.0f);
-		m_flag[1] = false;
 
 	}
 
 	if (m_flag[2] == true)
 	{
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(4, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"ÅZ", 267, 293, 40, o);
 	}
 	if (m_flag[3] == true)
 	{
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(5, &src, &dst, d, 0.0f);
-
+		Font::StrDraw(L"ÅZ", 297, 293, 40, o);
 	}
 	if (m_flag[4] == true)
 	{
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 830.0f;
-		src.m_bottom = 635.0f;
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(6, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"ÅZ", 327, 293, 40, o);
 
 	}
 	if (m_flag[5] == true)
 	{
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(7, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"ÅZ", 357, 293, 40, o);
 
 	}
 	if (m_flag[6] == true)
 	{
-
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(8, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"ÅZ", 387, 293, 40, o);
 
 	}
 	if (m_flag[7] == true)
 	{
+		Font::StrDraw(L"ÅZ", 417, 293, 40, o);
 
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(9, &src, &dst, d, 0.0f);
 	}
 	if (m_flag[8] == true)
 	{
-
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(10, &src, &dst, d, 0.0f);
+		Font::StrDraw(L"ÅZ", 447, 293, 40, o);
 
 	}
 	if (m_flag[9] == true)
 	{
+		Font::StrDraw(L"ÅZ", 477, 293, 40, o);
 
-		dst.m_top = 220.0f;
-		dst.m_left = 135.0f;
-		dst.m_right = 258.0f;
-		dst.m_bottom = 330.0f;
-		Draw::Draw(11, &src, &dst, d, 0.0f);
 	}
 
 }

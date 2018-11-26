@@ -51,6 +51,7 @@ enum OBJ_NAME
 	OBJ_ED2GAZOU,
 	OBJ_ED3GAZOU,
 	OBJ_KURIA,
+	OBJ_REMEMBER,
 };
 //------------------------------------------------
 
@@ -123,6 +124,9 @@ struct UserData
 #include "謎解き\ObjTenkey.h"
 #include "シューティング\Objteki1.h"
 #include "シューティング\Objteki2.h"
+#include "シューティング\Objteki3.h"
+#include "シューティング\Objteki4.h"
+#include "Objteki5.h"
 #include "シューティング\ObjSTG.h"
 #include "シューティング\ObjSTG2.h"
 #include "シューティング\ObjSTG3.h"
@@ -137,6 +141,7 @@ struct UserData
 #include "小物関係\ObjED2gazou.h"
 #include "小物関係\ObjED3gazou.h"
 #include "シューティング\ObjKuria.h"
+#include "小物関係\Remember.h"
 
 //------------------------------------------------
 
@@ -165,5 +170,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneED3
+#define SET_GAME_START CSceneMain
 //-----------------------------------------------

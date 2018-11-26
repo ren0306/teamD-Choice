@@ -12,7 +12,7 @@ using namespace GameL;
 //ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 CObjteki4::CObjteki4(float x, float y)
 {
-	m_hp = 25.f;
+	m_hp = 1.f;
 	m_maxhp = 25.f;
 
 	m_x = x;
@@ -86,13 +86,14 @@ void CObjteki4::Action()
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+		/*this->SetStatus(false);
+		Hits::DeleteHitBox(this);*/
+		m_f4 = true;
 		Scene::SetScene(new CSceneMain5());
 	}
 
 
-	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚µ‚½‚çHP‚ðŒ¸‚ç‚·
+	//’eŠÛ‚ÆÚG‚µ‚½‚çHP‚ðŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
