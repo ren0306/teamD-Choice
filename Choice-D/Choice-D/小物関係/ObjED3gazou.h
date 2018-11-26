@@ -5,7 +5,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-//シーン：ゲームタイトル
+//シーン：ゲームED3
 class CObjED3gazou :public CObj
 {
 public:

@@ -11,7 +11,7 @@ using namespace GameL;
 
 //使用ヘッダー
 #include "../ゲームメイン/SceneMain.h"
-#include "../タイトル/SceneTitle.h"
+#include "SceneED3.h"
 #include "../GameHead.h"
 
 //コンストラクタ
@@ -30,12 +30,12 @@ void CSceneED3::InitScene()
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
 
-	//タイトルオブジェクト作成
+	//エンディング3オブジェクト作成
 	CObjED3* obj = new CObjED3();
 	Objs::InsertObj(obj, OBJ_ED3, 10);
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームエンディング3実行中メソッド
 void CSceneED3::Scene()
 {
 }

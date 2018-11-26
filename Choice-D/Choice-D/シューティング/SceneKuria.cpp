@@ -25,18 +25,18 @@ CSceneKuria::~CSceneKuria()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//バトルクリア初期化メソッド
 void CSceneKuria::InitScene()
 {
 	
 	
 	
-	//タイトルオブジェクト作成
+	//クリアオブジェクト作成
 	CObjKuria* obj = new CObjKuria();
 	Objs::InsertObj(obj, OBJ_KURIA, 10);
 }
 
-//ゲームタイトル実行中メソッド
+//バトルクリア実行中メソッド
 void CSceneKuria::Scene()
 {
 

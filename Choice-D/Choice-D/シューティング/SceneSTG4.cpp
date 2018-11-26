@@ -25,7 +25,7 @@ CSceneSTG4::~CSceneSTG4()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲームシューティング4初期化メソッド
 void CSceneSTG4::InitScene()
 {
 
@@ -62,7 +62,7 @@ void CSceneSTG4::InitScene()
 	Objs::InsertObj(ob, OBJ_HERO, 150);
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームシューティング4実行中メソッド
 void CSceneSTG4::Scene()
 {
 

@@ -25,7 +25,7 @@ CSceneSTG::~CSceneSTG()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲームシューティング初期化メソッド
 void CSceneSTG::InitScene()
 {
 	
@@ -65,7 +65,7 @@ void CSceneSTG::InitScene()
 	Objs::InsertObj(ob, OBJ_HERO, 110);
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームシューティング実行中メソッド
 void CSceneSTG::Scene()
 {
 }
