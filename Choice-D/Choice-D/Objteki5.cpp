@@ -20,6 +20,7 @@ CObjteki5::CObjteki5(float x, float y)
 	m_y = y;
 }
 
+
 //イニシャライズ
 void CObjteki5::Init()
 {

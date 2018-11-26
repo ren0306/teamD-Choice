@@ -45,6 +45,7 @@ void CObjHero::Init()
 	m_f = true;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	m_time = 50.f;
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
@@ -173,10 +174,15 @@ void CObjHero::Action()
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
-		this->SetStatus(false);		//自身に削除命令を出す。
-		Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxに削除する。
+		m_time--;
+		if (m_time <= 0)
+		{
+			this->SetStatus(false);		//自身に削除命令を出す。
+			Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxに削除する。
 
-		Scene::SetScene(new CSceneGameOver2());
+
+			Scene::SetScene(new CSceneGameOver2());
+		}
 	}
 }
 

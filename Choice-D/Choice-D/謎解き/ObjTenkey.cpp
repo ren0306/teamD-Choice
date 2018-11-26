@@ -29,13 +29,15 @@ void CObjTenkey::Init()
 //アクション
 void CObjTenkey::Action()
 {
+	//削除実行
 	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
 	{
 		if (m_mou_l == true)
 		{
-			Font::ListDelete();
+			//フォント削除プログラム
 		}
 	}
+	//謎解き答え正解にの場合2へ
 	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
 	{
 		if (m_mou_l == true)
@@ -47,6 +49,15 @@ void CObjTenkey::Action()
 			}
 		}
 	}
+	//メインに戻る
+	if (m_mou_x >= 37 && m_mou_x <= 290 && m_mou_y >= 33 && m_mou_y <= 60)
+	{
+		if (m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneMain);
+		}
+	}
+
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -71,7 +82,6 @@ void CObjTenkey::Action()
 				if (m_mou_l == true)
 				{
 					m_flag[7] = true;
-					m_psf = 2;
 				}
 			}
 			//4入力
@@ -164,13 +174,6 @@ void CObjTenkey::Action()
 	{
 		return;
 	}
-	if (cnt == 4)
-	{
-		Scene::SetScene(new CSceneGameOver2);
-	}
-		
-			
-
 
 }
 
@@ -237,7 +240,16 @@ void CObjTenkey::Draw()
 	//m_flag[]の制御
 	if (m_flag[1] == true)
 	{
-		Font::StrDraw(L"〇", 237, 293, 40, o);
+		if (cnt > 1)
+		{
+		Font::StrDraw(L"1", 237, 293, 40, o);
+		}
+		else
+		{
+			Font::StrDraw(L"〇", 237, 293, 40, o);
+		}
+
+
 	}
 
 	if (m_flag[2] == true)
