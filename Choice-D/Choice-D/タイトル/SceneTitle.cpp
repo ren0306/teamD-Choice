@@ -7,6 +7,7 @@
 #include "../GameL\DrawFont.h"
 #include "../GameL/DrawTexture.h"
 
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -28,6 +29,8 @@ CSceneTitle::~CSceneTitle()
 //ゲームタイトル初期化メソッド
 void CSceneTitle::InitScene()
 {
+	
+
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
 	Draw::LoadImage(L"Title.png", 0, TEX_SIZE_512);

@@ -25,7 +25,7 @@ CSceneSTG5::~CSceneSTG5()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲームシューティング5初期化メソッド
 void CSceneSTG5::InitScene()
 {
 
@@ -67,7 +67,7 @@ void CSceneSTG5::InitScene()
 	
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームシューティング5実行中メソッド
 void CSceneSTG5::Scene()
 {
 

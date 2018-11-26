@@ -46,6 +46,7 @@ void CObjMain::Action()
 	m_mou_l = Input::GetMouButtonL();
 
 
+
 }
 
 //ƒhƒ[

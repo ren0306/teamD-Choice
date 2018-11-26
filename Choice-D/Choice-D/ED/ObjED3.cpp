@@ -48,7 +48,7 @@ void CObjED3::Draw()
 	
 	float c[4] = { 1,1,1,1 };
 
-	//外部グラフィック画像を読み込み0番に登録
+	//ED画像を読み込み0番に登録
 	Draw::LoadImage(L"ED3.png", 3, TEX_SIZE_512);
 
 	CObjED3gazou* ED3 = new CObjED3gazou();

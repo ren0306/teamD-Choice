@@ -160,11 +160,16 @@ void CObjTenkey::Draw()
 		if (m_mou_l == true)
 		{
 			Scene::SetScene(new CSceneMain);
+
+			Audio::Start(1);
+
+
 		}
 	}
 	else
 	{
 		Font::StrDraw(L"[ƒƒCƒ“‰æ–Ê‚É–ß‚é]", 32, 32, 30, f);
+		//BGM‚ð“o˜^
 	}
 	//“ä‰ð‚«“š‚¦³‰ð‚É‚Ìê‡2‚Ö
 	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)

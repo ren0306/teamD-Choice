@@ -26,10 +26,10 @@ CSceneGameOver::~CSceneGameOver()
 
 }
 
-//ゲームメイン初期化メソッド
+//ゲームオーバー初期化メソッド
 void CSceneGameOver::InitScene()
 {
-	//外部グラフィック画像を読み込み0番に登録
+	//ゲームオーバー1画像を読み込み0番に登録
 	Draw::LoadImage(L"GameOver kuuhuku.png", 3, TEX_SIZE_512);
 
 	CObjGameOvergamen* ga = new CObjGameOvergamen();
@@ -38,12 +38,12 @@ void CSceneGameOver::InitScene()
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"GAME OVER");
 
-	//ゲームオーバーオブジェクト作成
+	//ゲームオーバーオブジェクト1作成
 	CObjGAMEOVER* obj = new CObjGAMEOVER();		//ゲームオーバーオブジェクト作成
 	Objs::InsertObj(obj, OBJ_GAMEOVER, 10);		//主人公オブジェクト登録
 }
 
-//ゲームメイン実行中メソッド
+//ゲームオーバー1実行中メソッド
 void CSceneGameOver::Scene()
 {
 
