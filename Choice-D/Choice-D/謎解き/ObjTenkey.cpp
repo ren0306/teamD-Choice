@@ -29,34 +29,6 @@ void CObjTenkey::Init()
 //アクション
 void CObjTenkey::Action()
 {
-	//削除実行
-	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
-	{
-		if (m_mou_l == true)
-		{
-			//フォント削除プログラム
-		}
-	}
-	//謎解き答え正解にの場合2へ
-	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
-	{
-		if (m_mou_l == true)
-		{
-			if (m_flag[5] == true && m_flag[4] == true && m_flag[7] == true)
-			{
-				Scene::SetScene(new CSceneMain2);
-				Audio::Start(0);
-			}
-		}
-	}
-	//メインに戻る
-	if (m_mou_x >= 37 && m_mou_x <= 290 && m_mou_y >= 33 && m_mou_y <= 60)
-	{
-		if (m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneMain);
-		}
-	}
 
 
 	//マウスの位置を取得
@@ -169,10 +141,21 @@ void CObjTenkey::Action()
 			}
 
 		}
-	//[すべて削除]を押すと(未実装)
-	if (m_reset_flag == true)
+	//[すべて削除]を押すと
+	if (m_mou_x>=500&&m_mou_x<=666&&m_mou_y>=442&&m_mou_y<=470)
 	{
-		return;
+		if (m_mou_l == true)
+		{
+			m_flag[1] = false;
+			m_flag[2] = false;
+			m_flag[3] = false;
+			m_flag[4] = false;
+			m_flag[5] = false;
+			m_flag[6] = false;
+			m_flag[7] = false;
+			m_flag[8] = false;
+			m_flag[9] = false;
+		}
 	}
 
 }
@@ -181,7 +164,6 @@ void CObjTenkey::Action()
 void CObjTenkey::Draw()
 {
 	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
-	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
 
 	float c[4] = { 1,1,1,1 };
 	//仮マウス位置表示
@@ -189,8 +171,41 @@ void CObjTenkey::Draw()
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 	Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
-	Font::StrDraw(L"[答え決定ボタン]", 0, 450, 30, s);
-	Font::StrDraw(L"[メイン画面に戻る]", 32, 32, 30, f);
+
+	//メインに戻る
+	if (m_mou_x >= 37 && m_mou_x <= 290 && m_mou_y >= 33 && m_mou_y <= 60)
+	{
+		Font::StrDraw(L"[◇メイン画面に戻る]", 32, 32, 30, f);
+		if (m_mou_l == true)
+		{
+			Scene::SetScene(new CSceneMain);
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"[メイン画面に戻る]", 32, 32, 30, f);
+	}
+
+	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
+
+	//謎解き答え正解にの場合2へ
+	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
+	{
+		Font::StrDraw(L"[◇答え決定ボタン]", 0, 450, 30, s);
+
+		if (m_mou_l == true)
+		{
+			if (m_flag[5] == true && m_flag[4] == true && m_flag[7] == true)
+			{
+				Scene::SetScene(new CSceneMain2);
+				Audio::Start(0);
+			}
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"[答え決定ボタン]", 0, 450, 30, s);
+	}
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
 	RECT_F src;

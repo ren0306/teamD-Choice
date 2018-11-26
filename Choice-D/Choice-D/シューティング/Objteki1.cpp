@@ -14,17 +14,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-//位置情報X変更用
-void CObjteki1::Set(bool x)
-{
-	m_f = x;
-}
-
-//位置情報Y取得用
-bool CObjteki1::Get()
-{
-	return m_f;
-}
 
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)
@@ -39,7 +28,6 @@ void CObjteki1::Init()
 {
 	m_hp = 30.f;
 	m_maxhp = 30.f;
-	m_f1 = false;
 
 	m_time = 0;
 	m_vx = 0.0f;
@@ -56,9 +44,6 @@ void CObjteki1::Action()
 	hit->SetPos(m_x +90, m_y +20);
 
 	srand(time(NULL)); // ランダム情報を初期化
-
-	float rnd=0;
-	rnd = rand() % 100;
 
 
 	m_time++;
@@ -124,7 +109,6 @@ void CObjteki1::Action()
 	{
 		this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
-		m_f = true;
 		Scene::SetScene(new CSceneKuria());
 
 	}
