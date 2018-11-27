@@ -32,6 +32,7 @@ enum OBJ_NAME
 	OBJ_ED2,
 	OBJ_NAZO,
 	OBJ_TENKEY,
+	OBJ_TENKEY2,
 	OBJ_TEKI1,
 	OBJ_TEKI2,
 	OBJ_TEKI3,
@@ -53,6 +54,7 @@ enum OBJ_NAME
 	OBJ_KURIA,
 	OBJ_REMEMBER,
 	OBJ_TIME,
+
 };
 //------------------------------------------------
 
@@ -123,6 +125,7 @@ struct UserData
 #include "ED\ObjED1.h"
 #include "ED\ObjED3.h"
 #include "謎解き\ObjTenkey.h"
+#include "小物関係\ObjTenkey2.h"
 #include "シューティング\Objteki1.h"
 #include "シューティング\Objteki2.h"
 #include "シューティング\Objteki3.h"
@@ -160,6 +163,7 @@ struct UserData
 #include "ED\SceneED2.h"
 #include "ED\SceneED3.h"
 #include "謎解き\SceneNazo.h"
+#include "謎解き\SceneNazo2.h"
 #include "シューティング\SceneSTG.h"
 #include "シューティング\SceneSTG2.h"
 #include "シューティング\SceneSTG3.h"

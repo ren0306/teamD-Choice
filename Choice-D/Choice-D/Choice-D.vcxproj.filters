@@ -241,6 +241,13 @@
     <ClCompile Include="小物関係\TimeLimit.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\ObjTenkey2.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="謎解き\SceneNazo2.cpp">
+      <Filter>ソースファイル\謎解き</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -476,6 +483,12 @@
     </ClInclude>
     <ClInclude Include="小物関係\TimeLimit.h">
       <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="小物関係\ObjTenkey2.h">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="謎解き\SceneNazo2.h">
+      <Filter>ソースファイル\謎解き</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
