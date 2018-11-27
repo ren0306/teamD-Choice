@@ -53,6 +53,10 @@ enum OBJ_NAME
 	OBJ_KURIA,
 	OBJ_REMEMBER,
 	OBJ_TIME,
+	OBJ_KURIA2,
+	OBJ_KURIA3,
+	OBJ_KURIA4,
+	OBJ_KURIA5,
 };
 //------------------------------------------------
 
@@ -144,6 +148,11 @@ struct UserData
 #include "シューティング\ObjKuria.h"
 #include "小物関係\Remember.h"
 #include "小物関係\TimeLimit.h"
+#include "シューティング\ObjKuria2.h"
+#include "シューティング\ObjKuria3.h"
+#include "シューティング\ObjKuria4.h"
+#include "シューティング\ObjKuria5.h"
+
 
 //------------------------------------------------
 
@@ -167,6 +176,11 @@ struct UserData
 #include "SceneSTG5.h"
 #include "タイトル\SceneSousagamen.h"
 #include "シューティング\SceneKuria.h"
+#include "シューティング\SceneKuria2.h"
+#include "シューティング\SceneKuria3.h"
+#include "シューティング\SceneKuria4.h"
+#include "シューティング\SceneKuria5.h"
+
 
 //-----------------------------------------------
 

@@ -89,7 +89,7 @@ void CObjteki4::Action()
 		/*this->SetStatus(false);
 		Hits::DeleteHitBox(this);*/
 		m_f4 = true;
-		Scene::SetScene(new CSceneMain5());
+		Scene::SetScene(new CSceneKuria4());
 	}
 
 
