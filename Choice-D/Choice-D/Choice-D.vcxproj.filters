@@ -242,6 +242,31 @@
       <Filter>ソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="シューティング\ObjKuria2.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneKuria2.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneKuria3.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneKuria4.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneKuria5.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\ObjKuria3.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\ObjKuria4.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="シューティング\ObjKuria5.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\ObjTenkey2.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
@@ -483,6 +508,30 @@
     </ClInclude>
     <ClInclude Include="小物関係\TimeLimit.h">
       <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjKuria2.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneKuria2.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneKuria3.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneKuria4.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\SceneKuria5.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjKuria3.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjKuria4.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\ObjKuria5.h">
+      <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="小物関係\ObjTenkey2.h">
       <Filter>ソースファイル\小物関係</Filter>

@@ -99,7 +99,7 @@ void CObjteki5::Action()
 		Hits::DeleteHitBox(this);*/
 		if (m_f == true)
 		{
-			Scene::SetScene(new CSceneED2());
+			Scene::SetScene(new CSceneKuria5());
 		}
 
 	}
