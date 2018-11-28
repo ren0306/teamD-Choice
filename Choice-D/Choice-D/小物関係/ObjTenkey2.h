@@ -16,6 +16,7 @@ public:
 	void Action();		//アクション
 	void Draw();		//ドロー
 	bool Anser();
+	void Tenkey();
 	int m_f = 0;
 private:
 	float m_mou_x;

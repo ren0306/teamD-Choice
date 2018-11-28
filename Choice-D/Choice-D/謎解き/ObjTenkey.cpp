@@ -53,103 +53,7 @@ void CObjTenkey::Action()
 	456
 	123
 	*/
-	//741
-	if (m_mou_x > 300 && m_mou_x < 345)
-	{
-		//‚V“ü—Í
-			if (m_mou_y > 373 && m_mou_y < 410)
-			{
-				if (m_mou_l == true)
-				{
-					m_flag[7] = true;
-				}
-			}
-			//4“ü—Í
-			else if (m_mou_y > 416 && m_mou_y < 450)
-			{
-				if (m_mou_l == true)
-				{
-					m_flag[4] = true;
-				}
-			}
-
-		
-			//1“ü—Í
-			else if (m_mou_y > 460 && m_mou_y < 494)
-			{
-				if (m_mou_l == true)
-				{
-					m_flag[1] = true;
-				}
-			}
-
-		}
-	//852
-	if (m_mou_x > 353 && m_mou_x < 395)
-	{
-		//8“ü—Í
-		if (m_mou_y > 373 && m_mou_y < 410)
-		{
-			if (m_mou_l == true)
-			{		
-				m_flag[8] = true;
-			}
-
-		}
-		//5“ü—Í
-		else if (m_mou_y > 416 && m_mou_y < 450)
-		{
-			if (m_mou_l == true)
-			{
-				m_flag[5] = true;
-			}
-
-		}
-		//2“ü—Í
-		else if (m_mou_y > 460 && m_mou_y < 494)
-		{
-			if (m_mou_l == true)
-			{
-				m_flag[2] = true;
-			}
-
-		}
-
-	}
-	//963
-	if (m_mou_x > 406 && m_mou_x < 445)
-		{
-			//9“ü—Í
-			if (m_mou_y > 373 && m_mou_y < 410)
-			{
-				if (m_mou_l == true)
-				{
-					m_flag[9] = true;
-				}
-
-			}
-			//6“ü—Í
-			else if (m_mou_y > 416 && m_mou_y < 450)
-			{
-				if (m_mou_l == true)
-				{
-					m_flag[6] = true;
-				}
-
-
-			}
-			//3“ü—Í
-			else if (m_mou_y > 460 && m_mou_y < 494)
-			{
-				if (m_mou_l == true)
-				{
-					m_flag[3] = true;
-				}
-
-			}
-
-		}
-
+	Tenkey();
 }
 
 //ƒhƒ[
@@ -197,6 +101,7 @@ void CObjTenkey::Draw()
 		if (m_mou_l == true)
 		{
 			Anser();
+			cnt = 0;
 			if (m_ok==true)
 			{
 				Scene::SetScene(new CSceneMain2);
@@ -235,6 +140,7 @@ void CObjTenkey::Draw()
 			m_flag[7] = false;
 			m_flag[8] = false;
 			m_flag[9] = false;
+			cnt = 0;
 		}
 	}
 	else
@@ -337,6 +243,127 @@ void CObjTenkey::Draw()
 	}
 
 }
+void CObjTenkey::Tenkey()
+{
+	if (cnt != 1)
+	{
+		//741
+		if (m_mou_x > 300 && m_mou_x < 345)
+		{
+			//‚V“ü—Í
+			if (m_mou_y > 373 && m_mou_y < 410)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[7] = true;
+					cnt++;
+				}
+			}
+			//4“ü—Í
+			else if (m_mou_y > 416 && m_mou_y < 450)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[4] = true;
+					cnt++;
+
+				}
+			}
+
+
+			//1“ü—Í
+			else if (m_mou_y > 460 && m_mou_y < 494)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[1] = true;
+					cnt++;
+
+				}
+			}
+		}
+		//852
+		if (m_mou_x > 353 && m_mou_x < 395)
+		{
+			//8“ü—Í
+			if (m_mou_y > 373 && m_mou_y < 410)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[8] = true;
+					cnt++;
+
+				}
+
+			}
+			//5“ü—Í
+			else if (m_mou_y > 416 && m_mou_y < 450)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[5] = true;
+					cnt++;
+
+				}
+
+			}
+			//2“ü—Í
+			else if (m_mou_y > 460 && m_mou_y < 494)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[2] = true;
+					cnt++;
+
+				}
+
+			}
+
+		}
+		//963
+		if (m_mou_x > 406 && m_mou_x < 445)
+		{
+			//9“ü—Í
+			if (m_mou_y > 373 && m_mou_y < 410)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[9] = true;
+					cnt++;
+
+				}
+
+			}
+			//6“ü—Í
+			else if (m_mou_y > 416 && m_mou_y < 450)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[6] = true;
+					cnt++;
+
+				}
+
+
+			}
+			//3“ü—Í
+			else if (m_mou_y > 460 && m_mou_y < 494)
+			{
+				if (m_mou_l == true)
+				{
+					m_flag[3] = true;
+					cnt++;
+
+				}
+
+			}
+
+		}
+	}
+
+
+	return;
+}
 
 bool CObjTenkey::Anser ()
 {
@@ -353,14 +380,16 @@ bool CObjTenkey::Anser ()
 	{
 		for (int i = 0; i < 9; i++)
 		{
-			if (m_num[i+1] != m_anser[0][j])//“š‚¦‚½”Žš‚Æ³‰ð‚ðŒ©”ä‚×‚é
+			if (m_num[i+1] == m_anser[0][j])//“š‚¦‚½”Žš‚Æ³‰ð‚ðŒ©”ä‚×‚é
 			{
-				;
+				cnt++;
+				m_ok = true;
+				return m_ok;
+
 			}
 			else
 			{
-				m_ok = true;
-				return m_ok;
+				;
 			}
 		}
 	}
@@ -368,8 +397,4 @@ bool CObjTenkey::Anser ()
 	return m_ok;
 
 }
-
-
-
-
 

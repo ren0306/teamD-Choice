@@ -16,16 +16,19 @@ public:
 	void Action();		//アクション
 	void Draw();		//ドロー
 	bool Anser();
+	void Tenkey();
 	int m_f = 0;
 private:
 	float m_mou_x;
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;	
-	int cnt = 0;
+	int cnt ;
 	float m_ps ;
 	bool m_flag[10];
 	bool m_ok;
 	int m_num[10];
 	int m_anser;
+	int m_Q;
+	int m_A;
 };
