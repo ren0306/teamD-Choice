@@ -17,6 +17,7 @@ CObjteki4::CObjteki4(float x, float y)
 
 	m_x = x;
 	m_y = y;
+
 }
 
 //イニシャライズ
@@ -86,9 +87,11 @@ void CObjteki4::Action()
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
+		m_tekicnt++;
+
 		/*this->SetStatus(false);
 		Hits::DeleteHitBox(this);*/
-		m_f4 = true;
+		m_endflag = true;
 		Scene::SetScene(new CSceneKuria4());
 	}
 

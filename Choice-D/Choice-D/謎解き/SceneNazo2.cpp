@@ -38,15 +38,12 @@ void CSceneNazo2::InitScene()
 	Draw::LoadImage(L"問題.png", 13, TEX_SIZE_512);
 
 
-	Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
-	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	Audio::Start(1);
 	//オブジェクト作成
 	CObjTenkey2* key = new CObjTenkey2();
 	Objs::InsertObj(key, OBJ_TENKEY2, 2);
 
-	CObjBGN* BGN = new CObjBGN();
-	Objs::InsertObj(BGN, OBJ_BGN, 1);
+	CObjBGN2* BGN2 = new CObjBGN2();
+	Objs::InsertObj(BGN2, OBJ_BGN, 1);
 
 	CObjBackGround* b = new CObjBackGround();
 	Objs::InsertObj(b, OBJ_BACKGROUND, 0);

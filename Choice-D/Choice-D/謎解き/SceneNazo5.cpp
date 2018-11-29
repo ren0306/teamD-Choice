@@ -31,21 +31,17 @@ void CSceneNazo5::InitScene()
 {
 	//出力させる文字のグラフィックを作成
 	//例　Font::SetStrTex(L"ゲームを始める");
-	Draw::LoadImage(L"Main4.png", 0, TEX_SIZE_512);
-	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"Main5.png", 0, TEX_SIZE_512);
+	Draw::LoadImage(L"door2.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"解答.png", 12, TEX_SIZE_512);
 	Draw::LoadImage(L"問題.png", 13, TEX_SIZE_512);
 
-
-	/*Audio::LoadAudio(0, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
-	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	Audio::Start(1);*/
 	//オブジェクト作成
 	CObjTenkey5* key = new CObjTenkey5();
 	Objs::InsertObj(key, OBJ_TENKEY5, 2);
 
-	CObjBGN* BGN = new CObjBGN();
+	CObjBGN5* BGN = new CObjBGN5();
 	Objs::InsertObj(BGN, OBJ_BGN, 1);
 
 	CObjBackGround* b = new CObjBackGround();

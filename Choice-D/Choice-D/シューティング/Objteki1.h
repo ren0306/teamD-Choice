@@ -16,7 +16,6 @@ class CObjteki1 :public CObj
 		void Action();	//アクション
 		void Draw();	//ドロー
 
-		bool GET() { return m_f; }
 
 	private:
 		float m_x;	//敵1のx方向の位置

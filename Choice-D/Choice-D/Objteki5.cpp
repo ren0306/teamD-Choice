@@ -13,7 +13,6 @@ using namespace GameL;
 //コンストラクタ
 CObjteki5::CObjteki5(float x, float y)
 {
-
 	m_hp = 1.f;
 	m_maxhp = 35.f;
 	m_x = x;
@@ -39,8 +38,6 @@ void CObjteki5::Action()
 {
 
 	//敵1の正と負を取得する
-	CObjteki1* flag = (CObjteki1*)Objs::GetObj(OBJ_TEKI1);
-	m_f=flag->GET();
 
 	m_time++;
 
@@ -97,11 +94,17 @@ void CObjteki5::Action()
 	{
 		/*this->SetStatus(false);
 		Hits::DeleteHitBox(this);*/
-		if (m_f == true)
+		if (m_endflag == true)
 		{
-			Scene::SetScene(new CSceneKuria5());
+			if (m_nazoflag == true)
+			{
+				Scene::SetScene(new CSceneED2());
+			}
+			if(m_tekicnt==4)
+			{
+				Scene::SetScene(new CSceneED1());
+			}
 		}
-
 	}
 
 

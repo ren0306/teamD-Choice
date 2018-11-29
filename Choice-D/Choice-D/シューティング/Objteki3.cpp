@@ -9,7 +9,6 @@
 
 //使用するネームスペース
 using namespace GameL;
-
 //コンストラクタ
 CObjteki3::CObjteki3(float x, float y)
 {
@@ -17,6 +16,7 @@ CObjteki3::CObjteki3(float x, float y)
 	m_maxhp = 40.f;
 	m_x = x;
 	m_y = y;
+
 }
 
 //イニシャライズ
@@ -87,8 +87,11 @@ void CObjteki3::Action()
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
+		m_tekicnt++;
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		m_endflag = true;
 		Scene::SetScene(new CSceneKuria3());
 	}
 

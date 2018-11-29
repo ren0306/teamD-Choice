@@ -81,9 +81,8 @@ void CObjTenkey5::Draw()
 		Font::StrDraw(L"[◇メイン画面に戻る]", 32, 32, 30, f);
 		if (m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneMain2);
+			Scene::SetScene(new CSceneMain5);
 
-			Audio::Start(1);
 
 
 		}
@@ -104,7 +103,14 @@ void CObjTenkey5::Draw()
 			cnt = 0;
 			if (m_ok == true)
 			{
-				Scene::SetScene(new CSceneMain3);
+				if (m_Nazocnt == 5)
+				{
+					Scene::SetScene(new CSceneED3);
+				}
+				else
+				{
+					Scene::SetScene(new CSceneED2);
+				}
 			}
 			else
 			{
@@ -247,7 +253,7 @@ void CObjTenkey5::Draw()
 void CObjTenkey5::Tenkey()
 {
 	//２桁のみ入力可能
-	if (cnt != 3)
+	if (cnt != 4)
 	{
 		//741
 		if (m_mou_x > 300 && m_mou_x < 345)
@@ -447,11 +453,11 @@ bool CObjTenkey5::Anser()
 	};
 	cnt = 0;
 	//答え確認処理
-	for (int j = 0; j<2; j++)
+	for (int j = 0; j<3; j++)
 	{
 		for (int i = 0; i < 9; i++)
 		{
-			if (m_num[i + 1] == m_anser[2][j])//答えた数字と正解を見比べる
+			if (m_num[i + 1] == m_anser[4][j])//答えた数字と正解を見比べる
 			{
 				cnt++;
 				if (cnt == 3)

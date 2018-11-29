@@ -98,6 +98,9 @@ struct UserData
 //ゲーム内で使用されるグローバル変数・定数・列挙--
 
 extern bool m_endflag;
+extern bool m_nazoflag;
+extern int m_Nazocnt;
+extern int m_tekicnt;
 
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------

@@ -12,7 +12,8 @@
 #include <stdio.h>
 //使用するネームスペース
 using namespace GameL;
-
+bool m_nazoflag=true;
+int m_Nazocnt = 0;
 //イニシャライズ
 void CObjTenkey::Init()
 {
@@ -82,10 +83,6 @@ void CObjTenkey::Draw()
 		if (m_mou_l == true)
 		{
 			Scene::SetScene(new CSceneMain);
-
-			Audio::Start(1);
-
-
 		}
 	}
 	else
@@ -104,6 +101,8 @@ void CObjTenkey::Draw()
 			cnt = 0;
 			if (m_ok==true)
 			{
+				m_nazoflag = true;
+				m_Nazocnt++;
 				Scene::SetScene(new CSceneMain2);
 			}
 			else

@@ -96,8 +96,11 @@ void CObjteki2::Action()
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
+		m_tekicnt++;
+
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
+		m_endflag = true;
 		Scene::SetScene(new CSceneKuria2());
 	}
 }

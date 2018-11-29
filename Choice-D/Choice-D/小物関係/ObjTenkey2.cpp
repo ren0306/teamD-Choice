@@ -33,6 +33,7 @@ void CObjTenkey2::Init()
 	m_flag[7] = false;
 	m_flag[8] = false;
 	m_flag[9] = false;
+	
 
 }
 
@@ -83,7 +84,6 @@ void CObjTenkey2::Draw()
 		{
 			Scene::SetScene(new CSceneMain2);
 
-			Audio::Start(1);
 
 
 		}
@@ -104,6 +104,9 @@ void CObjTenkey2::Draw()
 			cnt = 0;
 			if (m_ok == true)
 			{
+				m_nazoflag = true;
+				m_Nazocnt++;
+
 				Scene::SetScene(new CSceneMain3);
 			}
 			else

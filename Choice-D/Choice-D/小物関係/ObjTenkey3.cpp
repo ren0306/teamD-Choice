@@ -81,9 +81,8 @@ void CObjTenkey3::Draw()
 		Font::StrDraw(L"[ƒƒCƒ“‰æ–Ê‚É–ß‚é]", 32, 32, 30, f);
 		if (m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneMain2);
+			Scene::SetScene(new CSceneMain3);
 
-			Audio::Start(1);
 
 
 		}
@@ -104,7 +103,10 @@ void CObjTenkey3::Draw()
 			cnt = 0;
 			if (m_ok == true)
 			{
-				Scene::SetScene(new CSceneMain3);
+				m_nazoflag = true;
+				m_Nazocnt++;
+
+				Scene::SetScene(new CSceneMain4);
 			}
 			else
 			{
@@ -441,13 +443,13 @@ bool CObjTenkey3::Anser()
 	int m_anser[QUESTION][ANSER] = {
 		{ 4 },
 		{ 1,5 },
-		{ 7,4,8 },
+		{ 4,7,8 },
 		{ 3,4,7,9 },
 		{ 5,6,7,9 },
 	};
 	cnt = 0;
 	//“š‚¦Šm”Fˆ—
-	for (int j = 0; j<2; j++)
+	for (int j = 0; j<3; j++)
 	{
 		for (int i = 0; i < 9; i++)
 		{

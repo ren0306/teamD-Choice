@@ -7,6 +7,7 @@
 
 #include "../GameHead.h"
 #include "Objteki1.h"
+#include "../謎解き/ObjTenkey.h"
 #include "UtilityModule.h"
 #include "../GameL/DrawFont.h"
 
@@ -14,7 +15,8 @@
 //使用するネームスペース
 using namespace GameL;
 
-
+bool m_endflag = false;
+int m_tekicnt=0;
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)
 {
@@ -109,7 +111,8 @@ void CObjteki1::Action()
 	//HP０で
 	if (m_hp <= 0)
 	{
-		m_f = true;
+		m_endflag = true;
+		m_tekicnt++;
 		/*this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する*/
 		Scene::SetScene(new CSceneKuria());
