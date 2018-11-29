@@ -273,6 +273,19 @@
     <ClCompile Include="謎解き\SceneNazo2.cpp">
       <Filter>ソースファイル\謎解き</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="ObjBGNazo2.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBGNazo3.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBGNazo4.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBGNazo5.cpp">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -538,6 +551,18 @@
     </ClInclude>
     <ClInclude Include="謎解き\SceneNazo2.h">
       <Filter>ソースファイル\謎解き</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBGNazo2.h">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBGNazo3.h">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBGNazo4.h">
+      <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBGNazo5.h">
+      <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
