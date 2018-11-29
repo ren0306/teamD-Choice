@@ -32,6 +32,10 @@ enum OBJ_NAME
 	OBJ_ED2,
 	OBJ_NAZO,
 	OBJ_TENKEY,
+	OBJ_TENKEY2,
+	OBJ_TENKEY3,
+	OBJ_TENKEY4,
+	OBJ_TENKEY5,
 	OBJ_TEKI1,
 	OBJ_TEKI2,
 	OBJ_TEKI3,
@@ -53,6 +57,10 @@ enum OBJ_NAME
 	OBJ_KURIA,
 	OBJ_REMEMBER,
 	OBJ_TIME,
+	OBJ_KURIA2,
+	OBJ_KURIA3,
+	OBJ_KURIA4,
+	OBJ_KURIA5,
 };
 //------------------------------------------------
 
@@ -89,7 +97,7 @@ struct UserData
 
 //ゲーム内で使用されるグローバル変数・定数・列挙--
 
-
+extern bool m_endflag;
 
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
@@ -123,6 +131,10 @@ struct UserData
 #include "ED\ObjED1.h"
 #include "ED\ObjED3.h"
 #include "謎解き\ObjTenkey.h"
+#include "小物関係\ObjTenkey2.h"
+#include "小物関係\ObjTenkey3.h"
+#include "小物関係\ObjTenkey4.h"
+#include "小物関係\ObjTenkey5.h"
 #include "シューティング\Objteki1.h"
 #include "シューティング\Objteki2.h"
 #include "シューティング\Objteki3.h"
@@ -134,6 +146,10 @@ struct UserData
 #include "シューティング\ObjSTG4.h"
 #include "ObjSTG5.h"
 #include "謎解き\ObjBGNazo.h"
+#include "ObjBGNazo2.h"
+#include "ObjBGNazo3.h"
+#include "ObjBGNazo4.h"
+#include "ObjBGNazo5.h"
 #include "小物関係\ObjDoor.h"
 #include "小物関係\GameOvergamen.h"
 #include "小物関係\ObjDoor2.h"
@@ -144,6 +160,11 @@ struct UserData
 #include "シューティング\ObjKuria.h"
 #include "小物関係\Remember.h"
 #include "小物関係\TimeLimit.h"
+#include "シューティング\ObjKuria2.h"
+#include "シューティング\ObjKuria3.h"
+#include "シューティング\ObjKuria4.h"
+#include "シューティング\ObjKuria5.h"
+
 
 //------------------------------------------------
 
@@ -160,6 +181,10 @@ struct UserData
 #include "ED\SceneED2.h"
 #include "ED\SceneED3.h"
 #include "謎解き\SceneNazo.h"
+#include "謎解き\SceneNazo2.h"
+#include "謎解き\SceneNazo3.h"
+#include "謎解き\SceneNazo4.h"
+#include "謎解き\SceneNazo5.h"
 #include "シューティング\SceneSTG.h"
 #include "シューティング\SceneSTG2.h"
 #include "シューティング\SceneSTG3.h"
@@ -167,6 +192,11 @@ struct UserData
 #include "SceneSTG5.h"
 #include "タイトル\SceneSousagamen.h"
 #include "シューティング\SceneKuria.h"
+#include "シューティング\SceneKuria2.h"
+#include "シューティング\SceneKuria3.h"
+#include "シューティング\SceneKuria4.h"
+#include "シューティング\SceneKuria5.h"
+
 
 //-----------------------------------------------
 

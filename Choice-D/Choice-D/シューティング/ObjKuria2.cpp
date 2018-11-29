@@ -6,7 +6,7 @@
 
 
 #include "../GameHead.h"
-#include "ObjKuria.h"
+#include "ObjKuria2.h"
 #include "../ゲームメイン/SceneMain.h"
 
 
@@ -16,7 +16,7 @@
 using namespace GameL;
 
 //イニシャライズ
-void CObjKuria::Init()
+void CObjKuria2::Init()
 {
 	//マウスの位置
 	m_mou_x = 0.0f;
@@ -27,7 +27,7 @@ void CObjKuria::Init()
 }
 
 //アクション
-void CObjKuria::Action()
+void CObjKuria2::Action()
 {
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -36,23 +36,23 @@ void CObjKuria::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
-	
+
 	//マウスの位置とクリックする場所で当たり判定
 	if (m_mou_x > 470 && m_mou_x < 750 && m_mou_y>525 && m_mou_y < 565)
 	{
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneMain2());
+			Scene::SetScene(new CSceneMain3());
 		}
 	}
 }
 
 //ドロー
-void CObjKuria::Draw()
+void CObjKuria2::Draw()
 {
 	
-	
+
 
 	RECT_F src;
 	RECT_F dst;

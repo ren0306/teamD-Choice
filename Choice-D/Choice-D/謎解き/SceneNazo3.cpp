@@ -12,37 +12,28 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "../ゲームメイン/SceneMain.h"
-#include "SceneNazo.h"
+#include "../ゲームメイン/SceneMain3.h"
+#include "SceneNazo3.h"
 #include "../GameHead.h"
 
 //コンストラクタ
-CSceneNazo::CSceneNazo()
+CSceneNazo3::CSceneNazo3()
 {
 }
 
 //デストラクタ
-CSceneNazo::~CSceneNazo()
+CSceneNazo3::~CSceneNazo3()
 {
 }
 
 //ゲームタイトル初期化メソッド
-void CSceneNazo::InitScene()
+void CSceneNazo3::InitScene()
 {
 	//出力させる文字のグラフィックを作成
 	//例　Font::SetStrTex(L"ゲームを始める");
-	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
+	Draw::LoadImage(L"Main3.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
-	Draw::LoadImage(L"1.png", 3, TEX_SIZE_512);
-	Draw::LoadImage(L"2.png", 4, TEX_SIZE_512);
-	Draw::LoadImage(L"3.png", 5, TEX_SIZE_512);
-	Draw::LoadImage(L"4.png", 6, TEX_SIZE_512);
-	Draw::LoadImage(L"5.png", 7, TEX_SIZE_512);
-	Draw::LoadImage(L"6.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"7.png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"8.png", 10, TEX_SIZE_512);
-	Draw::LoadImage(L"9.png", 11, TEX_SIZE_512);
 	Draw::LoadImage(L"解答.png", 12, TEX_SIZE_512);
 	Draw::LoadImage(L"問題.png", 13, TEX_SIZE_512);
 
@@ -51,8 +42,8 @@ void CSceneNazo::InitScene()
 	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::Start(1);*/
 	//オブジェクト作成
-	CObjTenkey* key = new CObjTenkey();
-	Objs::InsertObj(key, OBJ_TENKEY, 2);
+	CObjTenkey3* key = new CObjTenkey3();
+	Objs::InsertObj(key, OBJ_TENKEY3, 2);
 
 	CObjBGN* BGN = new CObjBGN();
 	Objs::InsertObj(BGN, OBJ_BGN, 1);
@@ -63,11 +54,11 @@ void CSceneNazo::InitScene()
 	CObjTimeLimit* t = new CObjTimeLimit();
 	Objs::InsertObj(t, OBJ_TIME, 150);
 
-	
+
 }
 
 //ゲームタイトル実行中メソッド
-void CSceneNazo::Scene()
+void CSceneNazo3::Scene()
 {
 
 

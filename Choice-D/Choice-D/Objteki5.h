@@ -4,6 +4,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+
 //オブジェクト：敵5
 class CObjteki5 :public CObj
 {
@@ -23,7 +24,6 @@ private:
 	float m_vy;	//敵5移動ベクトルy
 	float m_r = 0.0f;
 	int   m_time;//弾丸間隔用
-	bool m_f5;
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
 	bool m_f;

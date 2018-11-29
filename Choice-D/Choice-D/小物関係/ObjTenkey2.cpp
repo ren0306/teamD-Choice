@@ -5,7 +5,7 @@
 #include "../GameL\SceneManager.h"
 
 #include "../GameHead.h"
-#include "ObjTenkey.h"
+#include "ObjTenkey2.h"
 #include "../ゲームメイン/SceneMain.h"
 #include "../GameL/Audio.h"
 
@@ -14,7 +14,7 @@
 using namespace GameL;
 
 //イニシャライズ
-void CObjTenkey::Init()
+void CObjTenkey2::Init()
 {
 
 	m_mou_x = 0.0f;
@@ -37,7 +37,7 @@ void CObjTenkey::Init()
 }
 
 //アクション
-void CObjTenkey::Action()
+void CObjTenkey2::Action()
 {
 
 	//マウスの位置を取得
@@ -57,7 +57,7 @@ void CObjTenkey::Action()
 }
 
 //ドロー
-void CObjTenkey::Draw()
+void CObjTenkey2::Draw()
 {	//白
 	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
 	//赤
@@ -81,7 +81,7 @@ void CObjTenkey::Draw()
 		Font::StrDraw(L"[◇メイン画面に戻る]", 32, 32, 30, f);
 		if (m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneMain);
+			Scene::SetScene(new CSceneMain2);
 
 			Audio::Start(1);
 
@@ -93,7 +93,7 @@ void CObjTenkey::Draw()
 		Font::StrDraw(L"[メイン画面に戻る]", 32, 32, 30, f);
 		//BGMを登録
 	}
-	//謎解き答え正解にの場合2へ
+	//謎解き答え正解にの場合3へ
 	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
 	{
 		Font::StrDraw(L"[◇答え決定ボタン]", 0, 450, 25, s);
@@ -102,9 +102,9 @@ void CObjTenkey::Draw()
 		{
 			Anser();
 			cnt = 0;
-			if (m_ok==true)
+			if (m_ok == true)
 			{
-				Scene::SetScene(new CSceneMain2);
+				Scene::SetScene(new CSceneMain3);
 			}
 			else
 			{
@@ -154,10 +154,10 @@ void CObjTenkey::Draw()
 	src.m_right = 1024.0f;
 	src.m_bottom = 1024.0f;
 	//テンキー出力（出力位置）
-	dst.m_top = 50.0f+300;
-	dst.m_left = 0.0f+255;
-	dst.m_right = 400.0f+100;
-	dst.m_bottom =250.0f+300;
+	dst.m_top = 50.0f + 300;
+	dst.m_left = 0.0f + 255;
+	dst.m_right = 400.0f + 100;
+	dst.m_bottom = 250.0f + 300;
 	Draw::Draw(2, &src, &dst, f, 0.0f);
 
 
@@ -167,8 +167,8 @@ void CObjTenkey::Draw()
 	src.m_right = 1008.0f;
 	src.m_bottom = 647.0f;
 	//解答出力（出力位置）
-	dst.m_top = 50.0f +100;
-	dst.m_left = 0.0f ;
+	dst.m_top = 50.0f + 100;
+	dst.m_left = 0.0f;
 	dst.m_right = 600.0f + 300;
 	dst.m_bottom = 450.0f + 250;
 	Draw::Draw(12, &src, &dst, f, 0.0f);
@@ -181,7 +181,7 @@ void CObjTenkey::Draw()
 	//問題出力（出力位置）
 	dst.m_top = 25.0f;
 	dst.m_left = 50.0f;
-	dst.m_right = 750.f;
+	dst.m_right = 800.f;
 	dst.m_bottom = 350.0f;
 	Draw::Draw(13, &src, &dst, f, 0.0f);
 
@@ -196,7 +196,7 @@ void CObjTenkey::Draw()
 	if (m_flag[2] == true)
 	{
 		Font::StrDraw(L"〇", 267, 293, 40, o);
-		m_num[2]= 2;
+		m_num[2] = 2;
 
 	}
 	if (m_flag[3] == true)
@@ -226,7 +226,7 @@ void CObjTenkey::Draw()
 	if (m_flag[7] == true)
 	{
 		Font::StrDraw(L"〇", 417, 293, 40, o);
-		m_num[7] =7;
+		m_num[7] = 7;
 
 	}
 	if (m_flag[8] == true)
@@ -243,10 +243,11 @@ void CObjTenkey::Draw()
 	}
 
 }
-void CObjTenkey::Tenkey()
+
+void CObjTenkey2::Tenkey()
 {
-	//1桁のみ入力可能
-	if (cnt != 1)
+	//２桁のみ入力可能
+	if (cnt != 2)
 	{
 		//741
 		if (m_mou_x > 300 && m_mou_x < 345)
@@ -256,8 +257,16 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[7] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						m_flag[7] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 			}
 			//4入力
@@ -265,10 +274,19 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[4] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						m_flag[4] = true;
+						cnt++;
+						m_f = false;
+					}
 
 				}
+				else
+				{
+					m_f = true;
+				}
+
 			}
 
 
@@ -277,10 +295,19 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[1] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						m_flag[1] = true;
+						cnt++;
+						m_f = false;
+					}
 
 				}
+				else
+				{
+					m_f = true;
+				}
+
 			}
 		}
 		//852
@@ -291,10 +318,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[8] = true;
-					cnt++;
-
+					if (m_f == true)
+					{
+						m_flag[8] = true;
+						cnt++;
+						m_f = false;
+					}
 				}
+				else
+				{
+					m_f = true;
+				}
+
 
 			}
 			//5入力
@@ -302,10 +337,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[5] = true;
-					cnt++;
-
+					if (m_f == true)
+					{
+						m_flag[5] = true;
+						cnt++;
+						m_f = false;
+					}
 				}
+				else
+				{
+					m_f = true;
+				}
+
 
 			}
 			//2入力
@@ -313,9 +356,16 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[2] = true;
-					cnt++;
-
+					if (m_f == true)
+					{
+						m_flag[2] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
@@ -329,9 +379,16 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[9] = true;
-					cnt++;
-
+					if (m_f == true)
+					{
+						m_flag[9] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
@@ -340,9 +397,16 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[6] = true;
-					cnt++;
-
+					if (m_f == true)
+					{
+						m_flag[6] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 
@@ -352,41 +416,50 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[3] = true;
-					cnt++;
-
+					if (m_f == true)
+					{
+						m_flag[3] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
 
 		}
 	}
-
-
 	return;
 }
 
-bool CObjTenkey::Anser ()
+bool CObjTenkey2::Anser()
 {
 	//答え
 	int m_anser[QUESTION][ANSER] = {
 		{ 4 },
-		{ 1,2,3,5 },
-		{ 7,4,8,9 },
+		{ 1,5 },
+		{ 7,4,8 },
 		{ 3,4,7,9 },
 		{ 5,6,7,9 },
 	};
+	cnt = 0;
 	//答え確認処理
-	for (int j = 0;j<4; j++)
+	for (int j = 0; j<2; j++)
 	{
 		for (int i = 0; i < 9; i++)
 		{
-			if (m_num[i+1] == m_anser[0][j])//答えた数字と正解を見比べる
+			if (m_num[i + 1] == m_anser[1][j])//答えた数字と正解を見比べる
 			{
 				cnt++;
-				m_ok = true;
-				return m_ok;
-
+				if (cnt == 2)
+				{
+					m_ok = true;
+					return m_ok;
+				}
+				break;
 			}
 			else
 			{
@@ -398,4 +471,8 @@ bool CObjTenkey::Anser ()
 	return m_ok;
 
 }
+
+
+
+
 
