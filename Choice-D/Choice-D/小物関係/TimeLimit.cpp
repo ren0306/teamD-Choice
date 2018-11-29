@@ -23,7 +23,6 @@ void CObjTimeLimit::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;*/
-	m_time = 19856;
 }
 
 //アクション
@@ -35,16 +34,20 @@ void CObjTimeLimit::Action()
 	//マウスのボタンの状態
 	//m_mou_r = Input::GetMouButtonR();
 	//m_mou_l = Input::GetMouButtonL();
-	m_time--;
+	m_TimeL--;
 
+	if (m_TimeL == 0)
+	{
+		Scene::SetScene(new CSceneGameOver);
+	}
 }
 
 //ドロー
 void CObjTimeLimit::Draw()
 {
 	
-	int second = (m_time / 60) % 60; //秒
-	int minute = (m_time / 60) / 60; //分
+	int second = (m_TimeL / 60) % 60; //秒
+	int minute = (m_TimeL / 60) / 60; //分
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	wchar_t str[128];

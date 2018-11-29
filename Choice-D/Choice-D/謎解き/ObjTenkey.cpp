@@ -68,6 +68,8 @@ void CObjTenkey::Draw()
 	//紫
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
 
+	Font::StrDraw(L"この問題は１桁の数字のみ入力可能です", 160, 550, 30, r);
+
 	RECT_F src;
 	RECT_F dst;
 
@@ -107,6 +109,7 @@ void CObjTenkey::Draw()
 			}
 			else
 			{
+				m_fnot = true;
 				m_flag[1] = false;
 				m_flag[2] = false;
 				m_flag[3] = false;
@@ -123,6 +126,11 @@ void CObjTenkey::Draw()
 	{
 		Font::StrDraw(L"[答え決定ボタン]", 0, 450, 30, s);
 	}
+	if (m_fnot == true)
+	{
+
+	}
+	
 	//[すべて削除]を押すと
 	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
 	{
@@ -139,6 +147,16 @@ void CObjTenkey::Draw()
 			m_flag[7] = false;
 			m_flag[8] = false;
 			m_flag[9] = false;
+			m_num[1] = 0;
+			m_num[2] = 0;
+			m_num[3] = 0;
+			m_num[4] = 0;
+			m_num[5] = 0;
+			m_num[6] = 0;
+			m_num[7] = 0;
+			m_num[8] = 0;
+			m_num[9] = 0;
+
 			cnt = 0;
 		}
 	}
@@ -244,6 +262,8 @@ void CObjTenkey::Draw()
 }
 void CObjTenkey::Tenkey()
 {
+	float r[4] = { 1.0f,0.0f,0.0f,1.0f };
+
 	//1桁のみ入力可能
 	if (cnt != 1)
 	{
@@ -361,7 +381,6 @@ void CObjTenkey::Tenkey()
 		}
 	}
 
-
 	return;
 }
 
@@ -376,7 +395,7 @@ bool CObjTenkey::Anser ()
 		{ 5,6,7,9 },
 	};
 	//答え確認処理
-	for (int j = 0;j<4; j++)
+	for (int j = 0;j<1; j++)
 	{
 		for (int i = 0; i < 9; i++)
 		{

@@ -102,6 +102,8 @@ extern bool m_nazoflag;
 extern int m_Nazocnt;
 extern int m_tekicnt;
 
+extern int m_TimeL;
+
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
 

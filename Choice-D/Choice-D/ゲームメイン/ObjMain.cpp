@@ -11,7 +11,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-
+int m_TimeL = 3000;
 //イニシャライズ
 void CObjMain::Init()
 {
@@ -73,7 +73,7 @@ void CObjMain::Draw()
 			if (m_mou_x > 500 && m_mou_x < 765 && m_mou_y>220 && m_mou_y < 382)
 			{
 				Font::StrDraw(L"敵と戦うことを選ぶ", 400, 400, 32, c);
-				//マウスのボタンが押されたら戦闘に遷移
+				//マウスのボタンが押されたら選択に遷移
 				if (m_mou_r == true || m_mou_l == true)
 				{
 					m_f = true;

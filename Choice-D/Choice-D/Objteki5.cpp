@@ -13,7 +13,7 @@ using namespace GameL;
 //コンストラクタ
 CObjteki5::CObjteki5(float x, float y)
 {
-	m_hp = 1.f;
+	m_hp = 35.f;
 	m_maxhp = 35.f;
 	m_x = x;
 	m_y = y;

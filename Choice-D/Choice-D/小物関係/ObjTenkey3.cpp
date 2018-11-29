@@ -66,6 +66,7 @@ void CObjTenkey3::Draw()
 	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
 	//‡
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	Font::StrDraw(L"‚±‚Ì–â‘è‚Í3Œ…‚Ì”š‚Ì‚İ“ü—Í‰Â”\‚Å‚·", 160, 550, 30, r);
 
 	RECT_F src;
 	RECT_F dst;

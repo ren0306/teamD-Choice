@@ -29,6 +29,5 @@ private:
 	bool m_ok;
 	int m_num[10];
 	int m_anser;
-	int m_Q;
-	int m_A;
+	bool m_fnot;
 };

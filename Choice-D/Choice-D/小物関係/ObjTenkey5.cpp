@@ -66,6 +66,7 @@ void CObjTenkey5::Draw()
 	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
 	//‡
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	Font::StrDraw(L"‚±‚Ì–â‘è‚Í4Œ…‚Ì”š‚Ì‚İ“ü—Í‰Â”\‚Å‚·", 160, 550, 30, r);
 
 	RECT_F src;
 	RECT_F dst;
@@ -103,7 +104,7 @@ void CObjTenkey5::Draw()
 			cnt = 0;
 			if (m_ok == true)
 			{
-				if (m_Nazocnt == 5)
+				if (m_Nazocnt == 4)
 				{
 					Scene::SetScene(new CSceneED3);
 				}
