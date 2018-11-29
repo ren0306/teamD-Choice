@@ -83,7 +83,7 @@ void CObjTenkey::Draw()
 		{
 			Scene::SetScene(new CSceneMain);
 
-			Audio::Start(1);
+			//Audio::Start(1);
 
 
 		}
