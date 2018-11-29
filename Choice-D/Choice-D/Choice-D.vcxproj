@@ -197,16 +197,22 @@
     <ClCompile Include="小物関係\ObjED2gazou.cpp" />
     <ClCompile Include="小物関係\ObjED3gazou.cpp" />
     <ClCompile Include="小物関係\ObjTenkey2.cpp" />
+    <ClCompile Include="小物関係\ObjTenkey3.cpp" />
+    <ClCompile Include="小物関係\ObjTenkey4.cpp" />
     <ClCompile Include="小物関係\Remember.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="小物関係\ObjTenkey5.cpp" />
     <ClCompile Include="小物関係\TimeLimit.cpp" />
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />
     <ClCompile Include="謎解き\ObjTenkey.cpp" />
     <ClCompile Include="謎解き\SceneNazo.cpp" />
     <ClCompile Include="謎解き\SceneNazo2.cpp" />
+    <ClCompile Include="謎解き\SceneNazo3.cpp" />
+    <ClCompile Include="謎解き\SceneNazo4.cpp" />
+    <ClCompile Include="謎解き\SceneNazo5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjBulletTeki1.h" />
@@ -298,11 +304,17 @@
     <ClInclude Include="小物関係\ObjED2gazou.h" />
     <ClInclude Include="小物関係\ObjED3gazou.h" />
     <ClInclude Include="小物関係\ObjTenkey2.h" />
+    <ClInclude Include="小物関係\ObjTenkey3.h" />
+    <ClInclude Include="小物関係\ObjTenkey4.h" />
+    <ClInclude Include="小物関係\ObjTenkey5.h" />
     <ClInclude Include="小物関係\TimeLimit.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />
     <ClInclude Include="謎解き\SceneNazo2.h" />
+    <ClInclude Include="謎解き\SceneNazo3.h" />
+    <ClInclude Include="謎解き\SceneNazo4.h" />
+    <ClInclude Include="謎解き\SceneNazo5.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

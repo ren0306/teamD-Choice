@@ -132,7 +132,7 @@ void CObjMain5::Draw()
 				if (m_mou_r == true || m_mou_l == true)
 				{
 					//‰¼‚ÅSceneNazo‚ÉŒq‚¢‚Å‚¢‚éBŒã‚ÅSceneNazo5‚É•ÏX‚·‚×‚µB
-					Scene::SetScene(new CSceneNazo());
+					Scene::SetScene(new CSceneNazo5());
 				}
 
 			}

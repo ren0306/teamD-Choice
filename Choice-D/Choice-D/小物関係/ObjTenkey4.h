@@ -7,17 +7,17 @@ using namespace GameL;
 #define ANSER 4
 
 //オブジェクト：テンキー
-class CObjTenkey2 :public CObj
+class CObjTenkey4 :public CObj
 {
 public:
-	CObjTenkey2() {};
-	~CObjTenkey2() {};
+	CObjTenkey4() {};
+	~CObjTenkey4() {};
 	void Init();		//イニシャライズ
 	void Action();		//アクション
 	void Draw();		//ドロー
 	bool Anser();
 	void Tenkey();
-	
+
 private:
 	float m_mou_x;//マウスの位置X
 	float m_mou_y;//マウスの位置Y

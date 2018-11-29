@@ -33,6 +33,9 @@ enum OBJ_NAME
 	OBJ_NAZO,
 	OBJ_TENKEY,
 	OBJ_TENKEY2,
+	OBJ_TENKEY3,
+	OBJ_TENKEY4,
+	OBJ_TENKEY5,
 	OBJ_TEKI1,
 	OBJ_TEKI2,
 	OBJ_TEKI3,
@@ -94,7 +97,7 @@ struct UserData
 
 //ゲーム内で使用されるグローバル変数・定数・列挙--
 
-extern bool m_f;
+extern bool m_endflag;
 
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
@@ -129,6 +132,9 @@ extern bool m_f;
 #include "ED\ObjED3.h"
 #include "謎解き\ObjTenkey.h"
 #include "小物関係\ObjTenkey2.h"
+#include "小物関係\ObjTenkey3.h"
+#include "小物関係\ObjTenkey4.h"
+#include "小物関係\ObjTenkey5.h"
 #include "シューティング\Objteki1.h"
 #include "シューティング\Objteki2.h"
 #include "シューティング\Objteki3.h"
@@ -172,6 +178,9 @@ extern bool m_f;
 #include "ED\SceneED3.h"
 #include "謎解き\SceneNazo.h"
 #include "謎解き\SceneNazo2.h"
+#include "謎解き\SceneNazo3.h"
+#include "謎解き\SceneNazo4.h"
+#include "謎解き\SceneNazo5.h"
 #include "シューティング\SceneSTG.h"
 #include "シューティング\SceneSTG2.h"
 #include "シューティング\SceneSTG3.h"
