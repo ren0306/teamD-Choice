@@ -16,6 +16,15 @@
 //使用するネームスペース
 using namespace GameL;
 
+//GameHead.hで定義したグローバル変数をここで初期化----------------------
+bool m_nazoflag = false;
+int m_Nazocnt = 0;
+bool m_endflag = false;
+int m_tekicnt = 0;
+int m_TimeL = 3000;
+int m_floor = 1;
+//----------------------------------------------------------------------
+
 //イニシャライズ
 void CObjTitle::Init()
 {
@@ -36,7 +45,14 @@ void CObjTitle::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	
+	//グローバル変数をタイトルに来たらすべて初期化-------------------
+	m_Nazocnt = 0;
+	m_nazoflag = false;
+	m_endflag = false;
+	m_tekicnt = 0;
+	m_floor = 1;
+	m_TimeL = 19800;
+	//---------------------------------------------------------------
 }
 
 //ドロー

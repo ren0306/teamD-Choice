@@ -107,7 +107,7 @@ void CObjTenkey2::Draw()
 			{
 				m_nazoflag = true;
 				m_Nazocnt++;
-
+				m_floor++;
 				Scene::SetScene(new CSceneMain3);
 			}
 			else

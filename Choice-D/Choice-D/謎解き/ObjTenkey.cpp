@@ -12,8 +12,6 @@
 #include <stdio.h>
 //使用するネームスペース
 using namespace GameL;
-bool m_nazoflag=true;
-int m_Nazocnt = 0;
 //イニシャライズ
 void CObjTenkey::Init()
 {
@@ -105,6 +103,7 @@ void CObjTenkey::Draw()
 			{
 				m_nazoflag = true;
 				m_Nazocnt++;
+				m_floor++;
 				Scene::SetScene(new CSceneMain2);
 			}
 			else

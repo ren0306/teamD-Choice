@@ -97,7 +97,7 @@ void CObjteki2::Action()
 	if (m_hp <= 0)
 	{
 		m_tekicnt++;
-
+		m_floor++;
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 		m_endflag = true;

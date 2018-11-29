@@ -30,6 +30,7 @@ void CObjGAMEOVER::Action()
 		if (m_mou_r == true || m_mou_l == true)
 		{
 			m_TimeL = 3000;
+			m_floor = 1;
 			Scene::SetScene(new CSceneTitle());
 		}
 	}

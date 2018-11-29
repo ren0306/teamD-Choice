@@ -15,8 +15,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-bool m_endflag = false;
-int m_tekicnt=0;
 //コンストラクタ
 CObjteki1::CObjteki1(float x, float y)
 {
@@ -113,6 +111,7 @@ void CObjteki1::Action()
 	{
 		m_endflag = true;
 		m_tekicnt++;
+		m_floor++;
 		/*this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する*/
 		Scene::SetScene(new CSceneKuria());

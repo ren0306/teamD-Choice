@@ -11,7 +11,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-int m_TimeL = 3000;
 //イニシャライズ
 void CObjMain::Init()
 {
@@ -45,8 +44,6 @@ void CObjMain::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
-
-
 }
 
 //ドロー
@@ -61,6 +58,10 @@ void CObjMain::Draw()
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
+	//階層表示
+	wchar_t kaisou[4];
+	swprintf_s(kaisou, L"%d階層", m_floor);
+	Font::StrDraw(kaisou, 750, 0, 20, c);
 
 	//前シーンから左または右クリックを押し続けている、
 	//もしくはこのシーンに入って一度でもクリックを押してない状態に移行すると実行。
