@@ -29,6 +29,8 @@ void CObjGAMEOVER::Action()
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
+			m_TimeL = 3000;
+			m_floor = 1;
 			Scene::SetScene(new CSceneTitle());
 		}
 	}
@@ -37,6 +39,7 @@ void CObjGAMEOVER::Action()
 //ドロー
 void CObjGAMEOVER::Draw()
 {
+	//文字を入力
 	float c[4] = { 1.0f,0.0f,0.0f,1.0f };
 	Font::StrDraw(L"GAME OVER", 270, 50, 50, c);
 	float m[4] = { 0.5f,0.5f,0.5f,1.0f };

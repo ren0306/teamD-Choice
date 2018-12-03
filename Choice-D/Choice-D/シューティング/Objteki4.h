@@ -13,6 +13,9 @@ public:
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー
+	//bool GETF() { return m_f4; }
+	bool m_f4;
+
 private:
 	float m_x;	//敵3のx方向の位置
 	float m_y;	//敵3のy方向の位置
@@ -21,5 +24,6 @@ private:
 	float m_r = 0.0f;
 	int   m_time;//弾丸間隔用
 
-	int m_hp;	//ボスのヒットポイント
+	float m_hp;	//ボスのヒットポイント
+	float m_maxhp;
 };

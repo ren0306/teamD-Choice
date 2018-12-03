@@ -24,18 +24,18 @@ CSceneED2::~CSceneED2()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲームエンディング2初期化メソッド
 void CSceneED2::InitScene()
 {
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
 
-	//タイトルオブジェクト作成
+	//エンディング2オブジェクト作成
 	CObjED2* obj = new CObjED2();
 	Objs::InsertObj(obj, OBJ_ED2, 10);
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームエンディング2実行中メソッド
 void CSceneED2::Scene()
 {
 }

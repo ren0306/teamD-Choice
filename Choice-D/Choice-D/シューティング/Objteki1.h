@@ -4,6 +4,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+
+
 //オブジェクト：敵１
 class CObjteki1 :public CObj
 {
@@ -13,6 +15,8 @@ class CObjteki1 :public CObj
 		void Init();	//イニシャライズ
 		void Action();	//アクション
 		void Draw();	//ドロー
+
+
 	private:
 		float m_x;	//敵1のx方向の位置
 		float m_y;	//敵1のy方向の位置

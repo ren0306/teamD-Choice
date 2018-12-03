@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CObjAngleBullet.cpp" />
     <ClCompile Include="CObjBulletTeki1.cpp" />
     <ClCompile Include="CObjBulletTeki2.cpp" />
     <ClCompile Include="CObjBulletTeki3.cpp" />
@@ -142,10 +143,16 @@
     <ClCompile Include="GameOver\GAMEOVER1.cpp" />
     <ClCompile Include="GameOver\GameOver2.cpp" />
     <ClCompile Include="ObjBulletMove.cpp" />
+    <ClCompile Include="ObjBGNazo2.cpp" />
+    <ClCompile Include="ObjBGNazo3.cpp" />
+    <ClCompile Include="ObjBGNazo4.cpp" />
+    <ClCompile Include="ObjBGNazo5.cpp" />
+    <ClCompile Include="ObjMain3.cpp" />
+    <ClCompile Include="ObjMain4.cpp" />
+    <ClCompile Include="ObjMain5.cpp" />
     <ClCompile Include="ObjSTG5.cpp" />
     <ClCompile Include="Objteki5.cpp" />
     <ClCompile Include="SceneSTG5.cpp" />
-    <ClCompile Include="SceneMain5.cpp" />
     <ClCompile Include="STGBackground.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain2.cpp" />
@@ -157,6 +164,10 @@
     </ClCompile>
     <ClCompile Include="シューティング\CObjBullet.cpp" />
     <ClCompile Include="シューティング\ObjHero.cpp" />
+    <ClCompile Include="シューティング\ObjKuria.cpp" />
+    <ClCompile Include="シューティング\ObjKuria2.cpp" />
+    <ClCompile Include="シューティング\ObjKuria3.cpp" />
+    <ClCompile Include="シューティング\ObjKuria4.cpp" />
     <ClCompile Include="シューティング\ObjSTG.cpp" />
     <ClCompile Include="シューティング\ObjSTG2.cpp" />
     <ClCompile Include="シューティング\ObjSTG3.cpp" />
@@ -165,6 +176,10 @@
     <ClCompile Include="シューティング\Objteki2.cpp" />
     <ClCompile Include="シューティング\Objteki3.cpp" />
     <ClCompile Include="シューティング\Objteki4.cpp" />
+    <ClCompile Include="シューティング\SceneKuria.cpp" />
+    <ClCompile Include="シューティング\SceneKuria2.cpp" />
+    <ClCompile Include="シューティング\SceneKuria3.cpp" />
+    <ClCompile Include="シューティング\SceneKuria4.cpp" />
     <ClCompile Include="シューティング\SceneSTG.cpp" />
     <ClCompile Include="シューティング\SceneSTG2.cpp" />
     <ClCompile Include="シューティング\SceneSTG3.cpp" />
@@ -184,15 +199,27 @@
     <ClCompile Include="小物関係\ObjDoor2.cpp" />
     <ClCompile Include="小物関係\ObjED1gazou.cpp" />
     <ClCompile Include="小物関係\ObjED2gazou.cpp" />
+    <ClCompile Include="小物関係\ObjED3gazou.cpp" />
+    <ClCompile Include="小物関係\ObjTenkey2.cpp" />
+    <ClCompile Include="小物関係\ObjTenkey3.cpp" />
+    <ClCompile Include="小物関係\ObjTenkey4.cpp" />
+    <ClCompile Include="小物関係\Remember.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="小物関係\ObjTenkey5.cpp" />
+    <ClCompile Include="小物関係\TimeLimit.cpp" />
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />
     <ClCompile Include="謎解き\ObjTenkey.cpp" />
     <ClCompile Include="謎解き\SceneNazo.cpp" />
+    <ClCompile Include="謎解き\SceneNazo2.cpp" />
+    <ClCompile Include="謎解き\SceneNazo3.cpp" />
+    <ClCompile Include="謎解き\SceneNazo4.cpp" />
+    <ClCompile Include="謎解き\SceneNazo5.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CObjAngleBullet.h" />
     <ClInclude Include="CObjBulletTeki1.h" />
     <ClInclude Include="CObjBulletTeki2.h" />
     <ClInclude Include="CObjBulletTeki3.h" />
@@ -224,6 +251,13 @@
     <ClInclude Include="GameOver\GameOver2.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBulletMove.h" />
+    <ClInclude Include="ObjBGNazo2.h" />
+    <ClInclude Include="ObjBGNazo3.h" />
+    <ClInclude Include="ObjBGNazo4.h" />
+    <ClInclude Include="ObjBGNazo5.h" />
+    <ClInclude Include="ObjMain3.h" />
+    <ClInclude Include="ObjMain4.h" />
+    <ClInclude Include="ObjMain5.h" />
     <ClInclude Include="ObjSTG5.h" />
     <ClInclude Include="Objteki5.h" />
     <ClInclude Include="SceneSTG5.h" />
@@ -241,6 +275,10 @@
     </ClInclude>
     <ClInclude Include="シューティング\CObjBullet.h" />
     <ClInclude Include="シューティング\ObjHero.h" />
+    <ClInclude Include="シューティング\ObjKuria.h" />
+    <ClInclude Include="シューティング\ObjKuria2.h" />
+    <ClInclude Include="シューティング\ObjKuria3.h" />
+    <ClInclude Include="シューティング\ObjKuria4.h" />
     <ClInclude Include="シューティング\ObjSTG.h" />
     <ClInclude Include="シューティング\ObjSTG2.h" />
     <ClInclude Include="シューティング\ObjSTG3.h" />
@@ -249,6 +287,10 @@
     <ClInclude Include="シューティング\Objteki2.h" />
     <ClInclude Include="シューティング\Objteki3.h" />
     <ClInclude Include="シューティング\Objteki4.h" />
+    <ClInclude Include="シューティング\SceneKuria.h" />
+    <ClInclude Include="シューティング\SceneKuria2.h" />
+    <ClInclude Include="シューティング\SceneKuria3.h" />
+    <ClInclude Include="シューティング\SceneKuria4.h" />
     <ClInclude Include="シューティング\SceneSTG.h" />
     <ClInclude Include="シューティング\SceneSTG2.h" />
     <ClInclude Include="シューティング\SceneSTG3.h" />
@@ -268,9 +310,19 @@
     <ClInclude Include="小物関係\ObjDoor2.h" />
     <ClInclude Include="小物関係\ObjED1gazou.h" />
     <ClInclude Include="小物関係\ObjED2gazou.h" />
+    <ClInclude Include="小物関係\ObjED3gazou.h" />
+    <ClInclude Include="小物関係\ObjTenkey2.h" />
+    <ClInclude Include="小物関係\ObjTenkey3.h" />
+    <ClInclude Include="小物関係\ObjTenkey4.h" />
+    <ClInclude Include="小物関係\ObjTenkey5.h" />
+    <ClInclude Include="小物関係\TimeLimit.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />
+    <ClInclude Include="謎解き\SceneNazo2.h" />
+    <ClInclude Include="謎解き\SceneNazo3.h" />
+    <ClInclude Include="謎解き\SceneNazo4.h" />
+    <ClInclude Include="謎解き\SceneNazo5.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

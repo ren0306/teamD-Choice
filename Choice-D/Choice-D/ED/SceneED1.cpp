@@ -11,7 +11,7 @@ using namespace GameL;
 
 //使用ヘッダー
 #include "../ゲームメイン/SceneMain.h"
-#include "../タイトル/SceneTitle.h"
+#include "SceneED1.h"
 #include "../GameHead.h"
 
 //コンストラクタ
@@ -24,18 +24,18 @@ CSceneED1::~CSceneED1()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲームエンディング1初期化メソッド
 void CSceneED1::InitScene()
 {
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
 
-	//タイトルオブジェクト作成
+	//エンディング1オブジェクト作成
 	CObjED1* obj = new CObjED1();
 	Objs::InsertObj(obj, OBJ_ED1, 10);
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームエンディング1実行中メソッド
 void CSceneED1::Scene()
 {
 }

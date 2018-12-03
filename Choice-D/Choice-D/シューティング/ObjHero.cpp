@@ -4,6 +4,7 @@
 #include "../GameL\HitBoxManager.h"
 #include "../GameL\Audio.h"
 #include "../GameHead.h"
+#include "../GameL/DrawFont.h"
 #include "ObjHero.h"
 #include "UtilityModule.h"
 
@@ -44,7 +45,9 @@ void CObjHero::Init()
 	m_f = true;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
+	m_time = 50.f;
+	m_cnt = 7.f;
+	m_maxcnt = 7.f;
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
@@ -57,19 +60,32 @@ void CObjHero::Action()
 	{
 		if (m_f == true)
 		{
+			m_cnt--;
+
 			//発射音を鳴らす
 			//Audio::Start(2);
+			if (m_cnt <= 0)
+			{
+				m_f = false;
+			}
+			else
+			{
+				// 弾丸オブジェクト作成
+				CObjBullet*  i = new CObjBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
+				Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
 
-			// 弾丸オブジェクト作成
-			CObjBullet*  i = new CObjBullet(m_x , m_y + -30.0f); //弾丸オブジェクト作成
-			Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
-
-			m_f = false;
+				m_f = false;
+			}
 		}
 	}
 	else
 	{
 		m_f = true;
+	}
+
+	if (Input::GetVKey('R') == true)
+	{
+		m_cnt = 7.f;
 	}
 
 	//主人公機の移動ベクトル初期化
@@ -144,18 +160,43 @@ void CObjHero::Action()
 	//ELEMENT_ENEMYを持つオブジェクトと接触したらHPを減らす
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)
 	{
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI1) != nullptr)
+		{
+			m_hp -= 1;
+		}
+
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI2) != nullptr)
+		{
+			m_hp -= 1;
+		}
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI3) != nullptr)
+		{
+			m_hp -= 2;
+		}
+
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI4) != nullptr)
+		{
+			m_hp -= 3;
+		}
+		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI5) != nullptr)
+		{
+			m_hp -= 3;
+		}
+
 		m_hp -= 1;
 	}
-
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
-		this->SetStatus(false);		//自身に削除命令を出す。
-		Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxに削除する。
+		m_time--;
+		if (m_time <= 0)
+		{
+			this->SetStatus(false);		//自身に削除命令を出す。
+			Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxに削除する。
 
-		//主人公機消滅でシーンをゲームオーバーに移行する
-		/*↓ゲームオーバーのシーンはまだ作ってないためコメントアウト中*/
-		//Scene::SetScene(new CSceneGameOver());
+
+			Scene::SetScene(new CSceneGameOver2());
+		}
 	}
 }
 
@@ -169,6 +210,7 @@ void CObjHero::Draw()
 	RECT_F dst; //描画先表示位置
 
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -176,10 +218,24 @@ void CObjHero::Draw()
 	src.m_bottom = 720.0f;
 
 	//表示位置の設定
-	dst.m_top = 125.0f;
+	dst.m_top = 150.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = (m_hp / m_maxhp)*128.0f;
-	dst.m_bottom = 150.0f;
+	dst.m_bottom = 175.0f;
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
+
+	//残弾数表示
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 200.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_cnt / m_maxcnt)*128.0f;
+	dst.m_bottom = 225.0f;
 
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
@@ -198,5 +254,10 @@ void CObjHero::Draw()
 
 	//1番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(6, &src, &dst, ob, 0.0f);
+
+}
+
+void Bullet(int c,float x,float y)
+{
 
 }

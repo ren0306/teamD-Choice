@@ -25,7 +25,7 @@ CSceneSTG::~CSceneSTG()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲームシューティング初期化メソッド
 void CSceneSTG::InitScene()
 {
 	
@@ -63,9 +63,13 @@ void CSceneSTG::InitScene()
 
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 110);
+
+	CObjTimeLimit* t = new CObjTimeLimit();
+	Objs::InsertObj(t, OBJ_TIME, 150);
+
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームシューティング実行中メソッド
 void CSceneSTG::Scene()
 {
 }

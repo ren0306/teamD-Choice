@@ -5,7 +5,7 @@
 //使用するネームスペース
 using namespace GameL;
 
-//シーン：ゲームタイトル
+//シーン：ゲーム背景4
 class CObjBackGround4 :public CObj
 {
 public:

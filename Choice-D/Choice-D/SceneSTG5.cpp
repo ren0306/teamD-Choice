@@ -25,7 +25,7 @@ CSceneSTG5::~CSceneSTG5()
 {
 }
 
-//ゲームタイトル初期化メソッド
+//ゲームシューティング5初期化メソッド
 void CSceneSTG5::InitScene()
 {
 
@@ -58,16 +58,16 @@ void CSceneSTG5::InitScene()
 	CObjteki5* objb = new CObjteki5(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI5, 50);
 
-	
-
-
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
 	
+	CObjTimeLimit* t = new CObjTimeLimit();
+	Objs::InsertObj(t, OBJ_TIME, 150);
+
 	
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームシューティング5実行中メソッド
 void CSceneSTG5::Scene()
 {
 

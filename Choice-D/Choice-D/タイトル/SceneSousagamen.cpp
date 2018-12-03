@@ -31,6 +31,9 @@ void CSceneSousagamen::InitScene()
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
 	Draw::LoadImage(L"ki-bo-do.png", 0, TEX_SIZE_512);
+	Draw::LoadImage(L"mausu.png", 1, TEX_SIZE_512);
+	//Draw::LoadImage(L"tenbin.png", 1, TEX_SIZE_512);
+
 	//操作画面オブジェクト作成
 	CObjSousagamen* s = new CObjSousagamen();
 	Objs::InsertObj(s, OBJ_SOUSAGAMEN, 10);
@@ -39,4 +42,5 @@ void CSceneSousagamen::InitScene()
 //操作画面実行中メソッド
 void CSceneSousagamen::Scene()
 {
+
 }

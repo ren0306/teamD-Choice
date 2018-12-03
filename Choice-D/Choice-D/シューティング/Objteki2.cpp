@@ -1,7 +1,7 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
-
+#include "../GameL/DrawFont.h"
 #include "../GameHead.h"
 #include "Objteki2.h"
 #include "UtilityModule.h"
@@ -39,7 +39,7 @@ void CObjteki2::Action()
 	m_time++;
 
 	//通常弾発射
-	if (m_time % 50 == 0)
+	if (m_time % 45 == 0)
 	{
 		//弾丸敵機オブジェクト
 		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 78, m_y + 95);
@@ -81,18 +81,27 @@ void CObjteki2::Action()
 		this->SetStatus(false);		//自身に削除命令
 		Hits::DeleteHitBox(this);
 	}
-
-	//HPが0になったら破棄
-
-	if (m_hp <= 0)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
 	//弾丸と接触してるしたらHPを減らす
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
+	}
+
+	//弾丸と接触してるしたらHPを減らす
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		m_hp -= 1;
+	}
+
+	//HPが0になったら破棄
+	if (m_hp <= 0)
+	{
+		m_tekicnt++;
+		m_floor++;
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+		m_endflag = true;
+		Scene::SetScene(new CSceneKuria2());
 	}
 }
 
@@ -104,6 +113,7 @@ void CObjteki2::Draw()
 
 	//敵HP表示
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
+	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;

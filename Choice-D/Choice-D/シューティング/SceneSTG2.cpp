@@ -26,7 +26,7 @@ CSceneSTG2::~CSceneSTG2()
 {
 }
 
-//ゲーム戦闘初期化メソッド
+//ゲームシューティング2初期化メソッド
 void CSceneSTG2::InitScene()
 {
 	//背景を読み込み0番に登録
@@ -59,13 +59,16 @@ void CSceneSTG2::InitScene()
 	CObjteki2* objb = new CObjteki2(200, 10);
 	Objs::InsertObj(objb, OBJ_TEKI2, 50);
 
-
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
 
+	CObjTimeLimit* t = new CObjTimeLimit();
+	Objs::InsertObj(t, OBJ_TIME, 150);
+
+
 }
 
-//ゲームタイトル実行中メソッド
+//ゲームシューティング2実行中メソッド
 void CSceneSTG2::Scene()
 {
 }

@@ -5,6 +5,7 @@
 #include "../GameL\SceneManager.h"
 
 
+
 #include "../GameHead.h"
 #include "ObjTitle.h"
 #include "../ゲームメイン/SceneMain.h"
@@ -14,6 +15,15 @@
 
 //使用するネームスペース
 using namespace GameL;
+
+//GameHead.hで定義したグローバル変数をここで初期化----------------------
+bool m_nazoflag = false;
+int m_Nazocnt = 0;
+bool m_endflag = false;
+int m_tekicnt = 0;
+int m_TimeL = 3000;
+int m_floor = 1;
+//----------------------------------------------------------------------
 
 //イニシャライズ
 void CObjTitle::Init()
@@ -35,7 +45,14 @@ void CObjTitle::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-
+	//グローバル変数をタイトルに来たらすべて初期化-------------------
+	m_Nazocnt = 0;
+	m_nazoflag = false;
+	m_endflag = false;
+	m_tekicnt = 0;
+	m_floor = 1;
+	m_TimeL = 19800;
+	//---------------------------------------------------------------
 }
 
 //ドロー
@@ -62,10 +79,10 @@ void CObjTitle::Draw()
 		Font::StrDraw(L"ゲームを始める", 400, 400, 32, c);
 	}
 
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 470)
+	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 460)
 	{
 		Font::StrDraw(L"◇操作説明", 400, 450, 32, c);
-		//マウスのボタンが押されたらメインに遷移
+		//操作説明
 		if (m_mou_l == true)
 		{
 			m_and -= 0.1;
@@ -75,6 +92,20 @@ void CObjTitle::Draw()
 	else
 	{
 		Font::StrDraw(L"操作説明", 400, 450, 32, c);
+	}
+	if (m_mou_x > 400 && m_mou_x < 635 && m_mou_y>460 && m_mou_y < 520)
+	{
+		Font::StrDraw(L"◇Choiceを終了する", 400, 500, 32, c);
+		//ゲーム終了
+		if (m_mou_l == true)
+		{
+			m_and -= 0.1;
+			exit(4);
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"Choiceを終了する", 400, 500, 32, c);
 	}
 
 
