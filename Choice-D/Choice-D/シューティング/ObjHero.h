@@ -17,6 +17,7 @@ public:
 	void SetY(float y);//位置情報Y変更用
 	float GetX();	   //位置情報X取得用
 	float GetY();	   //位置情報Y取得用
+	void Bullet(int c,float x,float y);
 private:
 	float m_x;		//主人公機のｘ方向移動用変数
 	float m_y;		//主人公機のｙ方向移動用変数
@@ -26,4 +27,6 @@ private:
 	float   m_hp;		//自機のヒットポイント
 	float m_maxhp;
 	float m_time;
+	float m_cnt;
+	float m_maxcnt;
 };

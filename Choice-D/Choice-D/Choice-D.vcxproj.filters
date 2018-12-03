@@ -254,16 +254,10 @@
     <ClCompile Include="シューティング\SceneKuria4.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
-    <ClCompile Include="シューティング\SceneKuria5.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
     <ClCompile Include="シューティング\ObjKuria3.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="シューティング\ObjKuria4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjKuria5.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -305,6 +299,15 @@
     <ClCompile Include="ObjBGNazo5.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CObjAngleBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="ObjBulletMove.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="タイトル\SceneOP.cpp">
       <Filter>ソースファイル\タイトル</Filter>
@@ -560,16 +563,10 @@
     <ClInclude Include="シューティング\SceneKuria4.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
-    <ClInclude Include="シューティング\SceneKuria5.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
     <ClInclude Include="シューティング\ObjKuria3.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\ObjKuria4.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjKuria5.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="小物関係\ObjTenkey2.h">
@@ -607,6 +604,12 @@
     </ClInclude>
     <ClInclude Include="ObjBGNazo5.h">
       <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjAngleBullet.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBulletMove.h">
+      <Filter>ソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="タイトル\SceneOP.h">
       <Filter>ソースファイル\タイトル</Filter>

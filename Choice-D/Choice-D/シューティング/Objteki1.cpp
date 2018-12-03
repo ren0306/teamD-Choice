@@ -59,6 +59,19 @@ void CObjteki1::Action()
 
 	}
 
+	//20°間隔で弾丸発射(拡散弾発射)
+	if (m_time % 200 == 0)
+	{
+		//19発同時発射
+		CObjAngleBullet* obj_b;
+		for (int i = 0; i < 360; i += 20)
+		{
+			//角度iで角度弾丸発射
+			obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+		}
+	}
+
 	//m_timeの初期化
 	if (m_time > 1000)
 	{
@@ -80,8 +93,8 @@ void CObjteki1::Action()
 	UnitVec(&m_vy, &m_vx);
 
 	//速度付ける。
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
+	m_vx *= 2.5f;
+	m_vy *= 2.5f;
 
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;

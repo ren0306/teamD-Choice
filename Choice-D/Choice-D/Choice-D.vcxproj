@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CObjAngleBullet.cpp" />
     <ClCompile Include="CObjBulletTeki1.cpp" />
     <ClCompile Include="CObjBulletTeki2.cpp" />
     <ClCompile Include="CObjBulletTeki3.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="GameOver\GAME OVER2.cpp" />
     <ClCompile Include="GameOver\GAMEOVER1.cpp" />
     <ClCompile Include="GameOver\GameOver2.cpp" />
+    <ClCompile Include="ObjBulletMove.cpp" />
     <ClCompile Include="ObjBGNazo2.cpp" />
     <ClCompile Include="ObjBGNazo3.cpp" />
     <ClCompile Include="ObjBGNazo4.cpp" />
@@ -166,7 +168,6 @@
     <ClCompile Include="シューティング\ObjKuria2.cpp" />
     <ClCompile Include="シューティング\ObjKuria3.cpp" />
     <ClCompile Include="シューティング\ObjKuria4.cpp" />
-    <ClCompile Include="シューティング\ObjKuria5.cpp" />
     <ClCompile Include="シューティング\ObjSTG.cpp" />
     <ClCompile Include="シューティング\ObjSTG2.cpp" />
     <ClCompile Include="シューティング\ObjSTG3.cpp" />
@@ -179,7 +180,6 @@
     <ClCompile Include="シューティング\SceneKuria2.cpp" />
     <ClCompile Include="シューティング\SceneKuria3.cpp" />
     <ClCompile Include="シューティング\SceneKuria4.cpp" />
-    <ClCompile Include="シューティング\SceneKuria5.cpp" />
     <ClCompile Include="シューティング\SceneSTG.cpp" />
     <ClCompile Include="シューティング\SceneSTG2.cpp" />
     <ClCompile Include="シューティング\SceneSTG3.cpp" />
@@ -221,6 +221,7 @@
     <ClCompile Include="謎解き\SceneNazo5.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CObjAngleBullet.h" />
     <ClInclude Include="CObjBulletTeki1.h" />
     <ClInclude Include="CObjBulletTeki2.h" />
     <ClInclude Include="CObjBulletTeki3.h" />
@@ -251,6 +252,7 @@
     <ClInclude Include="GameOver\GAMEOVER1.h" />
     <ClInclude Include="GameOver\GameOver2.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="ObjBulletMove.h" />
     <ClInclude Include="ObjBGNazo2.h" />
     <ClInclude Include="ObjBGNazo3.h" />
     <ClInclude Include="ObjBGNazo4.h" />
@@ -279,7 +281,6 @@
     <ClInclude Include="シューティング\ObjKuria2.h" />
     <ClInclude Include="シューティング\ObjKuria3.h" />
     <ClInclude Include="シューティング\ObjKuria4.h" />
-    <ClInclude Include="シューティング\ObjKuria5.h" />
     <ClInclude Include="シューティング\ObjSTG.h" />
     <ClInclude Include="シューティング\ObjSTG2.h" />
     <ClInclude Include="シューティング\ObjSTG3.h" />
@@ -292,7 +293,6 @@
     <ClInclude Include="シューティング\SceneKuria2.h" />
     <ClInclude Include="シューティング\SceneKuria3.h" />
     <ClInclude Include="シューティング\SceneKuria4.h" />
-    <ClInclude Include="シューティング\SceneKuria5.h" />
     <ClInclude Include="シューティング\SceneSTG.h" />
     <ClInclude Include="シューティング\SceneSTG2.h" />
     <ClInclude Include="シューティング\SceneSTG3.h" />
