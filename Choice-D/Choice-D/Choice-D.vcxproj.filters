@@ -254,16 +254,10 @@
     <ClCompile Include="シューティング\SceneKuria4.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
-    <ClCompile Include="シューティング\SceneKuria5.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
     <ClCompile Include="シューティング\ObjKuria3.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="シューティング\ObjKuria4.cpp">
-      <Filter>ソースファイル\STG</Filter>
-    </ClCompile>
-    <ClCompile Include="シューティング\ObjKuria5.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -309,6 +303,7 @@
     <ClCompile Include="CObjAngleBullet.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -557,16 +552,10 @@
     <ClInclude Include="シューティング\SceneKuria4.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
-    <ClInclude Include="シューティング\SceneKuria5.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
     <ClInclude Include="シューティング\ObjKuria3.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\ObjKuria4.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="シューティング\ObjKuria5.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="小物関係\ObjTenkey2.h">

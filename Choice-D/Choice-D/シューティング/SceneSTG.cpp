@@ -63,6 +63,10 @@ void CSceneSTG::InitScene()
 
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 110);
+
+	CObjTimeLimit* t = new CObjTimeLimit();
+	Objs::InsertObj(t, OBJ_TIME, 150);
+
 }
 
 //ゲームシューティング実行中メソッド

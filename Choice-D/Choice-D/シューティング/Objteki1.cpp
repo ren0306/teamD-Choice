@@ -93,8 +93,8 @@ void CObjteki1::Action()
 	UnitVec(&m_vy, &m_vx);
 
 	//速度付ける。
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
+	m_vx *= 2.5f;
+	m_vy *= 2.5f;
 
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
