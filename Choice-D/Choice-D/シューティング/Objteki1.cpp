@@ -60,7 +60,7 @@ void CObjteki1::Action()
 	}
 
 	//20‹ŠÔŠu‚Å’eŠÛ”­ŽË(ŠgŽU’e”­ŽË)
-	if (m_time % 200 == 0)
+	/*if (m_time % 200 == 0)
 	{
 		//19”­“¯Žž”­ŽË
 		CObjAngleBullet* obj_b;
@@ -71,7 +71,7 @@ void CObjteki1::Action()
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
-
+	*/
 	//m_time‚Ì‰Šú‰»
 	if (m_time > 1000)
 	{

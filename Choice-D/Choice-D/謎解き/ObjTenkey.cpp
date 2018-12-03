@@ -97,13 +97,16 @@ void CObjTenkey::Draw()
 
 		if (m_mou_l == true)
 		{
+			//‰ğ“š‚Æ“š‚¦‚ğŒ©”ä‚×‚éŠÖ”
 			Anser();
 			cnt = 0;
 			if (m_f == true)
 			{
 				if (m_ok == true)
 				{
+					//‚P‚Â‚Å‚à‰ğ‚­‚Ætrue‚É‚·‚é
 					m_nazoflag = true;
+					//
 					m_Nazocnt++;
 					m_floor++;
 					Scene::SetScene(new CSceneMain2);
@@ -139,7 +142,7 @@ void CObjTenkey::Draw()
 	}
 	if (m_miss == true)
 	{
-		Font::StrDraw(L"-30•b", 50, 50, 30, r);
+		Font::StrDraw(L"-30•b", 40, 50, 30, r);
 		m_misscnt--;
 		if (m_misscnt <= 0)
 		{
