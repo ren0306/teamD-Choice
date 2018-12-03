@@ -171,7 +171,6 @@ extern int m_floor;
 #include "シューティング\ObjKuria2.h"
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
-#include "シューティング\ObjKuria5.h"
 
 
 //------------------------------------------------

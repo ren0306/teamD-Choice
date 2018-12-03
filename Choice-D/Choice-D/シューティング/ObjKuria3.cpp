@@ -37,14 +37,9 @@ void CObjKuria3::Action()
 	m_mou_l = Input::GetMouButtonL();
 
 
-	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 470 && m_mou_x < 750 && m_mou_y>525 && m_mou_y < 565)
+	if (Input::GetVKey(VK_RETURN) == true)
 	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneMain4());
-		}
+		Scene::SetScene(new CSceneMain4());
 	}
 }
 
