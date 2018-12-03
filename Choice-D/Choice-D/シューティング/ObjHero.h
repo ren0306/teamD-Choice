@@ -29,4 +29,6 @@ private:
 	float m_time;
 	float m_cnt;
 	float m_maxcnt;
+	float m_tame;
+	float m_maxtame;
 };

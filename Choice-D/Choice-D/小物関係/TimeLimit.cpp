@@ -36,7 +36,7 @@ void CObjTimeLimit::Action()
 	//m_mou_l = Input::GetMouButtonL();
 	m_TimeL--;
 
-	if (m_TimeL == 0)
+	if (m_TimeL <= 0)
 	{
 		Scene::SetScene(new CSceneGameOver);
 	}

@@ -30,4 +30,6 @@ private:
 	int m_num[10];
 	int m_anser;
 	bool m_fnot;
+	bool m_miss;
+	float m_misscnt;
 };

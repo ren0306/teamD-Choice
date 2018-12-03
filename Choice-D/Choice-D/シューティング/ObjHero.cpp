@@ -48,6 +48,8 @@ void CObjHero::Init()
 	m_time = 50.f;
 	m_cnt = 7.f;
 	m_maxcnt = 7.f;
+	m_tame = 0.f;
+	m_maxtame = 100.f;
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
@@ -88,6 +90,25 @@ void CObjHero::Action()
 		m_cnt = 7.f;
 	}
 
+	if (Input::GetVKey('A') == true)
+	{
+		m_tame++;
+		if (m_tame >= 100)
+		{
+			if (m_cnt <= 0)
+			{
+				return;
+			}
+			else
+			{
+				// 弾丸オブジェクト作成
+				CObjBullet*  i = new CObjBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
+				Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+
+				m_tame = 0;
+			}
+		}
+	}
 	//主人公機の移動ベクトル初期化
 	m_vx = 0.0f;
 	m_vy = 0.0f;
@@ -237,6 +258,20 @@ void CObjHero::Draw()
 	dst.m_right = (m_cnt / m_maxcnt)*128.0f;
 	dst.m_bottom = 225.0f;
 
+	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
+	Draw::Draw(5, &src, &dst, h, 0.0f);
+
+	//チャージ表示
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 720.0f;
+
+	//表示位置の設定
+	dst.m_top = 250.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = (m_tame / m_maxtame)*128.0f;
+	dst.m_bottom = 275.0f;
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 
