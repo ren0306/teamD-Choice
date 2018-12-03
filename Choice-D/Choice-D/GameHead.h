@@ -45,6 +45,7 @@ enum OBJ_NAME
 	OBJ_GAMEOVERGAMEN,
 	OBJ_ED1GAZOU,
 	OBJ_ED2GAZOU,
+	OBJ_BULLETMOVE,
 };
 //------------------------------------------------
 
@@ -125,6 +126,8 @@ struct UserData
 #include "タイトル\ObjSousagamen.h"
 #include "小物関係\ObjED1gazou.h"
 #include "小物関係\ObjED2gazou.h"
+#include "ObjBulletMove.h"
+
 
 //------------------------------------------------
 
@@ -151,5 +154,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain4
+#define SET_GAME_START CSceneMain5
 //-----------------------------------------------

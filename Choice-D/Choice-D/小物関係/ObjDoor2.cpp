@@ -40,8 +40,6 @@ void CObjDoor2::Action()
 //ドロー
 void CObjDoor2::Draw()
 {
-
-
 	RECT_F src;
 	RECT_F dst;
 
@@ -53,9 +51,9 @@ void CObjDoor2::Draw()
 	src.m_right = 188.0f;
 	src.m_bottom = 266.0f;
 	//表示位置
-	dst.m_top = 200.0f;
-	dst.m_left = 150.0f;
-	dst.m_right = 350.0f;
+	dst.m_top = 150.0f;
+	dst.m_left = 200.0f;
+	dst.m_right = 400.0f;
 	dst.m_bottom = 400.0f;
 	Draw::Draw(2, &src, &dst, d, 0.0f);
 
