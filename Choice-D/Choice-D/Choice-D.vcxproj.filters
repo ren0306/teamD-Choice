@@ -300,6 +300,14 @@
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CObjAngleBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="ObjBulletMove.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -589,6 +597,12 @@
     </ClInclude>
     <ClInclude Include="ObjBGNazo5.h">
       <Filter>ソースファイル\小物関係</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjAngleBullet.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBulletMove.h">
+      <Filter>ソースファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

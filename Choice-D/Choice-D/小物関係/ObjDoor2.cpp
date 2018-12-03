@@ -40,8 +40,6 @@ void CObjDoor2::Action()
 //ÉhÉçÅ[
 void CObjDoor2::Draw()
 {
-
-
 	RECT_F src;
 	RECT_F dst;
 

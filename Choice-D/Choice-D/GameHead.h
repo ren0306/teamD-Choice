@@ -14,6 +14,7 @@ enum OBJ_NAME
 	OBJ_BULLET_TEKI3,
 	OBJ_BULLET_TEKI4,
 	OBJ_BULLET_TEKI5,
+	OBJ_ANGLE_BULLET,
 	OBJ_GAMEOVER,
 	OBJ_MAIN,
 	OBJ_MAIN2,
@@ -61,6 +62,7 @@ enum OBJ_NAME
 	OBJ_KURIA3,
 	OBJ_KURIA4,
 	OBJ_KURIA5,
+	OBJ_BULLETMOVE,
 };
 //------------------------------------------------
 
@@ -121,6 +123,7 @@ extern int m_floor;
 #include "CObjBulletTeki3.h"
 #include "CObjBulletTeki4.h"
 #include "CObjBulletTeki5.h"
+#include "CObjAngleBullet.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
 #include "ゲームメイン\ObjMain2.h"
@@ -171,6 +174,8 @@ extern int m_floor;
 #include "シューティング\ObjKuria2.h"
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
+
+#include "ObjBulletMove.h"
 
 
 //------------------------------------------------
