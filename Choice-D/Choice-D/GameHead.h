@@ -61,6 +61,7 @@ enum OBJ_NAME
 	OBJ_KURIA3,
 	OBJ_KURIA4,
 	OBJ_KURIA5,
+	OBJ_OP,
 };
 //------------------------------------------------
 
@@ -172,7 +173,7 @@ extern int m_floor;
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
 #include "シューティング\ObjKuria5.h"
-
+#include "タイトル\ObjOP.h"
 
 //------------------------------------------------
 
@@ -204,11 +205,11 @@ extern int m_floor;
 #include "シューティング\SceneKuria3.h"
 #include "シューティング\SceneKuria4.h"
 #include "シューティング\SceneKuria5.h"
-
+#include "タイトル\SceneOP.h"
 
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneOP
 //-----------------------------------------------
