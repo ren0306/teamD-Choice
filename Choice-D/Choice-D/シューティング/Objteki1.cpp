@@ -59,6 +59,19 @@ void CObjteki1::Action()
 
 	}
 
+	//20‹ŠÔŠu‚Å’eŠÛ”­Ë(ŠgU’e”­Ë)
+	if (m_time % 200 == 0)
+	{
+		//19”­“¯”­Ë
+		CObjAngleBullet* obj_b;
+		for (int i = 0; i < 360; i += 20)
+		{
+			//Šp“xi‚ÅŠp“x’eŠÛ”­Ë
+			obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+		}
+	}
+
 	//m_time‚Ì‰Šú‰»
 	if (m_time > 1000)
 	{
