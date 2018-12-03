@@ -62,7 +62,7 @@ void CObjMain4::Draw()
 	Font::StrDraw(str, 20, 20, 12, c);
 	wchar_t kaisou[4];
 	swprintf_s(kaisou, L"%d階層", m_floor);
-	Font::StrDraw(kaisou, 750, 0, 20, c);
+	Font::StrDraw(kaisou, 710, 0, 35, c);
 
 	//前シーンから左または右クリックを押し続けている、
 	//もしくはこのシーンに入って一度でもクリックを押してない状態に移行すると実行。

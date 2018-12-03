@@ -59,5 +59,5 @@ void CObjTimeLimit::Draw()
 	{
 		swprintf_s(str, L"%d•ª%d•b", minute, second);
 	}
-	Font::StrDraw(str, 10, 10,  20, c);
+	Font::StrDraw(str, 10, 10,  35, c);
 }
