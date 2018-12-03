@@ -183,6 +183,16 @@ void CObjHero::Action()
 			m_hp -= 3;
 		}
 
+		if (hit->CheckObjNameHit(OBJ_ANGLE_BULLET) != nullptr)
+		{
+			m_hp -= 1;
+		}
+
+		if (hit->CheckObjNameHit(OBJ_HOMING_BULLET) != nullptr)
+		{
+			m_hp -= 1;
+		}
+
 		m_hp -= 1;
 	}
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü

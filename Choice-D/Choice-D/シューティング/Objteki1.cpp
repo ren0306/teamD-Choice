@@ -72,6 +72,14 @@ void CObjteki1::Action()
 		}
 	}
 
+	//—U“±’e”­ŽË
+	if (m_time % 100 == 0)
+	{
+		//—U“±’eŠÛì¬
+		CObjHomingBullet* obj_homing_bullet = new CObjHomingBullet(m_x + 178, m_y + 95);//—U“±’eŠÛì¬
+		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 100);//—U“±’eŠÛ“o˜^
+	}
+
 	//m_time‚Ì‰Šú‰»
 	if (m_time > 1000)
 	{
