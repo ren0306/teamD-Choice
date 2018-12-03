@@ -23,14 +23,9 @@ void CObjGAMEOVER2::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 280 && m_mou_x < 480 && m_mou_y>495 && m_mou_y < 516)
+	if (Input::GetVKey(VK_RETURN) == true)
 	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			Scene::SetScene(new CSceneTitle());
-		}
+		Scene::SetScene(new CSceneTitle());
 	}
 }
 

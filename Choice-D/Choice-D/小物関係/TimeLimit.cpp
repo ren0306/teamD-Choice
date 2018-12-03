@@ -36,7 +36,7 @@ void CObjTimeLimit::Action()
 	//m_mou_l = Input::GetMouButtonL();
 	m_TimeL--;
 
-	if (m_TimeL == 0)
+	if (m_TimeL <= 0)
 	{
 		Scene::SetScene(new CSceneGameOver);
 	}
@@ -59,5 +59,5 @@ void CObjTimeLimit::Draw()
 	{
 		swprintf_s(str, L"%d•ª%d•b", minute, second);
 	}
-	Font::StrDraw(str, 10, 10,  35, c);
+	Font::StrDraw(str, 0, 0,  35, c);
 }

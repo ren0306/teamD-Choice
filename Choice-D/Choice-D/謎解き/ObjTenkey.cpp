@@ -32,7 +32,7 @@ void CObjTenkey::Init()
 	m_flag[7] = false;
 	m_flag[8] = false;
 	m_flag[9] = false;
-
+	m_misscnt = 100.f;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -97,37 +97,58 @@ void CObjTenkey::Draw()
 
 		if (m_mou_l == true)
 		{
+			//‰ğ“š‚Æ“š‚¦‚ğŒ©”ä‚×‚éŠÖ”
 			Anser();
 			cnt = 0;
-			if (m_ok==true)
+			if (m_f == true)
 			{
-				m_nazoflag = true;
-				m_Nazocnt++;
-				m_floor++;
-				Scene::SetScene(new CSceneMain2);
+				if (m_ok == true)
+				{
+					//‚P‚Â‚Å‚à‰ğ‚­‚Ætrue‚É‚·‚é
+					m_nazoflag = true;
+					//
+					m_Nazocnt++;
+					m_floor++;
+					Scene::SetScene(new CSceneMain2);
+				}
+				else
+				{
+					m_fnot = true;
+					m_TimeL -= 1800;//‚R‚O•b’á‰º
+					m_miss = true;
+					m_flag[1] = false;
+					m_flag[2] = false;
+					m_flag[3] = false;
+					m_flag[4] = false;
+					m_flag[5] = false;
+					m_flag[6] = false;
+					m_flag[7] = false;
+					m_flag[8] = false;
+					m_flag[9] = false;
+				}
+				m_f = false;
 			}
-			else
-			{
-				m_fnot = true;
-				m_flag[1] = false;
-				m_flag[2] = false;
-				m_flag[3] = false;
-				m_flag[4] = false;
-				m_flag[5] = false;
-				m_flag[6] = false;
-				m_flag[7] = false;
-				m_flag[8] = false;
-				m_flag[9] = false;
-			}
+
 		}
+		else
+		{
+			m_f = true;
+		}
+
 	}
 	else
 	{
 		Font::StrDraw(L"[“š‚¦Œˆ’èƒ{ƒ^ƒ“]", 0, 450, 30, s);
 	}
-	if (m_fnot == true)
+	if (m_miss == true)
 	{
-
+		Font::StrDraw(L"-30•b", 40, 50, 30, r);
+		m_misscnt--;
+		if (m_misscnt <= 0)
+		{
+			m_miss = false;
+			m_misscnt = 100.f;
+		}
 	}
 	
 	//[‚·‚×‚Äíœ]‚ğ‰Ÿ‚·‚Æ

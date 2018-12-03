@@ -63,6 +63,7 @@ enum OBJ_NAME
 	OBJ_KURIA3,
 	OBJ_KURIA4,
 	OBJ_KURIA5,
+	OBJ_OP,
 };
 //------------------------------------------------
 
@@ -175,7 +176,7 @@ extern int m_floor;
 #include "シューティング\ObjKuria2.h"
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
-
+#include "タイトル\ObjOP.h"
 
 //------------------------------------------------
 
@@ -206,8 +207,7 @@ extern int m_floor;
 #include "シューティング\SceneKuria2.h"
 #include "シューティング\SceneKuria3.h"
 #include "シューティング\SceneKuria4.h"
-#include "シューティング\SceneKuria5.h"
-
+#include "タイトル\SceneOP.h"
 
 //-----------------------------------------------
 

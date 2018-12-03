@@ -307,6 +307,18 @@
     <ClCompile Include="CobjHomingBullet.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBulletMove.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="タイトル\SceneOP.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="タイトル\ObjOP.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -599,6 +611,15 @@
     </ClInclude>
     <ClInclude Include="CObjAngleBullet.h">
       <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBulletMove.h">
+      <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="タイトル\SceneOP.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="タイトル\ObjOP.h">
+      <Filter>ソースファイル\タイトル</Filter>
     </ClInclude>
     <ClInclude Include="CobjHomingBullet.h">
       <Filter>ソースファイル\STG</Filter>

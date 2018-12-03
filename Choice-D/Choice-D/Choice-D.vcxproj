@@ -143,6 +143,9 @@
     <ClCompile Include="GameOver\GAME OVER2.cpp" />
     <ClCompile Include="GameOver\GAMEOVER1.cpp" />
     <ClCompile Include="GameOver\GameOver2.cpp" />
+    <ClCompile Include="ObjBulletMove.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ObjBGNazo2.cpp" />
     <ClCompile Include="ObjBGNazo3.cpp" />
     <ClCompile Include="ObjBGNazo4.cpp" />
@@ -185,8 +188,10 @@
     <ClCompile Include="シューティング\SceneSTG3.cpp" />
     <ClCompile Include="シューティング\SceneSTG4.cpp" />
     <ClCompile Include="シューティング\UtilityModule.cpp" />
+    <ClCompile Include="タイトル\ObjOP.cpp" />
     <ClCompile Include="タイトル\ObjSousagamen.cpp" />
     <ClCompile Include="タイトル\ObjTitle.cpp" />
+    <ClCompile Include="タイトル\SceneOP.cpp" />
     <ClCompile Include="タイトル\SceneSousagamen.cpp" />
     <ClCompile Include="タイトル\SceneTitle.cpp" />
     <ClCompile Include="小物関係\GameOvergamen.cpp" />
@@ -251,6 +256,9 @@
     <ClInclude Include="GameOver\GAMEOVER1.h" />
     <ClInclude Include="GameOver\GameOver2.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="ObjBulletMove.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjBGNazo2.h" />
     <ClInclude Include="ObjBGNazo3.h" />
     <ClInclude Include="ObjBGNazo4.h" />
@@ -296,8 +304,10 @@
     <ClInclude Include="シューティング\SceneSTG3.h" />
     <ClInclude Include="シューティング\SceneSTG4.h" />
     <ClInclude Include="シューティング\UtilityModule.h" />
+    <ClInclude Include="タイトル\ObjOP.h" />
     <ClInclude Include="タイトル\ObjSousagamen.h" />
     <ClInclude Include="タイトル\ObjTitle.h" />
+    <ClInclude Include="タイトル\SceneOP.h" />
     <ClInclude Include="タイトル\SceneSousagamen.h" />
     <ClInclude Include="タイトル\SceneTitle.h" />
     <ClInclude Include="小物関係\GameOvergamen.h" />
