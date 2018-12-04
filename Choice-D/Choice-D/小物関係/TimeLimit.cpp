@@ -19,21 +19,13 @@ using namespace GameL;
 //イニシャライズ
 void CObjTimeLimit::Init()
 {
-	/*m_mou_x = 0.0f;
-	m_mou_y = 0.0f;
-	m_mou_r = false;
-	m_mou_l = false;*/
+	m_and = 0.0f;
+	m_f = true;
 }
 
 //アクション
 void CObjTimeLimit::Action()
 {
-	//マウスの位置を取得
-	//m_mou_x = (float)Input::GetPosX();
-	//m_mou_y = (float)Input::GetPosY();
-	//マウスのボタンの状態
-	//m_mou_r = Input::GetMouButtonR();
-	//m_mou_l = Input::GetMouButtonL();
 	m_TimeL--;
 
 	if (m_TimeL <= 0)
@@ -49,7 +41,16 @@ void CObjTimeLimit::Draw()
 	int second = (m_TimeL / 60) % 60; //秒
 	int minute = (m_TimeL / 60) / 60; //分
 
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	if (m_f == true)
+	{
+		m_and += 0.1f;
+		if (m_and >= 1)
+		{
+			m_and=1.0f;
+			m_f = false;
+		}
+	}
+	float c[4] = { 1.0f,1.0f,1.0f,m_and };
 	wchar_t str[128];
 	if (second < 10)
 	{

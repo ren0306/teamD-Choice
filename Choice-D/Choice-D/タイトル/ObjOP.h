@@ -23,4 +23,8 @@ private:
 	bool m_mz;
 	bool m_st;
 	bool m_op;
+	float m_and;
+	bool m_f;
+	bool m_andf;
+
 };

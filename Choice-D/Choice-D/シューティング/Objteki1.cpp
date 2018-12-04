@@ -59,8 +59,11 @@ void CObjteki1::Action()
 
 	}
 
+	//以下の拡散弾、誘導弾等のプログラムは一旦コメントアウト中。
+	//必要に応じて取り出すべし。
+	/*
 	//20°間隔で弾丸発射(拡散弾発射)
-	if (m_time % 200 == 0)
+	if (m_time % 100 == 0)
 	{
 		//19発同時発射
 		CObjAngleBullet* obj_b;
@@ -71,14 +74,29 @@ void CObjteki1::Action()
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
+	*/
+	//ショットガン風拡散弾発射(AngleBulletを応用している)
+	//260°～ 280°の範囲(下方向)に2°間隔で弾丸発射
+	if (m_time % 100 == 0)
+	{
+		//下方向に11発同時発射
+		CObjAngleBullet* obj_b;
+		for (int i = 260; i < 280; i += 2)
+		{
+			//角度iで角度弾丸発射
+			obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+		}
+	}
 
 	//誘導弾発射
-	if (m_time % 100 == 0)
+	if (m_time % 200 == 0)
 	{
 		//誘導弾丸作成
 		CObjHomingBullet* obj_homing_bullet = new CObjHomingBullet(m_x + 178, m_y + 95);//誘導弾丸作成
 		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 100);//誘導弾丸登録
 	}
+	
 
 	//m_timeの初期化
 	if (m_time > 1000)
@@ -107,18 +125,6 @@ void CObjteki1::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
-
-	if (m_hp <= 15)
-	{
-		if (m_time % 1 == 0)
-		{
-			//弾丸敵機オブジェクト
-			CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
-			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
-		}
-
-
-	}
 
 
 	//弾丸と接触してるしたらHPを減らす

@@ -19,5 +19,7 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;
+	bool m_f;
+	float m_and;
 
 };

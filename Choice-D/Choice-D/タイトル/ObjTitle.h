@@ -20,4 +20,6 @@ private:
 	bool m_mou_l;
 	float m_and=1;
 
+	bool m_f;
+
 };
