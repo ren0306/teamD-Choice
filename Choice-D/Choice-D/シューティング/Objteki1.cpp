@@ -59,8 +59,11 @@ void CObjteki1::Action()
 
 	}
 
+	//ˆÈ‰º‚ÌŠgŽU’eA—U“±’e“™‚ÌƒvƒƒOƒ‰ƒ€‚Íˆê’UƒRƒƒ“ƒgƒAƒEƒg’†B
+	//•K—v‚É‰ž‚¶‚ÄŽæ‚èo‚·‚×‚µB
+	/*
 	//20‹ŠÔŠu‚Å’eŠÛ”­ŽË(ŠgŽU’e”­ŽË)
-	if (m_time % 200 == 0)
+	if (m_time % 100 == 0)
 	{
 		//19”­“¯Žž”­ŽË
 		CObjAngleBullet* obj_b;
@@ -72,13 +75,28 @@ void CObjteki1::Action()
 		}
 	}
 
-	//—U“±’e”­ŽË
+	//ƒVƒ‡ƒbƒgƒKƒ“•—ŠgŽU’e”­ŽË(AngleBullet‚ð‰ž—p‚µ‚Ä‚¢‚é)
+	//260‹` 280‹‚Ì”ÍˆÍ(‰º•ûŒü)‚É2‹ŠÔŠu‚Å’eŠÛ”­ŽË
 	if (m_time % 100 == 0)
+	{
+		//‰º•ûŒü‚É11”­“¯Žž”­ŽË
+		CObjAngleBullet* obj_b;
+		for (int i = 260; i < 280; i += 2)
+		{
+			//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
+			obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+		}
+	}
+
+	//—U“±’e”­ŽË
+	if (m_time % 200 == 0)
 	{
 		//—U“±’eŠÛì¬
 		CObjHomingBullet* obj_homing_bullet = new CObjHomingBullet(m_x + 178, m_y + 95);//—U“±’eŠÛì¬
 		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 100);//—U“±’eŠÛ“o˜^
 	}
+	*/
 
 	//m_time‚Ì‰Šú‰»
 	if (m_time > 1000)
