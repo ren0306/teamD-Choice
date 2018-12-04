@@ -34,6 +34,10 @@ void CObjOP::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_and = 1.0f;
+	m_mz = true;
+	m_st = false;
+	m_f = true;
+	m_op = false;
 }
 
 //アクション
@@ -71,7 +75,51 @@ void CObjOP::Draw()
 	{
 		Font::StrDraw(L"脱出を試みる", 600, 550, 32, c);
 	}
+	if (m_mou_x > 430 && m_mou_x < 720 && m_mou_y>325 && m_mou_y < 355)
+	{
+		if (m_mou_l == true)
+		{
+			if (m_f == true)
+			{
+				m_mz = false;
+				if (m_mz == false)
+				{
+					m_st = true;
+				}
+				m_op = true;
+				m_f = false;
+			}
+		}
+		else
+		{
+			m_f = true;
+		}
+	}
 
+	if (m_mz == true)
+	{
+		float k[4] = { 0.3,0.6,0.6,1.0f };
+		Font::StrDraw(L"モンスターに倒され、目覚めたら洞窟にいた", 115, 200, 30, k);
+		Font::StrDraw(L"制限時間内にここから脱出をしよう！", 170, 250, 30, k);
+
+		Font::StrDraw(L"ここをクリックで次へ", 430, 330, 30, c);
+	}
+	
+		if (m_st == true)
+		{
+			(m_mou_x > 430 && m_mou_x < 720 && m_mou_y>325 && m_mou_y < 355);
+
+			float k[4] = { 0.3,0.6,0.6,1.0f };
+			Font::StrDraw(L"ここから脱出するには、謎を解くか", 170, 200, 30, k);
+			Font::StrDraw(L"敵を倒すしかありません", 175, 250, 30, k);
+			Font::StrDraw(L"ここをクリックで次へ", 430, 365, 30, c);
+		}
+	
+
+	if (m_op == true)
+	{
+
+	}
 
 	RECT_F src;
 	RECT_F dst;
