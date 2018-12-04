@@ -57,6 +57,8 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
 	//主人公機の弾丸発射
 	if (Input::GetVKey('Z') == true)
 	{
@@ -84,12 +86,12 @@ void CObjHero::Action()
 	{
 		m_f = true;
 	}
-
+	//Rを押してリロード
 	if (Input::GetVKey('R') == true)
 	{
 		m_cnt = 7.f;
 	}
-
+	//Aを長押しでチャージ
 	if (Input::GetVKey('A') == true)
 	{
 		m_tame++;
@@ -97,7 +99,7 @@ void CObjHero::Action()
 		{
 			if (m_cnt <= 0)
 			{
-				return;
+				m_tame = 0;
 			}
 			else
 			{
@@ -241,8 +243,15 @@ void CObjHero::Draw()
 	RECT_F dst; //描画先表示位置
 
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
-	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
+	float a[4] = { 1.0f,0.0f,0
+		.0f,1.0f };
 
+	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
+	Font::StrDraw(L"残弾数", 0, 175, 25, h);
+	if (m_cnt <= 0)
+	{
+		Font::StrDraw(L"残弾０です。リロードしてください", 0, 200, 25, a);
+	}
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1280.0f;
