@@ -57,6 +57,8 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
 	//主人公機の弾丸発射
 	if (Input::GetVKey('Z') == true)
 	{
@@ -84,12 +86,12 @@ void CObjHero::Action()
 	{
 		m_f = true;
 	}
-
+	//Rを押してリロード
 	if (Input::GetVKey('R') == true)
 	{
 		m_cnt = 7.f;
 	}
-
+	//Aを長押しでチャージ
 	if (Input::GetVKey('A') == true)
 	{
 		m_tame++;
@@ -97,7 +99,7 @@ void CObjHero::Action()
 		{
 			if (m_cnt <= 0)
 			{
-				return;
+				m_tame = 0;
 			}
 			else
 			{
@@ -239,6 +241,15 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
+	//アニメーションRECT情報
+	RECT_F ani_src[4] =
+	{
+		{ 32,  0,  32,  64},
+		{ 32, 32,  64,  64},
+		{ 32, 64,  96,  64},
+		{ 32, 96, 128,  64},
+	};
+	
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
 	float  ob[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -246,8 +257,14 @@ void CObjHero::Draw()
 	RECT_F dst; //描画先表示位置
 
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
-	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
+	float a[4] = { 1.0f,0.0f,0.0f,1.0f };
 
+	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
+	Font::StrDraw(L"残弾数", 0, 175, 25, h);
+	if (m_cnt <= 0)
+	{
+		Font::StrDraw(L"残弾０です。リロードしてください", 0, 200, 25, a);
+	}
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1280.0f;
@@ -258,6 +275,8 @@ void CObjHero::Draw()
 	dst.m_left = 0.0f;
 	dst.m_right = (m_hp / m_maxhp)*128.0f;
 	dst.m_bottom = 175.0f;
+
+	
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 

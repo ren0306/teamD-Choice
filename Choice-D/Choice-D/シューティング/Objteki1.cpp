@@ -134,18 +134,6 @@ void CObjteki1::Action()
 	m_x += m_vx;
 	m_y += m_vy;
 
-	if (m_hp <= 15)
-	{
-		if (m_time % 1 == 0)
-		{
-			//’eŠÛ“G‹@ƒIƒuƒWƒFƒNƒg
-			CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
-			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
-		}
-
-
-	}
-
 
 	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚µ‚½‚çHP‚ðŒ¸‚ç‚·
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)

@@ -18,6 +18,11 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;
+	float m_and = 1;
+	bool m_f;
+	bool m_mz;
+	bool m_st;
+	bool m_op;
 	float m_and;
 	bool m_f;
 	bool m_andf;
