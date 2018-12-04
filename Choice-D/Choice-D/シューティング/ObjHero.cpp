@@ -236,6 +236,15 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
+	//アニメーションRECT情報
+	RECT_F ani_src[4] =
+	{
+		{ 32,  0,  32,  64},
+		{ 32, 32,  64,  64},
+		{ 32, 64,  96,  64},
+		{ 32, 96, 128,  64},
+	};
+	
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
 	float  ob[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -262,6 +271,8 @@ void CObjHero::Draw()
 	dst.m_left = 0.0f;
 	dst.m_right = (m_hp / m_maxhp)*128.0f;
 	dst.m_bottom = 175.0f;
+
+	
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 

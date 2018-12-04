@@ -257,7 +257,7 @@
     <ClInclude Include="GameOver\GameOver2.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBulletMove.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="ObjBGNazo2.h" />
     <ClInclude Include="ObjBGNazo3.h" />

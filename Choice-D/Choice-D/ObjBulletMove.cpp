@@ -10,7 +10,7 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjBulletMove::CObjBulletMove
+CObjBulletMove::CObjBulletMove();
 {
 	
 }
@@ -62,7 +62,7 @@ void CObjBulletTeki1::Action()
 
 	//敵機弾丸のHitBox更新用ポインター取得
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);			 //HitBoxの位置を敵機弾丸の位置に更新
+	hit->SetPos(m_x, m_y); 		 //HitBoxの位置を敵機弾丸の位置に更新
 
 									 //敵機弾丸が完全に領域外に出たら敵機弾丸を破棄する
 	bool check = CheckWindow(m_x, m_y, -32.0f, -32.0f, 800.0f, 600.0f);
@@ -116,3 +116,4 @@ void CObjBulletTeki1::Draw()
 	//30番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(30, &m_eff, &dst, c, 0.0f);
 }
+
