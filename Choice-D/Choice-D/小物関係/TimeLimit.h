@@ -18,5 +18,7 @@ public:
 	int GETtime() { return m_time; }
 private:
 	int m_time;
+	bool m_f;
+	float m_and;
 
 };

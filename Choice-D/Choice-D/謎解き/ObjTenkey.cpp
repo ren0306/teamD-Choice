@@ -21,8 +21,9 @@ void CObjTenkey::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_f = true;
-	m_ps = 50.f;
+	m_andf = true;
 	cnt = 0;
+	m_and = 0.0f;
 	m_flag[1] = false;
 	m_flag[2] = false;
 	m_flag[3] = false;
@@ -58,13 +59,22 @@ void CObjTenkey::Action()
 //ƒhƒ[
 void CObjTenkey::Draw()
 {	//”’
-	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float f[4] = { 1.0f,1.0f,1.0f,m_and };
 	//Ô
-	float r[4] = { 1.0f,0.0f,0.0f,1.0f };
+	float r[4] = { 1.0f,0.0f,0.0f,m_and };
 	//‰©F
-	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
+	float s[4] = { 1.0f,1.0f,0.0f,m_and };
 	//‡
-	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	float o[4] = { 0.5f,0.0f,1.0f,m_and };
+	if (m_andf == true)
+	{
+		m_and += 0.1f;
+		if (m_and >= 1)
+		{
+			m_and = 1.0f;
+			m_andf = false;
+		}
+	}
 
 	Font::StrDraw(L"‚±‚Ì–â‘è‚Í‚PŒ…‚Ì”š‚Ì‚İ“ü—Í‰Â”\‚Å‚·", 160, 550, 30, r);
 
@@ -109,11 +119,11 @@ void CObjTenkey::Draw()
 					//
 					m_Nazocnt++;
 					m_floor++;
+					m_TimeL += 1800;//‚R‚O•b‘‰Á
 					Scene::SetScene(new CSceneMain2);
 				}
 				else
 				{
-					m_fnot = true;
 					m_TimeL -= 1800;//‚R‚O•b’á‰º
 					m_miss = true;
 					m_flag[1] = false;

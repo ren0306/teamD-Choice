@@ -16,15 +16,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-/*GameHead.hで定義したグローバル変数をここで初期化----------------------
-bool m_nazoflag = false;
-int m_Nazocnt = 0;
-bool m_endflag = false;
-int m_tekicnt = 0;
-int m_TimeL = 3000;
-int m_floor = 1;
-//----------------------------------------------------------------------
-*/
 //イニシャライズ
 void CObjOP::Init()
 {
@@ -33,7 +24,8 @@ void CObjOP::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0f;
+	m_and = 0.0f;
+	m_f = true;
 }
 
 //アクション
@@ -51,7 +43,17 @@ void CObjOP::Action()
 //ドロー
 void CObjOP::Draw()
 {
-	float c[4] = { 1,1,1,1 };
+	float c[4] = { 1,1,1,m_and };
+	if (m_f == true)
+	{
+		m_and += 0.1f;
+		if (m_and >= 1.0)
+		{
+			m_and = 1.0f;
+			m_f = false;
+		}
+
+	}
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
@@ -63,8 +65,7 @@ void CObjOP::Draw()
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_l == true)
 		{
-			m_and -= 0.1;
-			Scene::SetScene(new CSceneMain());
+			m_andf = true;
 		}
 	}
 	else
@@ -72,11 +73,20 @@ void CObjOP::Draw()
 		Font::StrDraw(L"脱出を試みる", 600, 550, 32, c);
 	}
 
+	if (m_andf == true)
+	{
+		m_and -= 0.1;
+		if (m_and <= 0)
+		{
+			Scene::SetScene(new CSceneMain());
+			m_andf = false;
+		}
+	}
 
 	RECT_F src;
 	RECT_F dst;
 
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float d[4] = { 1.0f,1.0f,1.0f,m_and };
 	//Choice表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;

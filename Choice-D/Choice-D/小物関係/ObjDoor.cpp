@@ -22,7 +22,8 @@ void CObjDoor::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-
+	m_and = 0.0f;
+	m_f = true;
 }
 
 //アクション
@@ -44,7 +45,17 @@ void CObjDoor::Draw()
 	RECT_F src;
 	RECT_F dst;
 
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	if (m_f == true)
+	{
+		m_and += 0.1f;
+		if (m_and >= 1)
+		{
+			m_and = 1.0f;
+			m_f = false;
+		}
+	}
+
+	float d[4] = { 1.0f,1.0f,1.0f,m_and };
 	//ドア1表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
