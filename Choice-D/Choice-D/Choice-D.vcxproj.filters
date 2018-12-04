@@ -319,6 +319,10 @@
       <Filter>ソースファイル\タイトル</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CObjMeanderBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -622,6 +626,9 @@
       <Filter>ソースファイル\タイトル</Filter>
     </ClInclude>
     <ClInclude Include="CobjHomingBullet.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMeanderBullet.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
   </ItemGroup>

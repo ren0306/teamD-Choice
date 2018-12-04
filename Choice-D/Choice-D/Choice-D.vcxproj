@@ -119,6 +119,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CobjHomingBullet.cpp" />
+    <ClCompile Include="CObjMeanderBullet.cpp" />
     <ClCompile Include="ED\ObjED1.cpp" />
     <ClCompile Include="ED\ObjED2.cpp" />
     <ClCompile Include="ED\ObjED3.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="GameOver\GameOver2.cpp" />
     <ClCompile Include="ObjBulletMove.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ObjBGNazo2.cpp" />
     <ClCompile Include="ObjBGNazo3.cpp" />
@@ -231,6 +233,7 @@
     <ClInclude Include="CObjBulletTeki4.h" />
     <ClInclude Include="CObjBulletTeki5.h" />
     <ClInclude Include="CobjHomingBullet.h" />
+    <ClInclude Include="CObjMeanderBullet.h" />
     <ClInclude Include="ED\ObjED1.h" />
     <ClInclude Include="ED\ObjED2.h" />
     <ClInclude Include="ED\ObjED3.h" />
@@ -258,6 +261,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBulletMove.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="ObjBGNazo2.h" />
     <ClInclude Include="ObjBGNazo3.h" />

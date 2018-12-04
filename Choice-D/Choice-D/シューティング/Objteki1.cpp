@@ -59,9 +59,10 @@ void CObjteki1::Action()
 
 	}
 
-	//ˆÈ‰º‚ÌŠgŽU’eA—U“±’e“™‚ÌƒvƒƒOƒ‰ƒ€‚Íˆê’UƒRƒƒ“ƒgƒAƒEƒg’†B
-	//•K—v‚É‰ž‚¶‚ÄŽæ‚èo‚·‚×‚µB
-	/*
+	//ˆÈ‰º‚ÌŠgŽU’eA—U“±’e“™‚ÌƒvƒƒOƒ‰ƒ€‚Í
+	//TEST—p‚ÅˆêŽž“I‚É’Ç‰Á‚µ‚Ä‚é‚¾‚¯‚È‚Ì‚Å
+	//•s—v‚Èê‡‚ÍƒRƒƒ“ƒgƒAƒEƒg‚µ‚ÄOKB
+
 	//20‹ŠÔŠu‚Å’eŠÛ”­ŽË(ŠgŽU’e”­ŽË)
 	if (m_time % 100 == 0)
 	{
@@ -96,7 +97,14 @@ void CObjteki1::Action()
 		CObjHomingBullet* obj_homing_bullet = new CObjHomingBullet(m_x + 178, m_y + 95);//—U“±’eŠÛì¬
 		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 100);//—U“±’eŠÛ“o˜^
 	}
-	*/
+
+	//ŽÖs’e”­ŽË
+	if (m_time % 50 == 0)
+	{
+		//ŽÖs’eŠÛì¬
+		CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 178, m_y + 95);
+		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
+	}
 
 	//m_time‚Ì‰Šú‰»
 	if (m_time > 1000)
