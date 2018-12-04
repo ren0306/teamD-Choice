@@ -1,6 +1,7 @@
 #pragma once
 //使用するヘッダー
 #include"../GameL\SceneObjManager.h"
+#include"GameL\DrawTexture.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -29,4 +30,6 @@ private:
 	float m_time;
 	float m_cnt;
 	float m_maxcnt;
+
+
 };

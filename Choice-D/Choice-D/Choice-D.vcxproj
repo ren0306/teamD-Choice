@@ -142,7 +142,9 @@
     <ClCompile Include="GameOver\GAME OVER2.cpp" />
     <ClCompile Include="GameOver\GAMEOVER1.cpp" />
     <ClCompile Include="GameOver\GameOver2.cpp" />
-    <ClCompile Include="ObjBulletMove.cpp" />
+    <ClCompile Include="ObjBulletMove.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ObjBGNazo2.cpp" />
     <ClCompile Include="ObjBGNazo3.cpp" />
     <ClCompile Include="ObjBGNazo4.cpp" />
@@ -250,7 +252,9 @@
     <ClInclude Include="GameOver\GAMEOVER1.h" />
     <ClInclude Include="GameOver\GameOver2.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="ObjBulletMove.h" />
+    <ClInclude Include="ObjBulletMove.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjBGNazo2.h" />
     <ClInclude Include="ObjBGNazo3.h" />
     <ClInclude Include="ObjBGNazo4.h" />
