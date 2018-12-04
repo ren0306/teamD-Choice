@@ -18,9 +18,10 @@ void CObjMain::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0;
+	m_and = 0.0;
 	m_f = false;
 	m_key_flag = false;
+	m_andf = true;
 }
 
 //アクション
@@ -28,15 +29,8 @@ void CObjMain::Action()
 {
 	float c[4] = { 1,1,1,m_and };
 
-	/*if (m_f == true)
-	{
-		m_and += 0.1;
-		if (m_and == 1.0)
-		{
-			m_f = false;
-		}
 
-	}*/
+
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -49,8 +43,18 @@ void CObjMain::Action()
 //ドロー
 void CObjMain::Draw()
 {
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	float d[4] = { 0.0f,0.0f,0.0f,1.0f };
+	float c[4] = { 1.0f,1.0f,1.0f,m_and };
+	float d[4] = { 0.0f,0.0f,0.0f,m_and};
+	if (m_andf == true)
+	{
+		m_and += 0.1;
+		if (m_and >= 1)
+		{
+			m_and = 1.0;
+			m_andf = false;
+		}
+
+	}
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 

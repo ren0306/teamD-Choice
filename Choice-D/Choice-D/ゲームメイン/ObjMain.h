@@ -22,4 +22,6 @@ private:
 	double m_and;
 	bool m_f;
 	bool m_key_flag;//キーフラグ
+	bool m_andf;
+	bool m_Trans;
 };

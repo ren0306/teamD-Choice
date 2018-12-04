@@ -4,12 +4,12 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト：タイトル
-class CObjTitle :public CObj
+//オブジェクト：OP
+class CObjOP :public CObj
 {
-public :
-	CObjTitle() {};
-	~CObjTitle() {};
+public:
+	CObjOP() {};
+	~CObjOP() {};
 	void Init();		//イニシャライズ
 	void Action();		//アクション
 	void Draw();		//ドロー
@@ -18,8 +18,8 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;
-	float m_and=1;
-
+	float m_and;
 	bool m_f;
+	bool m_andf;
 
 };

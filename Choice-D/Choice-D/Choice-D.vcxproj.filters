@@ -304,6 +304,9 @@
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CobjHomingBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
     <ClCompile Include="ObjBulletMove.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
@@ -604,6 +607,15 @@
     </ClInclude>
     <ClInclude Include="ObjBulletMove.h">
       <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="タイトル\SceneOP.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="タイトル\ObjOP.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="CobjHomingBullet.h">
+      <Filter>ソースファイル\STG</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
