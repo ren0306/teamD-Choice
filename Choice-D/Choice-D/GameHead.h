@@ -213,5 +213,5 @@ extern int m_floor;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneOP
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
