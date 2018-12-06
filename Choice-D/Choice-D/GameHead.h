@@ -127,7 +127,7 @@ extern int m_floor;
 #include "CObjBulletTeki5.h"
 #include "CObjAngleBullet.h"
 #include "CObjHomingBullet.h"
-#include "CObjMeanderBullet.h"
+//#include "CObjBulletMove.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
 #include "ゲームメイン\ObjMain2.h"

@@ -10,7 +10,7 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjBulletMove::CObjBulletMove();
+CObjBulletMove::CObjBulletMove()
 {
 	
 }
