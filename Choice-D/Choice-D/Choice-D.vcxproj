@@ -168,6 +168,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="シューティング\CObjBullet.cpp" />
+    <ClCompile Include="シューティング\CObjChargeBullet.cpp" />
     <ClCompile Include="シューティング\ObjHero.cpp" />
     <ClCompile Include="シューティング\ObjKuria.cpp" />
     <ClCompile Include="シューティング\ObjKuria2.cpp" />
@@ -286,6 +287,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="シューティング\CObjBullet.h" />
+    <ClInclude Include="シューティング\CObjChargeBullt.h" />
     <ClInclude Include="シューティング\ObjHero.h" />
     <ClInclude Include="シューティング\ObjKuria.h" />
     <ClInclude Include="シューティング\ObjKuria2.h" />
