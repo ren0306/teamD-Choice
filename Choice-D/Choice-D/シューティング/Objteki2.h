@@ -20,7 +20,7 @@ private:
 	float m_y;	//敵1のy方向の位置
 	float m_vx;	//敵1移動ベクトルx
 	float m_vy;	//敵¹移動ベクトルy
-	float m_r = 0.0f;
+	float m_r;	//sinカーブ用変数
 	int   m_time;//弾丸間隔用
 
 	bool m_f2;

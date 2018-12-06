@@ -55,6 +55,6 @@ void CObjKuria2::Draw()
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
 	Font::StrDraw(L"敵を倒した", 280, 260, 50, d);
 
-	Font::StrDraw(L"次のステージへ", 480, 535, 40, d);
+	Font::StrDraw(L"エンターキーで次のステージへ", 350, 535, 30, d);
 
 }
