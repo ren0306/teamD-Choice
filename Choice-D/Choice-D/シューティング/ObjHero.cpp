@@ -87,9 +87,12 @@ void CObjHero::Action()
 		m_f = true;
 	}
 	//Rを押してリロード
-	if (Input::GetVKey('R') == true)
+	if (m_cnt <= 0)
 	{
-		m_cnt = 7.f;
+		if (Input::GetVKey('R') == true)
+		{
+			m_cnt = 7.f;
+		}
 	}
 	//Aを長押しでチャージ
 	if (Input::GetVKey('A') == true)
@@ -104,8 +107,8 @@ void CObjHero::Action()
 			else
 			{
 				// 弾丸オブジェクト作成
-				CObjBullet*  i = new CObjBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
-				Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+				CObjChargeBullet*  a = new CObjChargeBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
+				Objs::InsertObj(a, OBJ_CHARGE_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
 
 				m_tame = 0;
 			}
@@ -308,6 +311,7 @@ void CObjHero::Draw()
 	dst.m_bottom = 275.0f;
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
+
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
