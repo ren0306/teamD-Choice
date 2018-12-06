@@ -14,5 +14,7 @@ class STGBackground : public CObj
 		void Action();  //アクション
 		void Draw();	//ドロー
 	private:
+		float m_and;
+		bool m_andf;
 
 };

@@ -47,7 +47,7 @@ void CObjMain::Draw()
 	float d[4] = { 0.0f,0.0f,0.0f,m_and};
 	if (m_andf == true)
 	{
-		m_and += 0.1;
+		m_and += 0.01;
 		if (m_and >= 1)
 		{
 			m_and = 1.0;

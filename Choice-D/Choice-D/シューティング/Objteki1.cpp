@@ -162,6 +162,7 @@ void CObjteki1::Action()
 		m_endflag = true;
 		m_tekicnt++;
 		m_floor++;
+		m_TimeL += 3000;
 		/*this->SetStatus(false);		//自身に削除命令を出す。
 		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する*/
 		Scene::SetScene(new CSceneKuria());

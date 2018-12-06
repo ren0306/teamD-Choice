@@ -24,7 +24,7 @@ void CObjOP::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0f;
+	m_and = 0.0f;
 	m_f = true;
 	m_cnt = 1;
 }
@@ -32,7 +32,7 @@ void CObjOP::Init()
 //アクション
 void CObjOP::Action()
 {
-	float k[4] = { 0.3,0.6,0.6,1.0f };
+	float k[4] = { 0.3,0.6,0.6,m_and };
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -76,7 +76,7 @@ void CObjOP::Draw()
 	//フェードイン・フェードアウト
 	if (m_f == true)
 	{
-		m_and += 0.1f;
+		m_and += 0.01f;
 		if (m_and >= 1.0)
 		{
 			m_and = 1.0f;

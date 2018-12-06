@@ -50,6 +50,8 @@ void CObjHero::Init()
 	m_maxcnt = 7.f;
 	m_tame = 0.f;
 	m_maxtame = 100.f;
+	m_and = 1.f;
+	m_andf = true;
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
@@ -58,6 +60,16 @@ void CObjHero::Init()
 void CObjHero::Action()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	if (m_andf == true)
+	{
+		m_and += 0.1;
+		if (m_and >= 1)
+		{
+			m_and = 1.0;
+			m_andf = false;
+		}
+
+	}
 
 	//主人公機の弾丸発射
 	if (Input::GetVKey('Z') == true)
@@ -89,6 +101,7 @@ void CObjHero::Action()
 	//Rを押してリロード
 	if (m_cnt <= 0)
 	{
+		
 		if (Input::GetVKey('R') == true)
 		{
 			m_cnt = 7.f;
@@ -330,7 +343,3 @@ void CObjHero::Draw()
 
 }
 
-void Bullet(int c,float x,float y)
-{
-
-}

@@ -21,7 +21,7 @@ bool m_nazoflag = false;
 int m_Nazocnt = 0;
 bool m_endflag = false;
 int m_tekicnt = 0;
-int m_TimeL = 3000;
+int m_TimeL = 19800;
 int m_floor = 1;
 //----------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ void CObjTitle::Draw()
 	}
 	if (m_f == true)
 	{
-		m_and -= 0.1;
+		m_and -= 0.01;
 		if (m_and <= 0)
 		{
 			Scene::SetScene(new CSceneOP());
