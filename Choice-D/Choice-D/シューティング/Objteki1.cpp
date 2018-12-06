@@ -30,6 +30,7 @@ void CObjteki1::Init()
 	m_maxhp = 30.f;
 	m_f = false;
 	m_time = 0;
+	m_r = 85.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//“–‚½‚è”»’èHitBox
@@ -113,7 +114,7 @@ void CObjteki1::Action()
 	}
 
 	//Šp“x‰ÁŽZ
-	m_r += 2.0f;
+	m_r += 1.0f;
 
 	//360‹‚Å‰Šú’l‚É–ß‚·
 	if (m_r > 360.0f)

@@ -23,6 +23,7 @@ CObjteki2::CObjteki2(float x, float y)
 //イニシャライズ
 void CObjteki2::Init()
 {
+	m_r = 45.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
@@ -53,7 +54,7 @@ void CObjteki2::Action()
 	}
 
 	//角度加算
-	m_r += 2.0f;
+	m_r += 1.0f;
 
 	//360°で初期値に戻す
 	if (m_r > 360.0f)
@@ -67,8 +68,8 @@ void CObjteki2::Action()
 	UnitVec(&m_vy, &m_vx);
 
 	//速度付ける。
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
+	m_vx *= 2.5f;
+	m_vy *= 2.5f;
 
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
