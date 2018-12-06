@@ -119,6 +119,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CobjHomingBullet.cpp" />
+    <ClCompile Include="CObjMeanderBullet.cpp" />
     <ClCompile Include="ED\ObjED1.cpp" />
     <ClCompile Include="ED\ObjED2.cpp" />
     <ClCompile Include="ED\ObjED3.cpp" />
@@ -232,6 +233,7 @@
     <ClInclude Include="CObjBulletTeki4.h" />
     <ClInclude Include="CObjBulletTeki5.h" />
     <ClInclude Include="CobjHomingBullet.h" />
+    <ClInclude Include="CObjMeanderBullet.h" />
     <ClInclude Include="ED\ObjED1.h" />
     <ClInclude Include="ED\ObjED2.h" />
     <ClInclude Include="ED\ObjED3.h" />

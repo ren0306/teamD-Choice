@@ -59,8 +59,9 @@ void CObjteki1::Action()
 
 	}
 
-	//以下の拡散弾、誘導弾等のプログラムは一旦コメントアウト中。
-	//必要に応じて取り出すべし。
+	//以下の拡散弾、誘導弾等のプログラムは
+	//TEST用で一時的に追加してるだけなので
+	//不要な場合はコメントアウトしてOK。
 	/*
 	//20°間隔で弾丸発射(拡散弾発射)
 	if (m_time % 100 == 0)
@@ -77,7 +78,22 @@ void CObjteki1::Action()
 	*/
 	//ショットガン風拡散弾発射(AngleBulletを応用している)
 	//260°～ 280°の範囲(下方向)に2°間隔で弾丸発射
-	if (m_time % 100 == 0)
+	if (m_hp <= 15)
+	{
+		if (m_time % 50 == 0)
+		{
+			//下方向に11発同時発射
+			CObjAngleBullet* obj_b;
+			for (int i = 260; i < 280; i += 2)
+			{
+				//角度iで角度弾丸発射
+				obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			}
+		}
+
+	}
+	else if (m_time % 100 == 0)
 	{
 		//下方向に11発同時発射
 		CObjAngleBullet* obj_b;
@@ -88,7 +104,7 @@ void CObjteki1::Action()
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
-
+	/*
 	//誘導弾発射
 	if (m_time % 200 == 0)
 	{
@@ -97,7 +113,14 @@ void CObjteki1::Action()
 		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 100);//誘導弾丸登録
 	}
 	
-
+	//蛇行弾発射
+	if (m_time % 50 == 0)
+	{
+		//蛇行弾丸作成
+		CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 178, m_y + 95);
+		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
+	}
+	*/
 	//m_timeの初期化
 	if (m_time > 1000)
 	{
