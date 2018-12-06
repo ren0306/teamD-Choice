@@ -177,6 +177,7 @@ extern int m_floor;
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
 #include "タイトル\ObjOP.h"
+#include "ObjBulletMove.h"
 
 //------------------------------------------------
 
@@ -213,5 +214,5 @@ extern int m_floor;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneSTG
 //-----------------------------------------------

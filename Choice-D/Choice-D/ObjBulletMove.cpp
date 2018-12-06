@@ -10,13 +10,14 @@
 using namespace GameL;
 
 //コンストラクタ
-CObjBulletMove::CObjBulletMove();
+
+CObjBulletMove::CObjBulletMove()
 {
 	
 }
 
 //イニシャライズ
-void CObjBulletTeki1::Init()
+void CObjBulletMove::Init()
 {
 	m_eff.m_top		= 32;
 	m_eff.m_left	= 0;
@@ -37,7 +38,7 @@ void CObjBulletTeki1::Init()
 }
 
 //アクション
-void CObjBulletTeki1::Action()
+void CObjBulletMove::Action()
 {
 	//Resourcesの描画物のRECT
 	m_eff = GetBulletEffec(&m_ani, &m_ani_time, m_del, 2);
@@ -100,7 +101,7 @@ void CObjBulletTeki1::Action()
 }
 
 //ドロー
-void CObjBulletTeki1::Draw()
+void CObjBulletMove::Draw()
 {
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
 	float  c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -116,4 +117,3 @@ void CObjBulletTeki1::Draw()
 	//30番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(30, &m_eff, &dst, c, 0.0f);
 }
-
