@@ -11,6 +11,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+
 //位置情報X変更用
 void CObjHero::SetX(float x)
 {
@@ -38,7 +39,6 @@ float CObjHero::GetY()
 //イニシャライズ
 void CObjHero::Init()
 {
-	m_hp = 20.f;
 	m_maxhp = 20.f;
 	m_x = 400;
 	m_y = 550;
@@ -201,46 +201,46 @@ void CObjHero::Action()
 	{
 		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI1) != nullptr)
 		{
-			m_hp -= 1;
+			m_Mehp -= 1;
 		}
 
 		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI2) != nullptr)
 		{
-			m_hp -= 1;
+			m_Mehp -= 1;
 		}
 		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI3) != nullptr)
 		{
-			m_hp -= 2;
+			m_Mehp -= 2;
 		}
 
 		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI4) != nullptr)
 		{
-			m_hp -= 3;
+			m_Mehp -= 3;
 		}
 		if (hit->CheckObjNameHit(OBJ_BULLET_TEKI5) != nullptr)
 		{
-			m_hp -= 3;
+			m_Mehp -= 3;
 		}
 
 		if (hit->CheckObjNameHit(OBJ_ANGLE_BULLET) != nullptr)
 		{
-			m_hp -= 1;
+			m_Mehp -= 1;
 		}
 
 		if (hit->CheckObjNameHit(OBJ_HOMING_BULLET) != nullptr)
 		{
-			m_hp -= 1;
+			m_Mehp -= 1;
 		}
 
 		if (hit->CheckObjNameHit(OBJ_MEANDER_BULLET) != nullptr)
 		{
-			m_hp -= 1;
+			m_Mehp -= 1;
 		}
 
-		m_hp -= 1;
+		m_Mehp -= 1;
 	}
 	//HPが0になったら破棄
-	if (m_hp <= 0)
+	if (m_Mehp <= 0)
 	{
 		m_time--;
 		if (m_time <= 0)
@@ -289,7 +289,7 @@ void CObjHero::Draw()
 	//表示位置の設定
 	dst.m_top = 150.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = (m_hp / m_maxhp)*128.0f;
+	dst.m_right = (m_Mehp / m_maxhp)*128.0f;
 	dst.m_bottom = 175.0f;
 
 	

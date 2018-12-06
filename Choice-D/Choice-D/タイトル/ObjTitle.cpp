@@ -23,6 +23,8 @@ bool m_endflag = false;
 int m_tekicnt = 0;
 int m_TimeL = 19800;
 int m_floor = 1;
+float m_Mehp = 20.f;
+
 //----------------------------------------------------------------------
 
 //イニシャライズ
@@ -52,6 +54,8 @@ void CObjTitle::Action()
 	m_tekicnt = 0;
 	m_floor = 1;
 	m_TimeL = 19800;
+	m_Mehp = 20.f;
+
 	//---------------------------------------------------------------
 }
 
