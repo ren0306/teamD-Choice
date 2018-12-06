@@ -33,6 +33,7 @@ void CObjOP::Init()
 void CObjOP::Action()
 {
 	float k[4] = { 0.3,0.6,0.6,1.0f };
+	float c[4] = { 1,1,1,1 };
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -43,7 +44,6 @@ void CObjOP::Action()
 	//
 	if (m_mou_x >= 430 && m_mou_x <= 720 && m_mou_y >= 325 && m_mou_y <= 355)
 	{
-		Font::StrDraw(L"◇ここをクリックで次へ", 430, 330, 30, k);
 
 		if (m_mou_l == true)
 		{
@@ -59,11 +59,12 @@ void CObjOP::Action()
 			m_flag = true;
 		}
 	}
-	else
+	if (m_cnt == 5)
 	{
-		Font::StrDraw(L"ここをクリックで次へ", 430, 330, 30, k);
-
+		return;
 	}
+	else
+	Font::StrDraw(L"ここをクリックで次へ", 430, 330, 30, c);
 
 }
 
@@ -119,6 +120,27 @@ void CObjOP::Draw()
 
 	if (m_cnt == 3)
 	{
+		Font::StrDraw(L"謎を解いて次のステージに行く方法", 100, 100, 20, k);
+		Font::StrDraw(L"扉をマウスでクリックし、問題が出てくるので",200,200,20,k);
+		Font::StrDraw(L"問題を解いて次に行こう！",300,300,20,k);
+		Font::StrDraw(L"ただし、問題を間違えると時間が30秒減るので注意",400,400,20,k);
+
+	}
+
+	if (m_cnt == 4)
+	{
+		Font::StrDraw(L"敵との戦闘について",100,100,20,k);
+		Font::StrDraw(L"敵と戦うには敵をクリックすると、戦うか確認されるので",100,200,20,k);
+		Font::StrDraw(L"「はい」を押すと戦える",200,100,20,k);
+		Font::StrDraw(L"敵と戦うと戦いの音で他の敵に見つかるかもしれないので",300,100,20,k);
+		Font::StrDraw(L"敵と戦うのはなるべく避けよう",100,300,20,k);
+
+	}
+
+	if (m_cnt == 5)
+	{
+		Font::StrDraw(L"準備ができたら下の「脱出を試みる」をクリックして",100,200,20, k);
+		Font::StrDraw(L"脱出をしよう！",200,100,20, k);
 
 	}
 
