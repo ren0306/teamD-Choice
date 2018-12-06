@@ -21,5 +21,6 @@ private:
 	bool m_mou_l;
 	bool m_f;
 	float m_and;
+	int m_cnt;
 
 };

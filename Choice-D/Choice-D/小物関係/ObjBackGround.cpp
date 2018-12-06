@@ -24,6 +24,8 @@ void CObjBackGround::Init()
 	m_mou_l = false;
 	m_f = true;
 	m_and = 0.0f;
+	m_cnt = 0;
+
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -46,7 +48,6 @@ void CObjBackGround::Draw()
 	RECT_F src;
 	RECT_F dst;
 
-	
 	if (m_f == true)
 	{
 		m_and += 0.1;
