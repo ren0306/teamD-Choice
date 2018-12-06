@@ -175,7 +175,6 @@ extern int m_floor;
 #include "小物関係\ObjED2gazou.h"
 #include "小物関係\ObjED3gazou.h"
 #include "シューティング\ObjKuria.h"
-#include "小物関係\Remember.h"
 #include "小物関係\TimeLimit.h"
 #include "シューティング\ObjKuria2.h"
 #include "シューティング\ObjKuria3.h"

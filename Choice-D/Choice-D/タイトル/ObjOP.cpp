@@ -89,9 +89,9 @@ void CObjOP::Draw()
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 590 && m_mou_x < 780 && m_mou_y>540 && m_mou_y < 570)
+	if (m_mou_x > 565 && m_mou_x < 750 && m_mou_y>540 && m_mou_y < 570)
 	{
-		Font::StrDraw(L"◇脱出を試みる", 600, 550, 32, c);
+		Font::StrDraw(L"◇脱出を試みる", 570, 550, 32, c);
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_l == true)
 		{
@@ -100,7 +100,7 @@ void CObjOP::Draw()
 	}
 	else
 	{
-		Font::StrDraw(L"脱出を試みる", 600, 550, 32, c);
+		Font::StrDraw(L"脱出を試みる", 570, 550, 32, c);
 	}
 	if (m_cnt==1)
 	{

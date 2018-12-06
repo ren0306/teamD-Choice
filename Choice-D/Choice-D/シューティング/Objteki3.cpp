@@ -25,7 +25,6 @@ void CObjteki3::Init()
 	m_time = 0;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
 	//“–‚½‚è”»’èHitBox
 	Hits::SetHitBox(this, m_x, m_y , 150, 130, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 }
