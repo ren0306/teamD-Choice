@@ -25,28 +25,55 @@ void CObjOP::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_and = 1.0f;
-	m_mz = true;
-	m_st = false;
 	m_f = true;
-	m_op = false;
+	m_cnt = 1;
 }
 
 //アクション
 void CObjOP::Action()
 {
+	float k[4] = { 0.3,0.6,0.6,1.0f };
+
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	
+	//
+	if (m_mou_x >= 430 && m_mou_x <= 720 && m_mou_y >= 325 && m_mou_y <= 355)
+	{
+		Font::StrDraw(L"◇ここをクリックで次へ", 430, 330, 30, k);
+
+		if (m_mou_l == true)
+		{
+			if (m_flag == true)
+			{
+				m_cnt++;
+				m_flag = false;
+
+			}
+		}
+		else
+		{
+			m_flag = true;
+		}
+	}
+	else
+	{
+		Font::StrDraw(L"ここをクリックで次へ", 430, 330, 30, k);
+
+	}
+
 }
 
 //ドロー
 void CObjOP::Draw()
 {
 	float c[4] = { 1,1,1,m_and };
+	float k[4] = { 0.3,0.6,0.6,m_and };
+
+	//フェードイン・フェードアウト
 	if (m_f == true)
 	{
 		m_and += 0.1f;
@@ -64,59 +91,33 @@ void CObjOP::Draw()
 	//マウスの位置とクリックする場所で当たり判定
 	if (m_mou_x > 590 && m_mou_x < 780 && m_mou_y>540 && m_mou_y < 570)
 	{
-		Font::StrDraw(L"脱出を試みる", 600, 550, 32, c);
+		Font::StrDraw(L"◇脱出を試みる", 600, 550, 32, c);
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_l == true)
 		{
-			m_andf = true;
+			Scene::SetScene(new CSceneMain());
 		}
 	}
 	else
 	{
 		Font::StrDraw(L"脱出を試みる", 600, 550, 32, c);
 	}
-	if (m_mou_x > 430 && m_mou_x < 720 && m_mou_y>325 && m_mou_y < 355)
+	if (m_cnt==1)
 	{
-		if (m_mou_l == true)
-		{
-			if (m_f == true)
-			{
-				m_mz = false;
-				if (m_mz == false)
-				{
-					m_st = true;
-				}
-				m_op = true;
-				m_f = false;
-			}
-		}
-		else
-		{
-			m_f = true;
-		}
-	}
-
-	if (m_mz == true)
-	{
-		float k[4] = { 0.3,0.6,0.6,1.0f };
 		Font::StrDraw(L"モンスターに倒され、目覚めたら洞窟にいた", 115, 200, 30, k);
 		Font::StrDraw(L"制限時間内にここから脱出をしよう！", 170, 250, 30, k);
 
-		Font::StrDraw(L"ここをクリックで次へ", 430, 330, 30, c);
 	}
 	
-		if (m_st == true)
-		{
-			(m_mou_x > 430 && m_mou_x < 720 && m_mou_y>325 && m_mou_y < 355);
+	if (m_cnt==2)
+	{
 
-			float k[4] = { 0.3,0.6,0.6,1.0f };
-			Font::StrDraw(L"ここから脱出するには、謎を解くか", 170, 200, 30, k);
-			Font::StrDraw(L"敵を倒すしかありません", 175, 250, 30, k);
-			Font::StrDraw(L"ここをクリックで次へ", 430, 365, 30, c);
-		}
+		Font::StrDraw(L"ここから脱出するには、謎を解くか", 170, 200, 30, k);
+		Font::StrDraw(L"敵を倒すしかありません", 175, 250, 30, k);
+	}
 	
 
-	if (m_op == true)
+	if (m_cnt == 3)
 	{
 
 	}
