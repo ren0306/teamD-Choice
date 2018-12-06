@@ -39,7 +39,7 @@ void CObjGAMEOVER2::Draw()
 
 	Font::StrDraw(L"敵に倒された", 300, 400, 30, m);
 	float s[4] = { 1.0f,1.0f,1.0f,1.0f };
-	Font::StrDraw(L"タイトル画面へ", 280, 500, 30, s);
+	Font::StrDraw(L"エンターキーでタイトルへ", 350, 535, 30, s);
 
 	Font::StrDraw(L"やられてしまった", 325, 250, 20, s);
 
