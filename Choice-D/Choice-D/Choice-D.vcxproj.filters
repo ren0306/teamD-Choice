@@ -236,7 +236,6 @@
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="小物関係\Remember.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\TimeLimit.cpp">
       <Filter>ソースファイル</Filter>
@@ -320,7 +319,13 @@
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="CObjMeanderBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="シューティング\CObjChargeBullet.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -630,6 +635,9 @@
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="CObjMeanderBullet.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\CObjChargeBullt.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
   </ItemGroup>

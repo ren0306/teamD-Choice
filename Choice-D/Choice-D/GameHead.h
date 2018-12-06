@@ -14,6 +14,7 @@ enum OBJ_NAME
 	OBJ_BULLET_TEKI3,
 	OBJ_BULLET_TEKI4,
 	OBJ_BULLET_TEKI5,
+	OBJ_CHARGE_BULLET,
 	OBJ_ANGLE_BULLET,
 	OBJ_HOMING_BULLET,
 	OBJ_MEANDER_BULLET,
@@ -127,7 +128,8 @@ extern int m_floor;
 #include "CObjBulletTeki5.h"
 #include "CObjAngleBullet.h"
 #include "CObjHomingBullet.h"
-#include "CObjMeanderBullet.h"
+#include "シューティング\CObjChargeBullt.h"
+//#include "CObjBulletMove.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
 #include "ゲームメイン\ObjMain2.h"
@@ -179,6 +181,7 @@ extern int m_floor;
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
 #include "タイトル\ObjOP.h"
+#include "ObjBulletMove.h"
 
 //------------------------------------------------
 
