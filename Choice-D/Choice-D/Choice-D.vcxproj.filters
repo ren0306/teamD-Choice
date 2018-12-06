@@ -313,6 +313,18 @@
     <ClCompile Include="タイトル\ObjOP.cpp" />
     <ClCompile Include="タイトル\SceneOP.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="タイトル\SceneOP.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="タイトル\ObjOP.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CObjMeanderBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -612,6 +624,18 @@
     <ClInclude Include="CobjHomingBullet.h" />
     <ClInclude Include="タイトル\ObjOP.h" />
     <ClInclude Include="タイトル\SceneOP.h" />
+    <ClInclude Include="タイトル\SceneOP.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="タイトル\ObjOP.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="CobjHomingBullet.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMeanderBullet.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">

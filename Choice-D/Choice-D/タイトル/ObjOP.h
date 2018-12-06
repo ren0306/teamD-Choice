@@ -18,8 +18,10 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;
+	int m_cnt;
 	float m_and;
 	bool m_f;
+	bool m_flag;
 	bool m_andf;
 
 };

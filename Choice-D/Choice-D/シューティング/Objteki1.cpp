@@ -59,9 +59,10 @@ void CObjteki1::Action()
 
 	}
 
-	//以下の拡散弾、誘導弾等のプログラムは一旦コメントアウト中。
-	//必要に応じて取り出すべし。
-	/*
+	//以下の拡散弾、誘導弾等のプログラムは
+	//TEST用で一時的に追加してるだけなので
+	//不要な場合はコメントアウトしてOK。
+
 	//20°間隔で弾丸発射(拡散弾発射)
 	if (m_time % 100 == 0)
 	{
@@ -96,7 +97,14 @@ void CObjteki1::Action()
 		CObjHomingBullet* obj_homing_bullet = new CObjHomingBullet(m_x + 178, m_y + 95);//誘導弾丸作成
 		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 100);//誘導弾丸登録
 	}
-	*/
+
+	//蛇行弾発射
+	if (m_time % 50 == 0)
+	{
+		//蛇行弾丸作成
+		CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 178, m_y + 95);
+		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
+	}
 
 	//m_timeの初期化
 	if (m_time > 1000)
@@ -125,18 +133,6 @@ void CObjteki1::Action()
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;
 	m_y += m_vy;
-
-	if (m_hp <= 15)
-	{
-		if (m_time % 1 == 0)
-		{
-			//弾丸敵機オブジェクト
-			CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
-			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
-		}
-
-
-	}
 
 
 	//弾丸と接触してるしたらHPを減らす

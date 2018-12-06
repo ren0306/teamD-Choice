@@ -19,6 +19,8 @@ void CObjBGN::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
+	m_f = true;
+	m_and = 0.0f;
 }
 
 //アクション
@@ -37,14 +39,22 @@ void CObjBGN::Action()
 void CObjBGN::Draw()
 {
 
-	float c[4] = { 1,1,1,1 };
+	float c[4] = { 1,1,1,m_and };
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
+	if (m_f == true)
+	{
+		m_and += 0.1;
+		if (m_and >= 1)
+		{
+			m_and = 1.0f;
+			m_f = false;
+		}
+	}
 
-
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float d[4] = { 1.0f,1.0f,1.0f,m_and};
 	RECT_F src;
 	RECT_F dst;
 	//ドア1表示(切り取り位置)

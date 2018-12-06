@@ -28,12 +28,7 @@ CSceneOP::~CSceneOP()
 
 //ゲームOP初期化メソッド
 void CSceneOP::InitScene()
-{
-
-
-	//出力させる文字のグラフィックを作成
-	Font::SetStrTex(L"ゲームを始める");
-	
+{	
 	//OPオブジェクト作成
 	CObjOP* obj = new CObjOP();
 	Objs::InsertObj(obj, OBJ_OP, 10);
