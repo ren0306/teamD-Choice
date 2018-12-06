@@ -252,6 +252,7 @@ void CObjHero::Draw()
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
 	Font::StrDraw(L"Ž©•ª‚ÌHP", 0, 126, 28, h);
 
+
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1280.0f;
