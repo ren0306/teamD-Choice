@@ -24,7 +24,7 @@ CObjteki4::CObjteki4(float x, float y)
 void CObjteki4::Init()
 {
 	m_time = 0;
-	m_r = 45.0f;
+	m_r = 42.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
