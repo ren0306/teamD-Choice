@@ -181,6 +181,7 @@ extern int m_floor;
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
 #include "タイトル\ObjOP.h"
+#include "ObjBulletMove.h"
 
 //------------------------------------------------
 
