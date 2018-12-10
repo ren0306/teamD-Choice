@@ -44,6 +44,10 @@ void CObjOP::Action()
 	//
 	if (m_mou_x >= 450 && m_mou_x <= 740 && m_mou_y >= 470 && m_mou_y <= 500)
 	{
+		if (m_cnt >= 5)
+		{
+			return;
+		}
 
 		if (m_mou_l == true)
 		{
@@ -59,13 +63,14 @@ void CObjOP::Action()
 			m_flag = true;
 		}
 	}
-	if (m_cnt == 5)
+	if (m_cnt >= 5)
 	{
 		return;
 	}
 	else
-	Font::StrDraw(L"ここをクリックで次へ", 450, 480, 30, c);
-
+	{
+		Font::StrDraw(L"ここをクリックで次へ", 450, 480, 30, c);
+	}
 }
 
 //ドロー
@@ -143,6 +148,11 @@ void CObjOP::Draw()
 		Font::StrDraw(L"脱出をしよう！",300,300,35, k);
 
 	}
+	//if (m_cnt >= 6)
+	//{
+	//	Scene::SetScene(new CSceneMain());
+
+	//}
 
 	RECT_F src;
 	RECT_F dst;

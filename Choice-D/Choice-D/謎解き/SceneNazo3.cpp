@@ -35,7 +35,7 @@ void CSceneNazo3::InitScene()
 	Draw::LoadImage(L"door2.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"解答.png", 12, TEX_SIZE_512);
-	Draw::LoadImage(L"問題.png", 13, TEX_SIZE_512);
+	Draw::LoadImage(L"問題3.png", 13, TEX_SIZE_512);
 
 
 	//オブジェクト作成
