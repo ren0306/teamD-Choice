@@ -87,11 +87,13 @@ void CObjteki2::Action()
 		m_hp -= 1;
 	}
 
-	//’eŠÛ‚ÆÚG‚µ‚Ä‚é‚µ‚½‚çHP‚ðŒ¸‚ç‚·
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	//ƒ`ƒƒ[ƒW’e‚Ìƒ_ƒ[ƒW‚R
+	if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
 	{
-		m_hp -= 1;
+		m_hp -= 3;
+
 	}
+
 
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)

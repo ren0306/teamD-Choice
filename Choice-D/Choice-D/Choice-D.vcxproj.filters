@@ -333,6 +333,7 @@
     <ClCompile Include="CObjHeroExplosion.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -667,14 +668,14 @@
     <Filter Include="ソースファイル\謎解き">
       <UniqueIdentifier>{072450db-b0e6-47ba-b529-b089fe7784e2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\メイン">
-      <UniqueIdentifier>{0c57de22-b459-4bfd-acbf-18a7fdc5e7c5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル\タイトル">
       <UniqueIdentifier>{7d6744ca-d2c7-4187-8212-78b2c04ee9fc}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\STG">
       <UniqueIdentifier>{aa193f39-49b2-47f6-92b0-1c68767ac6a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\メイン">
+      <UniqueIdentifier>{0c57de22-b459-4bfd-acbf-18a7fdc5e7c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

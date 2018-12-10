@@ -217,8 +217,8 @@ void CObjTenkey::Draw()
 	src.m_bottom = 647.0f;
 	//解答出力（出力位置）
 	dst.m_top = 50.0f +100;
-	dst.m_left = 0.0f ;
-	dst.m_right = 600.0f + 300;
+	dst.m_left = -10.0f ;
+	dst.m_right = 600.0f + 420;
 	dst.m_bottom = 450.0f + 250;
 	Draw::Draw(12, &src, &dst, f, 0.0f);
 
@@ -421,7 +421,7 @@ bool CObjTenkey::Anser ()
 	//答え
 	int m_anser[QUESTION][ANSER] = {
 		{ 4 },
-		{ 1,2,3,5 },
+		{ 1,5},
 		{ 7,4,8,9 },
 		{ 3,4,7,9 },
 		{ 5,6,7,9 },
