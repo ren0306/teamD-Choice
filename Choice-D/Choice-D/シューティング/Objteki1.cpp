@@ -157,6 +157,13 @@ void CObjteki1::Action()
 		m_hp -= 1;
 
 	}
+	//ƒ`ƒƒ[ƒW’e‚Ìƒ_ƒ[ƒW‚R
+	if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
+	{
+		m_hp -= 3;
+
+	}
+
 	//HP‚O‚Å
 	if (m_hp <= 0)
 	{

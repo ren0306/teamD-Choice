@@ -47,7 +47,7 @@ void CObjMain::Draw()
 	float d[4] = { 0.0f,0.0f,0.0f,m_and};
 	if (m_andf == true)
 	{
-		m_and += 0.01;
+		m_and += 0.1;
 		if (m_and >= 1)
 		{
 			m_and = 1.0;
@@ -163,18 +163,6 @@ void CObjMain::Draw()
 	//2”Ô‚ß‚É“o˜^‚µ‚½ƒOƒ‰ƒtƒBƒbƒN‚ğsrcEdstEc‚Ìî•ñ‚ğŒ³‚É•`‰æ
 	Draw::Draw(2, &src, &dst, c, 0.0f);
 
-	/*int second = (m_time / 60) % 60; //•b
-	int minute = (m_time / 60) / 60; //•ª
-
-	wchar_t strt[128];
-	if (second < 10)
-	{
-		swprintf_s(strt, L"%d•ª0%d•b", minute, second);
-	}
-	else
-	{
-		swprintf_s(strt, L"%d•ª%d•b", minute, second);
-	}*/
 
 
 }
