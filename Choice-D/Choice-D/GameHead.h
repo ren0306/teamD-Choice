@@ -219,5 +219,5 @@ extern float m_Mehp;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneNazo3
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------

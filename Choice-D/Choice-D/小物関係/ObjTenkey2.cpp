@@ -129,6 +129,17 @@ void CObjTenkey2::Draw()
 					m_flag[7] = false;
 					m_flag[8] = false;
 					m_flag[9] = false;
+					m_num[1] = 0;
+					m_num[2] = 0;
+					m_num[3] = 0;
+					m_num[4] = 0;
+					m_num[5] = 0;
+					m_num[6] = 0;
+					m_num[7] = 0;
+					m_num[8] = 0;
+					m_num[9] = 0;
+
+
 				}
 				m_f = false;
 			}
@@ -481,7 +492,7 @@ bool CObjTenkey2::Anser()
 	//“š‚¦
 	int m_anser[QUESTION][ANSER] = {
 		{ 4 },
-		{ 1,5 },
+		{ 1,8 },
 		{ 7,4,8 },
 		{ 3,4,7,9 },
 		{ 5,6,7,9 },

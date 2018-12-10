@@ -482,7 +482,7 @@ bool CObjTenkey3::Anser()
 	//“š‚¦
 	int m_anser[QUESTION][ANSER] = {
 		{ 4 },
-		{ 1,5 },
+		{ 1,8 },
 		{ 1,3,5 },
 		{ 3,4,7,9 },
 		{ 5,6,7,9 },
