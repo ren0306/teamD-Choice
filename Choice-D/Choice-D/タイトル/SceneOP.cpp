@@ -29,9 +29,14 @@ CSceneOP::~CSceneOP()
 //ゲームOP初期化メソッド
 void CSceneOP::InitScene()
 {	
+	
 	//OPオブジェクト作成
-	CObjOP* obj = new CObjOP();
-	Objs::InsertObj(obj, OBJ_OP, 10);
+	CObjOP* abc = new CObjOP();
+	Objs::InsertObj(abc, OBJ_OP, 10);
+
+	//OPオブジェクト作成
+	CObjOP* d = new CObjOP();
+	Objs::InsertObj(d, OBJ_OP, 10);
 }
 
 //ゲームタイトル実行中メソッド
