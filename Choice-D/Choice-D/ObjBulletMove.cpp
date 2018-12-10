@@ -30,8 +30,6 @@ void CObjBulletMove::Init()
 	m_vx = 0.0f;
 	m_vy = 1.0f;
 
-	//移動ベクトルの正規化
-	UnitVec(&m_vy, &m_vx);
 
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_ENEMY, OBJ_BULLET_TEKI1, 1);
@@ -42,6 +40,8 @@ void CObjBulletMove::Action()
 {
 	//Resourcesの描画物のRECT
 	m_eff = GetBulletEffec(&m_ani, &m_ani_time, m_del, 2);
+	//移動ベクトルの正規化
+	UnitVec(&m_vy, &m_vx);
 
 	//弾丸消滅処理　-----
 	if (m_del == true)
@@ -105,15 +105,32 @@ void CObjBulletMove::Draw()
 {
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
 	float  c[4] = { 1.0f,1.0f,1.0f,1.0f };
-
 	RECT_F dst; //描画先表示位置
-
-				//表示位置の設定
+	RECT_F srt;
+	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
 	dst.m_right = 32.0f + m_x;
 	dst.m_bottom = 32.0f + m_y;
 
-	//30番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(30, &m_eff, &dst, c, 0.0f);
+	//弾丸の状態で描画を変更
+	if (m_del == true)
+	{
+		//着弾アニメーション描画
+		Draw::Draw(0, &m_eff, &dst, c, 0.0f);
+	}
+	else
+	{
+		//弾丸描画の切り取り位置
+		src.m_top = 0.0f;
+		src.m_left = 96.0f;
+		src.m_right = 126.0f;
+		src.m_bottom = 32.0f;
+
+
+
+		//30番目に登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(30, &m_eff,&src, &dst, c, 0.0f);
+	}
+
 }
