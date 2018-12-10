@@ -94,6 +94,8 @@ void CObjHero::Action()
 	//A‚ð’·‰Ÿ‚µ‚Åƒ`ƒƒ[ƒW
 	if (Input::GetVKey('A') == true)
 	{
+		
+		
 		m_tame++;
 		if (m_tame >= 100)
 		{
