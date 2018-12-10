@@ -18,7 +18,7 @@ void CObjMain2::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0;
+	m_and = 0.0;
 	m_f = false;
 	m_key_flag = false;
 }
@@ -28,7 +28,7 @@ void CObjMain2::Action()
 {
 	float c[4] = { 1,1,1,m_and };
 
-	/*if (m_f == true)
+	if (m_f == true)
 	{
 		m_and += 0.1;
 		if (m_and == 1.0)
@@ -36,7 +36,7 @@ void CObjMain2::Action()
 			m_f = false;
 		}
 
-	}*/
+	}
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();

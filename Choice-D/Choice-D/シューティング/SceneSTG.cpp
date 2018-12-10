@@ -54,15 +54,19 @@ void CSceneSTG::InitScene()
 	//敵HPバー表示
 	Draw::LoadImage(L"HP.png", 5, TEX_SIZE_512);
 
+	//ため攻撃
+	Draw::LoadImage(L"tamedama.png", 12, TEX_SIZE_512);
+
+
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();
-	Objs::InsertObj(back, OBJ_STGBACKGROUND, 0);
+	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);
 
 	CObjteki1* objb = new CObjteki1(200,10);
-	Objs::InsertObj(objb, OBJ_TEKI1, 2);
+	Objs::InsertObj(objb, OBJ_TEKI1, 50);
 
 	CObjHero*ob = new CObjHero();
-	Objs::InsertObj(ob, OBJ_HERO, 110);
+	Objs::InsertObj(ob, OBJ_HERO, 150);
 
 	CObjTimeLimit* t = new CObjTimeLimit();
 	Objs::InsertObj(t, OBJ_TIME, 150);

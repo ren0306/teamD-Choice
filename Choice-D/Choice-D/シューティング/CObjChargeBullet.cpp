@@ -3,21 +3,21 @@
 #include "../GameL\HitBoxManager.h"
 #include "../GameL\Audio.h"
 #include "../GameHead.h"
-#include "CObjBullet.h"
+#include "CObjChargeBullt.h"
 #include "UtilityModule.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //コンストラクタ
-CObjBullet::CObjBullet(float x, float y)
+CObjChargeBullet::CObjChargeBullet(float x, float y)
 {
 	m_x = x;
 	m_y = y;
 }
 
 //イニシャライズ
-void CObjBullet::Init()
+void CObjChargeBullet::Init()
 {
 	m_eff.m_top = 32;
 	m_eff.m_left = 0;
@@ -29,11 +29,11 @@ void CObjBullet::Init()
 	m_vy = 0.0f;
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_BULLET, 1);
+	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_CHARGE_BULLET, 1);
 }
 
 //アクション
-void CObjBullet::Action()
+void CObjChargeBullet::Action()
 {
 	//Resourcesの描画物のRECT
 	m_eff = GetBulletEffec(&m_ani, &m_ani_time, m_del, 2);
@@ -93,15 +93,14 @@ void CObjBullet::Action()
 }
 
 //ドロー
-void CObjBullet::Draw()
+void CObjChargeBullet::Draw()
 {
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
 	float  i[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	
 	RECT_F dst; //描画先表示位置
 
-	
+
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
@@ -109,5 +108,5 @@ void CObjBullet::Draw()
 	dst.m_bottom = 32.0f + m_y;
 
 	//11番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(11, &m_eff, &dst, i, 0.0f);
+	Draw::Draw(12, &m_eff, &dst, i, 0.0f);
 }

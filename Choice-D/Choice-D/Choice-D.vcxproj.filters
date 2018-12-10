@@ -236,7 +236,6 @@
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="小物関係\Remember.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\TimeLimit.cpp">
       <Filter>ソースファイル</Filter>
@@ -304,14 +303,13 @@
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CobjHomingBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
     <ClCompile Include="ObjBulletMove.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="CobjHomingBullet.cpp" />
-    <ClCompile Include="タイトル\ObjOP.cpp" />
-    <ClCompile Include="タイトル\SceneOP.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="タイトル\SceneOP.cpp">
       <Filter>ソースファイル\タイトル</Filter>
@@ -323,6 +321,11 @@
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="CObjMeanderBullet.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="シューティング\CObjChargeBullet.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -622,9 +625,6 @@
     <ClInclude Include="ObjBulletMove.h">
       <Filter>ソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="CobjHomingBullet.h" />
-    <ClInclude Include="タイトル\ObjOP.h" />
-    <ClInclude Include="タイトル\SceneOP.h" />
     <ClInclude Include="タイトル\SceneOP.h">
       <Filter>ソースファイル\タイトル</Filter>
     </ClInclude>
@@ -635,6 +635,9 @@
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="CObjMeanderBullet.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="シューティング\CObjChargeBullt.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,6 +14,7 @@ enum OBJ_NAME
 	OBJ_BULLET_TEKI3,
 	OBJ_BULLET_TEKI4,
 	OBJ_BULLET_TEKI5,
+	OBJ_CHARGE_BULLET,
 	OBJ_ANGLE_BULLET,
 	OBJ_HOMING_BULLET,
 	OBJ_MEANDER_BULLET,
@@ -111,6 +112,8 @@ extern int m_tekicnt;
 extern int m_TimeL;
 extern int m_floor;
 //------------------------------------------------
+extern float m_Mehp;
+
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
 
@@ -127,6 +130,7 @@ extern int m_floor;
 #include "CObjBulletTeki5.h"
 #include "CObjAngleBullet.h"
 #include "CObjHomingBullet.h"
+#include "シューティング\CObjChargeBullt.h"
 //#include "CObjBulletMove.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
@@ -173,7 +177,6 @@ extern int m_floor;
 #include "小物関係\ObjED2gazou.h"
 #include "小物関係\ObjED3gazou.h"
 #include "シューティング\ObjKuria.h"
-#include "小物関係\Remember.h"
 #include "小物関係\TimeLimit.h"
 #include "シューティング\ObjKuria2.h"
 #include "シューティング\ObjKuria3.h"
@@ -216,5 +219,5 @@ extern int m_floor;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneSTG
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------

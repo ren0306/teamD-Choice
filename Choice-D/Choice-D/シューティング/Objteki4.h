@@ -21,7 +21,7 @@ private:
 	float m_y;	//敵3のy方向の位置
 	float m_vx;	//敵3移動ベクトルx
 	float m_vy;	//敵3移動ベクトルy
-	float m_r = 0.0f;
+	float m_r;	//sinカーブ用変数
 	int   m_time;//弾丸間隔用
 
 	float m_hp;	//ボスのヒットポイント

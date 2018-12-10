@@ -33,6 +33,7 @@ void CObjOP::Init()
 void CObjOP::Action()
 {
 	float k[4] = { 0.3,0.6,0.6,1.0f };
+	float c[4] = { 1,1,1,1 };
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -41,9 +42,8 @@ void CObjOP::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 	//
-	if (m_mou_x >= 430 && m_mou_x <= 720 && m_mou_y >= 325 && m_mou_y <= 355)
+	if (m_mou_x >= 450 && m_mou_x <= 740 && m_mou_y >= 470 && m_mou_y <= 500)
 	{
-		Font::StrDraw(L"◇ここをクリックで次へ", 430, 330, 30, k);
 
 		if (m_mou_l == true)
 		{
@@ -59,11 +59,12 @@ void CObjOP::Action()
 			m_flag = true;
 		}
 	}
-	else
+	if (m_cnt == 5)
 	{
-		Font::StrDraw(L"ここをクリックで次へ", 430, 330, 30, k);
-
+		return;
 	}
+	else
+	Font::StrDraw(L"ここをクリックで次へ", 450, 480, 30, c);
 
 }
 
@@ -89,9 +90,9 @@ void CObjOP::Draw()
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
 	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 590 && m_mou_x < 780 && m_mou_y>540 && m_mou_y < 570)
+	if (m_mou_x > 565 && m_mou_x < 750 && m_mou_y>540 && m_mou_y < 570)
 	{
-		Font::StrDraw(L"◇脱出を試みる", 600, 550, 32, c);
+		Font::StrDraw(L"◇脱出を試みる", 570, 550, 32, c);
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_l == true)
 		{
@@ -100,7 +101,7 @@ void CObjOP::Draw()
 	}
 	else
 	{
-		Font::StrDraw(L"脱出を試みる", 600, 550, 32, c);
+		Font::StrDraw(L"脱出を試みる", 570, 550, 32, c);
 	}
 	if (m_cnt==1)
 	{
@@ -119,6 +120,27 @@ void CObjOP::Draw()
 
 	if (m_cnt == 3)
 	{
+		Font::StrDraw(L"謎を解いて次のステージに行く方法", 150, 100, 30, c);
+		Font::StrDraw(L"扉をマウスでクリックし、問題が出てくるので",70,180,30,k);
+		Font::StrDraw(L"問題を解いて次に行こう！",70,260,30,k);
+		Font::StrDraw(L"ただし、問題を間違えると時間が30秒減るので注意",70,340,30,k);
+
+	}
+
+	if (m_cnt == 4)
+	{
+		Font::StrDraw(L"敵との戦闘について",250,100,35,c);
+		Font::StrDraw(L"敵と戦うには敵をクリックすると、戦うか確認されるので",70,180,25,k);
+		Font::StrDraw(L"「はい」を押すと戦える",70,260,25,k);
+		Font::StrDraw(L"敵と戦うと戦いの音で他の敵に見つかるかもしれないので",70,340,25,k);
+		Font::StrDraw(L"敵と戦うのはなるべく避けよう",70,420,25,k);
+
+	}
+
+	if (m_cnt == 5)
+	{
+		Font::StrDraw(L"準備ができたら下の「脱出を試みる」をクリックして",60,230,30, k);
+		Font::StrDraw(L"脱出をしよう！",300,300,35, k);
 
 	}
 

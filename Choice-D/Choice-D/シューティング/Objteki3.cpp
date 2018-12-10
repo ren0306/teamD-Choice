@@ -23,9 +23,9 @@ CObjteki3::CObjteki3(float x, float y)
 void CObjteki3::Init()
 {
 	m_time = 0;
+	m_r = 45.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y , 150, 130, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 }
@@ -50,7 +50,7 @@ void CObjteki3::Action()
 	}
 
 	//角度加算
-	m_r += 2.0f;
+	m_r += 1.0f;
 
 	//360°で初期値に戻す
 	if (m_r > 360.0f)
@@ -64,8 +64,8 @@ void CObjteki3::Action()
 	UnitVec(&m_vy, &m_vx);
 
 	//速度付ける。
-	m_vx *= 1.5f;
-	m_vy *= 1.5f;
+	m_vx *= 2.5f;
+	m_vy *= 2.5f;
 
 	//移動ベクトルを座標に加算する
 	m_x += m_vx;

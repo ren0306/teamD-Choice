@@ -66,6 +66,8 @@ void CObjTenkey::Draw()
 	float s[4] = { 1.0f,1.0f,0.0f,m_and };
 	//Ž‡
 	float o[4] = { 0.5f,0.0f,1.0f,m_and };
+
+
 	if (m_andf == true)
 	{
 		m_and += 0.1f;
