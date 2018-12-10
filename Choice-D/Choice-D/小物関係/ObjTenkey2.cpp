@@ -22,8 +22,9 @@ void CObjTenkey2::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_f = true;
-	m_ps = 50.f;
+	m_andf = true;
 	cnt = 0;
+	m_and = 0.0f;
 	m_flag[1] = false;
 	m_flag[2] = false;
 	m_flag[3] = false;
@@ -33,8 +34,7 @@ void CObjTenkey2::Init()
 	m_flag[7] = false;
 	m_flag[8] = false;
 	m_flag[9] = false;
-	
-
+	m_misscnt = 100.f;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -94,40 +94,67 @@ void CObjTenkey2::Draw()
 		Font::StrDraw(L"[ƒƒCƒ“‰æ–Ê‚É–ß‚é]", 32, 32, 30, f);
 		//BGM‚ð“o˜^
 	}
-	//“ä‰ð‚«“š‚¦³‰ð‚É‚Ìê‡3‚Ö
+	//“ä‰ð‚«“š‚¦³‰ð‚É‚Ìê‡2‚Ö
 	if (m_mou_x >= 5 && m_mou_x <= 232 && m_mou_y >= 445 && m_mou_y <= 470)
 	{
 		Font::StrDraw(L"[ž“š‚¦Œˆ’èƒ{ƒ^ƒ“]", 0, 450, 25, s);
 
 		if (m_mou_l == true)
 		{
+			//‰ð“š‚Æ“š‚¦‚ðŒ©”ä‚×‚éŠÖ”
 			Anser();
 			cnt = 0;
-			if (m_ok == true)
+			if (m_f == true)
 			{
-				m_nazoflag = true;
-				m_Nazocnt++;
-				m_floor++;
-				Scene::SetScene(new CSceneMain3);
+				if (m_ok == true)
+				{
+					//‚P‚Â‚Å‚à‰ð‚­‚Ætrue‚É‚·‚é
+					m_nazoflag = true;
+					//
+					m_Nazocnt++;
+					m_floor++;
+					m_TimeL += 1800;//‚R‚O•b‘‰Á
+					Scene::SetScene(new CSceneMain3);
+				}
+				else
+				{
+					m_TimeL -= 1800;//‚R‚O•b’á‰º
+					m_miss = true;
+					m_flag[1] = false;
+					m_flag[2] = false;
+					m_flag[3] = false;
+					m_flag[4] = false;
+					m_flag[5] = false;
+					m_flag[6] = false;
+					m_flag[7] = false;
+					m_flag[8] = false;
+					m_flag[9] = false;
+				}
+				m_f = false;
 			}
-			else
-			{
-				m_flag[1] = false;
-				m_flag[2] = false;
-				m_flag[3] = false;
-				m_flag[4] = false;
-				m_flag[5] = false;
-				m_flag[6] = false;
-				m_flag[7] = false;
-				m_flag[8] = false;
-				m_flag[9] = false;
-			}
+
 		}
+		else
+		{
+			m_f = true;
+		}
+
 	}
 	else
 	{
 		Font::StrDraw(L"[“š‚¦Œˆ’èƒ{ƒ^ƒ“]", 0, 450, 30, s);
 	}
+	if (m_miss == true)
+	{
+		Font::StrDraw(L"-30•b", 40, 50, 30, r);
+		m_misscnt--;
+		if (m_misscnt <= 0)
+		{
+			m_miss = false;
+			m_misscnt = 100.f;
+		}
+	}
+
 	//[‚·‚×‚Äíœ]‚ð‰Ÿ‚·‚Æ
 	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
 	{
@@ -144,6 +171,16 @@ void CObjTenkey2::Draw()
 			m_flag[7] = false;
 			m_flag[8] = false;
 			m_flag[9] = false;
+			m_num[1] = 0;
+			m_num[2] = 0;
+			m_num[3] = 0;
+			m_num[4] = 0;
+			m_num[5] = 0;
+			m_num[6] = 0;
+			m_num[7] = 0;
+			m_num[8] = 0;
+			m_num[9] = 0;
+
 			cnt = 0;
 		}
 	}

@@ -22,8 +22,9 @@ void CObjTenkey4::Init()
 	m_mou_r = false;
 	m_mou_l = false;
 	m_f = true;
-	m_ps = 50.f;
+	m_andf = true;
 	cnt = 0;
+	m_and = 0.0f;
 	m_flag[1] = false;
 	m_flag[2] = false;
 	m_flag[3] = false;
@@ -33,7 +34,7 @@ void CObjTenkey4::Init()
 	m_flag[7] = false;
 	m_flag[8] = false;
 	m_flag[9] = false;
-
+	m_misscnt = 100.f;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -120,6 +121,16 @@ void CObjTenkey4::Draw()
 				m_flag[7] = false;
 				m_flag[8] = false;
 				m_flag[9] = false;
+				m_num[1] = 0;
+				m_num[2] = 0;
+				m_num[3] = 0;
+				m_num[4] = 0;
+				m_num[5] = 0;
+				m_num[6] = 0;
+				m_num[7] = 0;
+				m_num[8] = 0;
+				m_num[9] = 0;
+
 			}
 		}
 	}
@@ -142,7 +153,17 @@ void CObjTenkey4::Draw()
 			m_flag[6] = false;
 			m_flag[7] = false;
 			m_flag[8] = false;
-			m_flag[9] = false;
+			m_flag[9] = false;	
+			m_num[1] = 0;
+			m_num[2] = 0;
+			m_num[3] = 0;
+			m_num[4] = 0;
+			m_num[5] = 0;
+			m_num[6] = 0;
+			m_num[7] = 0;
+			m_num[8] = 0;
+			m_num[9] = 0;
+
 			cnt = 0;
 		}
 	}
