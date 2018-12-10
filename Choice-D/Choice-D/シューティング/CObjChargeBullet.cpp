@@ -100,6 +100,7 @@ void CObjChargeBullet::Draw()
 
 	RECT_F dst; //描画先表示位置
 
+
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;

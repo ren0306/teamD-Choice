@@ -60,6 +60,7 @@ void CObjHero::Init()
 void CObjHero::Action()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	//フェードイン
 	if (m_andf == true)
 	{
 		m_and += 0.1;
@@ -105,6 +106,7 @@ void CObjHero::Action()
 		if (Input::GetVKey('R') == true)
 		{
 			m_cnt = 7.f;
+			m_tame = 0.f;
 		}
 	}
 	//Aを長押しでチャージ
@@ -122,7 +124,7 @@ void CObjHero::Action()
 				// 弾丸オブジェクト作成
 				CObjChargeBullet*  a = new CObjChargeBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
 				Objs::InsertObj(a, OBJ_CHARGE_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
-
+				m_cnt--;
 				m_tame = 0;
 			}
 		}
@@ -277,6 +279,8 @@ void CObjHero::Draw()
 
 	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
 	Font::StrDraw(L"残弾数", 0, 175, 25, h);
+	Font::StrDraw(L"チャージゲージ", 0, 225, 25, h);
+
 	if (m_cnt <= 0)
 	{
 		Font::StrDraw(L"残弾０です。リロードしてください", 0, 200, 25, a);
