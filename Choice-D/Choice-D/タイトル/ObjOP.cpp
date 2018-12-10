@@ -27,6 +27,8 @@ void CObjOP::Init()
 	m_and = 1.0f;
 	m_f = true;
 	m_cnt = 1;
+	m_gazo = false;
+	m_kesu = false;
 }
 
 //アクション
@@ -73,7 +75,6 @@ void CObjOP::Draw()
 {
 	float c[4] = { 1,1,1,m_and };
 	float k[4] = { 0.3,0.6,0.6,m_and };
-
 	//フェードイン・フェードアウト
 	if (m_f == true)
 	{
@@ -103,6 +104,7 @@ void CObjOP::Draw()
 	{
 		Font::StrDraw(L"脱出を試みる", 570, 550, 32, c);
 	}
+
 	if (m_cnt==1)
 	{
 		Font::StrDraw(L"モンスターに倒され、目覚めたら洞窟にいた", 115, 200, 30, k);
@@ -120,11 +122,11 @@ void CObjOP::Draw()
 
 	if (m_cnt == 3)
 	{
-		Font::StrDraw(L"謎を解いて次のステージに行く方法", 150, 100, 30, c);
-		Font::StrDraw(L"扉をマウスでクリックし、問題が出てくるので",70,180,30,k);
-		Font::StrDraw(L"問題を解いて次に行こう！",70,260,30,k);
-		Font::StrDraw(L"ただし、問題を間違えると時間が30秒減るので注意",70,340,30,k);
-
+		Font::StrDraw(L"謎を解いて次のステージに行く方法", 150, 60, 30, c);
+		Font::StrDraw(L"扉をマウスでクリックし、問題が出てくるので",70,120,30,k);
+		Font::StrDraw(L"問題を解いて次に行こう！",70,200,30,k);
+		Font::StrDraw(L"ただし、問題を間違えると時間が30秒減るので注意",70,280,30,k);
+		Draw::LoadImage(L"OPtobira.png", 0, TEX_SIZE_512);
 	}
 
 	if (m_cnt == 4)
@@ -134,6 +136,7 @@ void CObjOP::Draw()
 		Font::StrDraw(L"「はい」を押すと戦える",70,260,25,k);
 		Font::StrDraw(L"敵と戦うと戦いの音で他の敵に見つかるかもしれないので",70,340,25,k);
 		Font::StrDraw(L"敵と戦うのはなるべく避けよう",70,420,25,k);
+		Draw::LoadImage(L"OPteki.png", 1, TEX_SIZE_512);
 
 	}
 
@@ -143,23 +146,36 @@ void CObjOP::Draw()
 		Font::StrDraw(L"脱出をしよう！",300,300,35, k);
 
 	}
-
+	
 	RECT_F src;
 	RECT_F dst;
 
-	float d[4] = { 1.0f,1.0f,1.0f,m_and };
-	//Choice表示
+	float d[4] = { 1.0f,1.0f,1.0f,1.0f};
+	//扉画面表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 455.0f;
-	src.m_bottom = 180.0f;
+	src.m_right = 763.0f;
+	src.m_bottom = 567.0f;
+
+	dst.m_top = 340.0f;
+	dst.m_left = 80.0f;
+	dst.m_right = 450.0f;
+	dst.m_bottom = 570.0f;
+	Draw::Draw(0, &src, &dst, d, 0.0f);
+
+
+	float abc[4] = { 1.0f,1.0f,1.0f,1.0f };
+	//敵画面表示
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 769.0f;
+	src.m_bottom = 576.0f;
 
 	dst.m_top = 150.0f;
 	dst.m_left = 150.0f;
 	dst.m_right = 600.0f;
 	dst.m_bottom = 400.0f;
-	Draw::Draw(0, &src, &dst, d, 0.0f);
-
-
-
+	Draw::Draw(1, &src, &dst, abc, 0.0f);
 }
+
+

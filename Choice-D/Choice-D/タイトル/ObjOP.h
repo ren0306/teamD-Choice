@@ -23,5 +23,6 @@ private:
 	bool m_f;
 	bool m_flag;
 	bool m_andf;
-
+	bool m_gazo;
+	bool m_kesu;
 };
