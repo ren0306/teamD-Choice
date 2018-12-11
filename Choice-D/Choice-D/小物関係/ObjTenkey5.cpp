@@ -214,9 +214,9 @@ void CObjTenkey5::Draw()
 	src.m_right = 1008.0f;
 	src.m_bottom = 647.0f;
 	//解答出力（出力位置）
-	dst.m_top = 50.0f + 100;
+	dst.m_top = 60.0f + 100;
 	dst.m_left = 0.0f;
-	dst.m_right = 600.0f + 300;
+	dst.m_right = 700.0f + 300;
 	dst.m_bottom = 450.0f + 250;
 	Draw::Draw(12, &src, &dst, f, 0.0f);
 
@@ -226,10 +226,10 @@ void CObjTenkey5::Draw()
 	src.m_right = 980.0f;
 	src.m_bottom = 647.0f;
 	//問題出力（出力位置）
-	dst.m_top = 25.0f;
-	dst.m_left = 50.0f;
-	dst.m_right = 800.f;
-	dst.m_bottom = 350.0f;
+	dst.m_top    = 20.0f;
+	dst.m_left   = 70.0f;
+	dst.m_right  = 745.f;
+	dst.m_bottom = 330.0f;
 	Draw::Draw(13, &src, &dst, f, 0.0f);
 
 	Font::StrDraw(L"1 2 3 4 5 6 7 8 9", 250, 300, 30, o);

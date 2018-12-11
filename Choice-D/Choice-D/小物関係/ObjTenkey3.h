@@ -35,6 +35,7 @@ private:
 	float m_misscnt;//間違えた時の時間を減らす表示をする変数	
 	int cnt;//桁数チェックカウント	
 	int m_num[10];//解答配列
+	int m_cnt[10];
 	int m_anser;//答え確認変数
 	float m_and;
 };

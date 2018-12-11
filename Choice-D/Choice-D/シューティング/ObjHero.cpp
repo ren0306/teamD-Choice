@@ -60,12 +60,6 @@ void CObjHero::Init()
 	m_eff.m_right = 32;
 	m_eff.m_bottom = 32;
 	m_ani = 0;
-	m_ani_time = 0;
-	m_eff.m_top		 = 32;
-	m_eff.m_left	 = 0;
-	m_eff.m_right	 = 32;
-	m_eff.m_bottom	 = 64;
-	m_ani			 = 0;
 	m_ani_time		 = 0;
 	m_del			 = false;
 
