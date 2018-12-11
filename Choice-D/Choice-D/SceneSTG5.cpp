@@ -5,7 +5,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
-
+#include "GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -32,6 +32,10 @@ void CSceneSTG5::InitScene()
 	//STGオブジェクト作成
 	CObjSTG5* obj = new CObjSTG5();
 	Objs::InsertObj(obj, OBJ_STG5, 10);
+
+	//バックミュージックスタート
+	float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
+	Audio::Start(0);//音楽スタート
 
 	//背景を読み込み0番に登録
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);

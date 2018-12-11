@@ -5,7 +5,7 @@
 //GameLで使用するヘッダー
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
-
+#include "../GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -50,6 +50,10 @@ void CSceneSTG2::InitScene()
 	//STGオブジェクト作成
 	CObjSTG2* obj = new CObjSTG2();
 	Objs::InsertObj(obj, OBJ_STG2, 10);
+
+	//バックミュージックスタート
+	float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
+	Audio::Start(0);//音楽スタート
 
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();

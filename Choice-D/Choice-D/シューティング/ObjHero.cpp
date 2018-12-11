@@ -52,6 +52,16 @@ void CObjHero::Init()
 	m_maxtame = 100.f;
 	m_and = 1.f;
 	m_andf = true;
+	m_eff.m_top		 = 32;
+	m_eff.m_left	 = 0;
+	m_eff.m_right	 = 32;
+	m_eff.m_bottom	 = 64;
+	m_ani			 = 0;
+	m_ani_time		 = 0;
+	m_del			 = false;
+
+	m_vx = 0.0f;
+	m_vy = 1.0f;
 	//“–‚½‚è”»’è—pHitBox‚ğì¬
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
