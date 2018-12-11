@@ -33,7 +33,6 @@ void CObjTenkey::Init()
 	m_flag[7] = false;
 	m_flag[8] = false;
 	m_flag[9] = false;
-	m_misscnt = 100.f;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -67,6 +66,7 @@ void CObjTenkey::Draw()
 	//‡
 	float o[4] = { 0.5f,0.0f,1.0f,m_and };
 
+	float g[4] = { 0.0f,1.0f,0.0f,m_and };
 
 	if (m_andf == true)
 	{
@@ -118,10 +118,13 @@ void CObjTenkey::Draw()
 				{
 					//‚P‚Â‚Å‚à‰ğ‚­‚Ætrue‚É‚·‚é
 					m_nazoflag = true;
-					//
+					//ED•ªŠò‚ÉŠÖŒW
 					m_Nazocnt++;
+					//ŠK‘w‚ğˆê‚Â‘‚â‚·
 					m_floor++;
-					m_TimeL += 1800;//‚R‚O•b‘‰Á
+					//
+					m_clear = true;
+					
 					Scene::SetScene(new CSceneMain2);
 				}
 				else
@@ -162,7 +165,18 @@ void CObjTenkey::Draw()
 			m_misscnt = 100.f;
 		}
 	}
-	
+	if (m_clear == true)
+	{
+		Font::StrDraw(L"+30•b", 40, 50, 30, g);
+		m_TimeL += 1800;//‚R‚O•b‘‰Á
+		m_clearcnt--;
+		if (m_clearcnt <= 0)
+		{
+			m_clear = false;
+			m_clearcnt = 500.f;
+		}
+	}
+
 	//[‚·‚×‚Äíœ]‚ğ‰Ÿ‚·‚Æ
 	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
 	{

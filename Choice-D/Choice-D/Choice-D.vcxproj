@@ -158,7 +158,9 @@
     <ClCompile Include="ObjMain5.cpp" />
     <ClCompile Include="ObjSTG5.cpp" />
     <ClCompile Include="Objteki5.cpp" />
-    <ClCompile Include="SceneSTG5.cpp" />
+    <ClCompile Include="SceneSTG5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="STGBackground.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain2.cpp" />
@@ -188,9 +190,15 @@
     <ClCompile Include="シューティング\SceneKuria3.cpp" />
     <ClCompile Include="シューティング\SceneKuria4.cpp" />
     <ClCompile Include="シューティング\SceneSTG.cpp" />
-    <ClCompile Include="シューティング\SceneSTG2.cpp" />
-    <ClCompile Include="シューティング\SceneSTG3.cpp" />
-    <ClCompile Include="シューティング\SceneSTG4.cpp" />
+    <ClCompile Include="シューティング\SceneSTG2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneSTG3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="シューティング\SceneSTG4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="シューティング\UtilityModule.cpp" />
     <ClCompile Include="タイトル\ObjOP.cpp" />
     <ClCompile Include="タイトル\ObjSousagamen.cpp" />

@@ -34,6 +34,16 @@ void CObjTenkey3::Init()
 	m_flag[7] = false;
 	m_flag[8] = false;
 	m_flag[9] = false;
+	m_cnt[1] = 0;
+	m_cnt[2] = 0;
+	m_cnt[3] = 0;
+	m_cnt[4] = 0;
+	m_cnt[5] = 0;
+	m_cnt[6] = 0;
+	m_cnt[7] = 0;
+	m_cnt[8] = 0;
+	m_cnt[9] = 0;
+
 	m_misscnt = 100.f;
 
 }
@@ -68,6 +78,9 @@ void CObjTenkey3::Draw()
 	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
 	//éá
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	//ê¬
+	float b[4] = { 0.0f,0.0f,1.0f,1.0f };
+
 	Font::StrDraw(L"Ç±ÇÃñ‚ëËÇÕ3åÖÇÃêîéöÇÃÇ›ì¸óÕâ¬î\Ç≈Ç∑", 160, 550, 30, r);
 
 	RECT_F src;
@@ -234,53 +247,165 @@ void CObjTenkey3::Draw()
 	{
 		Font::StrDraw(L"ÅZ", 237, 293, 40, o);
 		m_num[1] = 1;
+		if (m_cnt[1] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 237, 293, 40, s);
+		}
+		else if (m_cnt[1] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 237, 293, 40, r);
+		}
+		else if (m_cnt[1] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 237, 293, 40, b);
+		}
+
 	}
 	if (m_flag[2] == true)
 	{
 		Font::StrDraw(L"ÅZ", 267, 293, 40, o);
 		m_num[2] = 2;
+		if (m_cnt[2] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 267, 293, 40, s);
+		}
+		else if (m_cnt[2] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 267, 293, 40, r);
+		}
+		else if (m_cnt[2] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 267, 293, 40, b);
+		}
+
 
 	}
 	if (m_flag[3] == true)
 	{
 		Font::StrDraw(L"ÅZ", 297, 293, 40, o);
 		m_num[3] = 3;
+		if (m_cnt[3] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 297, 293, 40, s);
+		}
+		else if (m_cnt[3] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 297, 293, 40, r);
+		}
+		else if (m_cnt[3] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 297, 293, 40, b);
+		}
 
 	}
 	if (m_flag[4] == true)
 	{
 		Font::StrDraw(L"ÅZ", 327, 293, 40, o);
 		m_num[4] = 4;
+		if (m_cnt[4] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 327, 293, 40, s);
+		}
+		else if (m_cnt[4] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 327, 293, 40, r);
+		}
+		else if (m_cnt[4] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 327, 293, 40, b);
+		}
 
 	}
 	if (m_flag[5] == true)
 	{
 		Font::StrDraw(L"ÅZ", 357, 293, 40, o);
 		m_num[5] = 5;
+		if (m_cnt[5] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 357, 293, 40, s);
+		}
+		else if (m_cnt[5] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 357, 293, 40, r);
+		}
+		else if (m_cnt[5] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 357, 293, 40, b);
+		}
+
 
 	}
 	if (m_flag[6] == true)
 	{
 		Font::StrDraw(L"ÅZ", 387, 293, 40, o);
 		m_num[6] = 6;
+		if (m_cnt[6] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 387, 293, 40, s);
+		}
+		else if (m_cnt[6] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 387, 293, 40, r);
+		}
+		else if (m_cnt[6] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 387, 293, 40, b);
+		}
 
 	}
 	if (m_flag[7] == true)
 	{
 		Font::StrDraw(L"ÅZ", 417, 293, 40, o);
 		m_num[7] = 7;
+		if (m_cnt[7] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 417, 293, 40, s);
+		}
+		else if (m_cnt[7] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 417, 293, 40, r);
+		}
+		else if (m_cnt[7] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 417, 293, 40, b);
+		}
+
 
 	}
 	if (m_flag[8] == true)
 	{
 		Font::StrDraw(L"ÅZ", 447, 293, 40, o);
 		m_num[8] = 8;
+		if (m_cnt[8] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 447, 293, 40, s);
+		}
+		else if (m_cnt[8] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 447, 293, 40, r);
+		}
+		else if (m_cnt[8] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 447, 293, 40, b);
+		}
 
 	}
 	if (m_flag[9] == true)
 	{
 		Font::StrDraw(L"ÅZ", 477, 293, 40, o);
 		m_num[9] = 9;
+		if (m_cnt[9] == 2)
+		{
+			Font::StrDraw(L"ÅZ", 477, 293, 40, s);
+		}
+		else if (m_cnt[9] == 3)
+		{
+			Font::StrDraw(L"ÅZ", 477, 293, 40, r);
+		}
+		else if (m_cnt[9] == 4)
+		{
+			Font::StrDraw(L"ÅZ", 477, 293, 40, b);
+		}
 
 	}
 
@@ -302,6 +427,7 @@ void CObjTenkey3::Tenkey()
 					if (m_f == true)
 					{
 						m_flag[7] = true;
+						m_cnt[7] += 1;
 						cnt++;
 						m_f = false;
 					}
@@ -318,6 +444,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[4] += 1;
+
 						m_flag[4] = true;
 						cnt++;
 						m_f = false;
@@ -339,6 +467,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[1] += 1;
+
 						m_flag[1] = true;
 						cnt++;
 						m_f = false;
@@ -362,6 +492,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[8] += 1;
+
 						m_flag[8] = true;
 						cnt++;
 						m_f = false;
@@ -381,6 +513,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[5] += 1;
+
 						m_flag[5] = true;
 						cnt++;
 						m_f = false;
@@ -400,6 +534,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[2] += 1;
+
 						m_flag[2] = true;
 						cnt++;
 						m_f = false;
@@ -423,6 +559,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[9] += 1;
+
 						m_flag[9] = true;
 						cnt++;
 						m_f = false;
@@ -441,6 +579,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[6] += 1;
+
 						m_flag[6] = true;
 						cnt++;
 						m_f = false;
@@ -460,6 +600,8 @@ void CObjTenkey3::Tenkey()
 				{
 					if (m_f == true)
 					{
+						m_cnt[3] += 1;
+
 						m_flag[3] = true;
 						cnt++;
 						m_f = false;
