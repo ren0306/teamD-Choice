@@ -3,7 +3,7 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
-
+#include "../GameL/Audio.h"
 
 
 #include "../GameHead.h"
@@ -24,6 +24,10 @@ int m_tekicnt = 0;
 int m_TimeL = 19800;
 int m_floor = 1;
 float m_Mehp = 20.f;
+bool m_clear = false;
+bool m_miss = false;//“š‚¦ŠÔˆá‚¢‚È‚çtrue•Ï”
+float m_clearcnt=100.f;
+float m_misscnt=100.f;//ŠÔˆá‚¦‚½‚ÌŠÔ‚ğŒ¸‚ç‚·•\¦‚ğ‚·‚é•Ï”	
 
 //----------------------------------------------------------------------
 
@@ -55,7 +59,8 @@ void CObjTitle::Action()
 	m_floor = 1;
 	m_TimeL = 19800;
 	m_Mehp = 20.f;
-
+	m_clear = false;
+	m_miss = false;
 	//---------------------------------------------------------------
 }
 
@@ -116,6 +121,7 @@ void CObjTitle::Draw()
 		if (m_and <= 0)
 		{
 			Scene::SetScene(new CSceneOP());
+			Audio::Stop(0);
 			m_f = false;
 		}
 	}

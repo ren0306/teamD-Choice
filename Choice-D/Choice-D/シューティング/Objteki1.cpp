@@ -3,8 +3,7 @@
 #include "../GameL\HitBoxManager.h"
 #include <stdlib.h>
 #include <time.h>
-
-
+#include "../GameL/Audio.h"
 #include "../GameHead.h"
 #include "Objteki1.h"
 #include "../謎解き/ObjTenkey.h"
@@ -42,6 +41,8 @@ void CObjteki1::Init()
 //アクション
 void CObjteki1::Action()
 {
+	Audio::Start(0);
+
 	//HitBox位置を更新
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x +90, m_y +20);

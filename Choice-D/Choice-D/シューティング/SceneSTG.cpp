@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
+#include "../GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -28,13 +29,16 @@ CSceneSTG::~CSceneSTG()
 //ゲームシューティング初期化メソッド
 void CSceneSTG::InitScene()
 {
-	
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+
+	Audio::Start(0);
+
 
 	//STGオブジェクト作成
 	CObjSTG* obj = new CObjSTG();
 	Objs::InsertObj(obj, OBJ_STG, 10);
-
-	
 
 	//背景を読み込み0番に登録
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);

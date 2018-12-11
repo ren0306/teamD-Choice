@@ -3,10 +3,10 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
+#include "../GameL/Audio.h"
 
 #include "../GameHead.h"
 #include "ObjSTG.h"
-#include "../ゲームメイン/SceneMain.h"
 #include "SceneSTG.h"
 
 //使用するネームスペース
@@ -31,6 +31,7 @@ void CObjSTG::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
+	Audio::Start(0);
 
 
 }

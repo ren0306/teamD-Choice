@@ -35,10 +35,10 @@ void CSceneMain4::InitScene()
 {
 
 	//BGMを登録
-	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
 	float Volume = Audio::VolumeMaster(-0.9f);//マスターボリュームを0.8下げる
 
-	Audio::Start(1);
+	Audio::Start(0);
 
 	//外部グラフィックファイルを読み込み1番に登録
 	Draw::LoadImage(L"Main4.png", 0, TEX_SIZE_512);
