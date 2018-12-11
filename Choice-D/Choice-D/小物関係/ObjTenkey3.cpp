@@ -194,6 +194,15 @@ void CObjTenkey3::Draw()
 			m_num[7] = 0;
 			m_num[8] = 0;
 			m_num[9] = 0;
+			m_cnt[1] = 0;
+			m_cnt[2] = 0;
+			m_cnt[3] = 0;
+			m_cnt[4] = 0;
+			m_cnt[5] = 0;
+			m_cnt[6] = 0;
+			m_cnt[7] = 0;
+			m_cnt[8] = 0;
+			m_cnt[9] = 0;
 
 			cnt = 0;
 		}
