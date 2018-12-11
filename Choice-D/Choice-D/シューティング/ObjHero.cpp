@@ -56,11 +56,15 @@ void CObjHero::Init()
 	size1 = 0.0f;
 	size2 = 0.0f;
 	m_eff.m_top = 0;
-	m_eff.m_left = 96;
-	m_eff.m_right = 128;
+	m_eff.m_left = 0;
+	m_eff.m_right = 32;
 	m_eff.m_bottom = 32;
 	m_ani = 0;
-	m_ani_time = 0;
+	m_ani_time		 = 0;
+	m_del			 = false;
+
+	m_vx = 0.0f;
+	m_vy = 1.0f;
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
@@ -70,8 +74,9 @@ void CObjHero::Action()
 {
 	if (death == true)
 	{
-		RECT_F ani_src[5] =
+		RECT_F ani_src[6] =
 		{
+			{ 0,   0,  32,  32 },
 			{ 0,  96, 128,  32 },
 			{ 64,  32,  64,  96 },
 			{ 96, 224, 256,  128 },
@@ -92,11 +97,18 @@ void CObjHero::Action()
 			m_ani_time++;
 		}
 
-		//自機爆発アニメーション終了で本当にオブジェクトの破棄＆シーン遷移
-		if (m_ani == 5)
+		//適切なタイミング(1コマ目)でこのオブジェクトのサイズを大きく変更する
+		if (m_ani == 1)
+		{
+			size1 = -20.0f;
+			size2 = +20.0f;
+		}
+
+		//自機爆発アニメーション終了から少し時間が経った後に
+		//本当にオブジェクトの破棄＆ゲームオーバー画面に移行
+		else if (m_ani == 9)
 		{
 			this->SetStatus(false);		//自身に削除命令を出す。
-			Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxに削除する。
 
 			Scene::SetScene(new CSceneGameOver2());
 		}
@@ -304,14 +316,14 @@ void CObjHero::Action()
 	{
 		death = true;
 
-		//size1 = -20.0f;
-		//size2 = +20.0f;
+		Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxを削除する。
 	}
 }
 
 //ドロー
 void CObjHero::Draw()
 {
+	/*
 	//アニメーションRECT情報
 	RECT_F ani_src[4] =
 	{
@@ -320,6 +332,7 @@ void CObjHero::Draw()
 		{ 32, 64,  96,  64},
 		{ 32, 96, 128,  64},
 	};
+	*/
 
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
 	float  ob[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -396,7 +409,7 @@ void CObjHero::Draw()
 	dst.m_bottom = 32.0f + size2 + m_y;
 
 	//6番目に登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(6, &src, &dst, ob, 0.0f);
+	Draw::Draw(6, &m_eff, &dst, ob, 0.0f);
 
 }
 

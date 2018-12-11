@@ -34,8 +34,6 @@ void CSceneSTG::InitScene()
 	CObjSTG* obj = new CObjSTG();
 	Objs::InsertObj(obj, OBJ_STG, 10);
 
-	
-
 	//îwåiÇì«Ç›çûÇ›0î‘Ç…ìoò^
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
 	
