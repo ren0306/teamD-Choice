@@ -155,6 +155,7 @@ void CObjTenkey::Draw()
 	{
 		Font::StrDraw(L"[答え決定ボタン]", 0, 450, 30, s);
 	}
+	//間違えると３０秒低下したことを表示する処理
 	if (m_miss == true)
 	{
 		Font::StrDraw(L"-30秒", 40, 50, 30, r);
@@ -230,9 +231,9 @@ void CObjTenkey::Draw()
 	src.m_right = 1008.0f;
 	src.m_bottom = 647.0f;
 	//解答出力（出力位置）
-	dst.m_top = 50.0f +100;
-	dst.m_left = -10.0f ;
-	dst.m_right = 600.0f + 420;
+	dst.m_top = 70.0f + 100;
+	dst.m_left = 0.0f;
+	dst.m_right = 700.0f + 300;
 	dst.m_bottom = 450.0f + 250;
 	Draw::Draw(12, &src, &dst, f, 0.0f);
 
@@ -243,9 +244,9 @@ void CObjTenkey::Draw()
 	src.m_bottom = 647.0f;
 	//問題出力（出力位置）
 	dst.m_top = 25.0f;
-	dst.m_left = 50.0f;
-	dst.m_right = 750.f;
-	dst.m_bottom = 350.0f;
+	dst.m_left = 60.0f;
+	dst.m_right = 735.f;
+	dst.m_bottom = 370.0f;
 	Draw::Draw(13, &src, &dst, f, 0.0f);
 
 	Font::StrDraw(L"1 2 3 4 5 6 7 8 9", 250, 300, 30, o);
