@@ -55,6 +55,10 @@ void CSceneSTG3::InitScene()
 	//敵HPバー表示
 	Draw::LoadImage(L"HP.png", 5, TEX_SIZE_512);
 
+	//ため攻撃
+	Draw::LoadImage(L"tamedama.png", 12, TEX_SIZE_512);
+
+
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();
 	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);

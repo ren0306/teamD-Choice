@@ -47,6 +47,10 @@ void CSceneSTG2::InitScene()
 	//敵HPバー表示
 	Draw::LoadImage(L"HP.png", 5, TEX_SIZE_512);
 
+	//ため攻撃
+	Draw::LoadImage(L"tamedama.png", 12, TEX_SIZE_512);
+
+
 	//STGオブジェクト作成
 	CObjSTG2* obj = new CObjSTG2();
 	Objs::InsertObj(obj, OBJ_STG2, 10);
