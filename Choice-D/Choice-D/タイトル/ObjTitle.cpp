@@ -3,7 +3,7 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
-
+#include "../GameL/Audio.h"
 
 
 #include "../GameHead.h"
@@ -116,6 +116,7 @@ void CObjTitle::Draw()
 		if (m_and <= 0)
 		{
 			Scene::SetScene(new CSceneOP());
+			Audio::Stop(0);
 			m_f = false;
 		}
 	}

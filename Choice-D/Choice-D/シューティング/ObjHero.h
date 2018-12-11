@@ -32,8 +32,6 @@ private:
 	float m_tame;
 	float m_maxtame;
 	float m_and;
-	float m_ani;
-	float m_ani_time;
 	float m_del;
 	bool m_andf;
 	bool death;		//ålŒö‹@‚Ì¶‘¶ŠÇ—
