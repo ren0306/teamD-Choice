@@ -330,7 +330,9 @@
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CObjHeroExplosion.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -641,6 +643,9 @@
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\CObjChargeBullt.h">
+      <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjHeroExplosion.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
   </ItemGroup>
