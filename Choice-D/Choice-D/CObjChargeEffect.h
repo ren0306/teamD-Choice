@@ -9,7 +9,7 @@ using namespace GameL;
 class CObjChargeEffect : public CObj
 {
 public:
-	CObjChargeEffect(float x, float y);
+	CObjChargeEffect() {};
 	~CObjChargeEffect() {};
 	void Init();	//イニシャライズ
 	void Action();  //アクション
