@@ -3,10 +3,8 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
-
-
-
 #include "../GameHead.h"
+
 #include "ObjOP.h"
 #include "../ゲームメイン/SceneMain.h"
 
@@ -24,7 +22,7 @@ void CObjOP::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0f;
+	m_and = 0.0f;
 	m_f = true;
 	m_cnt = 1;
 }
@@ -32,8 +30,8 @@ void CObjOP::Init()
 //アクション
 void CObjOP::Action()
 {
-	float k[4] = { 0.3,0.6,0.6,1.0f };
-	float c[4] = { 1,1,1,1 };
+	float k[4] = { 0.3,0.6,0.6,m_and };
+	float c[4] = { 1,1,1,m_and };
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -41,7 +39,7 @@ void CObjOP::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	//
+	//クリック処理
 	if (m_mou_x >= 450 && m_mou_x <= 740 && m_mou_y >= 470 && m_mou_y <= 500)
 	{
 		if (m_cnt >= 5)
@@ -51,6 +49,7 @@ void CObjOP::Action()
 
 		if (m_mou_l == true)
 		{
+
 			if (m_flag == true)
 			{
 				m_cnt++;
@@ -78,6 +77,10 @@ void CObjOP::Draw()
 {
 	float c[4] = { 1,1,1,m_and };
 	float k[4] = { 0.3,0.6,0.6,m_and };
+	float d[4] = { 1.0f,1.0f,1.0f,m_and };
+
+	RECT_F src;
+	RECT_F dst;
 
 	//フェードイン・フェードアウト
 	if (m_f == true)
@@ -90,6 +93,8 @@ void CObjOP::Draw()
 		}
 
 	}
+
+
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
@@ -129,6 +134,16 @@ void CObjOP::Draw()
 		Font::StrDraw(L"扉をマウスでクリックし、問題が出てくるので",70,180,30,k);
 		Font::StrDraw(L"問題を解いて次に行こう！",70,260,30,k);
 		Font::StrDraw(L"ただし、問題を間違えると時間が30秒減るので注意",70,340,30,k);
+		src.m_top = 0.0f;
+		src.m_left = 0.0f;
+		src.m_right = 763.0f;
+		src.m_bottom = 567.0f;
+
+		dst.m_top = 0.0f+380;
+		dst.m_left = 50.0f;
+		dst.m_right =420.0f+30;
+		dst.m_bottom = 320.0f+300;
+		Draw::Draw(1, &src, &dst, d, 0.0f);
 
 	}
 
@@ -138,7 +153,17 @@ void CObjOP::Draw()
 		Font::StrDraw(L"敵と戦うには敵をクリックすると、戦うか確認されるので",70,180,25,k);
 		Font::StrDraw(L"「はい」を押すと戦える",70,260,25,k);
 		Font::StrDraw(L"敵と戦うと戦いの音で他の敵に見つかるかもしれないので",70,340,25,k);
-		Font::StrDraw(L"敵と戦うのはなるべく避けよう",70,420,25,k);
+		Font::StrDraw(L"敵と戦うのはなるべく避けよう",450,420,25,k);
+		src.m_top = 0.0f;
+		src.m_left = 0.0f;
+		src.m_right = 763.0f;
+		src.m_bottom = 567.0f;
+
+		dst.m_top = 0.0f + 380;
+		dst.m_left = 50.0f;
+		dst.m_right = 420.0f + 30;
+		dst.m_bottom = 320.0f + 300;
+		Draw::Draw(2, &src, &dst, d, 0.0f);
 
 	}
 
@@ -148,16 +173,11 @@ void CObjOP::Draw()
 		Font::StrDraw(L"脱出をしよう！",300,300,35, k);
 
 	}
-	//if (m_cnt >= 6)
-	//{
-	//	Scene::SetScene(new CSceneMain());
+	if (m_cnt >= 6)
+	{
+		Scene::SetScene(new CSceneMain());
 
-	//}
-
-	RECT_F src;
-	RECT_F dst;
-
-	float d[4] = { 1.0f,1.0f,1.0f,m_and };
+	}
 	//Choice表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
