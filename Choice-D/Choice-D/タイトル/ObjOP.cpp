@@ -118,62 +118,62 @@ void CObjOP::Draw()
 	}
 	if (m_cnt==1)
 	{
-		Font::StrDraw(L"モンスターに倒され、目覚めたら洞窟にいた", 115, 200, 30, k);
-		Font::StrDraw(L"制限時間内にここから脱出をしよう！", 170, 250, 30, k);
+		Font::StrDraw(L"モンスターに倒され、目覚めたら洞窟にいた", 115, 230, 30, k);
+		Font::StrDraw(L"制限時間内にここから脱出をしよう！", 170, 320, 30, k);
 
 	}
 	
 	if (m_cnt==2)
 	{
 
-		Font::StrDraw(L"ここから脱出するには、謎を解くか", 170, 200, 30, k);
-		Font::StrDraw(L"敵を倒すしかありません", 175, 250, 30, k);
+		Font::StrDraw(L"ここから脱出するには、謎を解くか", 170, 230, 30, k);
+		Font::StrDraw(L"敵を倒すしかありません", 175, 320, 30, k);
 	}
 	
 
 	if (m_cnt == 3)
 	{
-		Font::StrDraw(L"謎を解いて次のステージに行く方法", 150, 100, 30, c);
-		Font::StrDraw(L"扉をマウスでクリックし、問題が出てくるので",70,180,30,k);
-		Font::StrDraw(L"問題を解いて次に行こう！",70,260,30,k);
-		Font::StrDraw(L"ただし、問題を間違えると時間が30秒減るので注意",70,340,30,k);
+		Font::StrDraw(L"謎を解いて次のステージに行く方法", 150, 80, 30, c);
+		Font::StrDraw(L"扉をマウスでクリックし、問題が出てくるので",70,160,30,k);
+		Font::StrDraw(L"問題を解いて次に行こう！",70,240,30,k);
+		Font::StrDraw(L"ただし、問題を間違えると時間が30秒減るので注意",70,320,30,k);
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
 		src.m_right = 763.0f;
 		src.m_bottom = 567.0f;
 
-		dst.m_top = 0.0f+380;
+		dst.m_top = 0.0f+360;
 		dst.m_left = 50.0f;
-		dst.m_right =420.0f+30;
-		dst.m_bottom = 320.0f+300;
+		dst.m_right =410.0f+30;
+		dst.m_bottom = 300.0f+300;
 		Draw::Draw(1, &src, &dst, d, 0.0f);
 
 	}
 
 	if (m_cnt == 4)
 	{
-		Font::StrDraw(L"敵との戦闘について",250,100,35,c);
-		Font::StrDraw(L"敵と戦うには敵をクリックすると、戦うか確認されるので",70,180,25,k);
-		Font::StrDraw(L"「はい」を押すと戦える",70,260,25,k);
-		Font::StrDraw(L"敵と戦うと戦いの音で他の敵に見つかるかもしれないので",70,340,25,k);
-		Font::StrDraw(L"敵と戦うのはなるべく避けよう",450,420,25,k);
+		Font::StrDraw(L"敵との戦闘について",250,30,35,c);
+		Font::StrDraw(L"敵と戦うには敵をクリックすると、戦うか確認されるので",70,110,25,k);
+		Font::StrDraw(L"「はい」を押すと戦える",70,170,25,k);
+		Font::StrDraw(L"敵と戦うと戦いの音で他の敵に見つかるかもしれないので",70,230,25,k);
+		Font::StrDraw(L"敵と戦うのはなるべく避けよう",70,290,25,k);
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
 		src.m_right = 763.0f;
 		src.m_bottom = 567.0f;
 
-		dst.m_top = 0.0f + 380;
+		dst.m_top = 0.0f + 360;
 		dst.m_left = 50.0f;
-		dst.m_right = 420.0f + 30;
-		dst.m_bottom = 320.0f + 300;
-		Draw::Draw(2, &src, &dst, d, 0.0f);
+		dst.m_right = 410.0f + 30;
+		dst.m_bottom = 300.0f + 300;
+		Draw::Draw(1, &src, &dst, d, 0.0f);
 
 	}
 
 	if (m_cnt == 5)
 	{
-		Font::StrDraw(L"準備ができたら下の「脱出を試みる」をクリックして",60,230,30, k);
-		Font::StrDraw(L"脱出をしよう！",300,300,35, k);
+		Font::StrDraw(L"準備ができたら下の「脱出を試みる」をクリックして",50,250,30, k);
+		Font::StrDraw(L"脱出をしよう！",300,330,35, k);
 
 	}
 	if (m_cnt >= 6)
@@ -182,14 +182,14 @@ void CObjOP::Draw()
 
 	}
 	//Choice表示
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 455.0f;
+	src.m_top    =   0.0f;
+	src.m_left   =   0.0f;
+	src.m_right  = 455.0f;
 	src.m_bottom = 180.0f;
 
-	dst.m_top = 150.0f;
-	dst.m_left = 150.0f;
-	dst.m_right = 600.0f;
+	dst.m_top	 = 150.0f;
+	dst.m_left	 = 150.0f;
+	dst.m_right	 = 600.0f;
 	dst.m_bottom = 400.0f;
 	Draw::Draw(0, &src, &dst, d, 0.0f);
 
