@@ -30,9 +30,9 @@ void CObjOP::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjOP::Action()
 {
-	Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	//Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
-	Audio::Start(0);
+	//Audio::Start(0);
 	float k[4] = { 0.3,0.6,0.6,m_and };
 	float c[4] = { 1,1,1,m_and };
 
