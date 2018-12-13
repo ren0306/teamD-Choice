@@ -124,7 +124,8 @@ void CObjTenkey::Draw()
 					m_floor++;
 					//
 					m_clear = true;
-					
+					m_TimeL += 1800;//ÇRÇOïbëùâ¡
+
 					Scene::SetScene(new CSceneMain2);
 				}
 				else

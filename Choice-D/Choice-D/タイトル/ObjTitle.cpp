@@ -104,7 +104,7 @@ void CObjTitle::Draw()
 		Font::StrDraw(L"ƒQ[ƒ€‚ðŽn‚ß‚é", 400, 400, 32, c);
 	}
 
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 460)
+	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 480)
 	{
 		Font::StrDraw(L"ž‘€ìà–¾", 400, 450, 32, c);
 		//‘€ìà–¾

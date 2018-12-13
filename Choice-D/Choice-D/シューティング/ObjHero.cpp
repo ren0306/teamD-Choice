@@ -173,6 +173,8 @@ void CObjHero::Action()
 		
 		if (Input::GetVKey('R') == true)
 		{
+			Audio::Start(2);
+
 			m_cnt = 7.f;
 			m_tame = 0.f;
 		}
