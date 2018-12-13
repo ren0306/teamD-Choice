@@ -31,9 +31,9 @@ void CSceneSTG::InitScene()
 {
 
 	//音楽情報の読み込み
-	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	//Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
-	Audio::Start(0);
+	//Audio::Start(0);
 
 
 	//STGオブジェクト作成

@@ -31,7 +31,7 @@ void CObjSTG::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	Audio::Start(0);
+	//Audio::Start(0);
 
 
 }

@@ -123,7 +123,7 @@ void CObjTitle::Draw()
 		{
 			m_BGM++;
 			Scene::SetScene(new CSceneOP());
-			Audio::Stop(0);
+			//Audio::Stop(0);
 			m_f = false;
 		}
 	}
