@@ -36,7 +36,7 @@ void CSceneOP::InitScene()
 	Audio::Start(0);
 	Draw::LoadImage(L"OPtobira.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"OPteki.png", 2, TEX_SIZE_512);
-	Draw::LoadImage(L"敵2印.png", 1, TEX_SIZE_512);
+	Draw::LoadImage(L"敵3印.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"扉3印.png", 2, TEX_SIZE_512);
 
 	//OPオブジェクト作成
