@@ -32,7 +32,6 @@ CSceneTitle::~CSceneTitle()
 void CSceneTitle::InitScene()
 {
 	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
-
 	Audio::Start(0);
 
 	//出力させる文字のグラフィックを作成
@@ -46,4 +45,5 @@ void CSceneTitle::InitScene()
 //ゲームタイトル実行中メソッド
 void CSceneTitle::Scene()
 {
+
 }

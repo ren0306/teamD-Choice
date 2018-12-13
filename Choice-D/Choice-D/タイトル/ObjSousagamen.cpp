@@ -20,7 +20,9 @@ void CObjSousagamen::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0f;
+	m_and = 0.0f;
+	m_andf = true;
+	m_title = false;
 }
 
 //アクション
@@ -33,13 +35,35 @@ void CObjSousagamen::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	if (m_andf == true)
+	{
+		m_and += 0.1;
+		if (m_and >= 1)
+		{
+			m_and = 1.0;
+			m_andf = false;
+		}
+
+	}
+
 	//マウスの位置とクリックする場所で当たり判定
 	if (m_mou_x > 450 && m_mou_x < 723 && m_mou_y>525 && m_mou_y < 582)
 	{
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
+			m_title = true;
+		}
+	}
+
+	if (m_title == true)
+	{
+		m_and -= 0.03;
+		if (m_and <= 0)
+		{
+			m_and == 0.0f;
 			Scene::SetScene(new CSceneTitle());
+
 		}
 	}
 
@@ -48,14 +72,14 @@ void CObjSousagamen::Action()
 //ドロー
 void CObjSousagamen::Draw()
 {
-	float c[4] = { 1,1,1,1 };
+	float c[4] = { 1,1,1,m_and};
 	
 
 
 	RECT_F src;
 	RECT_F dst;
 
-	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float d[4] = { 1.0f,1.0f,1.0f,m_and };
 	//キーボード表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
