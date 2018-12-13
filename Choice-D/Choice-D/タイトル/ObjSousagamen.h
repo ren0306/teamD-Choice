@@ -18,6 +18,8 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;
-	float m_and = 1;
+	float m_and;
+	bool m_andf;
+	bool m_title;
 
 };

@@ -19,7 +19,8 @@ private:
 	bool m_mou_r;
 	bool m_mou_l;
 	float m_and=1;
-
+	bool m_end;
 	bool m_f;
+	bool m_sousa;
 
 };

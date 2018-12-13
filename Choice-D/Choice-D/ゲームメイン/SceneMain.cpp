@@ -34,6 +34,10 @@ CSceneMain::~CSceneMain()
 //ゲームメイン初期化メソッド
 void CSceneMain::InitScene()
 {
+	//BGMを登録
+	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
+
+	Audio::Start(1);
 	//外部グラフィックファイルを読み込み０番に登録
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
@@ -44,17 +48,10 @@ void CSceneMain::InitScene()
 
 	Font::SetStrTex(L"謎解きを選ぶ");
 
-	Audio::Start(0);
 
 	
 
 
-	//扉音を登録
-	Audio::LoadAudio(1, L"door-old-open1 .wav", SOUND_TYPE::EFFECT);
-	
-	float Volume = Audio::VolumeMaster(-0.9f);//マスターボリュームを0.8下げる
-
-	Audio::Start(1);
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_MAIN, 140);
