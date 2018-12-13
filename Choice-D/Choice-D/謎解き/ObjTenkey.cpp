@@ -124,7 +124,8 @@ void CObjTenkey::Draw()
 					m_floor++;
 					//
 					m_clear = true;
-					
+					m_TimeL += 1800;//ÇRÇOïbëùâ¡
+
 					Scene::SetScene(new CSceneMain2);
 				}
 				else
@@ -164,17 +165,6 @@ void CObjTenkey::Draw()
 		{
 			m_miss = false;
 			m_misscnt = 100.f;
-		}
-	}
-	if (m_clear == true)
-	{
-		Font::StrDraw(L"+30ïb", 40, 50, 30, g);
-		m_TimeL += 1800;//ÇRÇOïbëùâ¡
-		m_clearcnt--;
-		if (m_clearcnt <= 0)
-		{
-			m_clear = false;
-			m_clearcnt = 500.f;
 		}
 	}
 

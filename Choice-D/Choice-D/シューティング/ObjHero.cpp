@@ -148,7 +148,7 @@ void CObjHero::Action()
 			m_cnt--;
 
 			//”­ŽË‰¹‚ð–Â‚ç‚·
-			//Audio::Start(2);
+			Audio::Start(2);
 			if (m_cnt <= 0)
 			{
 				m_f = false;
@@ -173,6 +173,8 @@ void CObjHero::Action()
 		
 		if (Input::GetVKey('R') == true)
 		{
+			Audio::Start(2);
+
 			m_cnt = 7.f;
 			m_tame = 0.f;
 		}

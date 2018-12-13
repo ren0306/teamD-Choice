@@ -21,6 +21,7 @@ void CObjMain2::Init()
 	m_and = 0.0;
 	m_f = false;
 	m_key_flag = false;
+	m_timecnt = 50;
 }
 
 //アクション
@@ -54,6 +55,8 @@ void CObjMain2::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	float d[4] = { 0.0f,0.0f,0.0f,1.0f };
+	float g[4] = { 0.0f,1.0f,0.0f,m_and };
+
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
@@ -145,6 +148,15 @@ void CObjMain2::Draw()
 	else
 	{
 		m_key_flag = true;
+	}
+	if (m_clear == true)
+	{
+		m_clearcnt--;
+		if (m_clearcnt <= 0)
+		{
+			m_clear = false;
+			m_clearcnt = 100.f;
+		}
 	}
 
 	//切り取り位置の設定

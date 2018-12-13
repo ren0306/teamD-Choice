@@ -29,6 +29,13 @@ CSceneSTG2::~CSceneSTG2()
 //ゲームシューティング2初期化メソッド
 void CSceneSTG2::InitScene()
 {
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
+
+	Audio::Start(0);
+
 	//背景を読み込み0番に登録
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
 
@@ -55,10 +62,10 @@ void CSceneSTG2::InitScene()
 	CObjSTG2* obj = new CObjSTG2();
 	Objs::InsertObj(obj, OBJ_STG2, 10);
 
-	//バックミュージックスタート
-	//float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
-	//Audio::Start(0);//音楽スタート
-
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
+	Audio::Start(0);
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();
 	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);

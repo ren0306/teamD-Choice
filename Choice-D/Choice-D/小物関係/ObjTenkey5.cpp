@@ -66,7 +66,7 @@ void CObjTenkey5::Draw()
 	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
 	//紫
 	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
-	Font::StrDraw(L"この問題は4桁の数字のみ入力可能です", 160, 550, 30, r);
+	Font::StrDraw(L"この問題は2桁の数字のみ入力可能です", 160, 550, 30, r);
 
 	RECT_F src;
 	RECT_F dst;
@@ -294,7 +294,7 @@ void CObjTenkey5::Draw()
 void CObjTenkey5::Tenkey()
 {
 	//２桁のみ入力可能
-	if (cnt != 4)
+	if (cnt != 2)
 	{
 		//741
 		if (m_mou_x > 300 && m_mou_x < 345)
@@ -490,18 +490,18 @@ bool CObjTenkey5::Anser()
 		{ 1,5 },
 		{ 7,4,8 },
 		{ 3,4,7,9 },
-		{ 5,6,7,9 },
+		{ 4,3 },
 	};
 	cnt = 0;
 	//答え確認処理
-	for (int j = 0; j<3; j++)
+	for (int j = 0; j<2; j++)
 	{
 		for (int i = 0; i < 9; i++)
 		{
 			if (m_num[i + 1] == m_anser[4][j])//答えた数字と正解を見比べる
 			{
 				cnt++;
-				if (cnt == 3)
+				if (cnt == 2)
 				{
 					m_ok = true;
 					return m_ok;

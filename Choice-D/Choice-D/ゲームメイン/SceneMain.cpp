@@ -38,6 +38,8 @@ void CSceneMain::InitScene()
 	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
 	Audio::Start(1);
+	
+
 	//外部グラフィックファイルを読み込み０番に登録
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"door.png", 1, TEX_SIZE_512);
@@ -45,13 +47,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"teki1.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
 
-
 	Font::SetStrTex(L"謎解きを選ぶ");
-
-
-	
-
-
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_MAIN, 140);
