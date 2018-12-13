@@ -5,7 +5,7 @@
 #include "../GameL\SceneManager.h"
 #include "../GameL/Audio.h"
 
-
+#include "../ObjBGM.h"
 #include "../GameHead.h"
 #include "ObjTitle.h"
 #include "../ゲームメイン/SceneMain.h"
@@ -28,7 +28,7 @@ bool m_clear = false;
 bool m_miss = false;//答え間違いならtrue変数
 float m_clearcnt=100.f;
 float m_misscnt=100.f;//間違えた時の時間を減らす表示をする変数	
-
+float m_BGM = 0;
 //----------------------------------------------------------------------
 
 //イニシャライズ
@@ -80,6 +80,7 @@ void CObjTitle::Draw()
 		if (m_mou_l == true)
 		{
 			m_f = true;
+			
 		}
 	}
 	else
@@ -120,6 +121,7 @@ void CObjTitle::Draw()
 		m_and -= 0.01;
 		if (m_and <= 0)
 		{
+			m_BGM++;
 			Scene::SetScene(new CSceneOP());
 			Audio::Stop(0);
 			m_f = false;

@@ -44,9 +44,6 @@ void CSceneMain::InitScene()
 
 	Font::SetStrTex(L"“ä‰ð‚«‚ð‘I‚Ô");
 
-	//BGM‚ð“o˜^
-	Audio::LoadAudio(0,L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
-
 	Audio::Start(0);
 
 	

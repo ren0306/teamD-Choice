@@ -118,7 +118,7 @@
     <ClCompile Include="CObjBulletTeki5.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="CObjHeroExplosion.cpp" />
+    <ClCompile Include="CObjChargeEffect.cpp" />
     <ClCompile Include="CobjHomingBullet.cpp" />
     <ClCompile Include="CObjMeanderBullet.cpp" />
     <ClCompile Include="ED\ObjED1.cpp" />
@@ -145,6 +145,7 @@
     <ClCompile Include="GameOver\GAME OVER2.cpp" />
     <ClCompile Include="GameOver\GAMEOVER1.cpp" />
     <ClCompile Include="GameOver\GameOver2.cpp" />
+    <ClCompile Include="ObjBGM.cpp" />
     <ClCompile Include="ObjBulletMove.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -241,7 +242,7 @@
     <ClInclude Include="CObjBulletTeki3.h" />
     <ClInclude Include="CObjBulletTeki4.h" />
     <ClInclude Include="CObjBulletTeki5.h" />
-    <ClInclude Include="CObjHeroExplosion.h" />
+    <ClInclude Include="CObjChargeEffect.h" />
     <ClInclude Include="CobjHomingBullet.h" />
     <ClInclude Include="CObjMeanderBullet.h" />
     <ClInclude Include="ED\ObjED1.h" />
@@ -269,6 +270,7 @@
     <ClInclude Include="GameOver\GAMEOVER1.h" />
     <ClInclude Include="GameOver\GameOver2.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="ObjBGM.h" />
     <ClInclude Include="ObjBulletMove.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

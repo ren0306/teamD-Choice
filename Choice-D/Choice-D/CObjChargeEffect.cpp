@@ -1,34 +1,31 @@
-/*
-
 //使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
-#include "GameL\HitBoxManager.h"
 #include "GameHead.h"
-#include "CObjHeroExplosion.h"
+#include "CObjChargeEffect.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-//コンストラクタ
-CObjHeroExplosion::CObjHeroExplosion(float x, float y)
+
+//アニメーションコマ変更用
+void CObjChargeEffect::Set(int a)
 {
-	m_x = x;
-	m_y = y;
+	m_ani = a;
 }
 
 //イニシャライズ
-void CObjHeroExplosion::Init()
+void CObjChargeEffect::Init()
 {
 	m_eff.m_top = 0;
 	m_eff.m_left = 96;
 	m_eff.m_right = 128;
 	m_eff.m_bottom = 32;
 	m_ani = 0;
-	m_ani_time = 0;
+	m_ani_time = 0;//ObjHero内で変更したい。
 }
 
 //アクション
-void CObjHeroExplosion::Action()
+void CObjChargeEffect::Action()
 {
 	RECT_F ani_src[5] =
 	{
@@ -63,26 +60,19 @@ void CObjHeroExplosion::Action()
 }
 
 //ドロー
-void CObjHeroExplosion::Draw()
+void CObjChargeEffect::Draw()
 {
-	//主人公機の位置を取る
-	//CObjHero* obj = (CObjHero*)Objs::GetObj(OBJ_HERO);
-	//float x = obj->GetX();
-	//float y = obj->GetY();
-	
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
 	float  c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	RECT_F dst; //描画先表示位置
 
 	//表示位置の設定
-	dst.m_top = -20.0f + m_y;
-	dst.m_left = -20.0f + m_x;
-	dst.m_right = 52.0f + m_x;
-	dst.m_bottom = 52.0f + m_y;
+	dst.m_top = -20.0f;
+	dst.m_left = -20.0f;
+	dst.m_right = 52.0f;
+	dst.m_bottom = 52.0f;
 
 	//8番目に登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(8, &m_eff, &dst, c, 0.0f);
 }
-
-*/
