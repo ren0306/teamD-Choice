@@ -27,14 +27,17 @@ void CObjBGM::Init()
 //アクション
 void CObjBGM::Action()
 {
+	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	//BGMを登録
+	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
 	//音楽情報の読み込み
-	Audio::LoadAudio(2, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	//Audio::LoadAudio(2, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
-	Audio::Start(0);
+	//Audio::Start(0);
 	if (m_BGM == 1)
 	{
-		Audio::Start(1);
+		//Audio::Start(1);
 	}
 	float k[4] = { 0.3,0.6,0.6,0 };
 	float c[4] = { 1,1,1,0 };
