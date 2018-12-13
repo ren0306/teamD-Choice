@@ -3,7 +3,7 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
-#include "../GameL/Audio.h"
+//#include "../GameL/Audio.h"
 
 #include "../ObjBGM.h"
 #include "../GameHead.h"
@@ -39,12 +39,28 @@ void CObjTitle::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0f;
+	m_and = 0.0f;
+	m_end = false;
+	m_sousa = false;
+	m_andf = true;
 }
 
 //アクション
 void CObjTitle::Action()
 {
+	if (m_andf == true)
+	{
+		m_and += 0.03;
+		if (m_and >= 1)
+		{
+			m_and = 1.0;
+			m_andf = false;
+		}
+
+	}
+
+
+
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -94,22 +110,20 @@ void CObjTitle::Draw()
 		//操作説明
 		if (m_mou_l == true)
 		{
-			m_and -= 0.1;
-			Scene::SetScene(new CSceneSousagamen());
+			m_sousa =true;
 		}
 	}
 	else
 	{
 		Font::StrDraw(L"操作説明", 400, 450, 32, c);
 	}
-	if (m_mou_x > 400 && m_mou_x < 635 && m_mou_y>460 && m_mou_y < 520)
+	if (m_mou_x > 400 && m_mou_x < 635 && m_mou_y>493 && m_mou_y < 520)
 	{
 		Font::StrDraw(L"◇Choiceを終了する", 400, 500, 32, c);
 		//ゲーム終了
 		if (m_mou_l == true)
 		{
-			m_and -= 0.1;
-			exit(4);
+			m_end = true;
 		}
 	}
 	else
@@ -119,13 +133,29 @@ void CObjTitle::Draw()
 	if (m_f == true)
 	{
 		m_and -= 0.01;
-		if (m_and <= 0)
+		/*if (m_and <= 0)
 		{
 			m_BGM++;
 			Scene::SetScene(new CSceneOP());
-			//Audio::Stop(0);
 			m_f = false;
+		}*/
+	}
+	if (m_end == true)
+	{
+		m_and -= 0.03;
+		if (m_and <= 0)
+		{
+			exit(4);
 		}
+	}
+	if (m_sousa == true)
+	{
+		m_and -= 0.03;
+		if (m_and <= 0)
+		{
+			Scene::SetScene(new CSceneSousagamen());
+		}
+
 	}
 	RECT_F src;
 	RECT_F dst;

@@ -31,7 +31,8 @@ CSceneTitle::~CSceneTitle()
 //ゲームタイトル初期化メソッド
 void CSceneTitle::InitScene()
 {
-	//Audio::Start(0);
+	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::Start(0);
 
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
@@ -44,4 +45,5 @@ void CSceneTitle::InitScene()
 //ゲームタイトル実行中メソッド
 void CSceneTitle::Scene()
 {
+
 }

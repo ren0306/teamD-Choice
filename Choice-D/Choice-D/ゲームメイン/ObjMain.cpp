@@ -28,7 +28,6 @@ void CObjMain::Init()
 void CObjMain::Action()
 {
 	float c[4] = { 1,1,1,m_and };
-	//Audio::Start(0);
 
 
 	//マウスの位置を取得
@@ -108,7 +107,6 @@ void CObjMain::Draw()
 					if (m_mou_l == true)
 					{
 						Scene::SetScene(new CSceneSTG());
-						//Audio::Start(0);
 					}
 				}
 				else
