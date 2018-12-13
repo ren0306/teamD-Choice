@@ -41,7 +41,7 @@ void CObjteki1::Init()
 //アクション
 void CObjteki1::Action()
 {
-	Audio::Start(0);
+	//Audio::Start(0);
 
 	//HitBox位置を更新
 	CHitBox* hit = Hits::GetHitBox(this);

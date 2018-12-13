@@ -56,8 +56,8 @@ void CSceneSTG2::InitScene()
 	Objs::InsertObj(obj, OBJ_STG2, 10);
 
 	//バックミュージックスタート
-	float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
-	Audio::Start(0);//音楽スタート
+	//float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
+	//Audio::Start(0);//音楽スタート
 
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();

@@ -127,7 +127,9 @@
     <ClCompile Include="ED\SceneED1.cpp" />
     <ClCompile Include="ED\SceneED2.cpp" />
     <ClCompile Include="ED\SceneED3.cpp" />
-    <ClCompile Include="GameL\Audio.cpp" />
+    <ClCompile Include="GameL\Audio.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="GameL\DirectXDevice.cpp" />
     <ClCompile Include="GameL\Draw2DTex_Source.cpp" />
     <ClCompile Include="GameL\DrawFont.cpp" />
@@ -254,7 +256,9 @@
     <ClInclude Include="ED\SceneED2.h" />
     <ClInclude Include="ED\SceneED3.h" />
     <ClInclude Include="GameHead.h" />
-    <ClInclude Include="GameL\Audio.h" />
+    <ClInclude Include="GameL\Audio.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GameL\DirectXDevice.h" />
     <ClInclude Include="GameL\DirectXTex.h" />
     <ClInclude Include="GameL\DrawFont.h" />
