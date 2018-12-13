@@ -36,7 +36,6 @@ void CSceneMain::InitScene()
 {
 	//BGM‚ð“o˜^
 	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	
 
 	Audio::Start(1);
 	
@@ -48,13 +47,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"teki1.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
 
-
 	Font::SetStrTex(L"“ä‰ð‚«‚ð‘I‚Ô");
-
-
-	
-
-
 
 	CObjMain* m = new CObjMain();
 	Objs::InsertObj(m, OBJ_MAIN, 140);

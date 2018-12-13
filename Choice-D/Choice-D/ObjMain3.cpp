@@ -53,6 +53,7 @@ void CObjMain3::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	float d[4] = { 0.0f,0.0f,0.0f,1.0f };
+
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
@@ -145,6 +146,7 @@ void CObjMain3::Draw()
 	{
 		m_key_flag = true;
 	}
+	
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
