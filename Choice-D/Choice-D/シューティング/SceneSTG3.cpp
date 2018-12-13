@@ -34,8 +34,8 @@ void CSceneSTG3::InitScene()
 	Objs::InsertObj(obj, OBJ_STG3, 10);
 
 	//バックミュージックスタート
-	float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
-	Audio::Start(0);//音楽スタート
+	//float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
+	//Audio::Start(0);//音楽スタート
 
 	//背景を読み込み0番に登録
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
