@@ -223,5 +223,5 @@ extern bool m_miss;//答え間違いならtrue変数
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneMain2
 //-----------------------------------------------
