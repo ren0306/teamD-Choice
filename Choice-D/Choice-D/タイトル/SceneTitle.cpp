@@ -31,6 +31,8 @@ CSceneTitle::~CSceneTitle()
 //ゲームタイトル初期化メソッド
 void CSceneTitle::InitScene()
 {
+	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
+
 	Audio::Start(0);
 
 	//出力させる文字のグラフィックを作成

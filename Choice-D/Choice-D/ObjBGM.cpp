@@ -27,9 +27,6 @@ void CObjBGM::Init()
 //アクション
 void CObjBGM::Action()
 {
-	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	//BGMを登録
-	Audio::LoadAudio(1, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
 	//音楽情報の読み込み
 	Audio::LoadAudio(2, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);

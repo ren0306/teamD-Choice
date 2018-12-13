@@ -33,8 +33,6 @@ private:
 	float m_maxtame;
 	float m_and;
 	float m_del;
-	int m_ani;
-	int m_ani_time;
 	bool m_andf;
 	bool death;		//主人公機の生存管理
 	float size1;	//主人公→爆破時、大きさ変更用変数1
