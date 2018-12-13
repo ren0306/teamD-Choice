@@ -121,6 +121,7 @@ void CObjTitle::Draw()
 		if (m_and <= 0)
 		{
 			Scene::SetScene(new CSceneOP());
+			Audio::Stop(0);
 			m_f = false;
 		}
 	}
