@@ -333,6 +333,9 @@
     <ClCompile Include="ObjSTG5.cpp">
       <Filter>ソースファイル\STG\Scene\メイン</Filter>
     </ClCompile>
+    <ClCompile Include="ObjBGM.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -646,6 +649,9 @@
     </ClInclude>
     <ClInclude Include="ObjSTG5.h">
       <Filter>ソースファイル\STG\Scene\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBGM.h">
+      <Filter>ソースファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
