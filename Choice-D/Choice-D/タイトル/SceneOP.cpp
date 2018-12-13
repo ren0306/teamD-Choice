@@ -33,6 +33,7 @@ void CSceneOP::InitScene()
 {	
 	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
+	Audio::Start(0);
 	Draw::LoadImage(L"OPtobira.png", 1, TEX_SIZE_512);
 	Draw::LoadImage(L"OPteki.png", 2, TEX_SIZE_512);
 
