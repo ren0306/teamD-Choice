@@ -133,12 +133,11 @@ void CObjTitle::Draw()
 	if (m_f == true)
 	{
 		m_and -= 0.01;
-		/*if (m_and <= 0)
+		if (m_and <= 0)
 		{
-			m_BGM++;
 			Scene::SetScene(new CSceneOP());
 			m_f = false;
-		}*/
+		}
 	}
 	if (m_end == true)
 	{
