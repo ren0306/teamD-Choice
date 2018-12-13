@@ -230,7 +230,11 @@
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="CObjHeroExplosion.cpp">
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="CObjChargeEffect.cpp">
       <Filter>ソースファイル\STG</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -649,6 +653,8 @@
     </ClInclude>
     <ClInclude Include="ObjSTG5.h">
       <Filter>ソースファイル\STG\Scene\メイン</Filter>
+    <ClInclude Include="CObjChargeEffect.h">
+      <Filter>ソースファイル\STG</Filter>
     </ClInclude>
     <ClInclude Include="ObjBGM.h">
       <Filter>ソースファイル</Filter>
