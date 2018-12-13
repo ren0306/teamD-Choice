@@ -22,4 +22,5 @@ private:
 	double m_and;
 	bool m_f;
 	bool m_key_flag;//キーフラグ
+	int m_timecnt;
 };
