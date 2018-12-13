@@ -29,6 +29,8 @@ CSceneNazo::~CSceneNazo()
 //ゲームタイトル初期化メソッド
 void CSceneNazo::InitScene()
 {
+	Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::Start(0);
 	//出力させる文字のグラフィックを作成
 	//例　Font::SetStrTex(L"ゲームを始める");
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);

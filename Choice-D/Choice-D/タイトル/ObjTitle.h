@@ -22,5 +22,6 @@ private:
 	bool m_end;
 	bool m_f;
 	bool m_sousa;
+	bool m_andf;
 
 };
