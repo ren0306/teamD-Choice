@@ -340,6 +340,7 @@
     <ClCompile Include="ObjBGM.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -552,9 +553,6 @@
     <ClInclude Include="タイトル\ObjOP.h">
       <Filter>ソースファイル\タイトル</Filter>
     </ClInclude>
-    <ClInclude Include="CObjHeroExplosion.h">
-      <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
     <ClInclude Include="CObjAngleBullet.h">
       <Filter>ソースファイル\STG\Bullet</Filter>
     </ClInclude>
@@ -715,5 +713,4 @@
       <Filter>リソースファイル</Filter>
     </Library>
   </ItemGroup>
-  
 </Project>
