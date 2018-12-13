@@ -3,7 +3,7 @@
 #include "../GameL\WinInputs.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL\SceneManager.h"
-#include "../GameL/Audio.h"
+//#include "../GameL/Audio.h"
 
 #include "../ObjBGM.h"
 #include "../GameHead.h"
@@ -119,13 +119,13 @@ void CObjTitle::Draw()
 	if (m_f == true)
 	{
 		m_and -= 0.01;
-		if (m_and <= 0)
+		/*if (m_and <= 0)
 		{
 			m_BGM++;
 			Scene::SetScene(new CSceneOP());
 			Audio::Stop(0);
 			m_f = false;
-		}
+		}*/
 	}
 	RECT_F src;
 	RECT_F dst;
