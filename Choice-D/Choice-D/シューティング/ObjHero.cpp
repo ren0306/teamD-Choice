@@ -148,7 +148,7 @@ void CObjHero::Action()
 			m_cnt--;
 
 			//”­ŽË‰¹‚ð–Â‚ç‚·
-			//Audio::Start(2);
+			Audio::Start(2);
 			if (m_cnt <= 0)
 			{
 				m_f = false;
