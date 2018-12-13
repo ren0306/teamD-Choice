@@ -79,7 +79,7 @@ void CObjOP::Action()
 void CObjOP::Draw()
 {
 	float c[4] = { 1,1,1,m_and };
-	float k[4] = { 0.3,0.6,0.6,m_and };
+	float k[4] = { 0.7,0.7,0.0,m_and };
 	float d[4] = { 1.0f,1.0f,1.0f,m_and };
 
 	RECT_F src;
