@@ -21,6 +21,7 @@ void CObjMain2::Init()
 	m_and = 0.0;
 	m_f = false;
 	m_key_flag = false;
+	m_timecnt = 50;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -54,6 +55,8 @@ void CObjMain2::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 	float d[4] = { 0.0f,0.0f,0.0f,1.0f };
+	float g[4] = { 0.0f,1.0f,0.0f,m_and };
+
 	RECT_F src;//•`‰æŒ³Ø‚èæ‚èˆÊ’u
 	RECT_F dst;//•`‰ææ•\¦ˆÊ’u
 
@@ -145,6 +148,17 @@ void CObjMain2::Draw()
 	else
 	{
 		m_key_flag = true;
+	}
+	if (m_clear == true)
+	{
+		Font::StrDraw(L"+30•b", 40, 50, 30, g);
+		m_TimeL += 1800;//‚R‚O•b‘‰Á
+		m_clearcnt--;
+		if (m_clearcnt <= 0)
+		{
+			m_clear = false;
+			m_clearcnt = 500.f;
+		}
 	}
 
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
