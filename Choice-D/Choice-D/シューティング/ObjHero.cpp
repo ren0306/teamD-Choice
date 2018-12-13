@@ -180,8 +180,8 @@ void CObjHero::Action()
 	//Aを長押しでチャージ
 	if (Input::GetVKey('A') == true)
 	{
-		
-		
+	
+
 		m_tame++;
 		if (m_tame >= 100)
 		{
@@ -196,6 +196,10 @@ void CObjHero::Action()
 				Objs::InsertObj(a, OBJ_CHARGE_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
 				m_cnt--;
 				m_tame = 0;
+
+				//testチャージエフェクト
+				//CObjChargeEffect*ef = new CObjChargeEffect(m_x, m_y);
+				//Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
 			}
 		}
 	}
