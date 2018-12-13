@@ -39,14 +39,26 @@ void CObjTitle::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0f;
+	m_and = 0.0f;
 	m_end = false;
 	m_sousa = false;
+	m_andf = true;
 }
 
 //アクション
 void CObjTitle::Action()
 {
+	if (m_andf == true)
+	{
+		m_and += 0.03;
+		if (m_and >= 1)
+		{
+			m_and = 1.0;
+			m_andf = false;
+		}
+
+	}
+
 
 
 	//マウスの位置を取得
