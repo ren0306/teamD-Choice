@@ -653,6 +653,7 @@
     </ClInclude>
     <ClInclude Include="ObjSTG5.h">
       <Filter>ソースファイル\STG\Scene\メイン</Filter>
+    </ClInclude>
     <ClInclude Include="CObjChargeEffect.h">
       <Filter>ソースファイル\STG</Filter>
     </ClInclude>
@@ -714,4 +715,5 @@
       <Filter>リソースファイル</Filter>
     </Library>
   </ItemGroup>
+  
 </Project>
