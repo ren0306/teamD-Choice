@@ -29,6 +29,13 @@ CSceneSTG2::~CSceneSTG2()
 //ゲームシューティング2初期化メソッド
 void CSceneSTG2::InitScene()
 {
+
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
+
+	Audio::Start(0);
+
 	//背景を読み込み0番に登録
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
 

@@ -29,6 +29,12 @@ CSceneSTG3::~CSceneSTG3()
 void CSceneSTG3::InitScene()
 {
 
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
+
+	Audio::Start(0);
+
 	//STGオブジェクト作成
 	CObjSTG3* obj = new CObjSTG3();
 	Objs::InsertObj(obj, OBJ_STG3, 10);
