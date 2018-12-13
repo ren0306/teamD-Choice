@@ -117,6 +117,7 @@ extern float m_misscnt;//間違えた時の時間を減らす表示をする変数
 extern float m_clearcnt;
 extern bool m_clear;
 extern bool m_miss;//答え間違いならtrue変数
+extern float m_BGM;
 
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------

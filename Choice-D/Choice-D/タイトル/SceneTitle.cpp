@@ -16,6 +16,7 @@ using namespace GameL;
 #include "../ゲームメイン/SceneMain.h"
 #include "SceneTitle.h"
 #include "../GameHead.h"
+#include "../ObjBGM.h"
 
 //コンストラクタ
 CSceneTitle::CSceneTitle()
@@ -30,12 +31,7 @@ CSceneTitle::~CSceneTitle()
 //ゲームタイトル初期化メソッド
 void CSceneTitle::InitScene()
 {
-	//音楽情報の読み込み
-	Audio::LoadAudio(0, L"TitleBGM.wav", SOUND_TYPE::BACK_MUSIC);
-
-	//バックミュージックスタート
-	float Volumu = Audio::VolumeMaster(-0.8f); //マスターボリュームを0.8下げる。
-	Audio::Start(0);//音楽スタート
+	Audio::Start(0);
 
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");

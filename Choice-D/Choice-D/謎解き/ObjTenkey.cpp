@@ -155,6 +155,7 @@ void CObjTenkey::Draw()
 	{
 		Font::StrDraw(L"[“š‚¦Œˆ’èƒ{ƒ^ƒ“]", 0, 450, 30, s);
 	}
+	//ŠÔˆá‚¦‚é‚Æ‚R‚O•b’á‰º‚µ‚½‚±‚Æ‚ğ•\¦‚·‚éˆ—
 	if (m_miss == true)
 	{
 		Font::StrDraw(L"-30•b", 40, 50, 30, r);
