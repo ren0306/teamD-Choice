@@ -36,6 +36,10 @@ float CObjHero::GetY()
 	return m_y;
 }
 
+bool CObjHero::GetDeath()
+{
+	return death;
+}
 //イニシャライズ
 void CObjHero::Init()
 {

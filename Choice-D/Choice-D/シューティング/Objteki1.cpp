@@ -42,7 +42,13 @@ void CObjteki1::Init()
 void CObjteki1::Action()
 {
 	//Audio::Start(0);
+	CObjHero* Hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
+	Herodeath = Hero->GetDeath();
 
+	if (Herodeath == true)
+	{
+		Audio::Stop(0);
+	}
 	//HitBoxˆÊ’u‚ðXV
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x +90, m_y +20);
