@@ -33,6 +33,9 @@ void CObjTenkey::Init()
 	m_flag[7] = false;
 	m_flag[8] = false;
 	m_flag[9] = false;
+	m_delete = true;
+	m_wannig = true;
+	m_time = 100;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -116,6 +119,7 @@ void CObjTenkey::Draw()
 			{
 				if (m_ok == true)
 				{
+					Audio::Start(3);
 					//‚P‚Â‚Å‚à‰ğ‚­‚Ætrue‚É‚·‚é
 					m_nazoflag = true;
 					//ED•ªŠò‚ÉŠÖŒW
@@ -126,10 +130,14 @@ void CObjTenkey::Draw()
 					m_clear = true;
 					m_TimeL += 1800;//‚R‚O•b‘‰Á
 
-					Scene::SetScene(new CSceneMain2);
 				}
 				else
 				{
+					if (m_wannig == true)
+					{
+						Audio::Start(2);
+						m_wannig == false;
+					}
 					m_TimeL -= 1800;//‚R‚O•b’á‰º
 					m_miss = true;
 					m_flag[1] = false;
@@ -149,6 +157,7 @@ void CObjTenkey::Draw()
 		else
 		{
 			m_f = true;
+			m_wannig = true;
 		}
 
 	}
@@ -167,38 +176,62 @@ void CObjTenkey::Draw()
 			m_misscnt = 100.f;
 		}
 	}
+	if (m_clear == true)
+	{
+		m_and -= 0.03;
+		if (m_and <= 0)
+		{
+			m_and = 0.0f;
+			Scene::SetScene(new CSceneMain2);
 
+		}
+	}
 	//[‚·‚×‚Äíœ]‚ğ‰Ÿ‚·‚Æ
 	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
 	{
 		Font::StrDraw(L"[‚·‚×‚Äíœ]", 500, 450, 30, f);
-
+		
 		if (m_mou_l == true)
 		{
-			m_flag[1] = false;
-			m_flag[2] = false;
-			m_flag[3] = false;
-			m_flag[4] = false;
-			m_flag[5] = false;
-			m_flag[6] = false;
-			m_flag[7] = false;
-			m_flag[8] = false;
-			m_flag[9] = false;
-			m_num[1] = 0;
-			m_num[2] = 0;
-			m_num[3] = 0;
-			m_num[4] = 0;
-			m_num[5] = 0;
-			m_num[6] = 0;
-			m_num[7] = 0;
-			m_num[8] = 0;
-			m_num[9] = 0;
+			if (m_f == true)
+			{
+				if (m_delete == true)
+				{
+					Audio::Start(1);
+					m_delete == false;
+				}
+				m_flag[1] = false;
+				m_flag[2] = false;
+				m_flag[3] = false;
+				m_flag[4] = false;
+				m_flag[5] = false;
+				m_flag[6] = false;
+				m_flag[7] = false;
+				m_flag[8] = false;
+				m_flag[9] = false;
+				m_num[1] = 0;
+				m_num[2] = 0;
+				m_num[3] = 0;
+				m_num[4] = 0;
+				m_num[5] = 0;
+				m_num[6] = 0;
+				m_num[7] = 0;
+				m_num[8] = 0;
+				m_num[9] = 0;
 
-			cnt = 0;
+				cnt = 0;
+				m_f = false;
+			}
+		}
+		else
+		{
+			m_f = true;
+			m_delete = true;
 		}
 	}
 	else
 	{
+
 		Font::StrDraw(L"[‚·‚×‚Äíœ]", 500, 450, 30, f);
 	}
 

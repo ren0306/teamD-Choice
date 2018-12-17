@@ -5,7 +5,7 @@
 //GameLで使用するヘッダー
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
-
+#include "../GameL/Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -27,6 +27,10 @@ CSceneED2::~CSceneED2()
 //ゲームエンディング2初期化メソッド
 void CSceneED2::InitScene()
 {
+
+	Audio::LoadAudio(0, L"ENDBGM .wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::Start(0);
+
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
 

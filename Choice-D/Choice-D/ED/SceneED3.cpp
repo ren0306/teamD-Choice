@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
+#include "../GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -17,6 +18,7 @@ using namespace GameL;
 //コンストラクタ
 CSceneED3::CSceneED3()
 {
+
 }
 
 //デストラクタ
@@ -27,6 +29,9 @@ CSceneED3::~CSceneED3()
 //ゲームタイトル初期化メソッド
 void CSceneED3::InitScene()
 {
+	Audio::LoadAudio(0, L"HAPPY ENDBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::Start(0);
+
 	//出力させる文字のグラフィックを作成
 	Font::SetStrTex(L"ゲームを始める");
 

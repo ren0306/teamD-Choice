@@ -36,7 +36,6 @@ void CSceneMain4::InitScene()
 
 	//BGMを登録
 	Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	float Volume = Audio::VolumeMaster(-0.9f);//マスターボリュームを0.8下げる
 
 	Audio::Start(0);
 
