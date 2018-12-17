@@ -80,8 +80,8 @@ void CSceneSTG::InitScene()
 	CObjTimeLimit* t = new CObjTimeLimit();
 	Objs::InsertObj(t, OBJ_TIME, 150);
 
-	//CObjChargeEffect*ef = new CObjChargeEffect(0, 0);
-	//Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
+	CObjChargeEffect*ef = new CObjChargeEffect(-100, -100);
+	Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
 }
 
 //ゲームシューティング実行中メソッド

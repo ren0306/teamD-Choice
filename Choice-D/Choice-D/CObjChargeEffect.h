@@ -14,12 +14,14 @@ public:
 	void Init();	//イニシャライズ
 	void Action();  //アクション
 	void Draw();	//ドロー
-	void Set(int a);//アニメーションコマ変更用
+	void Set(bool f);//アニメーションフラグ変更用
 private:
 	float m_x;	//オブジェクトの位置Ｘ
 	float m_y;	//オブジェクトの位置Ｙ
 
-	int	   m_ani;	//着弾アニメーション用
-	int	   m_ani_time;//着弾アニメーション間隔タイム
-	RECT_F m_eff;	//着弾エフェクト描画用
+	int	   m_ani;	//チャージアニメーション用
+	int	   m_ani_time;//チャージアニメーション間隔タイム
+	RECT_F m_eff;	//チャージエフェクト描画用
+
+	bool m_ani_flag;//trueでアニメーション動作、falseでアニメーション停止
 };

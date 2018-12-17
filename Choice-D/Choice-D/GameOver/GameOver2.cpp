@@ -5,7 +5,7 @@
 //GameLで使用するヘッダー
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
-
+#include "../GameL/Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -29,6 +29,9 @@ CSceneGameOver2::~CSceneGameOver2()
 //ゲームオーバー2初期化メソッド
 void CSceneGameOver2::InitScene()
 {
+	Audio::LoadAudio(0, L"GAMEOVERBGM .wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::Start(0);
+
 	//敵3画像を読み込み15番に登録
 	Draw::LoadImage(L"teki3.png", 15, TEX_SIZE_512);
 
