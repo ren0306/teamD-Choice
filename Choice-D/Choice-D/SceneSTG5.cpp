@@ -46,6 +46,9 @@ void CSceneSTG5::InitScene()
 	//主人公を読み込み6番に登録
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
 
+	//チャージエフェクトを読み込み8番に登録
+	Draw::LoadImage(L"ChargeEffect.png", 8, TEX_SIZE_512);
+
 	//敵弾丸を読み込み30番に登録
 	Draw::LoadImage(L"Bullet5.png", 30, TEX_SIZE_512);
 
@@ -73,7 +76,8 @@ void CSceneSTG5::InitScene()
 	CObjTimeLimit* t = new CObjTimeLimit();
 	Objs::InsertObj(t, OBJ_TIME, 150);
 
-	
+	CObjChargeEffect*ef = new CObjChargeEffect(-100, -100);
+	Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
 }
 
 //ゲームシューティング5実行中メソッド

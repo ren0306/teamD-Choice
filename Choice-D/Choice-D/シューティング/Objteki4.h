@@ -26,4 +26,5 @@ private:
 
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
+	int m_dtime;
 };

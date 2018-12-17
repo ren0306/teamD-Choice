@@ -63,9 +63,7 @@ void CObjteki5::Action()
 	if (m_r > 360.0f)
 		m_r = 0.0f;
 
-	//移動方向
-	m_vx = sin(3.14 / 180 * m_r);
-	m_vy = 0.0f;
+	
 
 	//移動ベクトル正規化
 	UnitVec(&m_vy, &m_vx);
@@ -90,6 +88,19 @@ void CObjteki5::Action()
 		this->SetStatus(false);		//自身に削除命令
 		Hits::DeleteHitBox(this);
 	}
+
+	//HPが75%以下(26.25)になったら縦移動(往復)を追加する(縦移動に変更する)
+	if(m_hp<=26.25)
+		{
+		//移動方向
+		m_vx = 0.0f;
+		m_vy = cos(3.14 / 180 * m_r);
+		}
+	else {
+		//移動方向
+		m_vx = sin(3.14 / 180 * m_r);
+		m_vy = 0.0f;
+		}
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{

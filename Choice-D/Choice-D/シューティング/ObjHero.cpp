@@ -183,11 +183,15 @@ void CObjHero::Action()
 			m_tame = 0.f;
 		}
 	}
+
+	//チャージエフェクトのアニメーション動作をObjHero内で管理するため、ここでチャージエフェクトのオブジェクトを取得
+	CObjChargeEffect* obj = (CObjChargeEffect*)Objs::GetObj(OBJ_CHARGE_EFFECT);
+
 	//Aを長押しでチャージ
 	if (Input::GetVKey('A') == true)
 	{
-	
-
+		obj->Set(true);//チャージエフェクトアニメーションを動作させる。
+		
 		m_tame++;
 		if (m_tame >= 100)
 		{
@@ -202,13 +206,14 @@ void CObjHero::Action()
 				Objs::InsertObj(a, OBJ_CHARGE_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
 				m_cnt--;
 				m_tame = 0;
-
-				//testチャージエフェクト
-				//CObjChargeEffect*ef = new CObjChargeEffect(m_x, m_y);
-				//Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
 			}
 		}
 	}
+	else
+	{
+		obj->Set(false);//チャージエフェクトアニメーションを停止させる。
+	}
+
 	//主人公機の移動ベクトル初期化
 	m_vx = 0.0f;
 	m_vy = 0.0f;
@@ -326,6 +331,7 @@ void CObjHero::Action()
 	{
 		death = true;
 
+		obj->Set(false);//チャージエフェクトアニメーションを停止させる。
 		Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxを削除する。
 	}
 }
