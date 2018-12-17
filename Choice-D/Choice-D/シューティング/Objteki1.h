@@ -27,5 +27,5 @@ class CObjteki1 :public CObj
 		float m_hp ;
 		float m_maxhp;
 		bool m_f;
-
+		bool Herodeath;
 };

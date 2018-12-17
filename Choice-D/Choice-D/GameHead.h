@@ -15,6 +15,7 @@ enum OBJ_NAME
 	OBJ_BULLET_TEKI4,
 	OBJ_BULLET_TEKI5,
 	OBJ_CHARGE_BULLET,
+	OBJ_CHARGE_EFFECT,
 	OBJ_ANGLE_BULLET,
 	OBJ_HOMING_BULLET,
 	OBJ_MEANDER_BULLET,
@@ -136,6 +137,7 @@ extern float m_BGM;
 #include "CObjAngleBullet.h"
 #include "CObjHomingBullet.h"
 #include "シューティング\CObjChargeBullt.h"
+#include "CObjChargeEffect.h"
 //#include "CObjBulletMove.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"

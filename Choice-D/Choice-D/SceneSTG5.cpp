@@ -28,7 +28,11 @@ CSceneSTG5::~CSceneSTG5()
 //ゲームシューティング5初期化メソッド
 void CSceneSTG5::InitScene()
 {
+	//音楽情報の読み込み
+	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
 
+	Audio::Start(0);
 	//STGオブジェクト作成
 	CObjSTG5* obj = new CObjSTG5();
 	Objs::InsertObj(obj, OBJ_STG5, 10);
@@ -46,6 +50,9 @@ void CSceneSTG5::InitScene()
 
 	//主人公を読み込み6番に登録
 	Draw::LoadImage(L"hero.png", 6, TEX_SIZE_512);
+
+	//チャージエフェクトを読み込み8番に登録
+	Draw::LoadImage(L"ChargeEffect.png", 8, TEX_SIZE_512);
 
 	//敵弾丸を読み込み30番に登録
 	Draw::LoadImage(L"Bullet5.png", 30, TEX_SIZE_512);
@@ -74,7 +81,8 @@ void CSceneSTG5::InitScene()
 	CObjTimeLimit* t = new CObjTimeLimit();
 	Objs::InsertObj(t, OBJ_TIME, 150);
 
-	
+	CObjChargeEffect*ef = new CObjChargeEffect(-100, -100);
+	Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
 }
 
 //ゲームシューティング5実行中メソッド

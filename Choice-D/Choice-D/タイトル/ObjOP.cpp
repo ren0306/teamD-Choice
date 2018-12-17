@@ -146,7 +146,7 @@ void CObjOP::Draw()
 		dst.m_left = 50.0f;
 		dst.m_right =410.0f+30;
 		dst.m_bottom = 300.0f+300;
-		Draw::Draw(1, &src, &dst, d, 0.0f);
+		Draw::Draw(2, &src, &dst, d, 0.0f);
 
 	}
 

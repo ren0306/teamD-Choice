@@ -151,13 +151,11 @@ void CObjMain2::Draw()
 	}
 	if (m_clear == true)
 	{
-		Font::StrDraw(L"+30ïb", 40, 50, 30, g);
-		m_TimeL += 18;//ÇRÇOïbëùâ¡
 		m_clearcnt--;
 		if (m_clearcnt <= 0)
 		{
 			m_clear = false;
-			m_clearcnt = 500.f;
+			m_clearcnt = 100.f;
 		}
 	}
 

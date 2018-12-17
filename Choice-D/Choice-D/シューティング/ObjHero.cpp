@@ -36,6 +36,10 @@ float CObjHero::GetY()
 	return m_y;
 }
 
+bool CObjHero::GetDeath()
+{
+	return death;
+}
 //イニシャライズ
 void CObjHero::Init()
 {
@@ -173,14 +177,20 @@ void CObjHero::Action()
 		
 		if (Input::GetVKey('R') == true)
 		{
+			Audio::Start(2);
+
 			m_cnt = 7.f;
 			m_tame = 0.f;
 		}
 	}
+
+	//チャージエフェクトのアニメーション動作をObjHero内で管理するため、ここでチャージエフェクトのオブジェクトを取得
+	CObjChargeEffect* obj = (CObjChargeEffect*)Objs::GetObj(OBJ_CHARGE_EFFECT);
+
 	//Aを長押しでチャージ
 	if (Input::GetVKey('A') == true)
 	{
-		
+		obj->Set(true);//チャージエフェクトアニメーションを動作させる。
 		
 		m_tame++;
 		if (m_tame >= 100)
@@ -199,6 +209,11 @@ void CObjHero::Action()
 			}
 		}
 	}
+	else
+	{
+		obj->Set(false);//チャージエフェクトアニメーションを停止させる。
+	}
+
 	//主人公機の移動ベクトル初期化
 	m_vx = 0.0f;
 	m_vy = 0.0f;
@@ -316,6 +331,7 @@ void CObjHero::Action()
 	{
 		death = true;
 
+		obj->Set(false);//チャージエフェクトアニメーションを停止させる。
 		Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxを削除する。
 	}
 }

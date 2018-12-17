@@ -18,6 +18,7 @@ public:
 	void SetY(float y);//位置情報Y変更用
 	float GetX();	   //位置情報X取得用
 	float GetY();	   //位置情報Y取得用
+	bool GetDeath(); 
 private:
 	float m_x;		//主人公機のｘ方向移動用変数
 	float m_y;		//主人公機のｙ方向移動用変数
