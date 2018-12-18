@@ -149,7 +149,7 @@ void CObjTitle::Draw()
 			Audio::Start(1);
 			m_flag = false;
 		}
-		m_and -= 0.01f;
+		m_and -= 0.02f;
 		if (m_and <= 0)
 		{
 

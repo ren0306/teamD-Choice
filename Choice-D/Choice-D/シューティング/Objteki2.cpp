@@ -27,14 +27,14 @@ void CObjteki2::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//“–‚½‚è”»’èHitBox
-	Hits::SetHitBox(this, m_x, m_y, 180, 170, ELEMENT_ENEMY, OBJ_TEKI2, 1);
+	Hits::SetHitBox(this, m_x , m_y, 85, 130, ELEMENT_ENEMY, OBJ_TEKI2, 1);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjteki2::Action()
 {
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_x, m_y);
+	hit->SetPos(m_x +55, m_y +20);
 
 	m_time++;
 
@@ -57,12 +57,31 @@ void CObjteki2::Action()
 			for (int i = 250; i < 290; i += 8)
 			{
 				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-				obj_b = new CObjAngleBullet(m_x + 90, m_y + 125, i, 5.5f);
+				obj_b = new CObjAngleBullet(m_x + 85, m_y + 125, i, 5.5f);
 				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 			}
 		}
 
 	}
+
+	//ƒVƒ‡ƒbƒgƒKƒ“•—ŠgŽU’e”­ŽË(AngleBullet‚ð‰ž—p‚µ‚Ä‚¢‚é)
+	//260‹` 280‹‚Ì”ÍˆÍ(‰º•ûŒü)‚É2‹ŠÔŠu‚Å’eŠÛ”­ŽË
+	if (m_hp <= 10)
+	{
+		if (m_time % 75 == 0)
+		{
+			//‰º•ûŒü‚É11”­“¯Žž”­ŽË
+			CObjAngleBullet* obj_b;
+			for (int i = 245; i < 305; i += 12)
+			{
+				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
+				obj_b = new CObjAngleBullet(m_x + 85, m_y + 125, i, 5.0f);
+				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			}
+		}
+
+	}
+
 
 	//m_time‚Ì‰Šú‰»
 	if (m_time > 1000)

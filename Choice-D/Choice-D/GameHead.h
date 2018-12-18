@@ -136,6 +136,7 @@ extern float m_BGM;
 #include "CObjBulletTeki5.h"
 #include "CObjAngleBullet.h"
 #include "CObjHomingBullet.h"
+#include "CObjMeanderBullet.h"
 #include "シューティング\CObjChargeBullt.h"
 #include "CObjChargeEffect.h"
 //#include "CObjBulletMove.h"
@@ -226,5 +227,5 @@ extern float m_BGM;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMain4
+#define SET_GAME_START CSceneSTG2
 //-----------------------------------------------

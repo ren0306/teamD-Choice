@@ -14,7 +14,7 @@ CObjteki4::CObjteki4(float x, float y)
 {
 	m_hp = 25.f;
 	m_maxhp = 25.f;
-	m_dtime = 50;
+	m_dtime = 300;
 	m_x = x;
 	m_y = y;
 
@@ -107,20 +107,22 @@ void CObjteki4::Action()
 		Hits::DeleteHitBox(this);
 	}
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
-	if (m_hp <= 0)
+	if (m_hp <= 20)
 	{
-		m_tekicnt++;
-		m_floor++;
-		/*this->SetStatus(false);
-		Hits::DeleteHitBox(this);*/
 		m_dtime--;
+
 		if (m_dtime <= 0)
 		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			m_tekicnt++;
+			m_floor++;
+
 			m_endflag = true;
 			Scene::SetScene(new CSceneKuria4());
 		}
 		//20‹ŠÔŠu‚Å’eŠÛ”­Ë(ŠgU’e”­Ë)
-		else if (m_time % 100 == 0)
+		else if (m_time % 10 == 0)
 		{
 			//19”­“¯”­Ë
 			CObjAngleBullet* obj_b;
