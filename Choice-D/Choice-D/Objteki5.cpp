@@ -90,9 +90,28 @@ void CObjteki5::Action()
 		this->SetStatus(false);		//©g‚Éíœ–½—ß
 		Hits::DeleteHitBox(this);
 	}
+	//HP‚ª26.25ˆÈ‰º‚É‚È‚Á‚½‚ç	c•ûŒüˆÚ“®’Ç‰Á
+	if (m_hp <= 26.25)
+	{
+		m_vx -= sin(3.14f / 60 * m_r);
+		m_vy += sin(3.14f /	180 * m_r);
+		m_x -= m_vx;
+		m_y += m_vy;
+		
+		
+	}
+	//HP‚ª17.5ˆÈ‰º‚É‚È‚Á‚½‚ç@	“G’e‚ªÅ‘å1”½Ë‚·‚é
+	if (m_hp <= 17.5)
+	{
+		m_vx = sin(3.14 / 180 * m_r);
+		m_vy = sin(3.14 / 180 * m_r);
+		m_x += m_vx;
+		m_y += m_vy;
+	}
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
+		m_endflag = true;
 		/*this->SetStatus(false);
 		Hits::DeleteHitBox(this);*/
 		if (m_endflag == true)
@@ -105,6 +124,8 @@ void CObjteki5::Action()
 			{
 				Scene::SetScene(new CSceneED1());
 			}
+			Scene::SetScene(new CSceneED2());
+
 		}
 	}
 
