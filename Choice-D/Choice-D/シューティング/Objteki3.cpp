@@ -64,7 +64,7 @@ void CObjteki3::Action()
 	if (m_r > 360.0f)
 		m_r = 0.0f;
 	//ˆÚ“®•ûŒü
-	m_vx = sin(3.14 / 180 * m_r);
+	m_vx = sin(3.14f / 180 * m_r);
 	m_vy = 0.0f;
 	//ˆÚ“®ƒxƒNƒgƒ‹³‹K‰»z
 	UnitVec(&m_vy, &m_vx);

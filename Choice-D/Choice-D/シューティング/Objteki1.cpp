@@ -120,10 +120,10 @@ void CObjteki1::Action()
 	{
 		//‰º•ûŒü‚É11”­“¯Žž”­ŽË
 		CObjAngleBullet* obj_b;
-		for (int i = 260; i < 280; i += 2)
+		for (float i = 260.0f; i < 280.0f; i += 2.0f)
 		{
 			//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-			obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+			obj_b = new CObjAngleBullet(m_x + 178.0f, m_y + 95.0f, i, 5.0f);
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
@@ -146,8 +146,8 @@ void CObjteki1::Action()
 		m_r2 = 0.0f;
 
 	//ˆÚ“®•ûŒü
-	m_vx = sin(3.14 / 180 * m_r);
-	m_vy = sin(3.14 / 30 * m_r2);
+	m_vx = sin(3.14f / 180 * m_r);
+	m_vy = sin(3.14f / 30 * m_r2);
 
 	//ˆÚ“®ƒxƒNƒgƒ‹³‹K‰»
 	UnitVec(&m_vy, &m_vx);

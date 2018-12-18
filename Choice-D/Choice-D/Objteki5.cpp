@@ -94,16 +94,17 @@ void CObjteki5::Action()
 		{
 		//ˆÚ“®•ûŒü
 		m_vx = 0.0f;
-		m_vy = cos(3.14 / 180 * m_r);
+		m_vy = cos(3.14f / 180 * m_r);
 		}
 	else {
 		//ˆÚ“®•ûŒü
-		m_vx = sin(3.14 / 180 * m_r);
+		m_vx = sin(3.14f / 180 * m_r);
 		m_vy = 0.0f;
 		}
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
+		m_endflag = true;
 		/*this->SetStatus(false);
 		Hits::DeleteHitBox(this);*/
 		if (m_endflag == true)
@@ -116,6 +117,8 @@ void CObjteki5::Action()
 			{
 				Scene::SetScene(new CSceneED1());
 			}
+			Scene::SetScene(new CSceneED2());
+
 		}
 	}
 
