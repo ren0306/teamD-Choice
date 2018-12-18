@@ -73,11 +73,11 @@ void CObjHomingBullet::Action()
 		if (ar - br > 20)
 		{
 			//ˆÚ“®•ûŒü‚ğålŒö‹@‚Ì•ûŒü‚É‚·‚é
-			m_vx = cos(3.14 / 180 * ar);
-			m_vy = -sin(3.14 / 180 * ar);
+			m_vx = cos(3.14f / 180 * ar);
+			m_vy = -sin(3.14f / 180 * ar);
 		}
 
-		float r = 3.14 / 180.0f;	//Šp“x‚P‹
+		float r = 3.14f / 180.0f;	//Šp“x‚P‹
 		if (ar < br)
 		{
 			//ˆÚ“®•ûŒü‚É+1‹‰Á‚¦‚é
