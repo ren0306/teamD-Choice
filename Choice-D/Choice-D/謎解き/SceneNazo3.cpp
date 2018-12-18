@@ -29,6 +29,12 @@ CSceneNazo3::~CSceneNazo3()
 //ゲームタイトル初期化メソッド
 void CSceneNazo3::InitScene()
 {
+	Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(1, L"delete.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(2, L"warning.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(3, L"next.wav", SOUND_TYPE::EFFECT);
+	Audio::Start(0);
+
 	//出力させる文字のグラフィックを作成
 	//例　Font::SetStrTex(L"ゲームを始める");
 	Draw::LoadImage(L"Main3.png", 0, TEX_SIZE_512);

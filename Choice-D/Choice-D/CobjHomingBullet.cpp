@@ -73,11 +73,11 @@ void CObjHomingBullet::Action()
 		if (ar - br > 20)
 		{
 			//移動方向を主人公機の方向にする
-			m_vx = cos(3.14 / 180 * ar);
-			m_vy = -sin(3.14 / 180 * ar);
+			m_vx = cos(3.14f / 180 * ar);
+			m_vy = -sin(3.14f / 180 * ar);
 		}
 
-		float r = 3.14 / 180.0f;	//角度１°
+		float r = 3.14f / 180.0f;	//角度１°
 		if (ar < br)
 		{
 			//移動方向に+1°加える
@@ -122,7 +122,7 @@ void CObjHomingBullet::Action()
 void CObjHomingBullet::Draw()
 {
 	//描画カラー情報  R=RED  G=Green  B=Blue A=alpha(透過情報)
-	float  c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float  c[4] = { 0.0f,0.8f,0.8f,1.0f };
 
 	RECT_F dst; //描画先表示位置
 

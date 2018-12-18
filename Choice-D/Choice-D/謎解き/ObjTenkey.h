@@ -30,10 +30,13 @@ private:
 	bool m_ok;//解答確認変数
 	bool m_f;
 	bool m_andf;
+	bool m_delete;
+	bool m_wannig;
 	//------------------------------------
 	int cnt ;//桁数チェックカウント	
 	int m_num[10];//解答配列
 	int m_anser;//答え確認変数
 	float m_and;
+	int m_time;
 
 };

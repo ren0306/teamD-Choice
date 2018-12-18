@@ -36,11 +36,9 @@ void CSceneMain2::InitScene()
 
 	//BGMを登録
 	Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	float Volume = Audio::VolumeMaster(-0.9f);//マスターボリュームを0.8下げる
 
 	Audio::Start(0);
 
-	//Audio::Start(1);
 	//外部グラフィックファイルを読み込み０番に登録
 	Draw::LoadImage(L"ss01.png", 0, TEX_SIZE_512);
 	Draw::LoadImage(L"door2.png", 1, TEX_SIZE_512);

@@ -66,7 +66,7 @@ void CObjMeanderBullet::Action()
 		m_r = 0.0f;
 
 	//ˆÚ“®•ûŒü
-	m_vx = sin(3.14 / 90 * m_r);
+	m_vx = sin(3.14f / 90 * m_r);
 	m_vy = 1.0f;
 
 	//ˆÚ“®ƒxƒNƒgƒ‹‚Ì³‹K‰»

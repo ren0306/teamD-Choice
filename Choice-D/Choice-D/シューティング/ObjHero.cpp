@@ -70,7 +70,7 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 1.0f;
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, m_x, m_y, 5, 5, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //アクション
@@ -135,7 +135,7 @@ void CObjHero::Action()
 	//フェードイン
 	if (m_andf == true)
 	{
-		m_and += 0.1;
+		m_and += 0.1f;
 		if (m_and >= 1)
 		{
 			m_and = 1.0;
@@ -149,7 +149,6 @@ void CObjHero::Action()
 	{
 		if (m_f == true)
 		{
-			m_cnt--;
 
 			//発射音を鳴らす
 			Audio::Start(2);
@@ -171,18 +170,18 @@ void CObjHero::Action()
 	{
 		m_f = true;
 	}
-	//Rを押してリロード
-	if (m_cnt <= 0)
-	{
-		
-		if (Input::GetVKey('R') == true)
-		{
-			Audio::Start(2);
+	////Rを押してリロード
+	//if (m_cnt <= 0)
+	//{
+	//	
+	//	if (Input::GetVKey('R') == true)
+	//	{
+	//		Audio::Start(2);
 
-			m_cnt = 7.f;
-			m_tame = 0.f;
-		}
-	}
+	//		m_cnt = 7.f;
+	//		m_tame = 0.f;
+	//	}
+	//}
 
 	//チャージエフェクトのアニメーション動作をObjHero内で管理するため、ここでチャージエフェクトのオブジェクトを取得
 	CObjChargeEffect* obj = (CObjChargeEffect*)Objs::GetObj(OBJ_CHARGE_EFFECT);
@@ -281,7 +280,7 @@ void CObjHero::Action()
 
 	//HitBoxの内容を更新
 	CHitBox* hit = Hits::GetHitBox(this);	//作成したHitBox更新用の入り口を取り出す
-	hit->SetPos(m_x, m_y);					//入り口から新しい位置(主人公機の位置）情報に置き換える
+	hit->SetPos(m_x+15, m_y+15);					//入り口から新しい位置(主人公機の位置）情報に置き換える
 
 	//ELEMENT_ENEMYを持つオブジェクトと接触したらHPを減らす
 	if (hit->CheckElementHit(ELEMENT_ENEMY) == true)

@@ -63,9 +63,7 @@ void CObjteki5::Action()
 	if (m_r > 360.0f)
 		m_r = 0.0f;
 
-	//ˆÚ“®•ûŒü
-	m_vx = sin(3.14 / 180 * m_r);
-	m_vy = 0.0f;
+	
 
 	//ˆÚ“®ƒxƒNƒgƒ‹³‹K‰»
 	UnitVec(&m_vy, &m_vx);
@@ -90,24 +88,19 @@ void CObjteki5::Action()
 		this->SetStatus(false);		//©g‚Éíœ–½—ß
 		Hits::DeleteHitBox(this);
 	}
-	//HP‚ª26.25ˆÈ‰º‚É‚È‚Á‚½‚ç	c•ûŒüˆÚ“®’Ç‰Á
-	if (m_hp <= 26.25)
-	{
-		m_vx -= sin(3.14f / 60 * m_r);
-		m_vy += sin(3.14f /	180 * m_r);
-		m_x -= m_vx;
-		m_y += m_vy;
-		
-		
-	}
-	//HP‚ª17.5ˆÈ‰º‚É‚È‚Á‚½‚ç@	“G’e‚ªÅ‘å1”½Ë‚·‚é
-	if (m_hp <= 17.5)
-	{
-		m_vx = sin(3.14 / 180 * m_r);
-		m_vy = sin(3.14 / 180 * m_r);
-		m_x += m_vx;
-		m_y += m_vy;
-	}
+
+	//HP‚ª75%ˆÈ‰º(26.25)‚É‚È‚Á‚½‚çcˆÚ“®(‰•œ)‚ğ’Ç‰Á‚·‚é(cˆÚ“®‚É•ÏX‚·‚é)
+	if(m_hp<=26.25)
+		{
+		//ˆÚ“®•ûŒü
+		m_vx = 0.0f;
+		m_vy = cos(3.14f / 180 * m_r);
+		}
+	else {
+		//ˆÚ“®•ûŒü
+		m_vx = sin(3.14f / 180 * m_r);
+		m_vy = 0.0f;
+		}
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
