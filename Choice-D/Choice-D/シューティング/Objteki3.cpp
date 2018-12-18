@@ -16,6 +16,8 @@ CObjteki3::CObjteki3(float x, float y)
 	m_maxhp = 40.f;
 	m_x = x;
 	m_y = y;
+	m_hit = 0;
+
 
 }
 
@@ -26,8 +28,10 @@ void CObjteki3::Init()
 	m_r = 45.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	m_hit = 0;
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y , 150, 130, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+	Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13 - m_hit, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+
 }
 
 //アクション
@@ -36,13 +40,17 @@ void CObjteki3::Action()
 	m_time++;
 
 	//通常弾発射
-	if (m_time % 40 == 0)
+	if (m_time % 50 == 0)
 	{
-		//弾丸敵機オブジェクト
-		CObjBulletTeki3* obj_b = new CObjBulletTeki3(m_x + 68, m_y + 95);
-		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI3, 100);
+		//19発同時発射
+		CObjAngleBullet* obj_b;
+		for (int i = 0; i < 360; i += 20)
+		{
+			//角度iで角度弾丸発射
+			obj_b = new CObjAngleBullet(m_x, m_y , i, 5.0f);
+			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+		}
 	}
-
 	//m_timeの初期化
 	if (m_time > 1000)
 	{
@@ -55,16 +63,14 @@ void CObjteki3::Action()
 	//360°で初期値に戻す
 	if (m_r > 360.0f)
 		m_r = 0.0f;
-
 	//移動方向
 	m_vx = sin(3.14 / 180 * m_r);
 	m_vy = 0.0f;
-
-	//移動ベクトル正規化
+	//移動ベクトル正規化z
 	UnitVec(&m_vy, &m_vx);
 
 	//速度付ける。
-	m_vx *= 2.5f;
+	m_vx *= 3.5f;
 	m_vy *= 2.5f;
 
 	//移動ベクトルを座標に加算する
@@ -100,14 +106,28 @@ void CObjteki3::Action()
 	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		m_hp -= 1;
+		//ダメージを受けると画像と当たり判定が小さくなる
+		m_hit += 4;
+		Hits::DeleteHitBox(this);
+
+		//当たり判定HitBox
+		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+
 	}
 	//チャージ弾のダメージ３
 	if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
 	{
 		m_hp -= 3;
+		//ダメージを受けると画像と当たり判定が小さくなる
+		m_hit += 12;
+		Hits::DeleteHitBox(this);
+
+		//当たり判定HitBox
+		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 	}
 
+	
 
 }
 
@@ -138,7 +158,8 @@ void CObjteki3::Draw()
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 
-			   //切り取り位置の設定
+	//敵3表示
+   //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 512.0f;
@@ -147,8 +168,8 @@ void CObjteki3::Draw()
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
 	dst.m_left = 0.0f + m_x;
-	dst.m_right = 200.0f + m_x;
-	dst.m_bottom = 200.0f + m_y;
+	dst.m_right = 200.0f + m_x - m_hit;
+	dst.m_bottom = 200.0f + m_y - m_hit;
 
 	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);

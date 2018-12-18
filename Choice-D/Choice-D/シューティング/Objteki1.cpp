@@ -30,6 +30,7 @@ void CObjteki1::Init()
 	m_f = false;
 	m_time = 0;
 	m_r = 85.0f;
+	m_r2 = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	//当たり判定HitBox
@@ -58,19 +59,18 @@ void CObjteki1::Action()
 
 	m_time++;
 
-	//通常弾発射
-	if (m_time % 50 == 0)
-	{
-		//弾丸敵機オブジェクト
-		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
-		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
-
-	}
-
 	//以下の拡散弾、誘導弾等のプログラムは
 	//TEST用で一時的に追加してるだけなので
 	//不要な場合はコメントアウトしてOK。
 	/*
+	//通常弾発射
+	if (m_time % 50 == 0)
+	{
+	//弾丸敵機オブジェクト
+	CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
+	Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
+	}
+
 	//20°間隔で弾丸発射(拡散弾発射)
 	if (m_time % 100 == 0)
 	{
@@ -83,25 +83,10 @@ void CObjteki1::Action()
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
-	*/
+
 	//ショットガン風拡散弾発射(AngleBulletを応用している)
 	//260°～ 280°の範囲(下方向)に2°間隔で弾丸発射
-	if (m_hp <= 15)
-	{
-		if (m_time % 50 == 0)
-		{
-			//下方向に11発同時発射
-			CObjAngleBullet* obj_b;
-			for (int i = 260; i < 280; i += 2)
-			{
-				//角度iで角度弾丸発射
-				obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
-				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
-			}
-		}
-
-	}
-	else if (m_time % 100 == 0)
+	if (m_time % 100 == 0)
 	{
 		//下方向に11発同時発射
 		CObjAngleBullet* obj_b;
@@ -112,7 +97,7 @@ void CObjteki1::Action()
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
-	/*
+
 	//誘導弾発射
 	if (m_time % 200 == 0)
 	{
@@ -129,6 +114,20 @@ void CObjteki1::Action()
 		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
 	}
 	*/
+
+	//攻撃パターン
+	if (m_time % 50 == 0)
+	{
+		//下方向に11発同時発射
+		CObjAngleBullet* obj_b;
+		for (int i = 260; i < 280; i += 2)
+		{
+			//角度iで角度弾丸発射
+			obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+		}
+	}
+
 	//m_timeの初期化
 	if (m_time > 1000)
 	{
@@ -137,14 +136,18 @@ void CObjteki1::Action()
 
 	//角度加算
 	m_r += 1.0f;
+	m_r2 += 0.5f;
 
 	//360°で初期値に戻す
 	if (m_r > 360.0f)
 		m_r = 0.0f;
 
+	if (m_r2 > 360.0f)
+		m_r2 = 0.0f;
+
 	//移動方向
 	m_vx = sin(3.14 / 180 * m_r);
-	m_vy = 0.0f;
+	m_vy = sin(3.14 / 30 * m_r2);
 
 	//移動ベクトル正規化
 	UnitVec(&m_vy, &m_vx);
