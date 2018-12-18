@@ -227,5 +227,5 @@ extern float m_BGM;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneSTG2
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
