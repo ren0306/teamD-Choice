@@ -135,7 +135,7 @@ void CObjHero::Action()
 	//フェードイン
 	if (m_andf == true)
 	{
-		m_and += 0.1;
+		m_and += 0.1f;
 		if (m_and >= 1)
 		{
 			m_and = 1.0;

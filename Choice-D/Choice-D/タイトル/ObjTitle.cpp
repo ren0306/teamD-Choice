@@ -54,7 +54,7 @@ void CObjTitle::Action()
 {
 	if (m_andf == true)
 	{
-		m_and += 0.03;
+		m_and += 0.03f;
 		if (m_and >= 1)
 		{
 			m_and = 1.0;
@@ -149,7 +149,7 @@ void CObjTitle::Draw()
 			Audio::Start(1);
 			m_flag = false;
 		}
-		m_and -= 0.02;
+		m_and -= 0.02f;
 		if (m_and <= 0)
 		{
 
@@ -170,7 +170,7 @@ void CObjTitle::Draw()
 			m_flag2 = false;
 		}
 
-		m_and -= 0.03;
+		m_and -= 0.03f;
 		if (m_and <= 0)
 		{
 			exit(4);
@@ -189,7 +189,7 @@ void CObjTitle::Draw()
 			m_flag3 = false;
 		}
 
-		m_and -= 0.03;
+		m_and -= 0.03f;
 		if (m_and <= 0)
 		{
 
