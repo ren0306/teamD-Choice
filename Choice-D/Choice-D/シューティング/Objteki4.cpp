@@ -14,7 +14,7 @@ CObjteki4::CObjteki4(float x, float y)
 {
 	m_hp = 25.f;
 	m_maxhp = 25.f;
-	m_dtime = 500;
+	m_dtime = 50;
 	m_x = x;
 	m_y = y;
 
