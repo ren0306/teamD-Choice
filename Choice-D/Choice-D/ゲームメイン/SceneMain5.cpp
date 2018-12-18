@@ -46,10 +46,10 @@ void CSceneMain5::InitScene()
 	//ìGÇQÇì«Ç›çûÇ›2î‘Ç…ìoò^
 	Draw::LoadImage(L"teki5.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"sentaku.png", 3, TEX_SIZE_512);
-
+	
 	CObjMain5* m = new CObjMain5();
 	Objs::InsertObj(m, OBJ_MAIN5, 140);
-
+	
 	CObjBackGround5* b = new CObjBackGround5();
 	Objs::InsertObj(b, OBJ_BACKGROUND5, 120);
 
@@ -58,7 +58,7 @@ void CSceneMain5::InitScene()
 
 	CObjTimeLimit* t = new CObjTimeLimit();
 	Objs::InsertObj(t, OBJ_TIME, 150);
-
+	
 
 
 }
