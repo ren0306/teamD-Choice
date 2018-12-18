@@ -14,7 +14,7 @@ CObjteki4::CObjteki4(float x, float y)
 {
 	m_hp = 25.f;
 	m_maxhp = 25.f;
-	m_dtime = 500;
+	m_dtime = 50;
 	m_x = x;
 	m_y = y;
 
@@ -127,7 +127,7 @@ void CObjteki4::Action()
 			for (int i = 0; i < 360; i += 20)
 			{
 				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-				obj_b = new CObjAngleBullet(m_x + 178, m_y + 95, i, 5.0f);
+				obj_b = new CObjAngleBullet(m_x + 65, m_y + 95, i, 5.0f);
 				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 			}
 		}
