@@ -37,11 +37,6 @@ void CSceneSTG5::InitScene()
 	CObjSTG5* obj = new CObjSTG5();
 	Objs::InsertObj(obj, OBJ_STG5, 10);
 
-	//âπäyèÓïÒÇÃì«Ç›çûÇ›
-	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
-	Audio::Start(0);
-
 	//îwåiÇì«Ç›çûÇ›0î‘Ç…ìoò^
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);
 

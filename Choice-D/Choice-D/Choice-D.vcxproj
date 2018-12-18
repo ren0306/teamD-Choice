@@ -186,10 +186,18 @@
     <ClCompile Include="シューティング\ObjSTG2.cpp" />
     <ClCompile Include="シューティング\ObjSTG3.cpp" />
     <ClCompile Include="シューティング\ObjSTG4.cpp" />
-    <ClCompile Include="シューティング\Objteki1.cpp" />
-    <ClCompile Include="シューティング\Objteki2.cpp" />
-    <ClCompile Include="シューティング\Objteki3.cpp" />
-    <ClCompile Include="シューティング\Objteki4.cpp" />
+    <ClCompile Include="シューティング\Objteki1.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="シューティング\Objteki2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="シューティング\Objteki3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="シューティング\Objteki4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="シューティング\SceneKuria.cpp" />
     <ClCompile Include="シューティング\SceneKuria2.cpp" />
     <ClCompile Include="シューティング\SceneKuria3.cpp" />
@@ -316,10 +324,18 @@
     <ClInclude Include="シューティング\ObjSTG2.h" />
     <ClInclude Include="シューティング\ObjSTG3.h" />
     <ClInclude Include="シューティング\ObjSTG4.h" />
-    <ClInclude Include="シューティング\Objteki1.h" />
-    <ClInclude Include="シューティング\Objteki2.h" />
-    <ClInclude Include="シューティング\Objteki3.h" />
-    <ClInclude Include="シューティング\Objteki4.h" />
+    <ClInclude Include="シューティング\Objteki1.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="シューティング\Objteki2.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="シューティング\Objteki3.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="シューティング\Objteki4.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="シューティング\SceneKuria.h" />
     <ClInclude Include="シューティング\SceneKuria2.h" />
     <ClInclude Include="シューティング\SceneKuria3.h" />

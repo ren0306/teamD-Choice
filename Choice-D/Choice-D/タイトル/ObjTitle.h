@@ -23,5 +23,8 @@ private:
 	bool m_f;
 	bool m_sousa;
 	bool m_andf;
+	bool m_flag;
+	bool m_flag2;
+	bool m_flag3;
 
 };
