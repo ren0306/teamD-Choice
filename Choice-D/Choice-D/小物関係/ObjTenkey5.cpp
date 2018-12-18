@@ -34,11 +34,21 @@ void CObjTenkey5::Init()
 	m_flag[8] = false;
 	m_flag[9] = false;
 	m_misscnt = 100.f;
+	m_clear = false;
 }
 
 //アクション
 void CObjTenkey5::Action()
 {
+	if (m_andf == true)
+	{
+		m_and += 0.1f;
+		if (m_and >= 1)
+		{
+			m_and = 1.0f;
+			m_andf = false;
+		}
+	}
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -59,13 +69,13 @@ void CObjTenkey5::Action()
 //ドロー
 void CObjTenkey5::Draw()
 {	//白
-	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float f[4] = { 1.0f,1.0f,1.0f,m_and };
 	//赤
-	float r[4] = { 1.0f,0.0f,0.0f,1.0f };
+	float r[4] = { 1.0f,0.0f,0.0f,m_and };
 	//黄色
-	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
+	float s[4] = { 1.0f,1.0f,0.0f,m_and };
 	//紫
-	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	float o[4] = { 0.5f,0.0f,1.0f,m_and };
 	Font::StrDraw(L"この問題は2桁の数字のみ入力可能です", 160, 550, 30, r);
 
 	RECT_F src;
@@ -106,17 +116,18 @@ void CObjTenkey5::Draw()
 			{
 				if (m_ok == true)
 				{
-					if (m_Nazocnt == 4)
-					{
-						Scene::SetScene(new CSceneED3);
-					}
-					else
-					{
-						Scene::SetScene(new CSceneED2);
-					}
+					Audio::Start(3);
+					m_clear = true;
+
 				}
 				else
 				{
+					if (m_wannig == true)
+					{
+						Audio::Start(2);
+						m_wannig == false;
+					}
+
 					m_flag[1] = false;
 					m_flag[2] = false;
 					m_flag[3] = false;
@@ -143,6 +154,7 @@ void CObjTenkey5::Draw()
 		else
 		{
 			m_f = true;
+			m_wannig = true;
 		}
 	}
 	else
@@ -159,6 +171,34 @@ void CObjTenkey5::Draw()
 			m_misscnt = 100.f;
 		}
 	}
+	if (m_Nazocnt == 4)
+	{
+		if (m_clear == true)
+		{
+			m_and -= 0.03;
+			if (m_and <= 0)
+			{
+				m_and = 0.0f;
+				Scene::SetScene(new CSceneED3);
+
+			}
+		}
+
+	}
+	else
+	{
+		if (m_clear == true)
+		{
+			m_and -= 0.03;
+			if (m_and <= 0)
+			{
+				m_and = 0.0f;
+				Scene::SetScene(new CSceneED2);
+
+			}
+		}
+
+	}
 
 
 	//[すべて削除]を押すと
@@ -168,30 +208,45 @@ void CObjTenkey5::Draw()
 
 		if (m_mou_l == true)
 		{
-			m_flag[1] = false;
-			m_flag[2] = false;
-			m_flag[3] = false;
-			m_flag[4] = false;
-			m_flag[5] = false;
-			m_flag[6] = false;
-			m_flag[7] = false;
-			m_flag[8] = false;
-			m_flag[9] = false;
-			m_num[1] = 0;
-			m_num[2] = 0;
-			m_num[3] = 0;
-			m_num[4] = 0;
-			m_num[5] = 0;
-			m_num[6] = 0;
-			m_num[7] = 0;
-			m_num[8] = 0;
-			m_num[9] = 0;
+			if (m_f == true)
+			{
+				if (m_delete == true)
+				{
+					Audio::Start(1);
+					m_delete == false;
+				}
+				m_flag[1] = false;
+				m_flag[2] = false;
+				m_flag[3] = false;
+				m_flag[4] = false;
+				m_flag[5] = false;
+				m_flag[6] = false;
+				m_flag[7] = false;
+				m_flag[8] = false;
+				m_flag[9] = false;
+				m_num[1] = 0;
+				m_num[2] = 0;
+				m_num[3] = 0;
+				m_num[4] = 0;
+				m_num[5] = 0;
+				m_num[6] = 0;
+				m_num[7] = 0;
+				m_num[8] = 0;
+				m_num[9] = 0;
 
-			cnt = 0;
+				cnt = 0;
+				m_f = false;
+			}
+		}
+		else
+		{
+			m_f = true;
+			m_delete = true;
 		}
 	}
 	else
 	{
+
 		Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
 	}
 

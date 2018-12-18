@@ -44,13 +44,22 @@ void CObjTenkey2::Init()
 	m_cnt[8] = 0;
 	m_cnt[9] = 0;
 
-
+	m_clear = false;
 	m_misscnt = 100.f;
 }
 
 //アクション
 void CObjTenkey2::Action()
 {
+	if (m_andf == true)
+	{
+		m_and += 0.1f;
+		if (m_and >= 1)
+		{
+			m_and = 1.0f;
+			m_andf = false;
+		}
+	}
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -71,15 +80,15 @@ void CObjTenkey2::Action()
 //ドロー
 void CObjTenkey2::Draw()
 {	//白
-	float f[4] = { 1.0f,1.0f,1.0f,1.0f };
+	float f[4] = { 1.0f,1.0f,1.0f,m_and };
 	//赤
-	float r[4] = { 1.0f,0.0f,0.0f,1.0f };
+	float r[4] = { 1.0f,0.0f,0.0f,m_and };
 	//黄色
-	float s[4] = { 1.0f,1.0f,0.0f,1.0f };
+	float s[4] = { 1.0f,1.0f,0.0f,m_and };
 	//紫
-	float o[4] = { 0.5f,0.0f,1.0f,1.0f };
+	float o[4] = { 0.5f,0.0f,1.0f,m_and };
 	//青
-	float b[4] = { 0.0f,0.0f,1.0f,1.0f };
+	float b[4] = { 0.0f,0.0f,1.0f,m_and };
 
 	Font::StrDraw(L"この問題は2桁の数字のみ入力可能です", 160, 550, 30, r);
 
@@ -122,16 +131,23 @@ void CObjTenkey2::Draw()
 			{
 				if (m_ok == true)
 				{
+					Audio::Start(3);
 					//１つでも解くとtrueにする
 					m_nazoflag = true;
 					//
 					m_Nazocnt++;
 					m_floor++;
 					m_TimeL += 1800;//３０秒増加
-					Scene::SetScene(new CSceneMain3);
+					m_clear = true;
 				}
 				else
 				{
+					if (m_wannig == true)
+					{
+						Audio::Start(2);
+						m_wannig == false;
+					}
+
 					m_TimeL -= 1800;//３０秒低下
 					m_miss = true;
 					m_flag[1] = false;
@@ -152,6 +168,15 @@ void CObjTenkey2::Draw()
 					m_num[7] = 0;
 					m_num[8] = 0;
 					m_num[9] = 0;
+					m_cnt[1] = 0;
+					m_cnt[2] = 0;
+					m_cnt[3] = 0;
+					m_cnt[4] = 0;
+					m_cnt[5] = 0;
+					m_cnt[6] = 0;
+					m_cnt[7] = 0;
+					m_cnt[8] = 0;
+					m_cnt[9] = 0;
 
 
 				}
@@ -162,6 +187,7 @@ void CObjTenkey2::Draw()
 		else
 		{
 			m_f = true;
+			m_wannig = true;
 		}
 
 	}
@@ -179,6 +205,16 @@ void CObjTenkey2::Draw()
 			m_misscnt = 100.f;
 		}
 	}
+	if (m_clear == true)
+	{
+		m_and -= 0.03;
+		if (m_and <= 0)
+		{
+			m_and = 0.0f;
+			Scene::SetScene(new CSceneMain3);
+
+		}
+	}
 
 	//[すべて削除]を押すと
 	if (m_mou_x >= 500 && m_mou_x <= 666 && m_mou_y >= 442 && m_mou_y <= 470)
@@ -187,43 +223,57 @@ void CObjTenkey2::Draw()
 
 		if (m_mou_l == true)
 		{
-			m_flag[1] = false;
-			m_flag[2] = false;
-			m_flag[3] = false;
-			m_flag[4] = false;
-			m_flag[5] = false;
-			m_flag[6] = false;
-			m_flag[7] = false;
-			m_flag[8] = false;
-			m_flag[9] = false;
-			m_num[1] = 0;
-			m_num[2] = 0;
-			m_num[3] = 0;
-			m_num[4] = 0;
-			m_num[5] = 0;
-			m_num[6] = 0;
-			m_num[7] = 0;
-			m_num[8] = 0;
-			m_num[9] = 0;
-			m_cnt[1] = 0;
-			m_cnt[2] = 0;
-			m_cnt[3] = 0;
-			m_cnt[4] = 0;
-			m_cnt[5] = 0;
-			m_cnt[6] = 0;
-			m_cnt[7] = 0;
-			m_cnt[8] = 0;
-			m_cnt[9] = 0;
+			if (m_f == true)
+			{
+				if (m_delete == true)
+				{
+					Audio::Start(1);
+					m_delete == false;
+				}
+				m_flag[1] = false;
+				m_flag[2] = false;
+				m_flag[3] = false;
+				m_flag[4] = false;
+				m_flag[5] = false;
+				m_flag[6] = false;
+				m_flag[7] = false;
+				m_flag[8] = false;
+				m_flag[9] = false;
+				m_num[1] = 0;
+				m_num[2] = 0;
+				m_num[3] = 0;
+				m_num[4] = 0;
+				m_num[5] = 0;
+				m_num[6] = 0;
+				m_num[7] = 0;
+				m_num[8] = 0;
+				m_num[9] = 0;
+				m_cnt[1] = 0;
+				m_cnt[2] = 0;
+				m_cnt[3] = 0;
+				m_cnt[4] = 0;
+				m_cnt[5] = 0;
+				m_cnt[6] = 0;
+				m_cnt[7] = 0;
+				m_cnt[8] = 0;
+				m_cnt[9] = 0;
+				
 
-
-			cnt = 0;
+				cnt = 0;
+				m_f = false;
+			}
+		}
+		else
+		{
+			m_f = true;
+			m_delete = true;
 		}
 	}
 	else
 	{
+
 		Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
 	}
-
 	//テンキー出力（切り取り位置）
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;

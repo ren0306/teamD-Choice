@@ -459,10 +459,6 @@ bool CObjTenkey::Anser ()
 	//“š‚¦
 	int m_anser[QUESTION][ANSER] = {
 		{ 4 },
-		{ 1,5},
-		{ 7,4,8,9 },
-		{ 3,4,7,9 },
-		{ 5,6,7,9 },
 	};
 	//“š‚¦Šm”Fˆ—
 	for (int j = 0;j<1; j++)
