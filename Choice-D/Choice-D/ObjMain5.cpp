@@ -55,7 +55,7 @@ void CObjMain5::Draw()
 	float d[4] = { 0.0f,0.0f,0.0f,1.0f };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-
+	
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
@@ -63,7 +63,7 @@ void CObjMain5::Draw()
 	wchar_t kaisou[4];
 	swprintf_s(kaisou, L"%d階層", m_floor);
 	Font::StrDraw(kaisou, 710, 0, 35, c);
-
+	
 	//前シーンから左または右クリックを押し続けている、
 	//もしくはこのシーンに入って一度でもクリックを押してない状態に移行すると実行。
 	if (m_mou_r == true || m_mou_l == true || m_key_flag == true)
