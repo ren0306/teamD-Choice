@@ -111,6 +111,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CObjChargeEffect.cpp" />
+    <ClCompile Include="CObjEnemyEX.cpp" />
     <ClCompile Include="ED\ObjED1.cpp" />
     <ClCompile Include="ED\ObjED2.cpp" />
     <ClCompile Include="ED\ObjED3.cpp" />
@@ -247,6 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjChargeEffect.h" />
+    <ClInclude Include="CObjEnemyEX.h" />
     <ClInclude Include="ED\ObjED1.h" />
     <ClInclude Include="ED\ObjED2.h" />
     <ClInclude Include="ED\ObjED3.h" />

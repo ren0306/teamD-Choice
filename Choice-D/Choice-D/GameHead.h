@@ -67,6 +67,7 @@ enum OBJ_NAME
 	OBJ_KURIA4,
 	OBJ_KURIA5,
 	OBJ_OP,
+	OBJ_EX,
 };
 //------------------------------------------------
 
@@ -191,6 +192,7 @@ extern float m_BGM;
 #include "シューティング\ObjKuria4.h"
 #include "タイトル\ObjOP.h"
 #include "ObjBulletMove.h"
+#include "CObjEnemyEX.h"
 
 //------------------------------------------------
 

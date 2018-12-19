@@ -346,6 +346,9 @@
     <ClCompile Include="ゲームメイン\ObjMain5.cpp">
       <Filter>ソースファイル\メイン</Filter>
     </ClCompile>
+    <ClCompile Include="CObjEnemyEX.cpp">
+      <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -664,6 +667,9 @@
     </ClInclude>
     <ClInclude Include="ゲームメイン\ObjMain5.h">
       <Filter>ソースファイル\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjEnemyEX.h">
+      <Filter>ソースファイル\STG</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
