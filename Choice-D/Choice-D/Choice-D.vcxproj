@@ -110,17 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CObjAngleBullet.cpp" />
-    <ClCompile Include="CObjBulletTeki1.cpp" />
-    <ClCompile Include="CObjBulletTeki2.cpp" />
-    <ClCompile Include="CObjBulletTeki3.cpp" />
-    <ClCompile Include="CObjBulletTeki4.cpp" />
-    <ClCompile Include="CObjBulletTeki5.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="CObjChargeEffect.cpp" />
-    <ClCompile Include="CobjHomingBullet.cpp" />
-    <ClCompile Include="CObjMeanderBullet.cpp" />
     <ClCompile Include="ED\ObjED1.cpp" />
     <ClCompile Include="ED\ObjED2.cpp" />
     <ClCompile Include="ED\ObjED3.cpp" />
@@ -154,29 +144,32 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="ObjBGNazo2.cpp" />
-    <ClCompile Include="ObjBGNazo3.cpp" />
-    <ClCompile Include="ObjBGNazo4.cpp" />
-    <ClCompile Include="ObjBGNazo5.cpp" />
-    <ClCompile Include="ObjMain3.cpp" />
-    <ClCompile Include="ObjMain4.cpp" />
-    <ClCompile Include="ObjMain5.cpp" />
     <ClCompile Include="ObjSTG5.cpp" />
     <ClCompile Include="Objteki5.cpp" />
     <ClCompile Include="SceneSTG5.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="STGBackground.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain.cpp" />
     <ClCompile Include="ゲームメイン\ObjMain2.cpp" />
+    <ClCompile Include="ゲームメイン\ObjMain3.cpp" />
+    <ClCompile Include="ゲームメイン\ObjMain4.cpp" />
+    <ClCompile Include="ゲームメイン\ObjMain5.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain2.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain3.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain5.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="シューティング\CObjAngleBullet.cpp" />
     <ClCompile Include="シューティング\CObjBullet.cpp" />
+    <ClCompile Include="シューティング\CObjBulletTeki1.cpp" />
+    <ClCompile Include="シューティング\CObjBulletTeki2.cpp" />
+    <ClCompile Include="シューティング\CObjBulletTeki3.cpp" />
+    <ClCompile Include="シューティング\CObjBulletTeki4.cpp" />
+    <ClCompile Include="シューティング\CObjBulletTeki5.cpp" />
     <ClCompile Include="シューティング\CObjChargeBullet.cpp" />
+    <ClCompile Include="シューティング\CobjHomingBullet.cpp" />
+    <ClCompile Include="シューティング\CObjMeanderBullet.cpp" />
     <ClCompile Include="シューティング\ObjHero.cpp" />
     <ClCompile Include="シューティング\ObjKuria.cpp" />
     <ClCompile Include="シューティング\ObjKuria2.cpp" />
@@ -212,6 +205,7 @@
     <ClCompile Include="シューティング\SceneSTG4.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="シューティング\STGBackground.cpp" />
     <ClCompile Include="シューティング\UtilityModule.cpp" />
     <ClCompile Include="タイトル\ObjOP.cpp" />
     <ClCompile Include="タイトル\ObjSousagamen.cpp" />
@@ -240,6 +234,10 @@
     <ClCompile Include="小物関係\ObjTenkey5.cpp" />
     <ClCompile Include="小物関係\TimeLimit.cpp" />
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />
+    <ClCompile Include="謎解き\ObjBGNazo2.cpp" />
+    <ClCompile Include="謎解き\ObjBGNazo3.cpp" />
+    <ClCompile Include="謎解き\ObjBGNazo4.cpp" />
+    <ClCompile Include="謎解き\ObjBGNazo5.cpp" />
     <ClCompile Include="謎解き\ObjTenkey.cpp" />
     <ClCompile Include="謎解き\SceneNazo.cpp" />
     <ClCompile Include="謎解き\SceneNazo2.cpp" />
@@ -248,15 +246,7 @@
     <ClCompile Include="謎解き\SceneNazo5.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CObjAngleBullet.h" />
-    <ClInclude Include="CObjBulletTeki1.h" />
-    <ClInclude Include="CObjBulletTeki2.h" />
-    <ClInclude Include="CObjBulletTeki3.h" />
-    <ClInclude Include="CObjBulletTeki4.h" />
-    <ClInclude Include="CObjBulletTeki5.h" />
     <ClInclude Include="CObjChargeEffect.h" />
-    <ClInclude Include="CobjHomingBullet.h" />
-    <ClInclude Include="CObjMeanderBullet.h" />
     <ClInclude Include="ED\ObjED1.h" />
     <ClInclude Include="ED\ObjED2.h" />
     <ClInclude Include="ED\ObjED3.h" />
@@ -291,19 +281,14 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="ObjBGNazo2.h" />
-    <ClInclude Include="ObjBGNazo3.h" />
-    <ClInclude Include="ObjBGNazo4.h" />
-    <ClInclude Include="ObjBGNazo5.h" />
-    <ClInclude Include="ObjMain3.h" />
-    <ClInclude Include="ObjMain4.h" />
-    <ClInclude Include="ObjMain5.h" />
     <ClInclude Include="ObjSTG5.h" />
     <ClInclude Include="Objteki5.h" />
     <ClInclude Include="SceneSTG5.h" />
-    <ClInclude Include="STGBackground.h" />
     <ClInclude Include="ゲームメイン\ObjMain.h" />
     <ClInclude Include="ゲームメイン\ObjMain2.h" />
+    <ClInclude Include="ゲームメイン\ObjMain3.h" />
+    <ClInclude Include="ゲームメイン\ObjMain4.h" />
+    <ClInclude Include="ゲームメイン\ObjMain5.h" />
     <ClInclude Include="ゲームメイン\SceneMain.h" />
     <ClInclude Include="ゲームメイン\SceneMain2.h" />
     <ClInclude Include="ゲームメイン\SceneMain3.h" />
@@ -313,8 +298,16 @@
     <ClInclude Include="ゲームメイン\SceneMain5.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="シューティング\CObjAngleBullet.h" />
     <ClInclude Include="シューティング\CObjBullet.h" />
+    <ClInclude Include="シューティング\CObjBulletTeki1.h" />
+    <ClInclude Include="シューティング\CObjBulletTeki2.h" />
+    <ClInclude Include="シューティング\CObjBulletTeki3.h" />
+    <ClInclude Include="シューティング\CObjBulletTeki4.h" />
+    <ClInclude Include="シューティング\CObjBulletTeki5.h" />
     <ClInclude Include="シューティング\CObjChargeBullt.h" />
+    <ClInclude Include="シューティング\CobjHomingBullet.h" />
+    <ClInclude Include="シューティング\CObjMeanderBullet.h" />
     <ClInclude Include="シューティング\ObjHero.h" />
     <ClInclude Include="シューティング\ObjKuria.h" />
     <ClInclude Include="シューティング\ObjKuria2.h" />
@@ -344,6 +337,7 @@
     <ClInclude Include="シューティング\SceneSTG2.h" />
     <ClInclude Include="シューティング\SceneSTG3.h" />
     <ClInclude Include="シューティング\SceneSTG4.h" />
+    <ClInclude Include="シューティング\STGBackground.h" />
     <ClInclude Include="シューティング\UtilityModule.h" />
     <ClInclude Include="タイトル\ObjOP.h" />
     <ClInclude Include="タイトル\ObjSousagamen.h" />
@@ -368,6 +362,10 @@
     <ClInclude Include="小物関係\ObjTenkey5.h" />
     <ClInclude Include="小物関係\TimeLimit.h" />
     <ClInclude Include="謎解き\ObjBGNazo.h" />
+    <ClInclude Include="謎解き\ObjBGNazo2.h" />
+    <ClInclude Include="謎解き\ObjBGNazo3.h" />
+    <ClInclude Include="謎解き\ObjBGNazo4.h" />
+    <ClInclude Include="謎解き\ObjBGNazo5.h" />
     <ClInclude Include="謎解き\ObjTenkey.h" />
     <ClInclude Include="謎解き\SceneNazo.h" />
     <ClInclude Include="謎解き\SceneNazo2.h" />

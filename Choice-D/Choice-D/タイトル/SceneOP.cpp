@@ -32,6 +32,8 @@ CSceneOP::~CSceneOP()
 void CSceneOP::InitScene()
 {	
 	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(1, L"ChoiceSE.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(2, L"next.wav", SOUND_TYPE::EFFECT);
 
 	Audio::Start(0);
 	Draw::LoadImage(L"OPtobira.png", 1, TEX_SIZE_512);

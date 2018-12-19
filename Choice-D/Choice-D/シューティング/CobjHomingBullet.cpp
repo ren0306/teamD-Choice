@@ -1,9 +1,9 @@
 //使用するヘッダーファイル
-#include "GameL\DrawTexture.h"
-#include "GameL\HitBoxManager.h"
-#include "GameHead.h"
+#include "../GameL\DrawTexture.h"
+#include "../GameL\HitBoxManager.h"
+#include "../GameHead.h"
 #include "CObjHomingBullet.h"
-#include "シューティング\UtilityModule.h"
+#include "UtilityModule.h"
 
 //使用するネームスペース
 using namespace GameL;

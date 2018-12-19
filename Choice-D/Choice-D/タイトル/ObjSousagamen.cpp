@@ -61,7 +61,7 @@ void CObjSousagamen::Action()
 		m_and -= 0.03f;
 		if (m_and <= 0)
 		{
-			m_and == 0.0f;
+			m_and = 0.0f;
 			Scene::SetScene(new CSceneTitle());
 
 		}

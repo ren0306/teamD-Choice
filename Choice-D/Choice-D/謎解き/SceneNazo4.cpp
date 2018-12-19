@@ -33,6 +33,8 @@ void CSceneNazo4::InitScene()
 	Audio::LoadAudio(1, L"delete.wav", SOUND_TYPE::EFFECT);
 	Audio::LoadAudio(2, L"warning.wav", SOUND_TYPE::EFFECT);
 	Audio::LoadAudio(3, L"next.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(4, L"keyboardSE.wav", SOUND_TYPE::EFFECT);
+
 	Audio::Start(0);
 
 	//出力させる文字のグラフィックを作成
