@@ -136,7 +136,7 @@ void CObjTenkey::Draw()
 					if (m_wannig == true)
 					{
 						Audio::Start(2);
-						m_wannig == false;
+						m_wannig = false;
 					}
 					m_TimeL -= 1800;//ÇRÇOïbí·â∫
 					m_miss = true;
@@ -198,7 +198,7 @@ void CObjTenkey::Draw()
 				if (m_delete == true)
 				{
 					Audio::Start(1);
-					m_delete == false;
+					m_delete = false;
 				}
 				m_flag[1] = false;
 				m_flag[2] = false;
@@ -345,8 +345,17 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[7] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
+						m_flag[7] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 			}
 			//4ì¸óÕ
@@ -354,9 +363,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[4] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[4] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 			}
 
@@ -366,9 +384,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[1] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[1] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 			}
 		}
@@ -380,9 +407,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[8] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[8] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
@@ -391,9 +427,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[5] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[5] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
@@ -402,9 +447,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[2] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[2] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
@@ -418,9 +472,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[9] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[9] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
@@ -429,9 +492,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[6] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[6] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 
@@ -441,9 +513,18 @@ void CObjTenkey::Tenkey()
 			{
 				if (m_mou_l == true)
 				{
-					m_flag[3] = true;
-					cnt++;
+					if (m_f == true)
+					{
+						Audio::Start(4);
 
+						m_flag[3] = true;
+						cnt++;
+						m_f = false;
+					}
+				}
+				else
+				{
+					m_f = true;
 				}
 
 			}
@@ -459,10 +540,6 @@ bool CObjTenkey::Anser ()
 	//ìöÇ¶
 	int m_anser[QUESTION][ANSER] = {
 		{ 4 },
-		{ 1,5},
-		{ 7,4,8,9 },
-		{ 3,4,7,9 },
-		{ 5,6,7,9 },
 	};
 	//ìöÇ¶ämîFèàóù
 	for (int j = 0;j<1; j++)

@@ -53,7 +53,7 @@ void CObjBackGround::Draw()
 		m_and += 0.1f;
 		if (m_and >= 1)
 		{
-			m_and == 1.0f;
+			m_and =1.0f;
 			m_f = false;
 		}
 	}

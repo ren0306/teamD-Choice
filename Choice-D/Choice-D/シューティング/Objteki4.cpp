@@ -107,7 +107,7 @@ void CObjteki4::Action()
 		Hits::DeleteHitBox(this);
 	}
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
-	if (m_hp <= 20)
+	if (m_hp <= 0)
 	{
 		m_dtime--;
 

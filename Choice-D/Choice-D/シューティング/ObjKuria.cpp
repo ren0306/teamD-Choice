@@ -48,8 +48,6 @@ void CObjKuria::Draw()
 	
 	
 
-	RECT_F src;
-	RECT_F dst;
 
 	float d[4] = { 1.0f,1.0f,1.0f,1.0f };
 	Font::StrDraw(L"“G‚ð“|‚µ‚½", 280, 260, 50, d);
