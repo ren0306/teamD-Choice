@@ -89,13 +89,13 @@
       <Filter>ソースファイル\謎解き</Filter>
     </ClCompile>
     <ClCompile Include="ゲームメイン\ObjMain.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="ゲームメイン\SceneMain.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="ゲームメイン\SceneMain2.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="ED\ObjED1.cpp">
       <Filter>ソースファイル\ED</Filter>
@@ -113,19 +113,19 @@
       <Filter>ソースファイル\タイトル</Filter>
     </ClCompile>
     <ClCompile Include="ゲームメイン\SceneMain3.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\ObjDoor2.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="ゲームメイン\SceneMain5.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="ゲームメイン\ObjMain2.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\GameOvergamen.cpp">
       <Filter>ソースファイル\小物関係</Filter>
@@ -156,13 +156,13 @@
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjMain3.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjMain4.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="ObjMain5.cpp">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -342,6 +342,7 @@
     </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -431,13 +432,13 @@
       <Filter>ソースファイル\謎解き</Filter>
     </ClInclude>
     <ClInclude Include="ゲームメイン\ObjMain.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ゲームメイン\SceneMain.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ゲームメイン\SceneMain2.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ED\ObjED1.h">
       <Filter>ソースファイル\ED</Filter>
@@ -455,19 +456,19 @@
       <Filter>ソースファイル\タイトル</Filter>
     </ClInclude>
     <ClInclude Include="ゲームメイン\SceneMain3.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="小物関係\ObjDoor2.h">
       <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
     <ClInclude Include="ゲームメイン\SceneMain4.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ゲームメイン\SceneMain5.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ゲームメイン\ObjMain2.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="小物関係\GameOvergamen.h">
       <Filter>ソースファイル\小物関係</Filter>
@@ -498,13 +499,13 @@
       <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
     <ClInclude Include="ObjMain3.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjMain4.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ObjMain5.h">
-      <Filter>ソースファイル\メイン</Filter>
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="小物関係\TimeLimit.h">
       <Filter>ソースファイル</Filter>
@@ -685,9 +686,6 @@
     <Filter Include="ソースファイル\STG">
       <UniqueIdentifier>{aa193f39-49b2-47f6-92b0-1c68767ac6a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\メイン">
-      <UniqueIdentifier>{0c57de22-b459-4bfd-acbf-18a7fdc5e7c5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル\STG\Bullet">
       <UniqueIdentifier>{ecb8b446-a177-46f3-b5b7-02773c17eb6a}</UniqueIdentifier>
     </Filter>
@@ -702,6 +700,9 @@
     </Filter>
     <Filter Include="ソースファイル\STG\Scene\メイン">
       <UniqueIdentifier>{c144aa12-6ed4-4d71-8655-0b069d828019}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\小物関係\メイン">
+      <UniqueIdentifier>{0c57de22-b459-4bfd-acbf-18a7fdc5e7c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
