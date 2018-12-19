@@ -175,7 +175,7 @@ void CObjTenkey5::Draw()
 	{
 		if (m_clear == true)
 		{
-			m_and -= 0.03;
+			m_and -= 0.03f;
 			if (m_and <= 0)
 			{
 				m_and = 0.0f;
@@ -189,7 +189,7 @@ void CObjTenkey5::Draw()
 	{
 		if (m_clear == true)
 		{
-			m_and -= 0.03;
+			m_and -= 0.03f;
 			if (m_and <= 0)
 			{
 				m_and = 0.0f;
