@@ -5,7 +5,7 @@
 
 #include "GameHead.h"
 #include "Objteki5.h"
-#include "シューティング\Objteki1.h"
+#include "シューティング\Objteki5.h"
 #include "シューティング\UtilityModule.h"
 //使用するネームスペース
 using namespace GameL;
@@ -26,7 +26,7 @@ void CObjteki5::Init()
 {
 	m_time = 0;
 	m_r = 45.0f;
-	m_r2 = 0.0f;
+	m_r2 = 90.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f5 = false;
@@ -51,6 +51,18 @@ void CObjteki5::Action()
 		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI5, 100);
 	}
 
+	if (m_time % 70== 0)
+	{
+		//19発同時発射
+		CObjAngleBullet* obj_b;
+		for (int i = 0; i < 360; i += 20)
+		{
+			//角度iで角度弾丸発射
+			obj_b = new CObjAngleBullet(m_x + 75, m_y + 13, i, 5.0f);
+			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+		}
+	}
+
 	//m_timeの初期化
 	if (m_time > 1000)
 	{
@@ -59,7 +71,6 @@ void CObjteki5::Action()
 
 	//角度加算
 	m_r += 1.0f;
-	m_r2 += 2.0f;
 
 	//360°で初期値に戻す
 	if (m_r > 360.0f)
@@ -95,12 +106,22 @@ void CObjteki5::Action()
 	}
 
 	//HPが75%以下(26.25)になったら縦移動(往復)を追加する(縦移動に変更する)
-	if(m_hp<=26.25)
+	if (m_hp <= 26.25)
+	{
 		{
+			//20°間隔で弾丸発射(拡散弾発射)
+			if (m_time % 100 == 0)
+			{
+				
+			}
+		}
+		//角度加算
+		m_r2 += 2.0f;
+
 		//移動方向
 		m_vx = 0.0f;
 		m_vy = sin(3.14f / 180 * m_r2);
-		}
+	}
 	else{
 		//移動方向
 		m_vx = sin(3.14f / 180 * m_r);

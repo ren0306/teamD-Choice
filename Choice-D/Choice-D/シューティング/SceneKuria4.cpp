@@ -6,7 +6,7 @@
 #include "../GameL\SceneObjManager.h"
 #include "../GameL\DrawFont.h"
 #include "../GameL/DrawTexture.h"
-
+#include"../GameL/Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -28,7 +28,8 @@ CSceneKuria4::~CSceneKuria4()
 //バトルクリア初期化メソッド
 void CSceneKuria4::InitScene()
 {
-
+	Audio::LoadAudio(0, L"勝利.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::Start(0);
 
 
 	//クリアオブジェクト作成
