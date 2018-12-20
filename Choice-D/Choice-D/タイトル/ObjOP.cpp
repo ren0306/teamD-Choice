@@ -25,6 +25,8 @@ void CObjOP::Init()
 	m_and = 0.0f;
 	m_f = true;
 	m_cnt = 1;
+	m_gazo = false;
+	m_flag = true;
 }
 
 //アクション
@@ -55,6 +57,7 @@ void CObjOP::Action()
 
 			if (m_flag == true)
 			{
+				Audio::Start(1);
 				m_cnt++;
 				m_flag = false;
 
@@ -109,18 +112,35 @@ void CObjOP::Draw()
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneMain());
+			if (m_flag == true)
+			{
+				m_kesu = true;
+				Audio::Start(2);
+
+				m_flag = false;
+			}
+		}
+		else
+		{
+			m_flag = true;
 		}
 	}
 	else
 	{
 		Font::StrDraw(L"脱出を試みる", 570, 550, 32, c);
 	}
+	if (m_kesu == true)
+	{
+		m_and -= 0.02;
+		if (m_and <= 0)
+		{
+			Scene::SetScene(new CSceneMain());
+		}
+	}
 	if (m_cnt==1)
 	{
 		Font::StrDraw(L"モンスターに倒され、目覚めたら洞窟にいた", 115, 230, 30, k);
 		Font::StrDraw(L"制限時間内にここから脱出をしよう！", 170, 320, 30, k);
-
 	}
 	
 	if (m_cnt==2)

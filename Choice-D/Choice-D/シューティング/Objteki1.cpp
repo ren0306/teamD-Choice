@@ -33,6 +33,8 @@ void CObjteki1::Init()
 	m_r2 = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+
+	m_enemytime = 100;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
@@ -42,6 +44,8 @@ void CObjteki1::Init()
 //アクション
 void CObjteki1::Action()
 {
+
+
 	//Audio::Start(0);
 	CObjHero* Hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	Herodeath = Hero->GetDeath();
@@ -174,17 +178,22 @@ void CObjteki1::Action()
 
 	}
 
+	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
+
 	//HP０で
 	if (m_hp <= 0)
 	{
-		m_endflag = true;
-		m_tekicnt++;
-		m_floor++;
-		m_TimeL += 3000;
-		/*this->SetStatus(false);		//自身に削除命令を出す。
-		Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する*/
-		Scene::SetScene(new CSceneKuria());
-
+		m_enemytime--;
+		if (m_enemytime <= 0)
+		{
+			m_endflag = true;
+			m_tekicnt++;
+			m_floor++;
+			m_TimeL += 3000;
+			/*this->SetStatus(false);		//自身に削除命令を出す。
+			Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する*/
+			Scene::SetScene(new CSceneKuria());
+		}
 	}
 
 
