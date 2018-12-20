@@ -17,6 +17,7 @@ CObjteki3::CObjteki3(float x, float y)
 	m_x = x;
 	m_y = y;
 	m_hit = 0;
+	m_tekicnt++;
 
 
 }
@@ -25,6 +26,7 @@ CObjteki3::CObjteki3(float x, float y)
 void CObjteki3::Init()
 {
 	m_time = 0;
+	m_dtime = 70;
 	m_r = 45.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
@@ -39,8 +41,8 @@ void CObjteki3::Action()
 {
 	m_time++;
 
-	//’Êí’e”­Ë
-	if (m_time % 35 == 0)
+	//ŠgU’e”­Ë
+	if (m_time % 50 == 0)
 	{
 		//19”­“¯”­Ë
 		CObjAngleBullet* obj_b;
@@ -89,16 +91,25 @@ void CObjteki3::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
 
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
-		m_tekicnt++;
-		m_floor++;
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		m_endflag = true;
-		Scene::SetScene(new CSceneKuria3());
+		obj->Set(true);
+		m_dtime--;
+		if (m_dtime <= 0)
+		{
+			m_floor++;
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+			m_endflag = true;
+			Scene::SetScene(new CSceneKuria3());
+		}
+	}
+	else
+	{
+		obj->Set(false);
 	}
 
 

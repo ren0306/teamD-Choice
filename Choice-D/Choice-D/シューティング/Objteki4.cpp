@@ -17,6 +17,7 @@ CObjteki4::CObjteki4(float x, float y)
 	m_dtime = 300;
 	m_x = x;
 	m_y = y;
+	m_tekicnt++;
 
 }
 
@@ -27,6 +28,7 @@ void CObjteki4::Init()
 	m_r = 42.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	death = false;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_TEKI4, 1);
 
@@ -35,25 +37,46 @@ void CObjteki4::Init()
 //アクション
 void CObjteki4::Action()
 {
+	if (death == true)
+	{
+		m_time++;
+
+		if (m_time > 120)
+		{
+			this->SetStatus(false);
+			m_tekicnt++;
+			m_floor++;
+
+			m_endflag = true;
+			Scene::SetScene(new CSceneKuria4());
+		}
+		
+		return;
+	}
+
 	m_time++;
 
-	//通常弾発射
-	if (m_time % 35 == 0)
+	
+	//蛇行弾発射
+	if (m_time % 30 == 0)
 	{
+		//蛇行弾丸作成
+		CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 65, m_y + 95);
+		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
+
+
 		if (m_hp <= 0)
 		{
 			;
 		}
 		else
 		{
-			//弾丸敵機オブジェクト
-			CObjBulletTeki4* obj_b = new CObjBulletTeki4(m_x + 65, m_y + 95);
-			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI4, 100);
+		
 		}
 	}
 
 	//誘導弾発射
-	if (m_time % 200 == 0)
+	if (m_time % 100 == 0)
 	{
 		if (m_hp <= 0)
 		{
@@ -106,20 +129,24 @@ void CObjteki4::Action()
 		this->SetStatus(false);		//自身に削除命令
 		Hits::DeleteHitBox(this);
 	}
+
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
 		m_dtime--;
-
-		if (m_dtime <= 0)
+		if (m_dtime <= 10)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-			m_tekicnt++;
-			m_floor++;
+			m_time = 0;
+			
+			//▼敵4の座標を画面外に移動させる事により、消えたように見せる。
+			//その後はdeath==trueのif文(return有)に入り、
+			//敵機が完全に領域外にでたら敵機を破棄するの命令が
+			//実行されないため、問題なくプログラムが動作する。
+			m_x = -1000;
+			m_y = -1000;
 
-			m_endflag = true;
-			Scene::SetScene(new CSceneKuria4());
+			Hits::DeleteHitBox(this);
+			death = true;
 		}
 		//20°間隔で弾丸発射(拡散弾発射)
 		else if (m_time % 10 == 0)

@@ -86,10 +86,10 @@ void CObjSousagamen::Draw()
 	src.m_right = 862.0f;
 	src.m_bottom = 361.0f;
 
-	dst.m_top = 150.0f;
-	dst.m_left = 10.0f;
-	dst.m_right = 430.0f;
-	dst.m_bottom = 400.0f;
+	dst.m_top = 250.0f;
+	dst.m_left = 100.0f;
+	dst.m_right = 700.0f;
+	dst.m_bottom = 500.0f;
 	Draw::Draw(0, &src, &dst, d, 0.0f);
 
 	//マウス表示
@@ -98,10 +98,10 @@ void CObjSousagamen::Draw()
 	src.m_right = 570.0f;
 	src.m_bottom = 365.0f;
 
-	dst.m_top = 170.0f;
-	dst.m_left = 440.0f;
-	dst.m_right = 770.0f;
-	dst.m_bottom = 385.0f;
+	dst.m_top = 20.0f;
+	dst.m_left = 220.0f;
+	dst.m_right = 580.0f;
+	dst.m_bottom = 230.0f;
 	Draw::Draw(1, &src, &dst, d, 0.0f);
 
 	Font::StrDraw(L"ここをクリックでタイトルへ", 450, 535, 25, c);
