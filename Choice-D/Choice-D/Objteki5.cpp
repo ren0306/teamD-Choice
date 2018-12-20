@@ -149,7 +149,7 @@ void CObjteki5::Action()
 			}
 			//Scene::SetScene(new CSceneED2());
 
-			}
+			
 		}
 	}
 	else
