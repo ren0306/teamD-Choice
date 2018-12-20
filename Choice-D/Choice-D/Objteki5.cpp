@@ -25,9 +25,9 @@ CObjteki5::CObjteki5(float x, float y)
 void CObjteki5::Init()
 {
 	m_time = 0;
-	m_r = 45.0f;
-	m_vx = 0.0f;
-	m_vy = 0.0f;
+	m_r = +5.0f;
+	m_vx = -5.0f;
+	m_vy = +10.0f;
 	m_f5 = false;
 	//“–‚½‚è”»’èHitBox
 	Hits::SetHitBox(this, m_x, m_y, 180-80, 170, ELEMENT_ENEMY, OBJ_TEKI5, 1);

@@ -67,7 +67,7 @@ void CSceneSTG5::InitScene()
 	STGBackground* back = new STGBackground();
 	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);
 
-	CObjteki5* objb = new CObjteki5(200, 10);
+	CObjteki5* objb = new CObjteki5(200, 100);
 	Objs::InsertObj(objb, OBJ_TEKI5, 50);
 
 	CObjHero*ob = new CObjHero();
