@@ -122,7 +122,7 @@ void CObjteki5::Action()
 			{
 				Scene::SetScene(new CSceneED1());
 			}
-			Scene::SetScene(new CSceneED2());
+			//Scene::SetScene(new CSceneED2());
 
 		}
 	}
