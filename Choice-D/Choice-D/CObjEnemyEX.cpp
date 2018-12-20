@@ -89,7 +89,7 @@ void CObjEnemyEX::Draw()
 	RECT_F dst; //•`‰ææ•\¦ˆÊ’u
 
 	//“G‚ğ“|‚µ‚½‚Æ‚«‚ÌÀ•Wæ“¾
-	if (m_tekicnt == 0)
+	if (m_floor==1)
 	{
 		//ålŒö‹@‚ÌˆÊ’u‚ğæ“¾
 		CObjteki1* obj = (CObjteki1*)Objs::GetObj(OBJ_TEKI1);
@@ -97,26 +97,26 @@ void CObjEnemyEX::Draw()
 		m_y = obj->GetY() - 30;
 	}
 	//“G‚ğ“|‚·‚Æt
-	else if (m_tekicnt == 1)
+	else if ( m_floor == 2)
 	{
 		CObjteki2*obj2 = (CObjteki2*)Objs::GetObj(OBJ_TEKI2);
 		m_x = obj2->GetX() -15;
 		m_y = obj2->GetY() - 100;
 	}
-	else if (m_tekicnt == 2)
+	else if ( m_floor == 3)
 	{
 		CObjteki3*obj3 = (CObjteki3*)Objs::GetObj(OBJ_TEKI3);
 		m_x = obj3->GetX() - 15;
 		m_y = obj3->GetY() - 100;
 	}
-	else if (m_tekicnt == 3)
+	else if ( m_floor == 4)
 	{
 		CObjteki4*obj4 = (CObjteki4*)Objs::GetObj(OBJ_TEKI4);
 		m_x = obj4->GetX() - 15;
 		m_y = obj4->GetY() - 100;
 
 	}
-	else if (m_tekicnt == 4)
+	else if ( m_floor == 5)
 	{
 		CObjteki5*obj5 = (CObjteki5*)Objs::GetObj(OBJ_TEKI5);
 		m_x = obj5->GetX() - 15;
