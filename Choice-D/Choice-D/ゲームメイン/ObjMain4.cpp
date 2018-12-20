@@ -60,6 +60,8 @@ void CObjMain4::Draw()
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
+
+	//äKëwï\é¶
 	wchar_t kaisou[4];
 	swprintf_s(kaisou, L"%däKëw", m_floor);
 	Font::StrDraw(kaisou, 710, 0, 35, c);
@@ -153,7 +155,7 @@ void CObjMain4::Draw()
 	src.m_bottom = 1772.0f;
 
 	//ï\é¶à íuÇÃê›íË
-	dst.m_top = 0.0f + 170;
+	dst.m_top = 0.0f + 150;
 	dst.m_left = 0.0f + 300;
 	dst.m_right = 160.0f + 400;
 	dst.m_bottom = 210.0f + 270;

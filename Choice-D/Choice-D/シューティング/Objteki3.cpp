@@ -41,8 +41,8 @@ void CObjteki3::Action()
 {
 	m_time++;
 
-	//’Êí’e”­Ë
-	if (m_time % 35 == 0)
+	//ŠgU’e”­Ë
+	if (m_time % 50 == 0)
 	{
 		//19”­“¯”­Ë
 		CObjAngleBullet* obj_b;

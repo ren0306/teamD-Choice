@@ -28,6 +28,7 @@ void CObjteki5::Init()
 {
 	m_time = 0;
 	m_r = 45.0f;
+	m_r2 = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_f5 = false;
@@ -60,10 +61,14 @@ void CObjteki5::Action()
 
 	//Šp“x‰ÁŽZ
 	m_r += 1.0f;
+	m_r2 += 2.0f;
 
 	//360‹‚Å‰Šú’l‚É–ß‚·
 	if (m_r > 360.0f)
 		m_r = 0.0f;
+
+	if (m_r2 > 360.0f)
+		m_r2 = 0.0f;
 
 	
 
@@ -96,9 +101,9 @@ void CObjteki5::Action()
 		{
 		//ˆÚ“®•ûŒü
 		m_vx = 0.0f;
-		m_vy = cos(3.14f / 180 * m_r);
+		m_vy = sin(3.14f / 180 * m_r2);
 		}
-	else {
+	else{
 		//ˆÚ“®•ûŒü
 		m_vx = sin(3.14f / 180 * m_r);
 		m_vy = 0.0f;
