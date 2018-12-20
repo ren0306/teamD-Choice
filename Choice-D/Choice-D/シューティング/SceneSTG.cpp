@@ -74,7 +74,7 @@ void CSceneSTG::InitScene()
 	Objs::InsertObj(back, OBJ_STGBACKGROUND, 20);
 
 	CObjteki1* objb = new CObjteki1(200,10);
-	Objs::InsertObj(objb, OBJ_TEKI1, 50);
+	Objs::InsertObj(objb, OBJ_TEKI1, 21);
 
 	CObjHero*ob = new CObjHero();
 	Objs::InsertObj(ob, OBJ_HERO, 150);
@@ -84,6 +84,9 @@ void CSceneSTG::InitScene()
 
 	CObjChargeEffect*ef = new CObjChargeEffect(-100, -100);
 	Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
+
+	CObjEnemyEX* eef = new CObjEnemyEX(0, 0);
+	Objs::InsertObj(eef, OBJ_EX, 200);
 }
 
 //ゲームシューティング実行中メソッド

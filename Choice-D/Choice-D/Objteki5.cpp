@@ -17,6 +17,8 @@ CObjteki5::CObjteki5(float x, float y)
 	m_maxhp = 35.f;
 	m_x = x;
 	m_y = y;
+	m_tekicnt++;
+
 }
 
 
@@ -101,25 +103,36 @@ void CObjteki5::Action()
 		m_vx = sin(3.14f / 180 * m_r);
 		m_vy = 0.0f;
 		}
+	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
+
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
-		m_endflag = true;
-		/*this->SetStatus(false);
-		Hits::DeleteHitBox(this);*/
-		if (m_endflag == true)
+		obj->Set(true);
+		m_dtime--;
+		if (m_dtime <= 0)
 		{
-			if (m_nazoflag == true)
+			m_endflag = true;
+			/*this->SetStatus(false);
+			Hits::DeleteHitBox(this);*/
+			if (m_endflag == true)
 			{
+				if (m_nazoflag == true)
+				{
+					Scene::SetScene(new CSceneED2());
+				}
+				if (m_tekicnt == 4)
+				{
+					Scene::SetScene(new CSceneED1());
+				}
 				Scene::SetScene(new CSceneED2());
-			}
-			if(m_tekicnt==4)
-			{
-				Scene::SetScene(new CSceneED1());
-			}
-			Scene::SetScene(new CSceneED2());
 
+			}
 		}
+	}
+	else
+	{
+		obj->Set(false);
 	}
 
 

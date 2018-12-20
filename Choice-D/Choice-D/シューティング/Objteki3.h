@@ -13,7 +13,11 @@ public:
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー
-	bool GETF() { return m_f3; }
+	void SetX(float x) { m_x = x; }//位置情報X変更用
+	void SetY(float y) { m_y = y; }//位置情報Y変更用
+	float GetX() { return m_x; }	   //位置情報X取得用
+	float GetY() { return m_y; }	   //位置情報Y取得用
+
 
 private:
 	float m_x;	//敵3のx方向の位置
@@ -28,4 +32,5 @@ private:
 	bool m_f3;
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
+	int m_dtime;
 };

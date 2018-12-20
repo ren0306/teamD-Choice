@@ -62,6 +62,8 @@ void CSceneSTG5::InitScene()
 	Draw::LoadImage(L"tamedama.png", 12, TEX_SIZE_512);
 
 
+	//爆破エフェクト２番
+	Draw::LoadImage(L"EnemyEX.png", 2, TEX_SIZE_512);
 
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();
@@ -78,6 +80,10 @@ void CSceneSTG5::InitScene()
 
 	CObjChargeEffect*ef = new CObjChargeEffect(-100, -100);
 	Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
+
+	CObjEnemyEX* eef = new CObjEnemyEX(0, 0);
+	Objs::InsertObj(eef, OBJ_EX, 200);
+
 }
 
 //ゲームシューティング5実行中メソッド

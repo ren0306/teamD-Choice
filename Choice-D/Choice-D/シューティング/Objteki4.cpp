@@ -17,6 +17,7 @@ CObjteki4::CObjteki4(float x, float y)
 	m_dtime = 300;
 	m_x = x;
 	m_y = y;
+	m_tekicnt++;
 
 }
 
@@ -106,32 +107,27 @@ void CObjteki4::Action()
 		this->SetStatus(false);		//©g‚Éíœ–½—ß
 		Hits::DeleteHitBox(this);
 	}
+
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
 		m_dtime--;
-
-		if (m_dtime <= 0)
+		if (m_dtime <= 10)
 		{
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-			m_tekicnt++;
+
+
+		}
+
+		//20‹ŠÔŠu‚Å’eŠÛ”­Ë(ŠgU’e”­Ë)
+		if (m_time % 10 == 0)
+		{
 			m_floor++;
 
 			m_endflag = true;
 			Scene::SetScene(new CSceneKuria4());
-		}
-		//20‹ŠÔŠu‚Å’eŠÛ”­Ë(ŠgU’e”­Ë)
-		else if (m_time % 10 == 0)
-		{
-			//19”­“¯”­Ë
-			CObjAngleBullet* obj_b;
-			for (int i = 0; i < 360; i += 20)
-			{
-				//Šp“xi‚ÅŠp“x’eŠÛ”­Ë
-				obj_b = new CObjAngleBullet(m_x + 65, m_y + 95, i, 5.0f);
-				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
-			}
+
 		}
 	
 	}
