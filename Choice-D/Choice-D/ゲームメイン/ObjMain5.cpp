@@ -60,6 +60,8 @@ void CObjMain5::Draw()
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
+
+	//ŠK‘w•\Ž¦
 	wchar_t kaisou[4];
 	swprintf_s(kaisou, L"%dŠK‘w", m_floor);
 	Font::StrDraw(kaisou, 710, 0, 35, c);

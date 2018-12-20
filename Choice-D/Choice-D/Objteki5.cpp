@@ -118,7 +118,7 @@ void CObjteki5::Action()
 			{
 				Scene::SetScene(new CSceneED2());
 			}
-			if(m_tekicnt==4)
+			if(m_tekicnt>=4)
 			{
 				Scene::SetScene(new CSceneED1());
 			}

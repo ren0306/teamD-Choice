@@ -113,12 +113,13 @@ void CObjteki4::Action()
 
 		if (m_dtime <= 0)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
 			m_tekicnt++;
 			m_floor++;
 
 			m_endflag = true;
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+
 			Scene::SetScene(new CSceneKuria4());
 		}
 		//20‹ŠÔŠu‚Å’eŠÛ”­Ë(ŠgU’e”­Ë)
