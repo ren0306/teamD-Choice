@@ -27,6 +27,7 @@ void CObjteki4::Init()
 	m_r = 42.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	death = false;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 160, 210, ELEMENT_ENEMY, OBJ_TEKI4, 1);
 
@@ -35,6 +36,23 @@ void CObjteki4::Init()
 //アクション
 void CObjteki4::Action()
 {
+	if (death == true)
+	{
+		m_time++;
+
+		if (m_time > 120)
+		{
+			this->SetStatus(false);
+			m_tekicnt++;
+			m_floor++;
+
+			m_endflag = true;
+			Scene::SetScene(new CSceneKuria4());
+		}
+		
+		return;
+	}
+
 	m_time++;
 
 	//通常弾発射
@@ -113,14 +131,17 @@ void CObjteki4::Action()
 
 		if (m_dtime <= 0)
 		{
-			m_tekicnt++;
-			m_floor++;
+			m_time = 0;
+			
+			//▼敵4の座標を画面外に移動させる事により、消えたように見せる。
+			//その後はdeath==trueのif文(return有)に入り、
+			//敵機が完全に領域外にでたら敵機を破棄するの命令が
+			//実行されないため、問題なくプログラムが動作する。
+			m_x = -1000;
+			m_y = -1000;
 
-			m_endflag = true;
-			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
-
-			Scene::SetScene(new CSceneKuria4());
+			death = true;
 		}
 		//20°間隔で弾丸発射(拡散弾発射)
 		else if (m_time % 10 == 0)
