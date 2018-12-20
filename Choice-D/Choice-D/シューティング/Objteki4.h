@@ -22,9 +22,10 @@ private:
 	float m_vx;	//敵3移動ベクトルx
 	float m_vy;	//敵3移動ベクトルy
 	float m_r;	//sinカーブ用変数
-	int   m_time;//弾丸間隔用
+	int   m_time;//弾丸間隔用＆オブジェクト削除までの時間管理用
 
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
 	int m_dtime;
+	bool death;	//敵4の生存管理
 };
