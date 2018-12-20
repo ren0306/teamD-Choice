@@ -113,24 +113,20 @@ void CObjteki5::Action()
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
-		obj->Set(true);
-		m_dtime--;
-		if (m_dtime <= 0)
+		m_endflag = true;
+		/*this->SetStatus(false);
+		Hits::DeleteHitBox(this);*/
+		if (m_endflag == true)
 		{
-			m_endflag = true;
-			/*this->SetStatus(false);
-			Hits::DeleteHitBox(this);*/
-			if (m_endflag == true)
+			if (m_nazoflag == true)
 			{
-				if (m_nazoflag == true)
-				{
-					Scene::SetScene(new CSceneED2());
-				}
-				if (m_tekicnt == 4)
-				{
-					Scene::SetScene(new CSceneED1());
-				}
 				Scene::SetScene(new CSceneED2());
+			}
+			if(m_tekicnt>=4)
+			{
+				Scene::SetScene(new CSceneED1());
+			}
+			//Scene::SetScene(new CSceneED2());
 
 			}
 		}
