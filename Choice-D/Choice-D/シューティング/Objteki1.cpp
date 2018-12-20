@@ -11,6 +11,8 @@
 #include "../GameL/DrawFont.h"
 
 
+
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -34,7 +36,7 @@ void CObjteki1::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	m_enemytime = 100;
+	m_enemytime = 70;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
@@ -45,6 +47,7 @@ void CObjteki1::Init()
 void CObjteki1::Action()
 {
 
+	RECT_F dst;//描画先表示位置
 
 	//Audio::Start(0);
 	CObjHero* Hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
@@ -183,17 +186,25 @@ void CObjteki1::Action()
 	//HP０で
 	if (m_hp <= 0)
 	{
+		obj->Set(true);
 		m_enemytime--;
+
 		if (m_enemytime <= 0)
 		{
 			m_endflag = true;
-			m_tekicnt++;
 			m_floor++;
 			m_TimeL += 3000;
-			/*this->SetStatus(false);		//自身に削除命令を出す。
-			Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する*/
+
+			this->SetStatus(false);		//自身に削除命令を出す。
+			Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+
 			Scene::SetScene(new CSceneKuria());
+
 		}
+	}
+	else
+	{
+		obj->Set(false);
 	}
 
 

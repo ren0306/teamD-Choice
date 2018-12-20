@@ -64,6 +64,8 @@ void CSceneSTG3::InitScene()
 	//ため攻撃
 	Draw::LoadImage(L"tamedama.png", 12, TEX_SIZE_512);
 
+	//爆破エフェクト２番
+	Draw::LoadImage(L"EnemyEX.png", 2, TEX_SIZE_512);
 
 	//背景オブジェクト作成
 	STGBackground* back = new STGBackground();
@@ -80,6 +82,10 @@ void CSceneSTG3::InitScene()
 
 	CObjChargeEffect*ef = new CObjChargeEffect(-100, -100);
 	Objs::InsertObj(ef, OBJ_CHARGE_EFFECT, 145);
+
+	CObjEnemyEX* eef = new CObjEnemyEX(0, 0);
+	Objs::InsertObj(eef, OBJ_EX, 200);
+
 }
 
 //ゲームシューティング3実行中メソッド

@@ -17,6 +17,7 @@ CObjteki4::CObjteki4(float x, float y)
 	m_dtime = 300;
 	m_x = x;
 	m_y = y;
+	m_tekicnt++;
 
 }
 
@@ -124,12 +125,12 @@ void CObjteki4::Action()
 		this->SetStatus(false);		//©g‚Éíœ–½—ß
 		Hits::DeleteHitBox(this);
 	}
+
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
 		m_dtime--;
-
-		if (m_dtime <= 0)
+		if (m_dtime <= 10)
 		{
 			m_time = 0;
 			

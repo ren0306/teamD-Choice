@@ -16,8 +16,11 @@ CObjteki2::CObjteki2(float x, float y)
 	m_maxhp = 35.f;
 
 	m_time = 0;
+	m_dtime = 70;
 	m_x = x;
 	m_y = y;
+	m_tekicnt++;
+
 }
 
 //イニシャライズ
@@ -149,16 +152,25 @@ void CObjteki2::Action()
 
 	}
 
-
+	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
-		m_tekicnt++;
-		m_floor++;
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		m_endflag = true;
-		Scene::SetScene(new CSceneKuria2());
+		obj->Set(true);
+		m_dtime--;
+		if (m_dtime <= 0)
+		{
+			m_floor++;
+			m_endflag = true;
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+
+			Scene::SetScene(new CSceneKuria2());
+		}
+	}
+	else
+	{
+		obj->Set(false);
 	}
 }
 
