@@ -55,23 +55,27 @@ void CObjteki4::Action()
 
 	m_time++;
 
-	//通常弾発射
-	if (m_time % 35 == 0)
+	
+	//蛇行弾発射
+	if (m_time % 30 == 0)
 	{
+		//蛇行弾丸作成
+		CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 65, m_y + 95);
+		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
+
+
 		if (m_hp <= 0)
 		{
 			;
 		}
 		else
 		{
-			//弾丸敵機オブジェクト
-			CObjBulletTeki4* obj_b = new CObjBulletTeki4(m_x + 65, m_y + 95);
-			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI4, 100);
+		
 		}
 	}
 
 	//誘導弾発射
-	if (m_time % 200 == 0)
+	if (m_time % 100 == 0)
 	{
 		if (m_hp <= 0)
 		{
