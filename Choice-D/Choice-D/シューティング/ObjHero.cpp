@@ -170,18 +170,18 @@ void CObjHero::Action()
 	{
 		m_f = true;
 	}
-	////Rを押してリロード
-	//if (m_cnt <= 0)
-	//{
-	//	
-	//	if (Input::GetVKey('R') == true)
-	//	{
-	//		Audio::Start(2);
+	//Rを押してリロード
+	if (m_cnt <= 0)
+	{
+		
+		if (Input::GetVKey('R') == true)
+		{
+			Audio::Start(2);
 
-	//		m_cnt = 7.f;
-	//		m_tame = 0.f;
-	//	}
-	//}
+			m_cnt = 7.f;
+			m_tame = 0.f;
+		}
+	}
 
 	//チャージエフェクトのアニメーション動作をObjHero内で管理するため、ここでチャージエフェクトのオブジェクトを取得
 	CObjChargeEffect* obj = (CObjChargeEffect*)Objs::GetObj(OBJ_CHARGE_EFFECT);

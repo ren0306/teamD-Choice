@@ -16,8 +16,11 @@ CObjteki2::CObjteki2(float x, float y)
 	m_maxhp = 35.f;
 
 	m_time = 0;
+	m_dtime = 70;
 	m_x = x;
 	m_y = y;
+	m_tekicnt++;
+
 }
 
 //ƒCƒjƒVƒƒƒ‰ƒCƒY
@@ -57,7 +60,25 @@ void CObjteki2::Action()
 			for (int i = 250; i < 290; i += 8)
 			{
 				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-				obj_b = new CObjAngleBullet(m_x + 85, m_y + 125, i, 5.5f);
+				obj_b = new CObjAngleBullet(m_x + 55, m_y + 105, i, 5.5f);
+				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			}
+		}
+
+	}
+
+	//ƒVƒ‡ƒbƒgƒKƒ“•—ŠgŽU’e”­ŽË(AngleBullet‚ð‰ž—p‚µ‚Ä‚¢‚é)
+	//260‹` 280‹‚Ì”ÍˆÍ(‰º•ûŒü)‚É2‹ŠÔŠu‚Å’eŠÛ”­ŽË
+	if (m_hp <= 27)
+	{
+		if (m_time % 60 == 0)
+		{
+			//‰º•ûŒü‚É11”­“¯Žž”­ŽË
+			CObjAngleBullet* obj_b;
+			for (int i = 250; i < 290; i += 8)
+			{
+				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
+				obj_b = new CObjAngleBullet(m_x + 115, m_y + 105, i, 5.5f);
 				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 			}
 		}
@@ -75,7 +96,7 @@ void CObjteki2::Action()
 			for (int i = 245; i < 305; i += 12)
 			{
 				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-				obj_b = new CObjAngleBullet(m_x + 85, m_y + 125, i, 5.0f);
+				obj_b = new CObjAngleBullet(m_x + 85, m_y + 105, i, 5.0f);
 				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 			}
 		}
@@ -131,16 +152,25 @@ void CObjteki2::Action()
 
 	}
 
-
+	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
 	//HP‚ª0‚É‚È‚Á‚½‚ç”jŠü
 	if (m_hp <= 0)
 	{
-		m_tekicnt++;
-		m_floor++;
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-		m_endflag = true;
-		Scene::SetScene(new CSceneKuria2());
+		obj->Set(true);
+		m_dtime--;
+		if (m_dtime <= 0)
+		{
+			m_floor++;
+			m_endflag = true;
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+
+			Scene::SetScene(new CSceneKuria2());
+		}
+	}
+	else
+	{
+		obj->Set(false);
 	}
 }
 
