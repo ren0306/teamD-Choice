@@ -32,6 +32,7 @@ void CSceneSTG::InitScene()
 
 	//âπäyèÓïÒÇÃì«Ç›çûÇ›
 	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::VolumeMaster(-0.4f);
 	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
 	Audio::Start(0);
 

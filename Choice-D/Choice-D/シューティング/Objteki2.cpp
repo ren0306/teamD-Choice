@@ -14,6 +14,7 @@ CObjteki2::CObjteki2(float x, float y)
 {
 	m_hp = 35.f;
 	m_maxhp = 35.f;
+	m_floor==3;
 
 	m_time = 0;
 	m_dtime = 70;
@@ -160,7 +161,6 @@ void CObjteki2::Action()
 		m_dtime--;
 		if (m_dtime <= 0)
 		{
-			m_floor++;
 			m_endflag = true;
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);

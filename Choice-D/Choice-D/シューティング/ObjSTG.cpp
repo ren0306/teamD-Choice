@@ -15,7 +15,6 @@ using namespace GameL;
 //イニシャライズ
 void CObjSTG::Init()
 {
-
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
 	m_mou_r = false;

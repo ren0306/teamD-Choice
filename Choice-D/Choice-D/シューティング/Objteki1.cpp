@@ -35,7 +35,7 @@ void CObjteki1::Init()
 	m_r2 = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
+	m_floor++;
 	m_enemytime = 70;
 	//“–‚½‚è”»’èHitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
@@ -192,7 +192,6 @@ void CObjteki1::Action()
 		if (m_enemytime <= 0)
 		{
 			m_endflag = true;
-			m_floor++;
 			m_TimeL += 3000;
 
 			this->SetStatus(false);		//©g‚Éíœ–½—ß‚ğo‚·B
