@@ -29,6 +29,7 @@ bool m_miss = false;//答え間違いならtrue変数
 float m_clearcnt=100.f;
 float m_misscnt=100.f;//間違えた時の時間を減らす表示をする変数	
 float m_BGM = 0;
+bool g_teki = false;
 //----------------------------------------------------------------------
 
 //イニシャライズ

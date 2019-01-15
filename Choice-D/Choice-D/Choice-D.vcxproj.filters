@@ -154,15 +154,6 @@
     <ClCompile Include="小物関係\ObjED3gazou.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMain3.cpp">
-      <Filter>ソースファイル\小物関係\メイン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMain4.cpp">
-      <Filter>ソースファイル\小物関係\メイン</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMain5.cpp">
-      <Filter>ソースファイル\小物関係\メイン</Filter>
-    </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -346,17 +337,18 @@
     <ClCompile Include="謎解き\ObjBGNazo5.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
-    <ClCompile Include="ゲームメイン\ObjMain3.cpp">
-      <Filter>ソースファイル\メイン</Filter>
-    </ClCompile>
-    <ClCompile Include="ゲームメイン\ObjMain4.cpp">
-      <Filter>ソースファイル\メイン</Filter>
-    </ClCompile>
-    <ClCompile Include="ゲームメイン\ObjMain5.cpp">
-      <Filter>ソースファイル\メイン</Filter>
-    </ClCompile>
     <ClCompile Include="CObjEnemyEX.cpp">
       <Filter>ソースファイル\STG</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="ゲームメイン\ObjMain3.cpp">
+      <Filter>ソースファイル\小物関係\メイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ゲームメイン\ObjMain4.cpp">
+      <Filter>ソースファイル\小物関係\メイン</Filter>
+    </ClCompile>
+    <ClCompile Include="ゲームメイン\ObjMain5.cpp">
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -511,15 +503,6 @@
     </ClInclude>
     <ClInclude Include="小物関係\ObjED3gazou.h">
       <Filter>ソースファイル\小物関係</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMain3.h">
-      <Filter>ソースファイル\小物関係\メイン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMain4.h">
-      <Filter>ソースファイル\小物関係\メイン</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMain5.h">
-      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="小物関係\TimeLimit.h">
       <Filter>ソースファイル</Filter>
@@ -677,17 +660,17 @@
     <ClInclude Include="謎解き\ObjBGNazo5.h">
       <Filter>ソースファイル\小物関係</Filter>
     </ClInclude>
-    <ClInclude Include="ゲームメイン\ObjMain3.h">
-      <Filter>ソースファイル\メイン</Filter>
-    </ClInclude>
-    <ClInclude Include="ゲームメイン\ObjMain4.h">
-      <Filter>ソースファイル\メイン</Filter>
-    </ClInclude>
-    <ClInclude Include="ゲームメイン\ObjMain5.h">
-      <Filter>ソースファイル\メイン</Filter>
-    </ClInclude>
     <ClInclude Include="CObjEnemyEX.h">
       <Filter>ソースファイル\STG</Filter>
+    </ClInclude>
+    <ClInclude Include="ゲームメイン\ObjMain3.h">
+      <Filter>ソースファイル\小物関係\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ゲームメイン\ObjMain4.h">
+      <Filter>ソースファイル\小物関係\メイン</Filter>
+    </ClInclude>
+    <ClInclude Include="ゲームメイン\ObjMain5.h">
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

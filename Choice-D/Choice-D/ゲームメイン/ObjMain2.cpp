@@ -109,6 +109,7 @@ void CObjMain2::Draw()
 					Font::StrDraw(L"ÅûÇÕÇ¢", 100, 150, 32, d);
 					if (m_mou_l == true)
 					{
+						g_teki = true;
 						Scene::SetScene(new CSceneSTG2());
 					}
 				}

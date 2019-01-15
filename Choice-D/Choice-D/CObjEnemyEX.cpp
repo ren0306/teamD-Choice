@@ -97,29 +97,31 @@ void CObjEnemyEX::Draw()
 		m_y = obj->GetY() - 30;
 	}
 	//敵を倒すと更新
-	else if ( m_floor == 2&&m_tekicnt==1)
+	else if ( m_floor == 2&&g_teki==true)
 	{
 		CObjteki2*obj2 = (CObjteki2*)Objs::GetObj(OBJ_TEKI2);
-		m_x = obj2->GetX() + 100;
-		m_y = obj2->GetY() - 100;
+		m_x = obj2->GetX() - 50;
+		m_y = obj2->GetY() - 50;
 	}
-	else if ( m_floor == 3 && m_tekicnt == 2)
+	else if ( m_floor == 3 && g_teki == true)
 	{
 		CObjteki3*obj3 = (CObjteki3*)Objs::GetObj(OBJ_TEKI3);
-		m_x = obj3->GetX() - 15;
-		m_y = obj3->GetY() - 100;
+		m_x = obj3->GetX() - 130;
+		m_y = obj3->GetY() - 150;
 	}
+	/*	
 	else if ( m_floor == 4 && m_tekicnt == 3)
 	{
 		CObjteki4*obj4 = (CObjteki4*)Objs::GetObj(OBJ_TEKI4);
 		m_x = obj4->GetX() - 15;
 		m_y = obj4->GetY() - 100;
 	}
-	else if ( m_floor == 5 && m_tekicnt == 4)
+	*/
+	else if ( m_floor == 6 && g_teki == true)
 	{
 		CObjteki5*obj5 = (CObjteki5*)Objs::GetObj(OBJ_TEKI5);
-		m_x = obj5->GetX() - 15;
-		m_y = obj5->GetY() - 100;
+		m_x = obj5->GetX() - 60;
+		m_y = obj5->GetY() - 70;
 	}
 
 	//表示位置の設定

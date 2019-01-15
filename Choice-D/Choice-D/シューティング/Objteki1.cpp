@@ -35,7 +35,6 @@ void CObjteki1::Init()
 	m_r2 = 0.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_floor++;
 	m_enemytime = 70;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
@@ -196,6 +195,8 @@ void CObjteki1::Action()
 
 			this->SetStatus(false);		//自身に削除命令を出す。
 			Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
+
+			m_floor++;
 
 			Scene::SetScene(new CSceneKuria());
 

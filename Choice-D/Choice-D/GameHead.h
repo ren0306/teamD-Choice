@@ -120,6 +120,7 @@ extern float m_clearcnt;
 extern bool m_clear;
 extern bool m_miss;//答え間違いならtrue変数
 extern float m_BGM;
+extern bool g_teki;
 
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
