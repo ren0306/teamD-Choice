@@ -200,7 +200,7 @@ void CObjteki5::Draw()
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 187.0f;
