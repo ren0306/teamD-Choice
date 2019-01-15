@@ -81,6 +81,8 @@ void CObjMain3::Draw()
 				//マウスのボタンが押されたら戦闘に遷移
 				if (m_mou_r == true || m_mou_l == true)
 				{
+					g_teki = true;
+
 					m_f = true;
 
 				}

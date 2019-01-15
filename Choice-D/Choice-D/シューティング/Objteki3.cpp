@@ -15,7 +15,6 @@ CObjteki3::CObjteki3(float x, float y)
 	m_hp = 40.f;
 	m_maxhp = 40.f;
 	m_x = x;
-	m_floor++;
 
 	m_y = y;
 	m_hit = 0;
@@ -105,6 +104,9 @@ void CObjteki3::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 			m_endflag = true;
+
+			m_floor++;
+			g_teki = false;
 			Scene::SetScene(new CSceneKuria3());
 		}
 	}

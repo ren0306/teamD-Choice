@@ -13,7 +13,6 @@ using namespace GameL;
 CObjteki4::CObjteki4(float x, float y)
 {
 	m_hp = 25.f;
-	m_floor++;
 
 	m_maxhp = 25.f;
 	m_dtime = 300;
@@ -49,6 +48,9 @@ void CObjteki4::Action()
 			m_tekicnt++;
 
 			m_endflag = true;
+
+			m_floor++;
+
 			Scene::SetScene(new CSceneKuria4());
 		}
 		
