@@ -13,7 +13,6 @@ using namespace GameL;
 CObjteki4::CObjteki4(float x, float y)
 {
 	m_hp = 25.f;
-
 	m_maxhp = 25.f;
 	m_dtime = 300;
 	m_x = x;

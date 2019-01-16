@@ -44,7 +44,8 @@ void CSceneNazo3::InitScene()
 	Draw::LoadImage(L"tenkey.png", 2, TEX_SIZE_512);
 	Draw::LoadImage(L"解答.png", 12, TEX_SIZE_512);
 	Draw::LoadImage(L"問題3.png", 13, TEX_SIZE_512);
-
+	Draw::LoadImage(L"ヒント.png", 14, TEX_SIZE_512);
+	Draw::LoadImage(L"ヒント３.png", 15, TEX_SIZE_512);
 
 	//オブジェクト作成
 	CObjTenkey3* key = new CObjTenkey3();
