@@ -89,10 +89,10 @@ void CObjTitle::Action()
 void CObjTitle::Draw()
 {
 	float c[4] = { 1,1,1,m_and };
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12,c);
+	////仮マウス位置表示
+	//wchar_t str[256];
+	//swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
+	//Font::StrDraw(str, 20, 20, 12,c);
 	//マウスの位置とクリックする場所で当たり判定
 	//OPに移行
 	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>390 && m_mou_y < 430)

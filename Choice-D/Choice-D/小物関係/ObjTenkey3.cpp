@@ -96,10 +96,10 @@ void CObjTenkey3::Draw()
 	RECT_F src;
 	RECT_F dst;
 
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, f);
+	////仮マウス位置表示
+	//wchar_t str[256];
+	//swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
+	//Font::StrDraw(str, 20, 20, 12, f);
 
 	//メインに戻る
 	if (m_mou_x >= 37 && m_mou_x <= 290 && m_mou_y >= 33 && m_mou_y <= 60)

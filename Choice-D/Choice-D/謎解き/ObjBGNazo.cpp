@@ -40,10 +40,10 @@ void CObjBGN::Draw()
 {
 
 	float c[4] = { 1,1,1,m_and };
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);
+	////仮マウス位置表示
+	//wchar_t str[256];
+	//swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
+	//Font::StrDraw(str, 20, 20, 12, c);
 	if (m_f == true)
 	{
 		m_and += 0.1f;
