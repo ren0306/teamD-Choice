@@ -45,6 +45,9 @@ void CObjTenkey5::Init()
 
 	m_misscnt = 100.f;
 	m_clear = false;
+
+	Hint_x = -904.0f;
+	Hint_y = -383.0f;
 }
 
 //アクション
@@ -293,6 +296,35 @@ void CObjTenkey5::Draw()
 		Font::StrDraw(L"[すべて削除]", 500, 450, 30, f);
 	}
 
+	//ヒント箱クリックでヒント本体表示＆非表示
+	if (m_mou_x >= 708 && m_mou_x <= 766 && m_mou_y >= 113 && m_mou_y <= 282)
+	{
+		if (m_mou_r == true || m_mou_l == true)
+		{
+			if (m_f == true)
+			{
+				m_f = false;
+
+				//▼ヒント本体が非表示の場合、ヒント本体を表示させる
+				if (Hint_x == -904.0f && Hint_y == -383.0f)
+				{
+					Hint_x = 0;
+					Hint_y = 0;
+				}
+				//▼ヒント本体が表示の場合、ヒント本体を非表示させる
+				else
+				{
+					Hint_x = -904.0f;
+					Hint_y = -383.0f;
+				}
+			}
+		}
+		else
+		{
+			m_f = true;
+		}
+	}
+
 	//テンキー出力（切り取り位置）
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -329,6 +361,31 @@ void CObjTenkey5::Draw()
 	dst.m_right  = 745.f;
 	dst.m_bottom = 330.0f;
 	Draw::Draw(13, &src, &dst, f, 0.0f);
+
+	//ヒント箱出力（切り取り位置）
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 243.0f;
+	src.m_bottom = 268.0f;
+	//ヒント箱出力（出力位置）
+	dst.m_top = 100.0f;
+	dst.m_left = 670.0f;
+	dst.m_right = 820.0f;
+	dst.m_bottom = 300.0f;
+	Draw::Draw(14, &src, &dst, f, 0.0f);
+
+	//ヒント本体出力（切り取り位置）
+	//▼切り取り位置を変化させる事で非表示と表示を切り替えている
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 904.0f + Hint_x;
+	src.m_bottom = 383.0f + Hint_y;
+	//ヒント本体出力（出力位置）
+	dst.m_top = 50.0f;
+	dst.m_left = 100.0f;
+	dst.m_right = 700.f;
+	dst.m_bottom = 260.0f;
+	Draw::Draw(15, &src, &dst, f, 0.0f);
 
 	Font::StrDraw(L"1 2 3 4 5 6 7 8 9", 250, 300, 30, o);
 

@@ -38,5 +38,8 @@ private:
 	int m_anser;//答え確認変数
 	float m_and;
 	int m_time;
-
+	//------------------------------------
+	//ヒント関係
+	float Hint_x;//ヒント本体表示/非表示用変数X
+	float Hint_y;//ヒント本体表示/非表示用変数Y
 };
