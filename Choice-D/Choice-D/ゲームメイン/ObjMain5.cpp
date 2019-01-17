@@ -56,10 +56,10 @@ void CObjMain5::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 	
-	//仮マウス位置表示
-	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);
+	////仮マウス位置表示
+	//wchar_t str[256];
+	//swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
+	//Font::StrDraw(str, 20, 20, 12, c);
 
 	//階層表示
 	wchar_t kaisou[4];
