@@ -1,14 +1,15 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
-#include <stdlib.h>
-#include <time.h>
-#include "../GameL/Audio.h"
-#include "../GameHead.h"
-#include "Objteki1.h"
-#include "../謎解き/ObjTenkey.h"
-#include "UtilityModule.h"
 #include "../GameL/DrawFont.h"
+#include "../GameHead.h"
+#include <time.h>
+#include "Objteki1.h"
+#include "UtilityModule.h"
+#include "../GameL/Audio.h"
+#include <stdlib.h>
+#include "../謎解き/ObjTenkey.h"
+
 
 
 
@@ -52,9 +53,12 @@ void CObjteki1::Action()
 	CObjHero* Hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	Herodeath = Hero->GetDeath();
 
+	
+
 	if (Herodeath == true)
 	{
 		Audio::Stop(0);
+
 	}
 	//HitBox位置を更新
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -186,15 +190,21 @@ void CObjteki1::Action()
 	if (m_hp <= 0)
 	{
 		obj->Set(true);
+		if (m_f == true)
+		{
+			Audio::Start(3);
+			m_f = false;
+		}
+		else
+		{
+			m_f = true;
+		}
 		m_enemytime--;
 
 		if (m_enemytime <= 0)
 		{
 			m_endflag = true;
 			m_TimeL += 3000;
-
-			this->SetStatus(false);		//自身に削除命令を出す。
-			Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
 
 			m_floor++;
 
@@ -205,6 +215,7 @@ void CObjteki1::Action()
 	else
 	{
 		obj->Set(false);
+
 	}
 
 

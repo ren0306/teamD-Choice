@@ -33,14 +33,17 @@ void CSceneSTG::InitScene()
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::VolumeMaster(-0.4f);
-	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(2, L"HERO弾丸　.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(3, L"消滅.wav", SOUND_TYPE::EFFECT);
+
 	Audio::Start(0);
 
 
 
-	//STGオブジェクト作成
+	//STGオブジェクト作成zzz
+	
 	CObjSTG* obj = new CObjSTG();
-	Objs::InsertObj(obj, OBJ_STG, 10);
+	Objs::InsertObj(obj,OBJ_STG,10);
 
 	//背景を読み込み0番に登録
 	Draw::LoadImage(L"syu-haikei.png", 0, TEX_SIZE_512);

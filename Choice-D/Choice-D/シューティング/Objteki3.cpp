@@ -6,6 +6,8 @@
 #include "../GameHead.h"
 #include "Objteki3.h"
 #include "UtilityModule.h"
+#include "../GameL/Audio.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -99,6 +101,8 @@ void CObjteki3::Action()
 	{
 		obj->Set(true);
 		m_dtime--;
+		Audio::Start(3);
+
 		if (m_dtime <= 0)
 		{
 			this->SetStatus(false);

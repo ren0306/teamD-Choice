@@ -5,6 +5,8 @@
 #include "../GameHead.h"
 #include "Objteki4.h"
 #include "UtilityModule.h"
+#include "../GameL/Audio.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -132,10 +134,15 @@ void CObjteki4::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
+
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
+		obj->Set(true);
 		m_dtime--;
+		Audio::Start(3);
+
 		if (m_dtime <= 10)
 		{
 			m_time = 0;
