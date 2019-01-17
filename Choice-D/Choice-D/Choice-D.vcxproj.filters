@@ -191,9 +191,6 @@
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="ObjBulletMove.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="タイトル\SceneOP.cpp">
@@ -291,9 +288,6 @@
     <ClCompile Include="ObjSTG5.cpp">
       <Filter>ソースファイル\STG\Scene\メイン</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBGM.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
@@ -350,6 +344,7 @@
     <ClCompile Include="ゲームメイン\ObjMain5.cpp">
       <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="小物関係\SceneMain4.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -532,9 +527,6 @@
     <ClInclude Include="謎解き\SceneNazo5.h">
       <Filter>ソースファイル\謎解き</Filter>
     </ClInclude>
-    <ClInclude Include="ObjBulletMove.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
     <ClInclude Include="タイトル\SceneOP.h">
       <Filter>ソースファイル\タイトル</Filter>
     </ClInclude>
@@ -618,9 +610,6 @@
     </ClInclude>
     <ClInclude Include="CObjChargeEffect.h">
       <Filter>ソースファイル\STG</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBGM.h">
-      <Filter>ソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="シューティング\STGBackground.h">
       <Filter>ソースファイル</Filter>

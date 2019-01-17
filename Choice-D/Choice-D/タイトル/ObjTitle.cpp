@@ -5,7 +5,6 @@
 #include "../GameL\SceneManager.h"
 #include "../GameL/Audio.h"
 
-#include "../ObjBGM.h"
 #include "../GameHead.h"
 #include "ObjTitle.h"
 #include "../ƒQ[ƒ€ƒƒCƒ“/SceneMain.h"
