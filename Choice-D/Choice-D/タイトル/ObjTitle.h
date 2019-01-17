@@ -26,5 +26,5 @@ private:
 	bool m_flag;
 	bool m_flag2;
 	bool m_flag3;
-
+	bool m_key_flag;//キーフラグ
 };

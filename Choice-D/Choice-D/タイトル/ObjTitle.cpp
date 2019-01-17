@@ -92,115 +92,129 @@ void CObjTitle::Draw()
 	//wchar_t str[256];
 	//swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	//Font::StrDraw(str, 20, 20, 12,c);
-	//マウスの位置とクリックする場所で当たり判定
-	//OPに移行
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>390 && m_mou_y < 430)
+
+	//前シーンから左または右クリックを押し続けている、
+	//もしくはこのシーンに入って一度でもクリックを押してない状態に移行すると実行。
+	if (m_mou_r == true || m_mou_l == true || m_key_flag == true)
 	{
-		Font::StrDraw(L"◇ゲームを始める", 400, 400, 32,c);
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_l == true)
+		//マウスの位置とクリックする場所で当たり判定
+		//OPに移行
+		if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>390 && m_mou_y < 430)
+		{
+			Font::StrDraw(L"◇ゲームを始める", 400, 400, 32, c);
+			//マウスのボタンが押されたらメインに遷移
+			if (m_mou_l == true)
+			{
+
+				m_f = true;
+
+			}
+		}
+		else
+		{
+			Font::StrDraw(L"ゲームを始める", 400, 400, 32, c);
+		}
+		//操作画面移行
+		if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 480)
 		{
 
-			m_f = true;
-			
-		}
-	}
-	else
-	{
-		Font::StrDraw(L"ゲームを始める", 400, 400, 32, c);
-	}
-	//操作画面移行
-	if (m_mou_x > 400 && m_mou_x < 620 && m_mou_y>430 && m_mou_y < 480)
-	{
+			Font::StrDraw(L"◇操作説明", 400, 450, 32, c);
+			//操作説明
+			if (m_mou_l == true)
+			{
 
-		Font::StrDraw(L"◇操作説明", 400, 450, 32, c);
-		//操作説明
-		if (m_mou_l == true)
+				m_sousa = true;
+			}
+		}
+		else
 		{
-
-			m_sousa =true;
+			Font::StrDraw(L"操作説明", 400, 450, 32, c);
 		}
-	}
-	else
-	{
-		Font::StrDraw(L"操作説明", 400, 450, 32, c);
-	}
-	//ゲーム終了
-	if (m_mou_x > 400 && m_mou_x < 635 && m_mou_y>493 && m_mou_y < 520)
-	{
-
-		Font::StrDraw(L"◇Choiceを終了する", 400, 500, 32, c);
 		//ゲーム終了
-		if (m_mou_l == true)
+		if (m_mou_x > 400 && m_mou_x < 635 && m_mou_y>493 && m_mou_y < 520)
 		{
 
-			m_end = true;
+			Font::StrDraw(L"◇Choiceを終了する", 400, 500, 32, c);
+			//ゲーム終了
+			//▼前シーンからクリック押し続けでこれをクリックしないように、
+			//このシーンに入って一度でもクリックを押してない状態に移行しないと
+			//実行出来ないようにしている。
+			if (m_mou_l == true && m_key_flag == true)
+			{
+
+				m_end = true;
+			}
+		}
+		else
+		{
+			Font::StrDraw(L"Choiceを終了する", 400, 500, 32, c);
+		}
+		//OP移行フラグ
+		if (m_f == true)
+		{
+			if (m_flag == true)
+			{
+				Audio::Start(1);
+				m_flag = false;
+			}
+			m_and -= 0.02f;
+			if (m_and <= 0)
+			{
+
+				Scene::SetScene(new CSceneOP());
+				m_f = false;
+			}
+		}
+		else
+		{
+			m_flag = true;
+		}
+		//プログラム終了フラグ
+		if (m_end == true)
+		{
+			if (m_flag2 == true)
+			{
+				Audio::Start(1);
+				m_flag2 = false;
+			}
+
+			m_and -= 0.03f;
+			if (m_and <= 0)
+			{
+				exit(4);
+			}
+		}
+		else
+		{
+			m_flag2 = true;
+		}
+		//操作説明移行フラグ
+		if (m_sousa == true)
+		{
+			if (m_flag3 == true)
+			{
+				Audio::Start(1);
+				m_flag3 = false;
+			}
+
+			m_and -= 0.03f;
+			if (m_and <= 0)
+			{
+
+				Scene::SetScene(new CSceneSousagamen());
+			}
+
+		}
+		else
+		{
+			m_flag3 = true;
 		}
 	}
 	else
 	{
-		Font::StrDraw(L"Choiceを終了する", 400, 500, 32, c);
+		m_key_flag = true;
 	}
-	//OP移行フラグ
-	if (m_f == true)
-	{
-		if (m_flag == true)
-		{
-			Audio::Start(1);
-			m_flag = false;
-		}
-		m_and -= 0.02f;
-		if (m_and <= 0)
-		{
 
-			Scene::SetScene(new CSceneOP());
-			m_f = false;
-		}
-	}
-	else
-	{
-		m_flag = true;
-	}
-	//プログラム終了フラグ
-	if (m_end == true)
-	{
-		if (m_flag2 == true)
-		{
-			Audio::Start(1);
-			m_flag2 = false;
-		}
-
-		m_and -= 0.03f;
-		if (m_and <= 0)
-		{
-			exit(4);
-		}
-	}
-	else
-	{
-		m_flag2 = true;
-	}
-	//操作説明移行フラグ
-	if (m_sousa == true)
-	{
-		if (m_flag3 == true)
-		{
-			Audio::Start(1);
-			m_flag3 = false;
-		}
-
-		m_and -= 0.03f;
-		if (m_and <= 0)
-		{
-
-			Scene::SetScene(new CSceneSousagamen());
-		}
-
-	}
-	else
-	{
-		m_flag3 = true;
-	}
 	RECT_F src;
 	RECT_F dst;
 
