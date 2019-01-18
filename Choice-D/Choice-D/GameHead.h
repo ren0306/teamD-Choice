@@ -141,7 +141,6 @@ extern bool g_teki;
 #include "シューティング\CObjMeanderBullet.h"
 #include "シューティング\CObjChargeBullt.h"
 #include "CObjChargeEffect.h"
-//#include "CObjBulletMove.h"
 #include "タイトル\ObjTitle.h"
 #include "ゲームメイン\ObjMain.h"
 #include "ゲームメイン\ObjMain2.h"
@@ -192,7 +191,6 @@ extern bool g_teki;
 #include "シューティング\ObjKuria3.h"
 #include "シューティング\ObjKuria4.h"
 #include "タイトル\ObjOP.h"
-#include "ObjBulletMove.h"
 #include "CObjEnemyEX.h"
 
 //------------------------------------------------
@@ -231,5 +229,4 @@ extern bool g_teki;
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
 #define SET_GAME_START CSceneTitle
-
 //-----------------------------------------------

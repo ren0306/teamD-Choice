@@ -50,8 +50,6 @@ void CObjHero::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_time = 50.f;
-	m_cnt = 7.f;
-	m_maxcnt = 7.f;
 	m_tame = 0.f;
 	m_maxtame = 100.f;
 	m_and = 1.f;
@@ -148,39 +146,32 @@ void CObjHero::Action()
 	{
 		if (m_f == true)
 		{
-
 			//発射音を鳴らす
 			Audio::Start(2);
-			if (m_cnt <= 0)
-			{
-				m_f = false;
-			}
-			else
-			{
-				// 弾丸オブジェクト作成
-				CObjBullet*  i = new CObjBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
-				Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+	
+			// 弾丸オブジェクト作成
+			CObjBullet*  i = new CObjBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
+			Objs::InsertObj(i, OBJ_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
 
-				m_f = false;
-			}
+			m_f = false;
 		}
 	}
 	else
 	{
 		m_f = true;
 	}
-	//Rを押してリロード
-	if (m_cnt <= 0)
-	{
-		
-		if (Input::GetVKey('R') == true)
-		{
-			Audio::Start(2);
+	////Rを押してリロード
+	//if (m_cnt <= 0)
+	//{
+	//	
+	//	if (Input::GetVKey('R') == true)
+	//	{
+	//		Audio::Start(2);
 
-			m_cnt = 7.f;
-			m_tame = 0.f;
-		}
-	}
+	//		m_cnt = 7.f;
+	//		m_tame = 0.f;
+	//	}
+	//}
 
 	//チャージエフェクトのアニメーション動作をObjHero内で管理するため、ここでチャージエフェクトのオブジェクトを取得
 	CObjChargeEffect* obj = (CObjChargeEffect*)Objs::GetObj(OBJ_CHARGE_EFFECT);
@@ -193,18 +184,11 @@ void CObjHero::Action()
 		m_tame++;
 		if (m_tame >= 100)
 		{
-			if (m_cnt <= 0)
-			{
-				m_tame = 0;
-			}
-			else
-			{
-				// 弾丸オブジェクト作成
-				CObjChargeBullet*  a = new CObjChargeBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
-				Objs::InsertObj(a, OBJ_CHARGE_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
-				m_cnt--;
-				m_tame = 0;
-			}
+			// 弾丸オブジェクト作成
+			CObjChargeBullet*  a = new CObjChargeBullet(m_x, m_y + -30.0f); //弾丸オブジェクト作成
+			Objs::InsertObj(a, OBJ_CHARGE_BULLET, 100); //作った弾丸オブジェクトをオブジェクトマネージャーに登録
+
+			m_tame = 0;
 		}
 	}
 	else
@@ -359,13 +343,8 @@ void CObjHero::Draw()
 	float a[4] = { 1.0f,0.0f,0.0f,1.0f };
 
 	Font::StrDraw(L"自分のHP", 0, 126, 28, h);
-	Font::StrDraw(L"残弾数", 0, 175, 25, h);
-	Font::StrDraw(L"チャージゲージ", 0, 225, 25, h);
+	Font::StrDraw(L"チャージゲージ", 0, 175, 25, h);
 
-	if (m_cnt <= 0)
-	{
-		Font::StrDraw(L"残弾０です。リロードしてください", 0, 200, 25, a);
-	}
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1280.0f;
@@ -381,7 +360,7 @@ void CObjHero::Draw()
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 
-	//残弾数表示
+	//チャージ表示
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1280.0f;
@@ -390,23 +369,8 @@ void CObjHero::Draw()
 	//表示位置の設定
 	dst.m_top = 200.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = (m_cnt / m_maxcnt)*128.0f;
-	dst.m_bottom = 225.0f;
-
-	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
-	Draw::Draw(5, &src, &dst, h, 0.0f);
-
-	//チャージ表示
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 1280.0f;
-	src.m_bottom = 720.0f;
-
-	//表示位置の設定
-	dst.m_top = 250.0f;
-	dst.m_left = 0.0f;
 	dst.m_right = (m_tame / m_maxtame)*128.0f;
-	dst.m_bottom = 275.0f;
+	dst.m_bottom = 225.0f;
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 

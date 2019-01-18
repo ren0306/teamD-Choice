@@ -155,6 +155,7 @@ void CObjTenkey5::Draw()
 						m_wannig = false;
 					}
 
+					m_TimeL -= 1800;//‚R‚O•b’á‰º
 					m_flag[1] = false;
 					m_flag[2] = false;
 					m_flag[3] = false;

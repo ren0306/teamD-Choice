@@ -28,8 +28,6 @@ private:
 	float   m_hp;	//自機のヒットポイント
 	float m_maxhp;
 	float m_time;
-	float m_cnt;
-	float m_maxcnt;
 	float m_tame;
 	float m_maxtame;
 	float m_and;

@@ -16,7 +16,6 @@ using namespace GameL;
 #include "../ゲームメイン/SceneMain.h"
 #include "SceneTitle.h"
 #include "../GameHead.h"
-#include "../ObjBGM.h"
 
 //コンストラクタ
 CSceneTitle::CSceneTitle()
