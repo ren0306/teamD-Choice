@@ -34,8 +34,9 @@ void CObjteki3::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_hit = 0;
+	death = false;
 	//当たり判定HitBox
-	Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13 - m_hit, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+	Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 50 - m_hit, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 }
 
@@ -100,6 +101,7 @@ void CObjteki3::Action()
 	if (m_hp <= 0)
 	{
 		obj->Set(true);
+		death = true;
 		m_dtime--;
 		Audio::Start(3);
 
@@ -132,18 +134,18 @@ void CObjteki3::Action()
 		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 	}
-	//チャージ弾のダメージ３
-	if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
-	{
-		m_hp -= 3;
-		//ダメージを受けると画像と当たり判定が小さくなる
-		m_hit += 12;
-		Hits::DeleteHitBox(this);
+	////チャージ弾のダメージ３
+	//if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
+	//{
+	//	m_hp -= 3;
+	//	//ダメージを受けると画像と当たり判定が小さくなる
+	//	m_hit += 12;
+	//	Hits::DeleteHitBox(this);
 
-		//当たり判定HitBox
-		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+	//	//当たり判定HitBox
+	//	Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
-	}
+	//}
 
 	
 
@@ -176,19 +178,22 @@ void CObjteki3::Draw()
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 
-	//敵3表示
-   //切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 512.0f;
-	src.m_bottom = 512.0f;
+	if (death == false)
+	{
+		//敵3表示
+	   //切り取り位置の設定
+		src.m_top = 0.0f;
+		src.m_left = 0.0f;
+		src.m_right = 512.0f;
+		src.m_bottom = 512.0f;
 
-	//表示位置の設定
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 0.0f + m_x;
-	dst.m_right = 200.0f + m_x - m_hit;
-	dst.m_bottom = 200.0f + m_y - m_hit;
+		//表示位置の設定
+		dst.m_top = 0.0f + m_y;
+		dst.m_left = 0.0f + m_x;
+		dst.m_right = 200.0f + m_x - m_hit;
+		dst.m_bottom = 200.0f + m_y - m_hit;
 
-	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(10, &src, &dst, c, 0.0f);
+	}
 }
