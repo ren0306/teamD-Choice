@@ -146,8 +146,8 @@ void CObjteki5::Action()
 		{
 			g_teki = false;
 			m_endflag = true;
-			/*this->SetStatus(false);
-			Hits::DeleteHitBox(this);*/
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 			if (m_endflag == true)
 			{
 				if (m_nazoflag == true)
