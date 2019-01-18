@@ -30,10 +30,11 @@ void CSceneSTG5::InitScene()
 {
 	//音楽情報の読み込み
 	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
-	Audio::LoadAudio(2, L"HeroBullet.wav", SOUND_TYPE::EFFECT);
-	
+	Audio::LoadAudio(2, L"HERO弾丸　.wav", SOUND_TYPE::EFFECT);
+	Audio::LoadAudio(3, L"消滅.wav", SOUND_TYPE::EFFECT);
 
 	Audio::Start(0);
+
 	//STGオブジェクト作成
 	CObjSTG5* obj = new CObjSTG5();
 	Objs::InsertObj(obj, OBJ_STG5, 10);

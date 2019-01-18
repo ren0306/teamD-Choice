@@ -1,14 +1,15 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameL\HitBoxManager.h"
-#include <stdlib.h>
-#include <time.h>
-#include "../GameL/Audio.h"
-#include "../GameHead.h"
-#include "Objteki1.h"
-#include "../謎解き/ObjTenkey.h"
-#include "UtilityModule.h"
 #include "../GameL/DrawFont.h"
+#include "../GameHead.h"
+#include <time.h>
+#include "Objteki1.h"
+#include "UtilityModule.h"
+#include "../GameL/Audio.h"
+#include <stdlib.h>
+#include "../謎解き/ObjTenkey.h"
+
 
 
 
@@ -36,6 +37,7 @@ void CObjteki1::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 	m_enemytime = 70;
+	death = false;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 200, 170, ELEMENT_ENEMY, OBJ_TEKI1, 1);
 }
@@ -52,9 +54,12 @@ void CObjteki1::Action()
 	CObjHero* Hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	Herodeath = Hero->GetDeath();
 
+	
+
 	if (Herodeath == true)
 	{
 		Audio::Stop(0);
+
 	}
 	//HitBox位置を更新
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -186,15 +191,22 @@ void CObjteki1::Action()
 	if (m_hp <= 0)
 	{
 		obj->Set(true);
+		if (m_f == true)
+		{
+			Audio::Start(3);
+			m_f = false;
+		}
+		else
+		{
+			m_f = true;
+		}
+		death = true;
 		m_enemytime--;
 
 		if (m_enemytime <= 0)
 		{
 			m_endflag = true;
 			m_TimeL += 3000;
-
-			this->SetStatus(false);		//自身に削除命令を出す。
-			Hits::DeleteHitBox(this);	//敵機弾丸が所有するHItBoxに削除する
 
 			m_floor++;
 
@@ -205,6 +217,7 @@ void CObjteki1::Action()
 	else
 	{
 		obj->Set(false);
+
 	}
 
 
@@ -238,27 +251,26 @@ void CObjteki1::Draw()
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 
-	//敵表示
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	if (death == false)
+	{
+		//敵表示
+		float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 984.0f;
-	src.m_bottom = 760.0f;
+	src.m_right = 986.0f;
+	src.m_bottom = 785.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
-	dst.m_left = 0.0f + m_x;
-	dst.m_right = 400.0f + m_x;
+	dst.m_left = 50.0f + m_x;
+	dst.m_right = 350.0f + m_x;
 	dst.m_bottom = 260.0f + m_y;
 
-	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(10, &src, &dst, c, 0.0f);
-
-
-
-
+		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(10, &src, &dst, c, 0.0f);
+	}
 
 }
 

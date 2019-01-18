@@ -125,7 +125,6 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneGameOver2());
 		}
 		*/
-
 		return;//消滅処理は、ここでアクションメソッドを終了させる
 	}
 
@@ -313,6 +312,7 @@ void CObjHero::Action()
 	if (m_Mehp <= 0)
 	{
 		death = true;
+		Audio::Start(3);
 
 		obj->Set(false);//チャージエフェクトアニメーションを停止させる。
 		Hits::DeleteHitBox(this);	//主人公機が所有するHitBoxを削除する。
