@@ -160,7 +160,7 @@ void CObjteki3::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-			   //敵HP表示
+	//敵HP表示
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
 	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
 
