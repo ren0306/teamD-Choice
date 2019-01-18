@@ -244,13 +244,13 @@ void CObjteki1::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 984.0f;
-	src.m_bottom = 760.0f;
+	src.m_right = 986.0f;
+	src.m_bottom = 785.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_y;
-	dst.m_left = 0.0f + m_x;
-	dst.m_right = 400.0f + m_x;
+	dst.m_left = 50.0f + m_x;
+	dst.m_right = 350.0f + m_x;
 	dst.m_bottom = 260.0f + m_y;
 
 	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
