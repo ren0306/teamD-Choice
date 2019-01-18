@@ -138,6 +138,7 @@ void CObjteki5::Action()
 	{
 		obj->Set(true);
 		m_dtime--;
+		g_teki = true;
 		if (m_dtime <= 0)
 		{
 			g_teki = false;
