@@ -32,4 +32,5 @@ private:
 	float m_hp;		//ボスのヒットポイント
 	float m_maxhp;
 	bool m_f5; 
+	bool death;//敵機の生存管理フラグ
 };

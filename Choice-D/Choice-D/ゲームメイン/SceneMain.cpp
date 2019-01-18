@@ -39,6 +39,7 @@ void CSceneMain::InitScene()
 
 	Audio::Start(1);
 	
+	
 
 	//外部グラフィックファイルを読み込み０番に登録
 	Draw::LoadImage(L"doukutu.png", 0, TEX_SIZE_512);

@@ -5,6 +5,8 @@
 #include "../GameHead.h"
 #include "Objteki4.h"
 #include "UtilityModule.h"
+#include "../GameL/Audio.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -132,10 +134,15 @@ void CObjteki4::Action()
 		Hits::DeleteHitBox(this);
 	}
 
+	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
+
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
+		obj->Set(true);
 		m_dtime--;
+		Audio::Start(3);
+
 		if (m_dtime <= 10)
 		{
 			m_time = 0;
@@ -208,19 +215,21 @@ void CObjteki4::Action()
 		//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 		Draw::Draw(5, &src, &dst, h, 0.0f);
 
+		if (death == false)
+		{
+			//切り取り位置の設定
+			src.m_top = 0.0f;
+			src.m_left = 0.0f;
+			src.m_right = 1152.0f;
+			src.m_bottom = 1772.0f;
 
-		//切り取り位置の設定
-		src.m_top = 0.0f;
-		src.m_left = 0.0f;
-		src.m_right = 1152.0f;
-		src.m_bottom = 1772.0f;
+			//表示位置の設定
+			dst.m_top = 0.0f + m_y;
+			dst.m_left = 0.0f + m_x;
+			dst.m_right = 160.0f + m_x;
+			dst.m_bottom = 210.0f + m_y;
 
-		//表示位置の設定
-		dst.m_top = 0.0f + m_y;
-		dst.m_left = 0.0f + m_x;
-		dst.m_right = 160.0f + m_x;
-		dst.m_bottom = 210.0f + m_y;
-
-		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-		Draw::Draw(10, &src, &dst, c, 0.0f);
+			//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+			Draw::Draw(10, &src, &dst, c, 0.0f);
+		}
 	}
