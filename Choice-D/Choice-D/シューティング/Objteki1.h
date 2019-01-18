@@ -32,4 +32,5 @@ class CObjteki1 :public CObj
 		float m_maxhp;
 		bool m_f;
 		bool Herodeath;
+		bool death;//敵機の生存管理フラグ
 };

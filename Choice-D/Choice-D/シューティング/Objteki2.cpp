@@ -20,7 +20,6 @@ CObjteki2::CObjteki2(float x, float y)
 	m_x = x;
 	m_y = y;
 	m_tekicnt++;
-
 }
 
 //イニシャライズ
@@ -29,6 +28,7 @@ void CObjteki2::Init()
 	m_r = 45.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	death = false;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x , m_y, 85, 130, ELEMENT_ENEMY, OBJ_TEKI2, 1);
 }
@@ -157,6 +157,7 @@ void CObjteki2::Action()
 	if (m_hp <= 0)
 	{
 		obj->Set(true);
+		death = true;
 		m_dtime--;
 		if (m_dtime <= 0)
 		{
@@ -199,23 +200,26 @@ void CObjteki2::Draw()
 	//5番目に登録したグラフィックをsrc・dst・cの元の情報に描画
 	Draw::Draw(5, &src, &dst, h, 0.0f);
 
+	if (death == false)
+	{
+		//敵２表示
+		float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	//敵２表示
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+		//切り取り位置の設定
+		src.m_top = 0.0f;
+		src.m_left = 0.0f;
+		src.m_right = 1071.0f;
+		src.m_bottom = 865.0f;
 
-	 //切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 1071.0f;
-	src.m_bottom = 865.0f;
+		//表示位置の設定
+		dst.m_top = 0.0f + m_y;
+		dst.m_left = 0.0f + m_x;
+		dst.m_right = 200.0f + m_x;
+		dst.m_bottom = 160.0f + m_y;
 
-	//表示位置の設定
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 0.0f + m_x;
-	dst.m_right = 200.0f + m_x;
-	dst.m_bottom = 160.0f + m_y;
-
-	//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
+		Draw::Draw(10, &src, &dst, c, 0.0f);
+	}
+	
 }
