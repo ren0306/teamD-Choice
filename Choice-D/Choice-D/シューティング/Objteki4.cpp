@@ -64,10 +64,6 @@ void CObjteki4::Action()
 	//é÷çsíeî≠éÀ
 	if (m_time % 30 == 0)
 	{
-		//é÷çsíeä€çÏê¨
-		CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 65, m_y + 95);
-		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
-
 
 		if (m_hp <= 0)
 		{
@@ -75,7 +71,11 @@ void CObjteki4::Action()
 		}
 		else
 		{
-		
+			//é÷çsíeä€çÏê¨
+			CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 65, m_y + 95);
+			Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
+
+
 		}
 	}
 
