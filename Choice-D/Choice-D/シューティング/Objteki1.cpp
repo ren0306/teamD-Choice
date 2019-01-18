@@ -220,8 +220,6 @@ void CObjteki1::Action()
 
 	}
 
-
-
 }
 
 //ƒhƒ[

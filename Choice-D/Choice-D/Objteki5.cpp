@@ -110,7 +110,7 @@ void CObjteki5::Action()
 		this->SetStatus(false);		//©g‚Éíœ–½—ß
 		Hits::DeleteHitBox(this);
 	}
-
+	
 	//HP‚ª75%ˆÈ‰º(26.25)‚É‚È‚Á‚½‚çcˆÚ“®(‰•œ)‚ğ’Ç‰Á‚·‚é(cˆÚ“®‚É•ÏX‚·‚é)
 	if (m_hp <= 26.25)
 	{
@@ -141,7 +141,7 @@ void CObjteki5::Action()
 		obj->Set(true);
 		death = true;
 		m_dtime--;
-		
+		g_teki = true;
 		if (m_dtime <= 0)
 		{
 			g_teki = false;
