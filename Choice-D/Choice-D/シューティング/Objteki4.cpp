@@ -139,14 +139,13 @@ void CObjteki4::Action()
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
-		obj->Set(true);
 		m_dtime--;
-		Audio::Start(3);
 
 		if (m_dtime <= 10)
 		{
 			m_time = 0;
-			
+			Audio::Start(3);
+
 			//▼敵4の座標を画面外に移動させる事により、消えたように見せる。
 			//その後はdeath==trueのif文(return有)に入り、
 			//敵機が完全に領域外にでたら敵機を破棄するの命令が

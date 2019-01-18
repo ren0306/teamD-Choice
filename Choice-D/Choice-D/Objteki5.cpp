@@ -7,6 +7,7 @@
 #include "Objteki5.h"
 #include "シューティング\Objteki5.h"
 #include "シューティング\UtilityModule.h"
+#include "GameL\Audio.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -140,6 +141,7 @@ void CObjteki5::Action()
 		obj->Set(true);
 		death = true;
 		m_dtime--;
+		
 		if (m_dtime <= 0)
 		{
 			g_teki = false;
