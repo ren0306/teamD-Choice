@@ -102,6 +102,8 @@ void CObjTenkey5::Draw()
 	float o[4] = { 0.5f,0.0f,1.0f,m_and };
 	//Â
 	float b[4] = { 0.0f,0.0f,1.0f,m_and };
+	//—Î
+	float g[4] = { 0.0f,1.0f,0.0f,1.0 };
 
 	Font::StrDraw(L"‚±‚Ì–â‘è‚Í2Œ…‚Ì”š‚Ì‚İ“ü—Í‰Â”\‚Å‚·", 160, 550, 30, r);
 
@@ -227,7 +229,8 @@ void CObjTenkey5::Draw()
 	{
 		if (m_clear == true)
 		{
-			m_and -= 0.03f;
+			m_and -= 0.02f;
+			Font::StrDraw(L"+30•b", 40, 50, 30, g);
 			if (m_and <= 0)
 			{
 				m_and = 0.0f;

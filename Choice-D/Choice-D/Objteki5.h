@@ -31,6 +31,6 @@ private:
 	int m_dtime;
 	float m_hp;		//ボスのヒットポイント
 	float m_maxhp;
-	bool m_f5; 
+	bool m_f; 
 	bool death;//敵機の生存管理フラグ
 };

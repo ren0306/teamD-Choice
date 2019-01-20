@@ -74,6 +74,15 @@ void CObjHero::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjHero::Action()
 {
+	if (g_CombatWaitTime >= 0)
+	{
+		g_CombatWaitTime--;
+		return;
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		;
+	}
 	if (death == true)
 	{
 		RECT_F ani_src[6] =

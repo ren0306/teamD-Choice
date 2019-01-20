@@ -34,6 +34,7 @@ void CSceneSTG::InitScene()
 	Audio::LoadAudio(0, L"STGBGM.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::VolumeMaster(-0.4f);
 	Audio::LoadAudio(2, L"HEROíeä€Å@.wav", SOUND_TYPE::EFFECT);
+	Audio::Volume(-0.5f, 2);
 	Audio::LoadAudio(3, L"è¡ñ≈.wav", SOUND_TYPE::EFFECT);
 
 	Audio::Start(0);

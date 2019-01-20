@@ -29,6 +29,7 @@ float m_clearcnt=100.f;
 float m_misscnt=100.f;//間違えた時の時間を減らす表示をする変数	
 float m_BGM = 0;
 bool g_teki = false;
+float g_CombatWaitTime = 300.f;
 //----------------------------------------------------------------------
 
 //イニシャライズ

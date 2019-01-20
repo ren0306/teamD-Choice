@@ -28,8 +28,8 @@ private:
 	int   m_time;//弾丸間隔用
 	int   m_hit;
 	int m_cnt;
-
-	bool m_f3;
+	int m_iti;
+	bool m_f;
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
 	int m_dtime;

@@ -71,8 +71,8 @@ void CObjTenkey::Draw()
 	float s[4] = { 1.0f,1.0f,0.0f,m_and };
 	//‡
 	float o[4] = { 0.5f,0.0f,1.0f,m_and };
-
-	float g[4] = { 0.0f,1.0f,0.0f,m_and };
+	//—Î
+	float g[4] = { 0.0f,1.0f,0.0f,1.0};
 
 	if (m_andf == true)
 	{
@@ -129,6 +129,7 @@ void CObjTenkey::Draw()
 					m_Nazocnt++;
 					//ŠK‘w‚ğˆê‚Â‘‚â‚·
 					m_floor++;
+
 					//
 					m_clear = true;
 					m_TimeL += 1800;//‚R‚O•b‘‰Á
@@ -181,7 +182,9 @@ void CObjTenkey::Draw()
 	}
 	if (m_clear == true)
 	{
-		m_and -= 0.03f;
+		m_and -= 0.02f;
+		Font::StrDraw(L"+30•b", 40, 50, 30, g);
+
 		if (m_and <= 0)
 		{
 			m_and = 0.0f;

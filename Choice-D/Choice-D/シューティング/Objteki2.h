@@ -26,7 +26,7 @@ private:
 	float m_r;	//sinカーブ用変数
 	int   m_time;//弾丸間隔用
 
-	bool m_f2;
+	bool m_f;
 	float m_hp;	//ボスのヒットポイント
 	float m_maxhp;
 	int m_dtime;
