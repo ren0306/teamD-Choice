@@ -32,12 +32,9 @@ void CSceneED_Roll::InitScene()
 	Audio::LoadAudio(0, L"BADENDBGM .wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::Start(0);
 
-	//出力させる文字のグラフィックを作成
-	Font::SetStrTex(L"ゲームを始める");
-
 	//エンディング1オブジェクト作成
-	CObjED1* obj = new CObjED1();
-	Objs::InsertObj(obj, OBJ_ED1, 10);
+	CObjED_Roll* obj = new CObjED_Roll();
+	Objs::InsertObj(obj, OBJ_ED_ROLL, 10);
 }
 
 //ゲームエンディング1実行中メソッド
