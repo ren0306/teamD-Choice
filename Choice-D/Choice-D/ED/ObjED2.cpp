@@ -56,5 +56,5 @@ void CObjED2::Draw()
 	
 	Font::StrDraw(L"NORMAL END", 180, 50, 90, c);
 	Font::StrDraw(L"無事に脱出することができた!",200, 435, 30, c);
-	Font::StrDraw(L"クリックでタイトルへ", 460, 535, 25, c);
+	Font::StrDraw(L"クリックでエンドロールへ", 460, 535, 25, c);
 }
