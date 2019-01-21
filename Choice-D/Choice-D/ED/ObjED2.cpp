@@ -31,7 +31,7 @@ void CObjED2::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 450 && m_mou_x < 730 && m_mou_y>525 && m_mou_y < 560)
+	if (m_mou_x > 450 && m_mou_x < 755 && m_mou_y>525 && m_mou_y < 560)
 	{
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
@@ -56,5 +56,5 @@ void CObjED2::Draw()
 	
 	Font::StrDraw(L"END", 330, 50, 90, c);
 	Font::StrDraw(L"敵には多少気づかれてしまったが、何とか脱出できた。", 40, 435, 30, c);
-	Font::StrDraw(L"クリックでタイトルへ", 460, 535, 25, c);
+	Font::StrDraw(L"クリックでエンドロールへ", 460, 535, 25, c);
 }

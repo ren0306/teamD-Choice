@@ -91,6 +91,9 @@ void CSceneSTG::InitScene()
 
 	CObjEnemyEX* eef = new CObjEnemyEX(0, 0);
 	Objs::InsertObj(eef, OBJ_EX, 200);
+
+	
+
 }
 
 //ゲームシューティング実行中メソッド

@@ -86,6 +86,7 @@ void CSceneSTG5::InitScene()
 	CObjEnemyEX* eef = new CObjEnemyEX(0, 0);
 	Objs::InsertObj(eef, OBJ_EX, 200);
 
+
 }
 
 //ゲームシューティング5実行中メソッド

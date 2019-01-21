@@ -31,7 +31,7 @@ void CObjED3::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 430 && m_mou_x < 725 && m_mou_y>520 && m_mou_y < 555)
+	if (m_mou_x > 470 && m_mou_x < 780 && m_mou_y>520 && m_mou_y < 555)
 	{
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
@@ -63,6 +63,6 @@ void CObjED3::Draw()
 	float s[4] = { 0.2f,1.0f,0.9f,1.0f };
 	Font::StrDraw(L"やったね！敵に気づかれずに脱出することができた！", 50, 450, 30, s);
 
-	Font::StrDraw(L"クリックでタイトルへ", 480, 535, 25, c);
+	Font::StrDraw(L"クリックでエンドロールへ", 480, 535, 25, c);
 
 }
