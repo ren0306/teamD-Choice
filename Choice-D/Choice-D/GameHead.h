@@ -208,6 +208,7 @@ extern bool g_teki;
 #include "ED\SceneED1.h"
 #include "ED\SceneED2.h"
 #include "ED\SceneED3.h"
+#include "ED\SceneED_Roll.h"
 #include "“ä‰ð‚«\SceneNazo.h"
 #include "“ä‰ð‚«\SceneNazo2.h"
 #include "“ä‰ð‚«\SceneNazo3.h"

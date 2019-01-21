@@ -61,7 +61,7 @@ void CObjED3::Draw()
 	Font::StrDraw(L"HAPPY END", 200, 50, 90, o);
 
 	float s[4] = { 0.2f,1.0f,0.9f,1.0f };
-	Font::StrDraw(L"やったね！敵に気づかれずに脱出することができた！", 50, 450, 30, s);
+	Font::StrDraw(L"やったね！無傷で脱出することができた！", 150, 450, 30, s);
 
 	Font::StrDraw(L"クリックでエンドロールへ", 480, 535, 25, c);
 

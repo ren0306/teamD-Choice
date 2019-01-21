@@ -204,7 +204,7 @@ void CObjteki1::Action()
 	//チャージ弾のダメージ３
 	if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
 	{
-		m_hp -= 3;
+		m_hp -= 8;
 
 	}
 
@@ -309,7 +309,7 @@ void CObjteki1::Draw()
 		}
 		else if (g_CombatWaitTime <= 0)
 		{
-			Font::StrDraw(L"GO!", 400, 200, 100, c);
+			Font::StrDraw(L"GO!", 380, 200, 100, c);
 		}
 		else if (g_CombatWaitTime <= 100)
 		{

@@ -193,15 +193,20 @@ void CObjteki5::Action()
 			//ED•ªŠò—p
 			if (m_endflag == true)
 			{
+				if (m_Mehp == 20)
+				{
+					Scene::SetScene(new CSceneED3());
+					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄÝ’è‚µ‚Ä‚¨‚­
+				}
 				//“ä‰ð‚«‚ð‚P‰ñ‚Å‚àƒNƒŠƒA‚·‚é‚ÆtrueƒGƒ“ƒh‚Ö
-				if (m_nazoflag == true)
+				else if (m_nazoflag == true)
 				{
 					Scene::SetScene(new CSceneED2());
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄÝ’è‚µ‚Ä‚¨‚­
 
 				}
 				//‚·‚×‚Ä‚Ì“G‚ðŸr–Å‚·‚é‚ÆABADƒGƒ“ƒh‚Ö
-				if (m_tekicnt >= 4)
+				else if (m_tekicnt >= 4)
 				{
 					Scene::SetScene(new CSceneED1());
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄÝ’è‚µ‚Ä‚¨‚­
@@ -226,7 +231,7 @@ void CObjteki5::Action()
 	//ƒ`ƒƒ[ƒW’e‚Ìƒ_ƒ[ƒW‚R
 	if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
 	{
-		m_hp -= 3;
+		m_hp -= 8;
 
 	}
 

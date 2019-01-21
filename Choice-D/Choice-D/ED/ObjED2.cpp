@@ -54,7 +54,7 @@ void CObjED2::Draw()
 	Objs::InsertObj(ED2, OBJ_ED2GAZOU, 20);
 
 	
-	Font::StrDraw(L"END", 330, 50, 90, c);
-	Font::StrDraw(L"敵には多少気づかれてしまったが、何とか脱出できた。", 40, 435, 30, c);
-	Font::StrDraw(L"クリックでエンドロールへ", 460, 535, 25, c);
+	Font::StrDraw(L"NORMAL END", 180, 50, 90, c);
+	Font::StrDraw(L"無事に脱出することができた!",200, 435, 30, c);
+	Font::StrDraw(L"クリックでタイトルへ", 460, 535, 25, c);
 }
