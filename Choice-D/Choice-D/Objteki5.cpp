@@ -193,6 +193,11 @@ void CObjteki5::Action()
 			//ED分岐用
 			if (m_endflag == true)
 			{
+				if (m_Mehp == 20)
+				{
+					Scene::SetScene(new CSceneED3());
+					g_CombatWaitTime = 300.f;//ここで必ず３００に再設定しておく
+				}
 				//謎解きを１回でもクリアするとtrueエンドへ
 				if (m_nazoflag == true)
 				{

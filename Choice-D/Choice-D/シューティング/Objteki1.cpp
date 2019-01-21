@@ -309,7 +309,7 @@ void CObjteki1::Draw()
 		}
 		else if (g_CombatWaitTime <= 0)
 		{
-			Font::StrDraw(L"GO!", 400, 200, 100, c);
+			Font::StrDraw(L"GO!", 380, 200, 100, c);
 		}
 		else if (g_CombatWaitTime <= 100)
 		{
