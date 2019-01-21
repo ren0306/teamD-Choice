@@ -350,6 +350,10 @@
     <ClCompile Include="ED\SceneED_Roll.cpp">
       <Filter>ソースファイル\ED</Filter>
     </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="ED\ObjED_Roll.cpp">
+      <Filter>ソースファイル\ED</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -667,6 +671,9 @@
       <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClInclude>
     <ClInclude Include="ED\SceneED_Roll.h">
+      <Filter>ソースファイル\ED</Filter>
+    </ClInclude>
+    <ClInclude Include="ED\ObjED_Roll.h">
       <Filter>ソースファイル\ED</Filter>
     </ClInclude>
   </ItemGroup>

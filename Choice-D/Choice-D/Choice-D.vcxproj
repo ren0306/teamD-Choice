@@ -115,6 +115,7 @@
     <ClCompile Include="ED\ObjED1.cpp" />
     <ClCompile Include="ED\ObjED2.cpp" />
     <ClCompile Include="ED\ObjED3.cpp" />
+    <ClCompile Include="ED\ObjED_Roll.cpp" />
     <ClCompile Include="ED\SceneED1.cpp" />
     <ClCompile Include="ED\SceneED2.cpp" />
     <ClCompile Include="ED\SceneED3.cpp" />
@@ -246,6 +247,7 @@
     <ClInclude Include="ED\ObjED1.h" />
     <ClInclude Include="ED\ObjED2.h" />
     <ClInclude Include="ED\ObjED3.h" />
+    <ClInclude Include="ED\ObjED_Roll.h" />
     <ClInclude Include="ED\SceneED1.h" />
     <ClInclude Include="ED\SceneED2.h" />
     <ClInclude Include="ED\SceneED3.h" />

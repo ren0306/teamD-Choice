@@ -35,6 +35,7 @@ enum OBJ_NAME
 	OBJ_ED1,
 	OBJ_ED3,
 	OBJ_ED2,
+	OBJ_ED_ROLL,
 	OBJ_NAZO,
 	OBJ_TENKEY,
 	OBJ_TENKEY2,
@@ -159,6 +160,7 @@ extern bool g_teki;
 #include "ED\ObjED2.h"
 #include "ED\ObjED1.h"
 #include "ED\ObjED3.h"
+#include "ED\ObjED_Roll.h"
 #include "謎解き\ObjTenkey.h"
 #include "小物関係\ObjTenkey2.h"
 #include "小物関係\ObjTenkey3.h"
@@ -230,5 +232,5 @@ extern bool g_teki;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneED_Roll
 //-----------------------------------------------
