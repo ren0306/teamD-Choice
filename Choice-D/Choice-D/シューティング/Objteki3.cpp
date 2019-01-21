@@ -163,18 +163,18 @@ void CObjteki3::Action()
 		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 	}
-	////チャージ弾のダメージ３
-	//if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
-	//{
-	//	m_hp -= 3;
-	//	//ダメージを受けると画像と当たり判定が小さくなる
-	//	m_hit += 12;
-	//	Hits::DeleteHitBox(this);
+	//チャージ弾のダメージ３
+	else if(hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
+	{
+		m_hp -= 3;
+		//ダメージを受けると画像と当たり判定が小さくなる
+		m_hit += 12;
+		Hits::DeleteHitBox(this);
 
-	//	//当たり判定HitBox
-	//	Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+		//当たり判定HitBox
+		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
-	//}
+	}
 
 	
 
