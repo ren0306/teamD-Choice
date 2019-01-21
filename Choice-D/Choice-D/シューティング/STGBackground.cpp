@@ -1,6 +1,7 @@
 //使用するヘッダーファイル
 #include "../GameL\DrawTexture.h"
 #include "../GameHead.h"
+#include "../GameL/DrawFont.h"
 
 #include "STGBackground.h"
 
@@ -18,6 +19,7 @@ void STGBackground::Init()
 //アクション
 void STGBackground::Action()
 {
+
 	if (m_andf == true)
 	{
 		m_and += 0.1f;
@@ -28,6 +30,8 @@ void STGBackground::Action()
 		}
 
 	}
+
+
 
 }
 

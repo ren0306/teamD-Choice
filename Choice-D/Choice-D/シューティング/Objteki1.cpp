@@ -30,7 +30,7 @@ void CObjteki1::Init()
 {
 	m_hp = 30.f;
 	m_maxhp = 30.f;
-	m_f = false;
+	m_f = true;
 	m_time = 0;
 	m_r = 85.0f;
 	m_r2 = 0.0f;
@@ -48,18 +48,31 @@ void CObjteki1::Init()
 void CObjteki1::Action()
 {
 
+	//戦闘待機時間を管理するグローバル変数が０になったら戦闘開始
+	if (g_CombatWaitTime >= 0)
+	{
+		g_CombatWaitTime--;
+		return;
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		g_CombatWaitTime--;
+
+		;
+	}
+
 	RECT_F dst;//描画先表示位置
 
 	//Audio::Start(0);
+	//主人公（Hero）の生死を取得する
 	CObjHero* Hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	Herodeath = Hero->GetDeath();
 
 	
-
+	//主人公（Hero）がもし死んでいたら音楽を止める
 	if (Herodeath == true)
 	{
 		Audio::Stop(0);
-
 	}
 	//HitBox位置を更新
 	CHitBox* hit = Hits::GetHitBox(this);
@@ -69,20 +82,20 @@ void CObjteki1::Action()
 
 
 	m_time++;
-
-	//以下の拡散弾、誘導弾等のプログラムは
-	//TEST用で一時的に追加してるだけなので
-	//不要な場合はコメントアウトしてOK。
-	/*
-	//通常弾発射
+	/*--敵弾製作所---------------------------------------------------------------------------------------------------
+	//ほかの敵に使う場合はその部分をコピーしてね
+	//※切り取りや削除はしないでね。してしまった場合Ctrl+Zを押したらたいてい戻るよ
+	//----------------------------------------------------------------------------
+	//通常弾発射プログラム
 	if (m_time % 50 == 0)
 	{
-	//弾丸敵機オブジェクト
-	CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
-	Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
+		//弾丸敵機オブジェクト
+		CObjBulletTeki1* obj_b = new CObjBulletTeki1(m_x + 178, m_y + 95);
+		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI1, 100);
 	}
-
-	//20°間隔で弾丸発射(拡散弾発射)
+	//----------------------------------------------------------------------------
+	//----------------------------------------------------------------------------
+	//20°間隔で弾丸発射(拡散弾発射)プログラム
 	if (m_time % 100 == 0)
 	{
 		//19発同時発射
@@ -94,8 +107,9 @@ void CObjteki1::Action()
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
-
-	//ショットガン風拡散弾発射(AngleBulletを応用している)
+	//----------------------------------------------------------------------------
+	//----------------------------------------------------------------------------
+	//ショットガン風拡散弾発射(AngleBulletを応用している)プログラム
 	//260°～ 280°の範囲(下方向)に2°間隔で弾丸発射
 	if (m_time % 100 == 0)
 	{
@@ -108,34 +122,43 @@ void CObjteki1::Action()
 			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 		}
 	}
-
-	//誘導弾発射
+	//----------------------------------------------------------------------------
+	//----------------------------------------------------------------------------
+	//誘導弾発射プログラム
 	if (m_time % 200 == 0)
 	{
 		//誘導弾丸作成
 		CObjHomingBullet* obj_homing_bullet = new CObjHomingBullet(m_x + 178, m_y + 95);//誘導弾丸作成
 		Objs::InsertObj(obj_homing_bullet, OBJ_HOMING_BULLET, 100);//誘導弾丸登録
 	}
-	
-	//蛇行弾発射
+	//----------------------------------------------------------------------------
+	//----------------------------------------------------------------------------
+	//蛇行弾発射プログラム
 	if (m_time % 50 == 0)
 	{
 		//蛇行弾丸作成
 		CObjMeanderBullet* obj_b = new CObjMeanderBullet(m_x + 178, m_y + 95);
 		Objs::InsertObj(obj_b, OBJ_MEANDER_BULLET, 100);
 	}
-	*/
-
+	//----------------------------------------------------------------------------
+	//----------------------------------------------------------------------------------------------------------------------*/
 	//攻撃パターン
 	if (m_time % 50 == 0)
 	{
-		//下方向に11発同時発射
-		CObjAngleBullet* obj_b;
-		for (float i = 260.0f; i < 280.0f; i += 2.0f)
+		if (m_hp <= 0)
 		{
-			//角度iで角度弾丸発射
-			obj_b = new CObjAngleBullet(m_x + 178.0f, m_y + 95.0f, i, 5.0f);
-			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			;
+		}
+		else
+		{
+			//下方向に11発同時発射
+			CObjAngleBullet* obj_b;
+			for (float i = 260.0f; i < 280.0f; i += 2.0f)
+			{
+				//角度iで角度弾丸発射
+				obj_b = new CObjAngleBullet(m_x + 178.0f, m_y + 95.0f, i, 5.0f);
+				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			}
 		}
 	}
 
@@ -187,10 +210,14 @@ void CObjteki1::Action()
 
 	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
 
-	//HP０で
+	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
 		obj->Set(true);
+		//敵が死んだということを確認する用
+		death = true;
+		//爆破エフェクトが消えてから消滅させるための変数をデクリメント
+		m_enemytime--;
 		if (m_f == true)
 		{
 			Audio::Start(3);
@@ -198,19 +225,18 @@ void CObjteki1::Action()
 		}
 		else
 		{
-			m_f = true;
+			;
 		}
-		death = true;
-		m_enemytime--;
-
+		//爆破エフェクト変数が０になったあと２階層へ
 		if (m_enemytime <= 0)
 		{
+			//敵を１体でも倒すと反応するbool変数をtrueにする
 			m_endflag = true;
-			m_TimeL += 3000;
-
+			//階層数を管理しているグローバル変数をインクリメント
 			m_floor++;
-
+			//２階層へ
 			Scene::SetScene(new CSceneKuria());
+			g_CombatWaitTime = 300.f;//ここで必ず３００に再設定しておく
 
 		}
 	}
@@ -226,14 +252,17 @@ void CObjteki1::Action()
 void CObjteki1::Draw()
 {
 
+
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-
 
 
 	//敵HP表示
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
 	Font::StrDraw(L"敵のHP", 0, 75, 28, h);
+	//敵表示
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -251,9 +280,6 @@ void CObjteki1::Draw()
 
 	if (death == false)
 	{
-		//敵表示
-		float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -268,6 +294,36 @@ void CObjteki1::Draw()
 
 		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(10, &src, &dst, c, 0.0f);
+	}
+	//主人公（Hero）が死ぬか、敵が死んだらストップさせる
+	if (Herodeath == true || death == true)
+	{
+		;
+	}
+	else
+	{
+		//戦闘が始まる３秒前からカウントダウンを画面に表示させるプログラム
+		if (g_CombatWaitTime <= -100)
+		{
+			;
+		}
+		else if (g_CombatWaitTime <= 0)
+		{
+			Font::StrDraw(L"GO!", 400, 200, 100, c);
+		}
+		else if (g_CombatWaitTime <= 100)
+		{
+			Font::StrDraw(L"1", 400, 200, 100, c);
+		}
+		else if (g_CombatWaitTime <= 200)
+		{
+			Font::StrDraw(L"2", 400, 200, 100, c);
+		}
+		else if (g_CombatWaitTime >= 200)
+		{
+			Font::StrDraw(L"3", 400, 200, 100, c);
+		}
+
 	}
 
 }

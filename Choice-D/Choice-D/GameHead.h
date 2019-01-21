@@ -113,6 +113,7 @@ extern int m_tekicnt;
 //ゲーム内時間管理グローバル変数------------------
 extern int m_TimeL;
 extern int m_floor;
+extern float g_CombatWaitTime;//戦闘開始までのカウントダウン用
 //------------------------------------------------
 extern float m_Mehp;
 extern float m_misscnt;//間違えた時の時間を減らす表示をする変数	

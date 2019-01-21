@@ -19,7 +19,7 @@ CObjteki5::CObjteki5(float x, float y)
 	m_x = x;
 	m_y = y;
 	m_tekicnt++;
-
+	m_f = true;
 	m_floor++;
 }
 
@@ -34,7 +34,6 @@ void CObjteki5::Init()
 	m_r2 = 90.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	m_f5 = false;
 	death = false;
 	//当たり判定HitBox
 	Hits::SetHitBox(this, m_x, m_y, 180-80, 170, ELEMENT_ENEMY, OBJ_TEKI5, 1);
@@ -44,28 +43,52 @@ void CObjteki5::Init()
 //アクション
 void CObjteki5::Action()
 {
+	//戦闘待機時間を管理するグローバル変数が０になったら戦闘開始
+	if (g_CombatWaitTime >= 0)
+	{
+		g_CombatWaitTime--;
+		return;
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		g_CombatWaitTime--;
+		;
+	}
 
-	//敵1の正と負を取得する
 
 	m_time++;
 
 	//通常弾発射
 	if (m_time % 20 == 0)
 	{
-		//弾丸敵機オブジェクト
-		CObjBulletTeki5* obj_b = new CObjBulletTeki5(m_x + 75, m_y + 95);
-		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI5, 100);
+		if (m_hp <= 0)
+		{
+			;
+		}
+		else
+		{
+			//弾丸敵機オブジェクト
+			CObjBulletTeki5* obj_b = new CObjBulletTeki5(m_x + 75, m_y + 95);
+			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI5, 100);
+		}
 	}
 
 	if (m_time % 70== 0)
 	{
-		//19発同時発射
-		CObjAngleBullet* obj_b;
-		for (int i = 0; i < 360; i += 20)
+		if (m_hp <= 0)
 		{
-			//角度iで角度弾丸発射
-			obj_b = new CObjAngleBullet(m_x + 75, m_y + 13, i, 5.0f);
-			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			;
+		}
+		else
+		{
+			//19発同時発射
+			CObjAngleBullet* obj_b;
+			for (int i = 0; i < 360; i += 20)
+			{
+				//角度iで角度弾丸発射
+				obj_b = new CObjAngleBullet(m_x + 75, m_y + 13, i, 5.0f);
+				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			}
 		}
 	}
 
@@ -133,30 +156,56 @@ void CObjteki5::Action()
 		m_vx = sin(3.14f / 180 * m_r);
 		m_vy = 0.0f;
 		}
+
+	//爆破エフェクト用のオブジェクト取得
 	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
 
 	//HPが0になったら破棄
 	if (m_hp <= 0)
 	{
 		obj->Set(true);
+		//敵が死んだということを確認する用
 		death = true;
+		//爆破エフェクトが消えてから消滅させるための変数をデクリメント
 		m_dtime--;
+		//爆破エフェクト制御用グローバル変数をtrueにする
 		g_teki = true;
+		//爆破音再生
+		if (m_f == true)
+		{
+			Audio::Start(3);
+			m_f = false;
+		}
+		else
+		{
+			;
+		}
+		//爆破エフェクト変数が０になったあとの行き先を決める
 		if (m_dtime <= 0)
 		{
+			//爆破エフェクト制御用グローバル変数をfalseにする
 			g_teki = false;
+			//敵を１体でも倒すと反応するbool変数をtrueにする
 			m_endflag = true;
+			//ヒットボックスを削除する
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
+			//ED分岐用
 			if (m_endflag == true)
 			{
+				//謎解きを１回でもクリアするとtrueエンドへ
 				if (m_nazoflag == true)
 				{
 					Scene::SetScene(new CSceneED2());
+					g_CombatWaitTime = 300.f;//ここで必ず３００に再設定しておく
+
 				}
+				//すべての敵を殲滅すると、BADエンドへ
 				if (m_tekicnt >= 4)
 				{
 					Scene::SetScene(new CSceneED1());
+					g_CombatWaitTime = 300.f;//ここで必ず３００に再設定しておく
+
 				}
 				//Scene::SetScene(new CSceneED2());
 
@@ -228,4 +277,26 @@ void CObjteki5::Draw()
 		//10番めに登録したグラフィックをsrc・dst・cの情報を元に描画
 		Draw::Draw(10, &src, &dst, c, 0.0f);
 	}
+	if (g_CombatWaitTime >= 200)
+	{
+		Font::StrDraw(L"3", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= -100)
+	{
+		;
+		//Font::StrDraw(L" ", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		Font::StrDraw(L"GO!", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 100)
+	{
+		Font::StrDraw(L"1", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 200)
+	{
+		Font::StrDraw(L"2", 400, 200, 100, c);
+	}
+
 }

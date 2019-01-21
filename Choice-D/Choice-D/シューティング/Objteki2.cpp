@@ -8,13 +8,13 @@
 #include "../GameL/Audio.h"
 //égópÇ∑ÇÈÉlÅ[ÉÄÉXÉyÅ[ÉX
 using namespace GameL;
-
 //ÉRÉìÉXÉgÉâÉNÉ^
 CObjteki2::CObjteki2(float x, float y)
 {
+
 	m_hp	= 35.f;
 	m_maxhp = 35.f;
-
+	m_f = true;
 	m_time = 0;
 	m_dtime = 70;
 	m_x = x;
@@ -36,6 +36,18 @@ void CObjteki2::Init()
 //ÉAÉNÉVÉáÉì
 void CObjteki2::Action()
 {
+	//êÌì¨ë“ã@éûä‘Çä«óùÇ∑ÇÈÉOÉçÅ[ÉoÉãïœêîÇ™ÇOÇ…Ç»Ç¡ÇΩÇÁêÌì¨äJén
+	if (g_CombatWaitTime >= 0)
+	{
+		g_CombatWaitTime--;
+		return;
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		g_CombatWaitTime--;
+		;
+	}
+
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x +55, m_y +20);
 
@@ -44,9 +56,16 @@ void CObjteki2::Action()
 	//í èÌíeî≠éÀ
 	if (m_time % 45 == 0)
 	{
-		//íeä€ìGã@ÉIÉuÉWÉFÉNÉg
-		CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 78, m_y + 95);
-		Objs::InsertObj(obj_b, OBJ_BULLET_TEKI2, 100);
+		if (m_hp <= 0)
+		{
+			;
+		}
+		else
+		{
+			//íeä€ìGã@ÉIÉuÉWÉFÉNÉg
+			CObjBulletTeki2* obj_b = new CObjBulletTeki2(m_x + 78, m_y + 95);
+			Objs::InsertObj(obj_b, OBJ_BULLET_TEKI2, 100);
+		}
 	}
 
 	//ÉVÉáÉbÉgÉKÉìïóägéUíeî≠éÀ(AngleBulletÇâûópÇµÇƒÇ¢ÇÈ)
@@ -55,13 +74,20 @@ void CObjteki2::Action()
 	{
 		if (m_time % 65 == 0)
 		{
-			//â∫ï˚å¸Ç…11î≠ìØéûî≠éÀ
-			CObjAngleBullet* obj_b;
-			for (int i = 250; i < 290; i += 8)
+			if (m_hp <= 0)
 			{
-				//äpìxiÇ≈äpìxíeä€î≠éÀ
-				obj_b = new CObjAngleBullet(m_x + 55, m_y + 105, i, 5.5f);
-				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+				;
+			}
+			else
+			{
+				//â∫ï˚å¸Ç…11î≠ìØéûî≠éÀ
+				CObjAngleBullet* obj_b;
+				for (int i = 250; i < 290; i += 8)
+				{
+					//äpìxiÇ≈äpìxíeä€î≠éÀ
+					obj_b = new CObjAngleBullet(m_x + 55, m_y + 105, i, 5.5f);
+					Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+				}
 			}
 		}
 
@@ -73,16 +99,22 @@ void CObjteki2::Action()
 	{
 		if (m_time % 60 == 0)
 		{
-			//â∫ï˚å¸Ç…11î≠ìØéûî≠éÀ
-			CObjAngleBullet* obj_b;
-			for (int i = 250; i < 290; i += 8)
+			if (m_hp <= 0)
 			{
-				//äpìxiÇ≈äpìxíeä€î≠éÀ
-				obj_b = new CObjAngleBullet(m_x + 115, m_y + 105, i, 5.5f);
-				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+				;
+			}
+			else
+			{
+				//â∫ï˚å¸Ç…11î≠ìØéûî≠éÀ
+				CObjAngleBullet* obj_b;
+				for (int i = 250; i < 290; i += 8)
+				{
+					//äpìxiÇ≈äpìxíeä€î≠éÀ
+					obj_b = new CObjAngleBullet(m_x + 115, m_y + 105, i, 5.5f);
+					Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+				}
 			}
 		}
-
 	}
 
 	//ÉVÉáÉbÉgÉKÉìïóägéUíeî≠éÀ(AngleBulletÇâûópÇµÇƒÇ¢ÇÈ)
@@ -91,13 +123,20 @@ void CObjteki2::Action()
 	{
 		if (m_time % 75 == 0)
 		{
-			//â∫ï˚å¸Ç…11î≠ìØéûî≠éÀ
-			CObjAngleBullet* obj_b;
-			for (int i = 245; i < 305; i += 12)
+			if (m_hp <= 0)
 			{
-				//äpìxiÇ≈äpìxíeä€î≠éÀ
-				obj_b = new CObjAngleBullet(m_x + 85, m_y + 105, i, 5.0f);
-				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+				;
+			}
+			else
+			{
+				//â∫ï˚å¸Ç…11î≠ìØéûî≠éÀ
+				CObjAngleBullet* obj_b;
+				for (int i = 245; i < 305; i += 12)
+				{
+					//äpìxiÇ≈äpìxíeä€î≠éÀ
+					obj_b = new CObjAngleBullet(m_x + 85, m_y + 105, i, 5.0f);
+					Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+				}
 			}
 		}
 
@@ -159,7 +198,16 @@ void CObjteki2::Action()
 		obj->Set(true);
 		death = true;
 		m_dtime--;
-		Audio::Start(3);
+		if (m_f == true)
+		{
+			Audio::Start(3);
+			m_f = false;
+		}
+		else
+		{
+			;
+		}
+
 
 		if (m_dtime <= 0)
 		{
@@ -170,6 +218,8 @@ void CObjteki2::Action()
 			m_floor++;
 			g_teki = false;
 			Scene::SetScene(new CSceneKuria2());
+			g_CombatWaitTime = 300.f;//Ç±Ç±Ç≈ïKÇ∏ÇRÇOÇOÇ…çƒê›íËÇµÇƒÇ®Ç≠
+
 		}
 	}
 	else
@@ -183,6 +233,7 @@ void CObjteki2::Draw()
 {
 	RECT_F src;//ï`âÊå≥êÿÇËéÊÇËà íu
 	RECT_F dst;//ï`âÊêÊï\é¶à íu
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//ìGHPï\é¶
 	float h[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -223,5 +274,26 @@ void CObjteki2::Draw()
 		//10î‘ÇﬂÇ…ìoò^ÇµÇΩÉOÉâÉtÉBÉbÉNÇsrcÅEdstÅEcÇÃèÓïÒÇå≥Ç…ï`âÊ
 		Draw::Draw(10, &src, &dst, c, 0.0f);
 	}
-	
+	if (g_CombatWaitTime >= 200)
+	{
+		Font::StrDraw(L"3", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= -100)
+	{
+		;
+		//Font::StrDraw(L" ", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		Font::StrDraw(L"GO!", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 100)
+	{
+		Font::StrDraw(L"1", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 200)
+	{
+		Font::StrDraw(L"2", 400, 200, 100, c);
+	}
+
 }

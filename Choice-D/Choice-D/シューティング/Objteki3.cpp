@@ -17,7 +17,7 @@ CObjteki3::CObjteki3(float x, float y)
 	m_hp = 40.f;
 	m_maxhp = 40.f;
 	m_x = x;
-
+	m_f = true;
 	m_y = y;
 	m_hit = 0;
 	m_tekicnt++;
@@ -36,25 +36,44 @@ void CObjteki3::Init()
 	m_hit = 0;
 	death = false;
 	//“–‚½‚è”»’èHitBox
-	Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 50 - m_hit, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+	Hits::SetHitBox(this, m_x, m_y+100, 150 - m_hit, 50 - m_hit, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjteki3::Action()
 {
+	//í“¬‘Ò‹@ŽžŠÔ‚ðŠÇ—‚·‚éƒOƒ[ƒoƒ‹•Ï”‚ª‚O‚É‚È‚Á‚½‚çí“¬ŠJŽn
+	if (g_CombatWaitTime >= 0)
+	{
+		g_CombatWaitTime--;
+		return;
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		g_CombatWaitTime--;
+		;
+	}
+
 	m_time++;
 
 	//ŠgŽU’e”­ŽË
 	if (m_time % 50 == 0)
 	{
-		//19”­“¯Žž”­ŽË
-		CObjAngleBullet* obj_b;
-		for (int i = 0; i < 360; i += 20)
+		if (m_hp <= 0)
 		{
-			//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-			obj_b = new CObjAngleBullet(m_x, m_y , i, 5.0f);
-			Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			;
+		}
+		else
+		{
+			//19”­“¯Žž”­ŽË
+			CObjAngleBullet* obj_b;
+			for (int i = 0; i < 360; i += 20)
+			{
+				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
+				obj_b = new CObjAngleBullet(m_x, m_y, i, 5.0f);
+				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
+			}
 		}
 	}
 	//m_time‚Ì‰Šú‰»
@@ -103,7 +122,15 @@ void CObjteki3::Action()
 		obj->Set(true);
 		death = true;
 		m_dtime--;
-		Audio::Start(3);
+		if (m_f == true)
+		{
+			Audio::Start(3);
+			m_f = false;
+		}
+		else
+		{
+			;
+		}
 
 		if (m_dtime <= 0)
 		{
@@ -114,6 +141,8 @@ void CObjteki3::Action()
 			m_floor++;
 			g_teki = false;
 			Scene::SetScene(new CSceneKuria3());
+			g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄÝ’è‚µ‚Ä‚¨‚­
+
 		}
 	}
 	else
@@ -134,18 +163,18 @@ void CObjteki3::Action()
 		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 	}
-	////ƒ`ƒƒ[ƒW’e‚Ìƒ_ƒ[ƒW‚R
-	//if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
-	//{
-	//	m_hp -= 3;
-	//	//ƒ_ƒ[ƒW‚ðŽó‚¯‚é‚Æ‰æ‘œ‚Æ“–‚½‚è”»’è‚ª¬‚³‚­‚È‚é
-	//	m_hit += 12;
-	//	Hits::DeleteHitBox(this);
+	//ƒ`ƒƒ[ƒW’e‚Ìƒ_ƒ[ƒW‚R
+	else if(hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
+	{
+		m_hp -= 3;
+		//ƒ_ƒ[ƒW‚ðŽó‚¯‚é‚Æ‰æ‘œ‚Æ“–‚½‚è”»’è‚ª¬‚³‚­‚È‚é
+		m_hit += 12;
+		Hits::DeleteHitBox(this);
 
-	//	//“–‚½‚è”»’èHitBox
-	//	Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+		//“–‚½‚è”»’èHitBox
+		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
-	//}
+	}
 
 	
 
@@ -196,4 +225,26 @@ void CObjteki3::Draw()
 		//10”Ô‚ß‚É“o˜^‚µ‚½ƒOƒ‰ƒtƒBƒbƒN‚ðsrcEdstEc‚Ìî•ñ‚ðŒ³‚É•`‰æ
 		Draw::Draw(10, &src, &dst, c, 0.0f);
 	}
+	if (g_CombatWaitTime >= 200)
+	{
+		Font::StrDraw(L"3", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= -100)
+	{
+		;
+		//Font::StrDraw(L" ", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 0)
+	{
+		Font::StrDraw(L"GO!", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 100)
+	{
+		Font::StrDraw(L"1", 400, 200, 100, c);
+	}
+	else if (g_CombatWaitTime <= 200)
+	{
+		Font::StrDraw(L"2", 400, 200, 100, c);
+	}
+
 }
