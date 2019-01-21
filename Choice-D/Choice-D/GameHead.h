@@ -208,6 +208,7 @@ extern bool g_teki;
 #include "ED\SceneED1.h"
 #include "ED\SceneED2.h"
 #include "ED\SceneED3.h"
+#include "ED\SceneED_Roll.h"
 #include "謎解き\SceneNazo.h"
 #include "謎解き\SceneNazo2.h"
 #include "謎解き\SceneNazo3.h"
@@ -229,5 +230,5 @@ extern bool g_teki;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneED3
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
