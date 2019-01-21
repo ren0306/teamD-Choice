@@ -199,14 +199,14 @@ void CObjteki5::Action()
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄİ’è‚µ‚Ä‚¨‚­
 				}
 				//“ä‰ğ‚«‚ğ‚P‰ñ‚Å‚àƒNƒŠƒA‚·‚é‚ÆtrueƒGƒ“ƒh‚Ö
-				if (m_nazoflag == true)
+				else if (m_nazoflag == true)
 				{
 					Scene::SetScene(new CSceneED2());
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄİ’è‚µ‚Ä‚¨‚­
 
 				}
 				//‚·‚×‚Ä‚Ì“G‚ğŸr–Å‚·‚é‚ÆABADƒGƒ“ƒh‚Ö
-				if (m_tekicnt >= 4)
+				else if (m_tekicnt >= 4)
 				{
 					Scene::SetScene(new CSceneED1());
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄİ’è‚µ‚Ä‚¨‚­
