@@ -231,7 +231,7 @@ void CObjteki5::Action()
 	//チャージ弾のダメージ３
 	if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
 	{
-		m_hp -= 3;
+		m_hp -= 8;
 
 	}
 
