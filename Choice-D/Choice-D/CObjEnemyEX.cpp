@@ -75,9 +75,9 @@ void CObjEnemyEX::Action()
 			m_ani_time++;
 		}
 	}
-	if (m_ani == 16)
+	if (m_ani == 200000000)
 	{
-
+		;
 	}
 }
 //ÉhÉçÅ[
