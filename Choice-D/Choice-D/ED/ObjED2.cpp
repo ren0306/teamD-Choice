@@ -36,7 +36,7 @@ void CObjED2::Action()
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneTitle());
+			Scene::SetScene(new CSceneED_Roll());
 		}
 	}
 

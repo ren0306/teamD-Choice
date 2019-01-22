@@ -108,6 +108,7 @@ struct UserData
 //ED分岐用グローバル変数---------
 extern bool m_endflag;
 extern bool m_nazoflag;
+extern bool g_RTA;
 extern int m_Nazocnt;
 extern int m_tekicnt;
 //-------------------------------

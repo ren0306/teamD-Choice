@@ -15,4 +15,5 @@ public:
 	void Draw();		//ƒhƒ[
 private:
 	float m_y;
+	float m_and;
 };

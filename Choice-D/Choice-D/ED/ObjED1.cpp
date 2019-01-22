@@ -30,13 +30,30 @@ void CObjED1::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
+
+	int second = (m_TimeL / 60) % 60; //秒
+	int minute = (m_TimeL / 60) / 60; //分
+
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+	wchar_t str[128];
+	if (second < 10)
+	{
+		swprintf_s(str, L"RTA用、のこりタイムは%d分%d秒でした。", minute, second);
+	}
+	else
+	{
+		swprintf_s(str, L"RTA用、のこりタイムは%d分%d秒でした。", minute, second);
+	}
+	Font::StrDraw(str, 0, 0, 35, c);
+
+
 	//マウスの位置とクリックする場所で当たり判定
 	if (m_mou_x > 450 && m_mou_x < 755 && m_mou_y>525 && m_mou_y < 560)
 	{
 		//マウスのボタンが押されたらメインに遷移
 		if (m_mou_r == true || m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneTitle());
+			Scene::SetScene(new CSceneED_Roll());
 		}
 	}
 

@@ -196,6 +196,7 @@ void CObjteki5::Action()
 				if (m_Mehp == 20)
 				{
 					Scene::SetScene(new CSceneED3());
+
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄİ’è‚µ‚Ä‚¨‚­
 				}
 				//“ä‰ğ‚«‚ğ‚P‰ñ‚Å‚àƒNƒŠƒA‚·‚é‚ÆtrueƒGƒ“ƒh‚Ö
@@ -209,6 +210,7 @@ void CObjteki5::Action()
 				else if (m_tekicnt >= 4)
 				{
 					Scene::SetScene(new CSceneED1());
+					g_RTA = true;
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄİ’è‚µ‚Ä‚¨‚­
 
 				}

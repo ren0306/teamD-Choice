@@ -26,7 +26,14 @@ void CObjTimeLimit::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjTimeLimit::Action()
 {
-	m_TimeL--;
+	if (g_RTA == true)
+	{
+		;
+	}
+	else
+	{
+		m_TimeL--;
+	}
 
 	if (m_TimeL <= 0)
 	{

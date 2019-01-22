@@ -29,8 +29,19 @@ CSceneED_Roll::~CSceneED_Roll()
 //ゲームエンディング1初期化メソッド
 void CSceneED_Roll::InitScene()
 {
-	Audio::LoadAudio(0, L"BADENDBGM .wav", SOUND_TYPE::BACK_MUSIC);
+	Audio::LoadAudio(0, L"titleBGM.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::Start(0);
+
+	//敵１を読み込み1番に登録
+	Draw::LoadImage(L"teki1.png", 1, TEX_SIZE_512);
+	//敵２を読み込み2番に登録
+	Draw::LoadImage(L"teki2.png", 2, TEX_SIZE_512);
+	//敵３を読み込み3番に登録
+	Draw::LoadImage(L"teki3.png", 3, TEX_SIZE_512);
+	//敵４を読み込み4番に登録
+	Draw::LoadImage(L"teki4.png", 4, TEX_SIZE_512);
+	//敵５を読み込み5番に登録
+	Draw::LoadImage(L"teki5.png", 5, TEX_SIZE_512);
 
 	//エンディング1オブジェクト作成
 	CObjED_Roll* obj = new CObjED_Roll();
