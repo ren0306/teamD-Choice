@@ -150,32 +150,33 @@ void CObjteki3::Action()
 		obj->Set(false);
 	}
 
-
-	//弾丸と接触してるしたらHPを減らす
-	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	if (death == false)
 	{
-		m_hp -= 1;
-		//ダメージを受けると画像と当たり判定が小さくなる
-		m_hit += 4;
-		Hits::DeleteHitBox(this);
+		//弾丸と接触してるしたらHPを減らす
+		if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+		{
+			m_hp -= 1;
+			//ダメージを受けると画像と当たり判定が小さくなる
+			m_hit += 4;
+			Hits::DeleteHitBox(this);
 
-		//当たり判定HitBox
-		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+			//当たり判定HitBox
+			Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
+		}
+		//チャージ弾のダメージ３
+		else if (hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
+		{
+			m_hp -= 8;
+			//ダメージを受けると画像と当たり判定が小さくなる
+			m_hit += 32;
+			Hits::DeleteHitBox(this);
+
+			//当たり判定HitBox
+			Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+
+		}
 	}
-	//チャージ弾のダメージ３
-	else if(hit->CheckObjNameHit(OBJ_CHARGE_BULLET) != nullptr)
-	{
-		m_hp -= 8;
-		//ダメージを受けると画像と当たり判定が小さくなる
-		m_hit += 32;
-		Hits::DeleteHitBox(this);
-
-		//当たり判定HitBox
-		Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
-
-	}
-
 	
 
 }

@@ -233,5 +233,5 @@ extern bool g_teki;
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneED_Roll
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
