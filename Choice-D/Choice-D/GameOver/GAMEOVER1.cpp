@@ -31,6 +31,7 @@ void CObjGAMEOVER::Action()
 		{
 			m_TimeL = 3000;
 			m_floor = 1;
+			g_CombatWaitTime = 300.f;
 			Scene::SetScene(new CSceneTitle());
 		}
 	}

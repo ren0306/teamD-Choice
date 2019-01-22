@@ -25,6 +25,10 @@ void CObjGAMEOVER2::Action()
 	m_mou_l = Input::GetMouButtonL();
 	if (Input::GetVKey(VK_RETURN) == true)
 	{
+		m_TimeL = 3000;
+		m_floor = 1;
+		g_CombatWaitTime = 300.f;
+
 		Scene::SetScene(new CSceneTitle());
 	}
 }

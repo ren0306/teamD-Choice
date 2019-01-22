@@ -193,10 +193,11 @@ void CObjteki5::Action()
 			//ED分岐用
 			if (m_endflag == true)
 			{
-				if (m_Mehp == 20)
+				//もし、敵と全員戦ったうえで、ノーダメージならHAPPYENDへ
+				if (m_Mehp == 20&&m_tekicnt>=4)
 				{
 					Scene::SetScene(new CSceneED3());
-
+					g_RTA = true;
 					g_CombatWaitTime = 300.f;//ここで必ず３００に再設定しておく
 				}
 				//謎解きを１回でもクリアするとtrueエンドへ
