@@ -36,7 +36,7 @@ void CObjEnemyEX::Set(bool f)
 void CObjEnemyEX::Action()
 {
 
-	RECT_F ani_src[16] =
+	RECT_F ani_src[17] =
 	{
 		{ 0,   0,  100,  100},
 		{ 0,  100, 200,  100},
@@ -54,11 +54,12 @@ void CObjEnemyEX::Action()
 		{100,500,600,200},
 		{100,600,700,200},
 		{100,700,800,200},
+		{0,0,0,0 },
 	};
 
 	if (m_ani_flag == false)
 	{
-		m_eff = ani_src[65];//アニメーションのRECT配列から4番目のRECT情報取得
+		m_eff = ani_src[16];//アニメーションのRECT配列から4番目のRECT情報取得
 	}
 	else
 	{
@@ -75,10 +76,10 @@ void CObjEnemyEX::Action()
 			m_ani_time++;
 		}
 	}
-	if (m_ani == 65)
-	{
-		;
-	}
+	//if (m_ani == 65)
+	//{
+	//	;
+	//}
 }
 //ドロー
 void CObjEnemyEX::Draw()
