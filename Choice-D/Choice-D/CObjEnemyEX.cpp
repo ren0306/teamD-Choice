@@ -58,7 +58,7 @@ void CObjEnemyEX::Action()
 
 	if (m_ani_flag == false)
 	{
-		m_eff = ani_src[-1];//アニメーションのRECT配列から4番目のRECT情報取得
+		m_eff = ani_src[65];//アニメーションのRECT配列から4番目のRECT情報取得
 	}
 	else
 	{
@@ -75,7 +75,7 @@ void CObjEnemyEX::Action()
 			m_ani_time++;
 		}
 	}
-	if (m_ani == 16)
+	if (m_ani == 65)
 	{
 		;
 	}
