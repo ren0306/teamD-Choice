@@ -35,8 +35,8 @@ void CObjOP::Action()
 	//Audio::LoadAudio(0, L"mainBGM.wav", SOUND_TYPE::BACK_MUSIC);
 
 	//Audio::Start(0);
-	float k[4] = { 0.3,0.6,0.6,m_and };
-	float c[4] = { 1,1,1,m_and };
+	float k[4] = { 0.3f,0.6f,0.6f,m_and };
+	float c[4] = { 1.f,1.f,1.f,m_and };
 
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -81,8 +81,8 @@ void CObjOP::Action()
 //ドロー
 void CObjOP::Draw()
 {
-	float c[4] = { 1,1,1,m_and };
-	float k[4] = { 0.7,0.7,0.0,m_and };
+	float c[4] = { 1.f,1.f,1.f,m_and };
+	float k[4] = { 0.7f,0.7f,0.0f,m_and };
 	float d[4] = { 1.0f,1.0f,1.0f,m_and };
 
 	RECT_F src;
@@ -131,7 +131,7 @@ void CObjOP::Draw()
 	}
 	if (m_kesu == true)
 	{
-		m_and -= 0.02;
+		m_and -= 0.02f;
 		if (m_and <= 0)
 		{
 			Scene::SetScene(new CSceneMain());

@@ -153,6 +153,7 @@
     <ClCompile Include="ゲームメイン\SceneMain.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain2.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain3.cpp" />
+    <ClCompile Include="ゲームメイン\SceneMain4.cpp" />
     <ClCompile Include="ゲームメイン\SceneMain5.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -223,10 +224,6 @@
     <ClCompile Include="小物関係\ObjTenkey2.cpp" />
     <ClCompile Include="小物関係\ObjTenkey3.cpp" />
     <ClCompile Include="小物関係\ObjTenkey4.cpp" />
-    <ClCompile Include="小物関係\SceneMain4.cpp" />
-    <ClCompile Include="小物関係\SceneMain4.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="小物関係\ObjTenkey5.cpp" />
     <ClCompile Include="小物関係\TimeLimit.cpp" />
     <ClCompile Include="謎解き\ObjBGNazo.cpp" />

@@ -75,7 +75,7 @@ void CObjEnemyEX::Action()
 			m_ani_time++;
 		}
 	}
-	if (m_ani == 200000000)
+	if (m_ani == 16)
 	{
 		;
 	}
@@ -109,14 +109,6 @@ void CObjEnemyEX::Draw()
 		m_x = obj3->GetX() - 130;
 		m_y = obj3->GetY() - 150;
 	}
-	/*	
-	else if ( m_floor == 4 && m_tekicnt == 3)
-	{
-		CObjteki4*obj4 = (CObjteki4*)Objs::GetObj(OBJ_TEKI4);
-		m_x = obj4->GetX() - 15;
-		m_y = obj4->GetY() - 100;
-	}
-	*/
 	else if ( m_floor == 6 && g_teki == true)
 	{
 		CObjteki5*obj5 = (CObjteki5*)Objs::GetObj(OBJ_TEKI5);

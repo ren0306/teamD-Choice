@@ -139,9 +139,6 @@ void CObjTenkey3::Draw()
 					Audio::Start(3);
 					//‚P‚Â‚Å‚à‰ğ‚­‚Ætrue‚É‚·‚é
 					m_nazoflag = true;
-					//
-					m_Nazocnt++;
-					m_floor++;
 					m_TimeL += 1800;//‚R‚O•b‘‰Á
 					m_clear = true;
 				}
@@ -219,6 +216,10 @@ void CObjTenkey3::Draw()
 		{
 			m_and = 0.0f;
 			Scene::SetScene(new CSceneMain4);
+			//ED•ªŠò‚ÉŠÖŒW
+			m_Nazocnt++;
+			//ŠK‘w‚ğˆê‚Â‘‚â‚·
+			m_floor++;
 
 		}
 	}

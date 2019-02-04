@@ -82,10 +82,10 @@ void CObjteki2::Action()
 			{
 				//‰º•ûŒü‚É11”­“¯Žž”­ŽË
 				CObjAngleBullet* obj_b;
-				for (int i = 250; i < 290; i += 8)
+				for (float i = 250.f; i < 290.f; i += 8.f)
 				{
 					//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-					obj_b = new CObjAngleBullet(m_x + 55, m_y + 105, i, 5.5f);
+					obj_b = new CObjAngleBullet(m_x + 55.f, m_y + 105.f, i, 5.5f);
 					Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 				}
 			}
@@ -107,10 +107,10 @@ void CObjteki2::Action()
 			{
 				//‰º•ûŒü‚É11”­“¯Žž”­ŽË
 				CObjAngleBullet* obj_b;
-				for (int i = 250; i < 290; i += 8)
+				for (float i = 250.f; i < 290.f; i += 8.f)
 				{
 					//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-					obj_b = new CObjAngleBullet(m_x + 115, m_y + 105, i, 5.5f);
+					obj_b = new CObjAngleBullet(m_x + 115.f, m_y + 105.f, i, 5.5f);
 					Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 				}
 			}
@@ -131,10 +131,10 @@ void CObjteki2::Action()
 			{
 				//‰º•ûŒü‚É11”­“¯Žž”­ŽË
 				CObjAngleBullet* obj_b;
-				for (int i = 245; i < 305; i += 12)
+				for (float i = 245.f; i < 305.f; i += 12.f)
 				{
 					//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
-					obj_b = new CObjAngleBullet(m_x + 85, m_y + 105, i, 5.0f);
+					obj_b = new CObjAngleBullet(m_x + 85.f, m_y + 105.f, i, 5.0f);
 					Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 				}
 			}

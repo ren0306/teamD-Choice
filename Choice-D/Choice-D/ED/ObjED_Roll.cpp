@@ -34,7 +34,7 @@ void CObjED_Roll::Action()
 	{
 		Font::StrDraw(L"EnterƒL[’·‰Ÿ‚µ‚Å‘‘—‚è‚Å‚«‚Ü‚·", 0, 0, 32, f);
 
-		m_and -= 0.02;
+		m_and -= 0.02f;
 	}
 	else
 	{

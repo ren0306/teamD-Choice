@@ -19,7 +19,7 @@ private:
 	float m_mou_y;
 	bool m_mou_r;
 	bool m_mou_l;
-	double m_and;
+	float m_and;
 	bool m_f;
 	bool m_key_flag;//キーフラグ
 	bool m_andf;

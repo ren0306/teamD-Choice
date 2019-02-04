@@ -18,7 +18,7 @@ void CObjMain4::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 1.0;
+	m_and = 1.0f;
 	m_f = false;
 	m_key_flag = false;
 }
@@ -26,7 +26,7 @@ void CObjMain4::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjMain4::Action()
 {
-	float c[4] = { 1,1,1,m_and };
+	float c[4] = { 1.f,1.f,1.f,m_and };
 
 	/*if (m_f == true)
 	{

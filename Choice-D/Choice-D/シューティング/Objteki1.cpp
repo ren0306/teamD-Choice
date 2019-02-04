@@ -61,7 +61,6 @@ void CObjteki1::Action()
 		;
 	}
 
-	RECT_F dst;//描画先表示位置
 
 	//Audio::Start(0);
 	//主人公（Hero）の生死を取得する
@@ -78,7 +77,6 @@ void CObjteki1::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_x +90, m_y +20);
 
-	srand(time(NULL)); // ランダム情報を初期化
 
 
 	m_time++;

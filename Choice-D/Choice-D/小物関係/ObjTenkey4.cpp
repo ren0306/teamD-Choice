@@ -221,6 +221,10 @@ void CObjTenkey4::Draw()
 		{
 			m_and = 0.0f;
 			Scene::SetScene(new CSceneMain5);
+			//ED分岐に関係
+			m_Nazocnt++;
+			//階層を一つ増やす
+			m_floor++;
 
 		}
 	}
@@ -365,8 +369,8 @@ void CObjTenkey4::Draw()
 	//▼切り取り位置を変化させる事で非表示と表示を切り替えている
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 904.0f + Hint_x;
-	src.m_bottom = 383.0f + Hint_y;
+	src.m_right = 600.0f + Hint_x;
+	src.m_bottom = 420.0f + Hint_y;
 	//ヒント本体出力（出力位置）
 	dst.m_top = 50.0f;
 	dst.m_left = 100.0f;

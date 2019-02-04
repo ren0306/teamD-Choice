@@ -31,21 +31,6 @@ void CObjED1::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
-	int second = (m_TimeL / 60) % 60; //秒
-	int minute = (m_TimeL / 60) / 60; //分
-
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-	wchar_t str[128];
-	if (second < 10)
-	{
-		swprintf_s(str, L"RTA用、のこりタイムは%d分%d秒でした。", minute, second);
-	}
-	else
-	{
-		swprintf_s(str, L"RTA用、のこりタイムは%d分%d秒でした。", minute, second);
-	}
-	Font::StrDraw(str, 0, 0, 35, c);
-
 
 	//マウスの位置とクリックする場所で当たり判定
 	if (m_mou_x > 450 && m_mou_x < 755 && m_mou_y>525 && m_mou_y < 560)
@@ -75,6 +60,7 @@ void CObjED1::Draw()
 
 	float a[4] = { 0.5f,0.5f,0.5f,1.0f };
 	Font::StrDraw(L"敵と戦っていたらたくさんの敵が集まってきて捕らえられた", 70, 450, 25, a);
+	Font::StrDraw(L"ノーダメージでクリアすると・・？", 70, 480, 25, a);
 
 	float s[4] = { 1.0f,1.0f,1.0f,1.0f };
 	Font::StrDraw(L"クリックでエンドロールへ", 460, 535, 25, s);

@@ -211,7 +211,7 @@ void CObjTenkey5::Draw()
 			m_misscnt = 100.f;
 		}
 	}
-	if (m_Nazocnt == 4)
+	if (m_Nazocnt >= 4)
 	{
 		if (m_clear == true)
 		{

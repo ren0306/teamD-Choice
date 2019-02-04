@@ -118,9 +118,6 @@
     <ClCompile Include="小物関係\ObjDoor2.cpp">
       <Filter>ソースファイル\小物関係</Filter>
     </ClCompile>
-    <ClCompile Include="小物関係\SceneMain4.cpp">
-      <Filter>ソースファイル\小物関係\メイン</Filter>
-    </ClCompile>
     <ClCompile Include="ゲームメイン\SceneMain5.cpp">
       <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
@@ -353,6 +350,10 @@
     <ClCompile Include="小物関係\SceneMain4.cpp" />
     <ClCompile Include="ED\ObjED_Roll.cpp">
       <Filter>ソースファイル\ED</Filter>
+    </ClCompile>
+    <ClCompile Include="小物関係\SceneMain4.cpp" />
+    <ClCompile Include="ゲームメイン\SceneMain4.cpp">
+      <Filter>ソースファイル\小物関係\メイン</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

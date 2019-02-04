@@ -36,7 +36,7 @@ void CObjteki3::Init()
 	m_hit = 0;
 	death = false;
 	//“–‚½‚è”»’èHitBox
-	Hits::SetHitBox(this, m_x, m_y+100, 150 - m_hit, 50 - m_hit, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+	Hits::SetHitBox(this, m_x, m_y+100.f, 150.f - m_hit, 50.f - m_hit, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 }
 
@@ -68,7 +68,7 @@ void CObjteki3::Action()
 		{
 			//19”­“¯Žž”­ŽË
 			CObjAngleBullet* obj_b;
-			for (int i = 0; i < 360; i += 20)
+			for (float i = 0.f; i < 360.f; i += 20.f)
 			{
 				//Šp“xi‚ÅŠp“x’eŠÛ”­ŽË
 				obj_b = new CObjAngleBullet(m_x, m_y, i, 5.0f);
@@ -161,7 +161,7 @@ void CObjteki3::Action()
 			Hits::DeleteHitBox(this);
 
 			//“–‚½‚è”»’èHitBox
-			Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+			Hits::SetHitBox(this, m_x, m_y, 150.f - m_hit, 13.f, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 		}
 		//ƒ`ƒƒ[ƒW’e‚Ìƒ_ƒ[ƒW‚R
@@ -173,7 +173,7 @@ void CObjteki3::Action()
 			Hits::DeleteHitBox(this);
 
 			//“–‚½‚è”»’èHitBox
-			Hits::SetHitBox(this, m_x, m_y, 150 - m_hit, 13, ELEMENT_ENEMY, OBJ_TEKI3, 1);
+			Hits::SetHitBox(this, m_x, m_y, 150.f - m_hit, 13.f, ELEMENT_ENEMY, OBJ_TEKI3, 1);
 
 		}
 	}

@@ -20,7 +20,6 @@ CObjteki5::CObjteki5(float x, float y)
 	m_y = y;
 	m_tekicnt++;
 	m_f = true;
-	m_floor++;
 }
 
 
@@ -83,10 +82,10 @@ void CObjteki5::Action()
 		{
 			//19”­“¯”­Ë
 			CObjAngleBullet* obj_b;
-			for (int i = 0; i < 360; i += 20)
+			for (float i = 0.f; i < 360.f; i += 20.f)
 			{
 				//Šp“xi‚ÅŠp“x’eŠÛ”­Ë
-				obj_b = new CObjAngleBullet(m_x + 75, m_y + 13, i, 5.0f);
+				obj_b = new CObjAngleBullet(m_x + 75.f, m_y + 13.f, i, 5.f);
 				Objs::InsertObj(obj_b, OBJ_ANGLE_BULLET, 100);
 			}
 		}
@@ -137,13 +136,6 @@ void CObjteki5::Action()
 	//HP‚ª75%ˆÈ‰º(26.25)‚É‚È‚Á‚½‚çcˆÚ“®(‰•œ)‚ğ’Ç‰Á‚·‚é(cˆÚ“®‚É•ÏX‚·‚é)
 	if (m_hp <= 26.25)
 	{
-		{
-			//20‹ŠÔŠu‚Å’eŠÛ”­Ë(ŠgU’e”­Ë)
-			if (m_time % 100 == 0)
-			{
-				
-			}
-		}
 		//Šp“x‰ÁZ
 		m_r2 += 2.0f;
 
@@ -151,11 +143,12 @@ void CObjteki5::Action()
 		m_vx = 0.0f;
 		m_vy = sin(3.14f / 180 * m_r2);
 	}
-	else{
-		//ˆÚ“®•ûŒü
-		m_vx = sin(3.14f / 180 * m_r);
-		m_vy = 0.0f;
-		}
+	else
+	{
+	//ˆÚ“®•ûŒü
+	m_vx = sin(3.14f / 180 * m_r);
+	m_vy = 0.0f;
+	}
 
 	//”š”jƒGƒtƒFƒNƒg—p‚ÌƒIƒuƒWƒFƒNƒgæ“¾
 	CObjEnemyEX* obj = (CObjEnemyEX*)Objs::GetObj(OBJ_EX);
@@ -197,7 +190,6 @@ void CObjteki5::Action()
 				if (m_Mehp == 20&&m_tekicnt>=4)
 				{
 					Scene::SetScene(new CSceneED3());
-					g_RTA = true;
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄİ’è‚µ‚Ä‚¨‚­
 				}
 				//“ä‰ğ‚«‚ğ‚P‰ñ‚Å‚àƒNƒŠƒA‚·‚é‚ÆtrueƒGƒ“ƒh‚Ö
@@ -211,7 +203,6 @@ void CObjteki5::Action()
 				else if (m_tekicnt >= 4)
 				{
 					Scene::SetScene(new CSceneED1());
-					g_RTA = true;
 					g_CombatWaitTime = 300.f;//‚±‚±‚Å•K‚¸‚R‚O‚O‚ÉÄİ’è‚µ‚Ä‚¨‚­
 
 				}

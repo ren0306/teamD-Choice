@@ -18,7 +18,7 @@ void CObjMain2::Init()
 	m_mou_y = 0.0f;
 	m_mou_r = false;
 	m_mou_l = false;
-	m_and = 0.0;
+	m_and = 0.0f;
 	m_f = false;
 	m_key_flag = false;
 	m_timecnt = 50;
@@ -27,12 +27,12 @@ void CObjMain2::Init()
 //アクション
 void CObjMain2::Action()
 {
-	float c[4] = { 1,1,1,m_and };
+	float c[4] = { 1.f,1.f,1.f,m_and };
 
 	if (m_f == true)
 	{
-		m_and += 0.1;
-		if (m_and == 1.0)
+		m_and += 0.1f;
+		if (m_and == 1.0f)
 		{
 			m_f = false;
 		}
@@ -67,7 +67,7 @@ void CObjMain2::Draw()
 	//階層表示
 	wchar_t kaisou[4];
 	swprintf_s(kaisou, L"%d階層", m_floor);
-	Font::StrDraw(kaisou, 710, 0, 35, c);
+	Font::StrDraw(kaisou, 710.f, 0.f, 35.f, c);
 	
 	//前シーンから左または右クリックを押し続けている、
 	//もしくはこのシーンに入って一度でもクリックを押してない状態に移行すると実行。
