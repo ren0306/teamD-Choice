@@ -50,7 +50,7 @@ void CObjED_Roll::Action()
 	Font::StrDraw(L"https://soundeffect-lab.info/", 200, 800 + m_y, 32, c);
 
 	Font::StrDraw(L"Šé‰æ", 200, 850 + m_y, 50, c);
-	Font::StrDraw(L"ˆäƒmâ@—T‹M", 200, 900 + m_y, 32, c);
+	Font::StrDraw(L"ˆäƒmã@—T‹M", 200, 900 + m_y, 32, c);
 	Font::StrDraw(L"ŒãˆÁ@õ", 200, 930 + m_y, 32, c);
 	Font::StrDraw(L"´…@˜@", 200, 960 + m_y, 32, c);
 	Font::StrDraw(L"“c’†@—Ç–¾", 200, 990 + m_y, 32, c);
@@ -67,7 +67,7 @@ void CObjED_Roll::Action()
 	Font::StrDraw(L"´…@˜@", 200, 1740 + m_y, 32, c);
 
 	Font::StrDraw(L"“G‚S", 200, 2000 + m_y, 40, c);
-	Font::StrDraw(L"ˆäƒmâ@—T‹M", 200, 2040 + m_y, 32, c);
+	Font::StrDraw(L"ˆäƒmã@—T‹M", 200, 2040 + m_y, 32, c);
 
 	Font::StrDraw(L"“G‚T", 200, 2300 + m_y, 40, c);
 	Font::StrDraw(L"•Ÿ“c@Li", 200, 2340 + m_y, 32, c);
