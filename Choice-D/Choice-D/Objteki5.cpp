@@ -20,6 +20,7 @@ CObjteki5::CObjteki5(float x, float y)
 	m_y = y;
 	m_tekicnt++;
 	m_f = true;
+	m_floor=6;
 }
 
 
