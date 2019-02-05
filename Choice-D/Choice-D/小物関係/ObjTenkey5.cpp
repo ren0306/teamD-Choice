@@ -211,7 +211,8 @@ void CObjTenkey5::Draw()
 			m_misscnt = 100.f;
 		}
 	}
-	if (m_Nazocnt >= 4)
+	//5回クリアでハッピーエンド
+	if (m_Nazocnt >= 5)
 	{
 		if (m_clear == true)
 		{
