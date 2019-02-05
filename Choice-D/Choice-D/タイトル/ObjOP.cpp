@@ -27,6 +27,7 @@ void CObjOP::Init()
 	m_cnt = 1;
 	m_gazo = false;
 	m_flag = true;
+	m_kesu = false;
 }
 
 //アクション
@@ -196,11 +197,11 @@ void CObjOP::Draw()
 		Font::StrDraw(L"脱出をしよう！",300,330,35, k);
 
 	}
-	if (m_cnt >= 6)
+	/*if (m_cnt >= 6)
 	{
 		Scene::SetScene(new CSceneMain());
 
-	}
+	}*/
 	//Choice表示
 	src.m_top    =   0.0f;
 	src.m_left   =   0.0f;
