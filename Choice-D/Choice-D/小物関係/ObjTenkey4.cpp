@@ -139,11 +139,6 @@ void CObjTenkey4::Draw()
 					Audio::Start(3);
 					//‚P‚Â‚Å‚à‰ğ‚­‚Ætrue‚É‚·‚é
 					m_nazoflag = true;
-					//ED•ªŠò‚ÉŠÖŒW
-					m_Nazocnt++;
-					//ŠK‘w‚ğˆê‚Â‘‚â‚·
-					m_floor++;
-					//
 					m_clear = true;
 					m_TimeL += 1800;//‚R‚O•b‘‰Á
 

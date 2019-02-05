@@ -21,6 +21,7 @@ void CObjMain5::Init()
 	m_and = 1.0f;
 	m_f = false;
 	m_key_flag = false;
+	m_floor = 5;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
